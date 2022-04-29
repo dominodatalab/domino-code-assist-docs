@@ -18,7 +18,8 @@ extra_css:
 extra_javascript:
   - js/termynal.js
   - js/custom.js
-
+repo_url: https://github.com/dominodatalab/low-code-jupyter-docs/
+repo_name: low-code-jupyter-docs
 markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:

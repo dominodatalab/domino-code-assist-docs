@@ -1,5 +1,10 @@
 # Transforming data
 
+The following video includes all the steps explained below
+<video controls autoplay>
+    <source src="../../videos/transform.webm" type="video/webm">
+</video>
+
 ## Initialize assistant
 
 We start similarly as in [Loading data](loading-data.md) by initializing the assistant.

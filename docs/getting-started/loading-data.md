@@ -1,5 +1,10 @@
 # Loading data
 
+The following video includes all the steps explained below
+<video controls autoplay>
+    <source src="../../videos/intro.webm" type="video/webm">
+</video>
+
 ## Check installation
 
 If you have followed the [installation instructions](../install.md), you should see a blue <span style="background-color: #2D71C7; color: white; padding: 3px 10px 3px 10px">Assistant</span> button in the toolbar of your Jupyter notebook.

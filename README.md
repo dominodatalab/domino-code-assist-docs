@@ -4,10 +4,12 @@ This repository only contains the documentation for dominocode.
 
 # Develop documentation
 
-Install dependencies:
+## Install dependencies:
 ```bash
 $ pip install -r requirements.txt
 ```
+
+## Start server
 Start mkdocs
 ```bash
 $ mkdocs serve
@@ -26,6 +28,11 @@ Now you can edit the markdown files, and the documentation page should reload.
      *  https://squidfunk.github.io/mkdocs-material/reference/annotations/
 
 
+## Publish
+
+```bash
+mkdocs gh-deploy
+```
 
 # Generating video/screenshots
 

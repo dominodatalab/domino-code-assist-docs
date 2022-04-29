@@ -17,7 +17,7 @@ In this case, instead of using the assistant, we load the data ourselves:
 
 ## Open dialog
 
-Hover above the ![assistant icon](../screenshots/general/assistant-icon.png) icon and click the <img src="../screenshots/general/assistant-transformations.png" style="border: 1px solid black"> menu item, which will open the `Transformations` dialog.
+Hover above the ![assistant icon](../screenshots/general/assistant-icon.png) icon and click the ![transformations](../screenshots/general/assistant-transformations.png){.docs-border} menu item, which will open the `Transformations` dialog.
 
 ![Open transformations](../screenshots/transform/03-assistant-expand.png)
 
@@ -39,7 +39,7 @@ After which the data is shown in a table.
 
 ## Apply quick transformation
 
-We could manually add a transformation by clicking on the ![add](../screenshots/general/assistant-transformation-add.png){.docs-border}, but
+We could manually add a transformation by clicking on the ![add](../screenshots/general/assistant-transformation-add.png), but
 in this example we will add a tranformation by a quick action throught the table. 
 
 
@@ -47,22 +47,22 @@ Hover above a cell value containing `nan`, and you can then hover above the trip
 
 ![Choose dataframe](../screenshots/transform/07-popup-menu.png)
 
-Click the menu item <img src="../screenshots/general/assistant-transformation-filter-like.png" style="border: 1px solid black"> to open the dialog:
+Click the menu item ![filter-like](../screenshots/general/assistant-transformation-filter-like.png){.docs-border} to open the dialog:
 
 ![Choose dataframe](../screenshots/transform/08-filter-nan.png)
 
-And click the <img src="../screenshots/general/assistant-transformation-apply.png" style="border: 1px solid black"> button to filter the dataframe. Now we can see that we only 
+And click the ![apply](../screenshots/general/assistant-transformation-apply.png) button to filter the dataframe. Now we can see that we only 
 have values with `nan` for the `cabin` column.
 
 ![Choose dataframe](../screenshots/transform/09-filtered.png)
 
 ## Show code
 
-Toggle the switch <img src="../screenshots/general/assistant-transformation-toggle-code.png" style="border: 1px solid black"> to show the code
+Toggle the switch ![toggle](../screenshots/general/assistant-transformation-toggle-code.png){.docs-border} to show the code
 ![Choose dataframe](../screenshots/transform/10-show-code.png)
 
 ## Insert code
 
-And click the <img src="../screenshots/general/assistant-transformation-insert-code.png" style="border: 1px solid black"> button to insert the code into the notebook.
+And click the ![insert](../screenshots/general/assistant-transformation-insert-code.png) button to insert the code into the notebook.
 ![Choose dataframe](../screenshots/transform/11-insert-code.png)
 

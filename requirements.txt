@@ -1,0 +1,4 @@
+typer
+mkdocs
+mkdocs-material
+playwright

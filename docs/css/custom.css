@@ -1,0 +1,9 @@
+:root {
+    --md-primary-fg-color:        #2D71C7;
+    --md-primary-fg-color--light: #2D71C7;
+    --md-primary-fg-color--dark:  #90030C;
+  }
+
+ img.docs-border {
+    border: 1px solid black;
+  }

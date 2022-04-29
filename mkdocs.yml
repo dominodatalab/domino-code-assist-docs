@@ -1,0 +1,32 @@
+site_name: ''
+site_url: https://dominolowcode.github.io/
+nav:
+   - index.md
+   - Getting started:
+     - getting-started/loading-data.md
+     - getting-started/transform.md
+   - install.md
+theme:
+  name: material
+  favicon: favicon.png
+  logo: https://dominodatalab.github.io/api-docs/logo.png
+  features:
+    - content.tabs.link
+extra_css:
+  - css/termynal.css
+  - css/custom.css
+extra_javascript:
+  - js/termynal.js
+  - js/custom.js
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg

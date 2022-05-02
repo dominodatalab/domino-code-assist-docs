@@ -3,8 +3,14 @@ site_url: https://dominolowcode.github.io/
 nav:
    - index.md
    - Getting started:
-     - getting-started/loading-data.md
-     - getting-started/transform.md
+     - Overview: getting-started/index.md
+     - Loading data:
+       - CSV to Pandas: getting-started/loading-data/csv.md
+       - Snowflake to Pandas: getting-started/loading-data/snowflake.md
+     - Transforming data:
+       - Filter NaN values: getting-started/transform.md
+     - Visualizing data:
+       - Scatter plot with Plotly: getting-started/viz/scatter.md
    - install.md
 theme:
   name: material
@@ -12,6 +18,7 @@ theme:
   logo: https://dominodatalab.github.io/api-docs/logo.png
   features:
     - content.tabs.link
+    - navigation.expand
 extra_css:
   - css/termynal.css
   - css/custom.css

@@ -2,13 +2,13 @@
 
 Dominocode is not available from pypi, please contact us for a private link so you can install it.
 
-!!! warning "Jupyter lab not yet supported"
+!!! warning "JupyterLab not yet supported"
 
-    Currently, the code assistant only works in the (classical) Jupyter notebook. Jupyter lab is not yet supported.
+    Currently, the code assistant only works in the (classical) Jupyter notebook. JupyterLab is not yet supported.
 
 
 ## Manual installation
-Once you have the private link, you can install it manually in an existing Python environment using.
+Once you have the private download link from your sales team, you can manually install it into an existing Python environment using.
 
 
 <div class="termy">

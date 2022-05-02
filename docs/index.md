@@ -1,8 +1,8 @@
 # Introduction
 
-## What it is?
+## What it this?
 
-Domino Low code assistant is a tool for the Jupyter notebook to insert code snippets into notebook cells. Some actions, such as opening a file, or connecting to a database are more easily done using a graphical UI than in code. 
+Domino Low Code Assistant (LCA) accelerates common routines in Jupyter notebook with a GUI assistant (such as importing, munging, and visualizing data). Every interaction with the LCA generates the underlying Python code that is being executed, helping beginning practitioners to learn and edit essential Python data science code.
 
 
 
@@ -20,20 +20,22 @@ Domino Low code assistant is a tool for the Jupyter notebook to insert code snip
 === "Loading a CSV file"
 
     <video controls autoplay>
-      <source src="videos/intro.webm" type="video/webm">
+      <source src="https://user-images.githubusercontent.com/1765949/166242724-f7f31c93-8dd1-46e4-8c82-611a63800fbd.mp4" type="video/mp4">
     </video>
 
 === "Loading data from Snowflake"
 
-    Soon
+    <video controls>
+      <source src="https://user-images.githubusercontent.com/1765949/166242864-91564e62-6d2d-4872-8bb1-e2b566876320.mp4" type="video/mp4">
+    </video>
 
 
-[Get started](getting-started/loading-data.md){.md-button .md-button--primary}
+[Get started](getting-started/loading-data/){.md-button .md-button--primary}
 [Installation](install.md){.md-button .md-button--secondary}
 
 
 
 
-!!! warning "Jupyter lab not yet supported"
+!!! warning "JupyterLab not yet supported"
 
-    Currently, the code assistant only works in the (classical) Jupyter notebook. Jupyter lab is not yet supported.
+    Currently, the code assistant only works in the (classical) Jupyter notebook. JupyterLab is not yet supported.

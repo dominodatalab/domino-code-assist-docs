@@ -1,13 +1,14 @@
 # Transforming data
 
 The following video includes all the steps explained below
-<video controls autoplay>
-    <source src="../../videos/transform.webm" type="video/webm">
+<video controls>
+    <source src="https://user-images.githubusercontent.com/1765949/166242962-44388be2-eb1e-44d9-b76b-d485c9ff07e4.mp4" type="video/mp4">
 </video>
+
 
 ## Initialize assistant
 
-We start similarly as in [Loading data](loading-data.md) by initializing the assistant.
+We start similarly as in [Loading data](loading-data/csv.md) by initializing the assistant.
 
 ![Assistant ready](../screenshots/transform/01-assistant-ready.png)
 

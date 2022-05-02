@@ -2,6 +2,7 @@
 
 This repository only contains the documentation for dominocode.
 
+The live documentation is at https://dominodatalab.github.io/low-code-jupyter-docs/
 # Develop documentation
 
 ## Install dependencies:

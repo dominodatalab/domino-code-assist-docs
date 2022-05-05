@@ -4,7 +4,7 @@ Dominocode is not available from pypi, please contact us for a private link so y
 
 !!! warning "JupyterLab not yet supported"
 
-    Currently, the code assistant only works in the (classical) Jupyter notebook. JupyterLab is not yet supported.
+    Currently, the Low Code Assistant™ only works in the (classical) Jupyter notebook. JupyterLab is not yet supported.
 
 
 ## Manual installation

@@ -7,3 +7,13 @@
  img.docs-border {
     border: 1px solid black;
   }
+
+.assistant-icon {
+    width: 32px;
+    height: 33px;
+}
+
+.menu-item {
+    width: 185px;
+    height: 40px;
+}

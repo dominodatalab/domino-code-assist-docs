@@ -2,20 +2,20 @@
 
 The following video includes all the steps explained below
 <video controls>
-    <source src="https://user-images.githubusercontent.com/1765949/166242962-44388be2-eb1e-44d9-b76b-d485c9ff07e4.mp4" type="video/mp4">
+    <source src="https://user-images.githubusercontent.com/46192475/166971248-018c650c-068e-4db3-97ff-c473a26d19f4.mp4">
 </video>
 
 
-## Initialize assistant
+## Initialize the Low Code Assistant™
 
-We start similarly as in [Loading data](loading-data/csv.md) by initializing the assistant.
+We start similarly as in [Loading data](loading-data/csv.md) by initializing the Low Code Assistant™.
 
 ![Assistant ready](../screenshots/transform/01-assistant-ready.png)
 
 
 ## Loading data
 
-In this case, instead of using the assistant, we load the data ourselves:
+In this case, instead of using the Low Code Assistant™, we load the data ourselves:
 
 ![Assistant ready](../screenshots/transform/02-assistant-visible.png)
 
@@ -23,7 +23,7 @@ In this case, instead of using the assistant, we load the data ourselves:
 
 ## Open dialog
 
-Hover above the ![assistant icon](../screenshots/general/assistant-icon.png) icon and click the ![transformations](../screenshots/general/assistant-transformations.png){.docs-border} menu item, which will open the `Transformations` dialog.
+Hover above the ![assistant icon](../screenshots/general/assistant-icon.png){.assistant-icon} icon and click the ![transformations](../screenshots/general/assistant-transformations.png){.docs-border .menu-item} menu item, which will open the `Transformations` dialog.
 
 ![Open transformations](../screenshots/transform/03-assistant-expand.png)
 

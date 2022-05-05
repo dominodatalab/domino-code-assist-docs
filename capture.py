@@ -66,7 +66,7 @@ class CaptureHelper:
 
     @property
     def assistant(self):
-        return self.page.locator('[aria-label="Assistant"]')
+        return self.page.locator('[aria-label="Low Code Assistant™"]')
 
     def shot(self, name):
         self.page.wait_for_timeout(self.animation_time * 1000)
@@ -125,7 +125,7 @@ def load_snowflake(
             helper.shot("initial")
 
             helper.assistant.click()
-            page.locator("text=Assistant initialized").wait_for()
+            page.locator("text=Low Code Assistant™ initialized").wait_for()
             helper.shot("assistant-read")
 
             mouse_move_middle(page, page.locator(".code_cell").last)
@@ -193,7 +193,7 @@ def viz_scatter(port: int = 11111, headless: bool = True, animation_time: float 
             helper.shot("initial")
 
             helper.assistant.click()
-            page.locator("text=Assistant initialized").wait_for()
+            page.locator("text=Low Code Assistant™ initialized").wait_for()
             helper.shot("assistant-ready")
 
             page.wait_for_load_state("networkidle")
@@ -222,7 +222,9 @@ df.head(2)"""
             helper.shot("choose-df-first")
             page.locator("text=Variable name >> xpath=.. >> input").click()
             helper.shot("choose-name")
-            page.locator("text=Variable name >> xpath=.. >> input").type(
+            var_input = page.locator("text=Variable name >> xpath=.. >> input")
+            var_input.fill("")
+            var_input.type(
                 "scatter1", delay=10
             )
             helper.shot("choose-name-scatter1")
@@ -283,7 +285,7 @@ def load_csv(port: int = 11111, headless: bool = True, animation_time: float = 0
             helper.shot("initial")
 
             helper.assistant.click()
-            page.locator("text=Assistant initialized").wait_for()
+            page.locator("text=Low Code Assistant™ initialized").wait_for()
             helper.shot("assistant-ready")
 
             mouse_move_middle(page, page.locator(".code_cell").last)
@@ -347,10 +349,10 @@ def transform(port: int = 11111, headless: bool = True, animation_time: float = 
             page.goto(f"http://localhost:{port}/notebooks/transform-demo.ipynb")
 
             # restart kernel
-            page.locator("#kernellink").click()
-            page.locator('span:has-text("Restart")').click()
-            page.locator('button:has-text("Restart")').click()
-            assistant = page.locator('[aria-label="Assistant"]')
+            # page.locator("#kernellink").click()
+            # page.locator('span:has-text("Restart")').click()
+            # # page.locator('button:has-text("Restart")').click()
+            assistant = page.locator('[aria-label="Low Code Assistant™"]')
             # box = assistant.bounding_box()
             # get rid of connected icon and make sure it's stable
             page.wait_for_load_state("networkidle")
@@ -368,7 +370,7 @@ def transform(port: int = 11111, headless: bool = True, animation_time: float = 
             N += 1
 
             assistant.click()
-            page.locator("text=Assistant initialized").wait_for()
+            page.locator("text=Low Code Assistant™ initialized").wait_for()
             page.screenshot(
                 path=f"docs/screenshots/transform/{N:02}-assistant-ready.png"
             )
@@ -379,7 +381,7 @@ def transform(port: int = 11111, headless: bool = True, animation_time: float = 
 
 df = pd.read_csv("{path_csv}")
 df.head(2)"""
-            input = page.locator("text=In [ ]: ​ >> textarea").last
+            input = page.locator(".code_cell:last-of-type textarea").last
             input.type(code, delay=7)
 
             input = page.locator("text=In [ ]:").last
@@ -479,7 +481,7 @@ df.head(2)"""
             page.wait_for_timeout(time_step)
             N += 1
 
-            toggle = "div:nth-child(8) .v-input__control .v-input__slot .v-input--selection-controls__input .v-input--selection-controls__ripple"
+            toggle = ".v-input--switch:last-of-type .v-input--selection-controls__ripple"
 
             page.locator(f"{toggle} >> xpath=../..").screenshot(
                 path="docs/screenshots/general/assistant-transformation-toggle-code.png"
@@ -516,10 +518,13 @@ df.head(2)"""
                 print("Trimming", time_initial - time_start)
                 video_path_raw = video_path.parent / "transform-raw.webm"
                 video_path_cut = video_path.parent / "transform.webm"
+                video_path_cut_mp4 = video_path.parent / "transform.mp4"
                 shutil.move(video_path, video_path_raw)
                 cmd = (
                     f"ffmpeg -y -i {video_path_raw}  -ss 2.38 -c copy {video_path_cut}"
                 )
+                os.system(cmd)
+                cmd = f"ffmpeg -y -i {video_path_cut} -vcodec libx264 -crf 23 {video_path_cut_mp4}"
                 os.system(cmd)
             else:
                 os.remove(video_path)

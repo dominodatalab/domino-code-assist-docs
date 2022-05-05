@@ -1,6 +1,6 @@
 # Overview
 
-The Domino Low Code Assistant (LCA) can help generate code for various tasks.
+The Domino Low Code Assistant™ (LCA) can help generate code for various tasks.
  
 ## Loading data
 

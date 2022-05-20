@@ -7,6 +7,8 @@ nav:
      - Loading data:
        - CSV to Pandas: getting-started/loading-data/csv.md
        - Snowflake to Pandas: getting-started/loading-data/snowflake.md
+       - Redshift to Pandas: getting-started/loading-data/redshift.md
+       - SQL with editor to Pandas: getting-started/loading-data/sql.md
      - Transforming data:
        - Filter NaN values: getting-started/transform.md
      - Visualizing data:

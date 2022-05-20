@@ -6,7 +6,8 @@ The Domino Low Code Assistant™ (LCA) can help generate code for various tasks.
 
   * [Loading a CSV file into a Pandas dataframe](loading-data/csv.md)
   * [Loading Snowflake data into a Pandas dataframe](loading-data/snowflake.md)
-  * More coming
+  * [Loading Redshift data into a Pandas dataframe](loading-data/snowflake.md)
+  * [Loading data using SQL into a Pandas dataframe](loading-data/sql.md)
 
 ## Transforming data
 

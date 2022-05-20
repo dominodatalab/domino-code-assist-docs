@@ -52,10 +52,45 @@ class CaptureHelper:
         self.page.locator('span:has-text("Restart")').click()
         self.page.locator('button:has-text("Restart")').click()
         self.assistant.wait_for()
-
+        self.page.add_style_tag(content="""
+        .record-info {
+            background-color: white;
+            border: 1px solid black;
+            font-size: 20pt;
+            position: absolute;
+            bottom: 70px;
+            left: 85px;
+            padding: 10px;
+            transition: opacity 0.3s;
+            z-index: 100000;
+        }
+        """)
+        self.page.add_script_tag(content="""
+            window.infoDiv = document.createElement('div')
+            infoDiv.style.opacity = 0;
+            infoDiv.classList.add('record-info')
+            document.body.appendChild(infoDiv)
+        """)
         # get rid of connected icon and make sure it's stable
         self.page.wait_for_load_state("networkidle")
         self.page.wait_for_timeout(200)
+
+    def scroll_to_last_code_cell(self):
+        last_code_cell = self.page.locator(".code_cell").last
+        last_code_cell.scroll_into_view_if_needed()
+
+    def add_msg(self, text, duration=None):
+        js_code = f"""
+            infoDiv.style.opacity = 0.7;
+            infoDiv.innerHTML = {text!r}
+        """
+        if duration:
+            js_code += f"""
+            setTimeout(() => {{
+                infoDiv.style.opacity = 0
+            }}, {duration*1000!r})
+            """
+        self.page.evaluate(js_code)
 
     def insert_code(self, code, delay=7):
         input = self.page.locator("textarea").last
@@ -174,6 +209,182 @@ def load_snowflake(
 
 
 @app.command()
+def load_redshift(
+    port: int = 11111, headless: bool = True, animation_time: float = 0.3
+):
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=headless, timeout=timeout)
+        helper = CaptureHelper(
+            browser, "load-redshift", port=port, animation_time=animation_time
+        )
+        with helper:
+            page = helper.page
+            helper.start_video()
+            # a bit of rest
+            page.wait_for_timeout(time_step)
+
+            helper.shot("initial")
+
+            helper.add_msg("Click the Low Code Assistant button", 2)
+            helper.assistant.click()
+            page.locator("text=Low Code Assistant™ initialized").wait_for()
+            helper.shot("assistant-read")
+
+            helper.add_msg("Hover above the next code cell", 2)
+            mouse_move_middle(page, page.locator(".code_cell").last)
+            page.wait_for_load_state("networkidle")
+            helper.shot("assistant-visible")
+            page.wait_for_timeout(time_step*3)
+
+            helper.add_msg("Open the assistant menu", 2)
+            page.locator(".dominocode-assistant-menu").hover()
+            helper.shot("assistant-expand")
+
+            page.locator("text=Load Data").click()
+            helper.shot("load-data")
+
+            page.wait_for_timeout(animation_time * 4000)  # wait for the data sources to populate
+            helper.add_msg("Choose a data source", 2)
+            # Click on data source
+            page.locator('div[role="button"]:has-text("Data Source")').click()
+            helper.shot("choose-datasource")
+
+            page.locator(
+                'div[role="option"] div:has-text("mario_test_redshift")'
+            ).first.click()
+            helper.shot("choose-datasource-first")
+
+            page.locator('div[role="button"]:has-text("Database")').click()
+            helper.add_msg("Choose a database, schema, and table", 2)
+            helper.shot("choose-database")
+
+            page.locator('div[role="option"] div:has-text("dev") >> nth=0').click()
+            helper.shot("choose-database-first")
+
+            page.locator('div[role="button"]:has-text("Schema")').click()
+            helper.shot("choose-schema")
+
+            page.locator('div[role="option"] div:has-text("public") >> nth=0').click()
+            helper.add_msg("Click 'Apply' to insert the Python code into the current cell", 2)
+            helper.shot("choose-schema-first")
+
+            page.locator('div[role="button"]:has-text("Table")').click()
+            helper.shot("choose-table")
+
+            page.locator("text=venue").click()
+            helper.shot("choose-table-first")
+
+            general(page.locator('button:has-text("apply")'), "apply")
+            page.locator('button:has-text("apply")').click()
+            helper.scroll_to_last_code_cell()
+            # wait for the dataframe to show
+            page.locator("text=rows ×").wait_for()
+            page.locator("text=San Francisco Opera").scroll_into_view_if_needed()
+            # helper.scroll_to_last_code_cell()
+            helper.shot("insert-code")
+
+
+
+@app.command()
+def load_redshift_sql(
+    port: int = 11111, headless: bool = True, animation_time: float = 0.3
+):
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=headless, timeout=timeout)
+        helper = CaptureHelper(
+            browser, "load-redshift-sql", port=port, animation_time=animation_time
+        )
+        with helper:
+            page = helper.page
+            helper.start_video()
+            # a bit of rest
+            page.wait_for_timeout(time_step)
+
+            helper.shot("initial")
+
+            helper.add_msg("Click the Low Code Assistant button", 2)
+            helper.assistant.click()
+            page.locator("text=Low Code Assistant™ initialized").wait_for()
+            helper.shot("assistant-read")
+
+            helper.add_msg("Hover above the next code cell", 2)
+            mouse_move_middle(page, page.locator(".code_cell").last)
+            page.wait_for_load_state("networkidle")
+            helper.shot("assistant-visible")
+            page.wait_for_timeout(time_step*3)
+
+            helper.add_msg("Open the assistant menu", 2)
+            page.locator(".dominocode-assistant-menu").hover()
+            helper.shot("assistant-expand")
+
+            page.locator("text=Load Data").click()
+            helper.shot("load-data")
+
+            page.wait_for_timeout(animation_time * 4000)  # wait for the data sources to populate
+            helper.add_msg("Choose a data source", 2)
+            # Click on data source
+            page.locator('div[role="button"]:has-text("Data Source")').click()
+            helper.shot("choose-datasource")
+
+            page.locator(
+                'div[role="option"] div:has-text("mario_test_redshift")'
+            ).first.click()
+            helper.shot("choose-datasource-first")
+
+            page.locator('div[role="button"]:has-text("Database")').click()
+            helper.add_msg("Choose a database and schema", 2)
+            helper.shot("choose-database")
+
+            page.locator('div[role="option"] div:has-text("dev") >> nth=0').click()
+            helper.shot("choose-database-first")
+
+            page.locator('div[role="button"]:has-text("Schema")').click()
+            helper.shot("choose-schema")
+
+
+            helper.add_msg("Toggle 'Use query'", 2)
+            page.locator('.v-input--selection-controls__ripple').click()
+
+            # wait for the widget, and scroll
+            page.locator("text=for auto-complete").wait_for()
+            page.locator('button:has-text("apply")').scroll_into_view_if_needed()
+            # seems it needs some extra time (maybe codemirror expands slowly)
+            page.wait_for_timeout(time_step)
+            page.locator('button:has-text("apply")').scroll_into_view_if_needed()
+
+            sql_input = page.locator("textarea").first
+            helper.add_msg("Enter your SQL query, and use <kbd>Ctrl</kbd>+<kbd>Space</kbd> for autocomplete", 4)
+            delay = 130
+            sql_input.focus()
+            for char in "SELECT ":
+                sql_input.press(char, delay=delay)
+            for char in "venue.":
+                sql_input.press(char, delay=delay)
+            sql_input.press("Control+ ", delay=delay)
+            for i in range(3):
+                sql_input.press("ArrowDown",  delay=delay)
+            sql_input.press("Enter",  delay=delay)
+            for char in " FROM venue WHERE venue.v":
+                sql_input.press(char, delay=delay)
+            sql_input.press("Control+ ", delay=delay)
+            for i in range(4):
+                sql_input.press("ArrowDown", delay=delay)
+            sql_input.press("Enter",  delay=delay)
+            for char in " > 10":
+                sql_input.press(char, delay=delay)
+
+
+            helper.add_msg("Click 'Apply' to insert the Python code into the current cell", 2)
+            page.wait_for_timeout(time_step*4)
+
+            page.locator('button:has-text("apply")').click()
+            # a unique string from printing the dataframe
+            page.locator("text=56").wait_for()
+            helper.shot("insert-code")
+
+
+
+@app.command()
 def viz_scatter(port: int = 11111, headless: bool = True, animation_time: float = 0.3):
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=headless, timeout=timeout)
@@ -193,12 +404,14 @@ def viz_scatter(port: int = 11111, headless: bool = True, animation_time: float 
             helper.shot("initial")
 
             helper.assistant.click()
+            helper.add_msg('Click the Low Code Assistant™ button')
             page.locator("text=Low Code Assistant™ initialized").wait_for()
             helper.shot("assistant-ready")
 
             page.wait_for_load_state("networkidle")
             helper.shot("assistant-visible")
 
+            helper.add_msg('Load data using code, or the Assistant', 2.)
             path_csv = "../mydata/titanic.csv"
             helper.insert_code(
                 f"""import pandas as pd
@@ -208,18 +421,21 @@ df.head(2)"""
             page.locator("text=pclass").wait_for()
             helper.shot("load-data-code")
 
+            helper.add_msg('Open the visualization dialog from the assistant', 2.)
             mouse_move_middle(page, page.locator(".code_cell").last)
             page.locator(".dominocode-assistant-menu").hover()
             page.wait_for_timeout(animation_time * 1000)  # animation
             helper.shot("assistant-expand")
 
             page.locator("text=Visualizations").click()
+            helper.add_msg('Choose the previously created dataframe named: "df"', 2.)
             helper.shot("open")
 
             page.locator('div[role="button"]:has-text("DataFrame")').click()
             helper.shot("choose-df")
             page.locator('div[role="option"] div:has-text("df")').first.click()
             helper.shot("choose-df-first")
+            # helper.add_msg('And give a variable name for later use', 2.)
             page.locator("text=Variable name >> xpath=.. >> input").click()
             helper.shot("choose-name")
             var_input = page.locator("text=Variable name >> xpath=.. >> input")
@@ -228,11 +444,13 @@ df.head(2)"""
                 "scatter1", delay=10
             )
             helper.shot("choose-name-scatter1")
+            helper.add_msg('Choose a Plot Type', 2.)
             page.locator('div[role="button"]:has-text("Plot Type")').click()
             helper.shot("choose-type")
             page.locator('div[role="option"] >> text=Scatter').first.click()
             helper.shot("choose-type-scatter")
 
+            helper.add_msg('Configure the plot', 4.)
             page.locator('div[role="button"]:has-text("X-axis")').click()
             helper.shot("choose-x")
             page.locator('div[role="option"] >> text=age').click()
@@ -257,6 +475,7 @@ df.head(2)"""
             helper.shot("choose-theme")
             page.locator('div[role="option"] >> text=ggplot2').first.click()
             helper.shot("choose-theme-ggplot2")
+            helper.add_msg('When done, insert the code', 2.)
             page.locator('button:has-text("Insert code")').click()
             page.locator(".plotly-graph-div").wait_for()
             # give some time to layout

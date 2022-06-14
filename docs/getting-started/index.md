@@ -17,3 +17,7 @@ The Domino Low Code Assistant™ (LCA) can help generate code for various tasks.
 ## Visualisation
 
   * [Creating a scatter plot](./viz/scatter.md)
+
+## Apps
+
+  * [Creating an App](./app/create.md)

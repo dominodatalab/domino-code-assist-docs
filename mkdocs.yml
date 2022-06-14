@@ -13,6 +13,8 @@ nav:
        - Filter NaN values: getting-started/transform.md
      - Visualizing data:
        - Scatter plot with Plotly: getting-started/viz/scatter.md
+     - Apps:
+       - App creation: getting-started/app/create.md
    - install.md
 theme:
   name: material

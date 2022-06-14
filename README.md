@@ -67,3 +67,5 @@ This is required when the dominocode assistant looks different.
     $ python capture.py transform
     ```
 
+Some scripts also general 'general' images (screenshots of buttons, icon etc). If these are performed while recording a video,
+the video will show a flicker. Instead run the script once with `--general-screenshots`, and for the video without.

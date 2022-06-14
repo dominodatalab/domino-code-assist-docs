@@ -60,7 +60,6 @@ meeting
 #misc
 /**/.DS_Store
 /**/.ipynb_checkpoints
-app
 dist
 python/.idea
 test/.idea

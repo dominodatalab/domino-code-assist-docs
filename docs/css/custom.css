@@ -17,3 +17,7 @@
     width: 185px;
     height: 40px;
 }
+
+.retina-image {
+  zoom: 50%;
+}

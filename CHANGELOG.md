@@ -1,5 +1,6 @@
-next
+v0.0.14
 =======
+- feat: remove loader selection from deployer
 
 v0.0.13
 =======

@@ -11,7 +11,7 @@ HERE = Path(__file__).parent
 app = typer.Typer()
 
 
-timeout = 500000
+timeout = 10000
 time_step = 500
 
 # if in a hurry, and want to test
@@ -191,7 +191,7 @@ def load_snowflake(
             page.locator('div[role="button"]:has-text("Database")').click()
             helper.shot("choose-database")
 
-            page.locator("text=SNOWFLAKE_SAMPLE_DATA").click()
+            page.locator('div[role="button"]:has-text("SNOWFLAKE_SAMPLE_DATA")').click()
             helper.shot("choose-database-first")
 
             page.locator('div[role="button"]:has-text("Schema")').click()

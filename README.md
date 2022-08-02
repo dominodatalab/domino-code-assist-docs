@@ -39,6 +39,11 @@ mkdocs gh-deploy
 
 This is required when the dominocode assistant looks different.
 
+```bash
+$ conda env create -f environment.yml
+$ conda activate lca-docs
+```
+
  1. Start a jupyter notebook server
     ```bash
     $ jupyter notebook --notebook-dir=notebooks --NotebookApp.token='' --port=11111 --no-browser
@@ -47,24 +52,15 @@ This is required when the dominocode assistant looks different.
  2. Install dependencies/playwright
 
     ```bash
-    $ pip install -r requirements.txt
     $ playwright install
-    ```
-    Make sure ffmpeg is installed
-    ```
-    $ ffmpeg -h
-    ```
-    If not installed, use brew/conda/mamba, e.g.:
-    ```bash
-    $ mamba install -c conda-forge ffmpeg 
     ```
 3. Run load session
     ```bash
-    $ python capture.py load
+    $ python capture.py load-csv
     ```
-4. Run transform session
+4. To run more available sessions, see:
     ```bash
-    $ python capture.py transform
+    $ python capture.py --help
     ```
 
 Some scripts also general 'general' images (screenshots of buttons, icon etc). If these are performed while recording a video,

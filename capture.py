@@ -206,8 +206,8 @@ def load_snowflake(
             page.locator("text=CALL_CENTER (60 rows)").click()
             helper.shot("choose-table-first")
 
-            general(page.locator('button:has-text("apply")'), "apply")
-            page.locator('button:has-text("apply")').click()
+            general(page.locator('button:has-text("insert code")'), "apply")
+            page.locator('button:has-text("Insert code")').click()
             # wait for the dataframe to show
             page.locator("text=rows ×").wait_for()
             helper.shot("insert-code")
@@ -273,7 +273,7 @@ def load_redshift(
 
             page.locator('div[role="option"] div:has-text("public") >> nth=0').click()
             helper.add_msg(
-                "Click 'Apply' to insert the Python code into the current cell", 2
+                "Click 'INSERT CODE' to insert the Python code into the current cell", 2
             )
             helper.shot("choose-schema-first")
 
@@ -283,8 +283,8 @@ def load_redshift(
             page.locator("text=venue").click()
             helper.shot("choose-table-first")
 
-            general(page.locator('button:has-text("apply")'), "apply")
-            page.locator('button:has-text("apply")').click()
+            general(page.locator('button:has-text("Insert code")'), "apply")
+            page.locator('button:has-text("Insert code")').click()
             helper.scroll_to_last_code_cell()
             # wait for the dataframe to show
             page.locator("text=rows ×").wait_for()
@@ -356,10 +356,10 @@ def load_redshift_sql(
 
             # wait for the widget, and scroll
             page.locator("text=for auto-complete").wait_for()
-            page.locator('button:has-text("apply")').scroll_into_view_if_needed()
+            page.locator("text=for auto-complete").scroll_into_view_if_needed()
             # seems it needs some extra time (maybe codemirror expands slowly)
             page.wait_for_timeout(time_step)
-            page.locator('button:has-text("apply")').scroll_into_view_if_needed()
+            page.locator("text=for auto-complete").scroll_into_view_if_needed()
 
             sql_input = page.locator("textarea").first
             helper.add_msg(
@@ -386,11 +386,11 @@ def load_redshift_sql(
                 sql_input.press(char, delay=delay)
 
             helper.add_msg(
-                "Click 'Apply' to insert the Python code into the current cell", 2
+                "Click 'INSERT CODE' to insert the Python code into the current cell", 2
             )
             page.wait_for_timeout(time_step * 4)
 
-            page.locator('button:has-text("apply")').click()
+            page.locator('button:has-text("Insert code")').click()
             # a unique string from printing the dataframe
             page.locator("text=56").wait_for()
             helper.shot("insert-code")
@@ -447,13 +447,7 @@ df.head(2)"""
             helper.shot("choose-df")
             page.locator('div[role="option"] div:has-text("df")').first.click()
             helper.shot("choose-df-first")
-            # helper.add_msg('And give a variable name for later use', 2.)
-            page.locator("text=Variable name >> xpath=.. >> input").click()
-            helper.shot("choose-name")
-            var_input = page.locator("text=Variable name >> xpath=.. >> input")
-            var_input.fill("")
-            var_input.type("scatter1", delay=10)
-            helper.shot("choose-name-scatter1")
+
             helper.add_msg("Choose a Plot Type", 2.0)
             page.locator('div[role="button"]:has-text("Plot Type")').click()
             helper.shot("choose-type")
@@ -470,11 +464,6 @@ df.head(2)"""
             page.locator('div[role="option"] >> text=fare').last.click()
             helper.shot("choose-y-fare")
 
-            # get viz into view
-            page.locator(
-                'button:has-text("Insert code")' ""
-            ).scroll_into_view_if_needed()
-
             page.locator('div[role="button"]:has-text("Color")').click()
             helper.shot("choose-color")
             page.locator('div[role="option"] >> text=pclass').last.click()
@@ -485,6 +474,15 @@ df.head(2)"""
             helper.shot("choose-theme")
             page.locator('div[role="option"] >> text=ggplot2').first.click()
             helper.shot("choose-theme-ggplot2")
+
+            # helper.add_msg('And give a variable name for later use', 2.)
+            page.locator('text="Output variable" >> xpath=.. >> input').click()
+            helper.shot("choose-name")
+            var_input = page.locator('text="Output variable" >> xpath=.. >> input')
+            var_input.fill("")
+            var_input.type("scatter1", delay=10)
+            helper.shot("choose-name-scatter1")
+
             helper.add_msg("When done, insert the code", 2.0)
             page.locator('button:has-text("Insert code")').click()
             page.locator(".plotly-graph-div").wait_for()
@@ -495,7 +493,7 @@ df.head(2)"""
 
 
 @app.command()
-def load_csv(port: int = 11111, headless: bool = True, animation_time: float = 0.3):
+def load_csv(port: int = 11111, headless: bool = True, animation_time: float = 0.3, screenshots: bool = True):
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=headless, timeout=timeout)
         helper = CaptureHelper(
@@ -554,7 +552,14 @@ def load_csv(port: int = 11111, headless: bool = True, animation_time: float = 0
             )
 
             page.locator("text=titanic.csv").click()
+            page.wait_for_timeout(time_step)
+            page.locator("button:has-text('Insert code')").click()
+
+            helper.scroll_to_last_code_cell()
             helper.shot("load-data-titanic")
+
+            page.wait_for_timeout(time_step * 2)
+
 
 
 @app.command()
@@ -666,7 +671,7 @@ df.head(2)"""
 
             # page.locator("div[role=\"option\"] >> text=df").dispatch_event("mousedown")
             page.locator('div[role="option"] >> text=df').click()
-            page.locator('div[role="option"] >> text=df').wait_for(state="detached")
+            page.locator('.solara-data-table__viewport').wait_for()
             # page.locator("div[role=\"listbox\"]:has-text(\"df\")").dispatch_event("mousedown")
             # page.locator("div[role=\"listbox\"]:has-text(\"df\")").click()
             # page.locator("div[role=\"menuitem\"] i").click()
@@ -693,7 +698,7 @@ df.head(2)"""
             )
 
             page.locator("text=Filter values like").click()
-            page.locator("text=New dataframe name").wait_for()
+            page.locator(".v-dialog:not(.v-bottom-sheet) >> text=New dataframe name").wait_for()
             page.wait_for_timeout(animation_time * 1000)  # animation
             page.screenshot(path=f"docs/screenshots/transform/{N:02}-filter-nan.png")
             page.wait_for_timeout(time_step)
@@ -703,8 +708,8 @@ df.head(2)"""
                 path="docs/screenshots/general/assistant-transformation-apply.png"
             )
 
-            page.locator("text=Apply").click()
-            page.locator("text=New dataframe name").wait_for(state="detached")
+            page.locator("text=apply").click()
+            page.locator(".v-dialog:not(.v-bottom-sheet) >> text=New dataframe name").wait_for(state="detached")
             page.wait_for_timeout(animation_time * 1000)  # animation
             page.screenshot(path=f"docs/screenshots/transform/{N:02}-filtered.png")
             page.wait_for_timeout(time_step)
@@ -719,6 +724,7 @@ df.head(2)"""
             )
             page.locator(toggle).click()
             page.wait_for_timeout(animation_time * 1000)  # animation
+            page.locator(".solara-code-highlight").scroll_into_view_if_needed()
             page.screenshot(path=f"docs/screenshots/transform/{N:02}-show-code.png")
             page.wait_for_timeout(time_step)
             N += 1

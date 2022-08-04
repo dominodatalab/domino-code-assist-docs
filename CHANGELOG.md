@@ -1,3 +1,10 @@
+v0.0.17
+=======
+- feat: WYSIWYG editor for markdown
+- feat: new UX
+- fix: S3 datasource name is hardcoded
+- fix: show app doesn't work on other domains
+
 v0.0.14
 =======
 - feat: remove loader selection from deployer

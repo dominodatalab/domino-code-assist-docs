@@ -65,3 +65,18 @@ $ conda activate lca-docs
 
 Some scripts also general 'general' images (screenshots of buttons, icon etc). If these are performed while recording a video,
 the video will show a flicker. Instead run the script once with `--general-screenshots`, and for the video without.
+
+To run all:
+```bash
+$ python capture.py load-csv &&\
+ python capture.py load-csv --no-general-screenshots &&\
+ python capture.py load-redshift &&\
+ python capture.py load-redshift --no-general-screenshots &&\
+ python capture.py load-redshift-sql &&\
+ python capture.py load-snowflake &&\
+ python capture.py transform &&\
+ python capture.py transform --no-general-screenshots &&\
+ python capture.py viz-scatter &&\
+ python capture.py app-create &&\
+ python capture.py app-create --no-general-screenshots
+```

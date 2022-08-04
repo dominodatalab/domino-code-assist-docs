@@ -2,7 +2,7 @@
 
 The following video includes all the steps explained below
 <video controls>
-    <source src="https://user-images.githubusercontent.com/46192475/166971248-018c650c-068e-4db3-97ff-c473a26d19f4.mp4">
+    <source src="https://user-images.githubusercontent.com/46192475/182823427-61bf2e88-db15-4aa8-bf85-054b21c9e6ac.mp4">
 </video>
 
 

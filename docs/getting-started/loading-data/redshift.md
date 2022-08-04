@@ -1,5 +1,5 @@
 # Loading data from Redshift
 
 <video controls>
-    <source src="https://user-images.githubusercontent.com/1765949/169533761-ac95b54e-ebbd-42a1-91bf-e37580a8423f.mp4" type="video/mp4">
+    <source src="https://user-images.githubusercontent.com/46192475/182823701-695fc350-b814-48bf-8ce9-ffed4d347f86.mp4" type="video/mp4">
 </video>

@@ -3,7 +3,7 @@
 The following video includes all the steps explained below
 
 <video controls>
-    <source src="https://user-images.githubusercontent.com/46192475/166969373-dec946f8-9702-4887-a57b-953adb18e1af.mp4" type="video/mp4">
+    <source src="https://user-images.githubusercontent.com/46192475/182823773-7af97491-89d4-44f3-9996-9b08900d38e1.mp4" type="video/mp4">
 </video>
 
 ## Check installation

@@ -1,7 +1,5 @@
 # Introduction
 
-## What is this?
-
 Domino Low Code Assistant™ (LCA) accelerates common routines in Jupyter notebook with a GUI assistant (such as importing data, data munging, and creating/editing charts). Every interaction with the LCA generates the underlying Python code that is being executed, helping beginning practitioners to learn and edit essential Python data science code.
 
 

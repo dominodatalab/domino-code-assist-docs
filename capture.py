@@ -124,7 +124,7 @@ class CaptureHelper:
         video_path = Path(self.page.video.path())
         self.page.close()
         self.browser.close()
-        if exception is None:
+        if exception is None and self.time_initial:
             print("Trimming", self.time_initial - self.time_start)
             video_path_raw = video_path.parent / f"{self.name}-raw.webm"
             video_path_cut = video_path.parent / f"{self.name}.webm"
@@ -215,7 +215,7 @@ def load_snowflake(
 
 @app.command()
 def load_redshift(
-    port: int = 11111, headless: bool = True, animation_time: float = 0.3
+    port: int = 11111, headless: bool = True, animation_time: float = 0.3, general_screenshots: bool = True
 ):
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=headless, timeout=timeout)
@@ -224,7 +224,8 @@ def load_redshift(
         )
         with helper:
             page = helper.page
-            helper.start_video()
+            if not general_screenshots:
+                helper.start_video()
             # a bit of rest
             page.wait_for_timeout(time_step)
 
@@ -283,7 +284,12 @@ def load_redshift(
             page.locator("text=venue").click()
             helper.shot("choose-table-first")
 
-            general(page.locator('button:has-text("Insert code")'), "apply")
+            locator = page.locator('button:has-text("Insert code")')
+            if general_screenshots:
+                general(locator, "apply")
+            else:
+                locator.wait_for()
+
             page.locator('button:has-text("Insert code")').click()
             helper.scroll_to_last_code_cell()
             # wait for the dataframe to show
@@ -493,7 +499,13 @@ df.head(2)"""
 
 
 @app.command()
-def load_csv(port: int = 11111, headless: bool = True, animation_time: float = 0.3, screenshots: bool = True):
+def load_csv(port: int = 11111, headless: bool = True, animation_time: float = 0.3, general_screenshots: bool = True):
+    def screenshot_or_wait(selector, path):
+        if general_screenshots:
+            selector.screenshot(path=path)
+        else:
+            selector.wait_for()
+
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=headless, timeout=timeout)
         helper = CaptureHelper(
@@ -505,7 +517,8 @@ def load_csv(port: int = 11111, headless: bool = True, animation_time: float = 0
         with helper:
 
             page = helper.page
-            helper.start_video()
+            if not general_screenshots:
+                helper.start_video()
             # a bit of rest
             page.wait_for_timeout(time_step)
 
@@ -519,21 +532,15 @@ def load_csv(port: int = 11111, headless: bool = True, animation_time: float = 0
             page.wait_for_load_state("networkidle")
             helper.shot("assistant-visible")
 
-            page.locator(".dominocode-assistant-menu").screenshot(
-                path="docs/screenshots/general/assistant-icon.png"
-            )
+            screenshot_or_wait(page.locator(".dominocode-assistant-menu"), path="docs/screenshots/general/assistant-icon.png")
 
             page.locator(".dominocode-assistant-menu").hover()
             page.wait_for_timeout(animation_time * 1000)  # animation
             helper.shot("assistant-expand")
 
-            page.locator("text=Load Data >> xpath=../../..").screenshot(
-                path="docs/screenshots/general/assistant-popup-menu.png"
-            )
+            screenshot_or_wait(page.locator("text=Load Data >> xpath=../../.."), path="docs/screenshots/general/assistant-popup-menu.png")
 
-            page.locator("text=Load Data >> xpath=../..").screenshot(
-                path="docs/screenshots/general/assistant-load-data.png"
-            )
+            screenshot_or_wait(page.locator("text=Load Data >> xpath=../.."), path="docs/screenshots/general/assistant-load-data.png")
 
             page.locator("text=Load Data").click()
             helper.shot("load-data")
@@ -547,9 +554,7 @@ def load_csv(port: int = 11111, headless: bool = True, animation_time: float = 0
             page.locator("text=mydata").click()
             helper.shot("load-data-datasets-dir-mydata")
 
-            page.locator("text=titanic.csv>> xpath=../..").screenshot(
-                path="docs/screenshots/general/assistant-dataset-titanic.png"
-            )
+            screenshot_or_wait(page.locator("text=titanic.csv>> xpath=../.."), path="docs/screenshots/general/assistant-dataset-titanic.png")
 
             page.locator("text=titanic.csv").click()
             page.wait_for_timeout(time_step)
@@ -561,9 +566,14 @@ def load_csv(port: int = 11111, headless: bool = True, animation_time: float = 0
             page.wait_for_timeout(time_step * 2)
 
 
-
 @app.command()
-def transform(port: int = 11111, headless: bool = True, animation_time: float = 0.3):
+def transform(port: int = 11111, headless: bool = True, animation_time: float = 0.3, general_screenshots: bool = True):
+    def screenshot_or_wait(selector, path):
+        if general_screenshots:
+            selector.screenshot(path=path)
+        else:
+            selector.wait_for()
+
     # TODO: needs refactor to use the Helper
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=headless, timeout=timeout)
@@ -649,9 +659,7 @@ df.head(2)"""
             page.wait_for_timeout(time_step)
             N += 1
 
-            page.locator("text=Transformations >> xpath=../..").screenshot(
-                path="docs/screenshots/general/assistant-transformations.png"
-            )
+            screenshot_or_wait(page.locator("text=Transformations >> xpath=../.."), path="docs/screenshots/general/assistant-transformations.png")
 
             page.locator("text=Transformations").click()
             page.wait_for_timeout(animation_time * 1000)  # animation
@@ -683,9 +691,7 @@ df.head(2)"""
             page.wait_for_timeout(time_step)
             N += 1
 
-            page.locator("text=Add transformation >> xpath=..").screenshot(
-                path="docs/screenshots/general/assistant-transformation-add.png"
-            )
+            screenshot_or_wait(page.locator("text=Add transformation >> xpath=.."), path="docs/screenshots/general/assistant-transformation-add.png")
 
             page.locator("tr:nth-child(10) td:nth-child(11) span .v-icon").click()
             page.wait_for_timeout(animation_time * 1000)  # animation
@@ -693,9 +699,7 @@ df.head(2)"""
             page.wait_for_timeout(time_step)
             N += 1
 
-            page.locator("text=Filter values like >> xpath=../..").screenshot(
-                path="docs/screenshots/general/assistant-transformation-filter-like.png"
-            )
+            screenshot_or_wait(page.locator("text=Filter values like >> xpath=../.."), path="docs/screenshots/general/assistant-transformation-filter-like.png")
 
             page.locator("text=Filter values like").click()
             page.locator(".v-dialog:not(.v-bottom-sheet) >> text=New dataframe name").wait_for()
@@ -704,9 +708,7 @@ df.head(2)"""
             page.wait_for_timeout(time_step)
             N += 1
 
-            page.locator("text=Apply >> xpath=..").screenshot(
-                path="docs/screenshots/general/assistant-transformation-apply.png"
-            )
+            screenshot_or_wait(page.locator("text=Apply >> xpath=.."), path="docs/screenshots/general/assistant-transformation-apply.png")
 
             page.locator("text=apply").click()
             page.locator(".v-dialog:not(.v-bottom-sheet) >> text=New dataframe name").wait_for(state="detached")
@@ -719,9 +721,7 @@ df.head(2)"""
                 ".v-input--switch:last-of-type .v-input--selection-controls__ripple"
             )
 
-            page.locator(f"{toggle} >> xpath=../..").screenshot(
-                path="docs/screenshots/general/assistant-transformation-toggle-code.png"
-            )
+            screenshot_or_wait(page.locator(f"{toggle} >> xpath=../.."), path="docs/screenshots/general/assistant-transformation-toggle-code.png")
             page.locator(toggle).click()
             page.wait_for_timeout(animation_time * 1000)  # animation
             page.locator(".solara-code-highlight").scroll_into_view_if_needed()
@@ -729,9 +729,7 @@ df.head(2)"""
             page.wait_for_timeout(time_step)
             N += 1
 
-            page.locator('button:has-text("Insert code")').screenshot(
-                path="docs/screenshots/general/assistant-transformation-insert-code.png"
-            )
+            screenshot_or_wait(page.locator('button:has-text("Insert code")'), path="docs/screenshots/general/assistant-transformation-insert-code.png")
             page.locator('button:has-text("Insert code")').click()
             page.locator("text=In [ ]:").last.scroll_into_view_if_needed()
             page.wait_for_timeout(animation_time * 1000)  # animation
@@ -751,7 +749,7 @@ df.head(2)"""
         finally:
             page.close()
             browser.close()
-            if succes:
+            if succes and not general_screenshots:
                 print("Trimming", time_initial - time_start)
                 video_path_raw = video_path.parent / "transform-raw.webm"
                 video_path_cut = video_path.parent / "transform.webm"
@@ -797,7 +795,9 @@ def app_create(
         )
         with helper:
             page = helper.page
-            helper.start_video()
+
+            if not general_screenshots:
+                helper.start_video()
             # a bit of rest
             page.wait_for_timeout(time_step)
 
@@ -871,11 +871,11 @@ scatter_age_fare
                 page.locator(".dominocode-assistant-menu").hover()
                 helper.shot("assistant-expand")
 
+            locator = page.locator('div[role="listbox"] >> text=App >> xpath=../..')
             if general_screenshots:
-                general(
-                    page.locator('div[role="listbox"] >> text=App >> xpath=../..'),
-                    "app-open",
-                )
+                general(locator, "app-open")
+            else:
+                locator.wait_for()
             with step("Click on 'App'", 1.5):
                 page.wait_for_timeout(1000)
                 page.locator('div[role="listbox"] >> text=App').click()
@@ -899,8 +899,11 @@ scatter_age_fare
             with step("Edit the code, or click 'Preview'", 2.0):
                 helper.scroll_to_last_code_cell()
             helper.shot("done")
+            locator = page.locator('button:has-text("Preview")')
             if general_screenshots:
-                general(page.locator('button:has-text("Preview")'), "app-preview")
+                general(locator, "app-preview")
+            else:
+                locator.wait_for()
 
             page.wait_for_timeout(time_step * 2)
 

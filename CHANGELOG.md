@@ -1,3 +1,14 @@
+v0.0.19
+=======
+- fix: datasets directory is not always present
+- fix: generate only valid python variable names in transformations
+
+v0.0.18
+=======
+- fix: deploy doesn't work correctly if a project contains a shared project
+- fix: deploy app status incidentally stuck in error state
+- fix: require Plotly>=4 so plotly.express is included
+
 v0.0.17
 =======
 - feat: WYSIWYG editor for markdown

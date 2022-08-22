@@ -1,0 +1,202 @@
+[
+    {
+        "text": "This video will demonstrate many of the features of Low Code Assistant\u2122",
+        "t_start": 0.501521110534668
+    },
+    {
+        "text": "Click the Low Code Assistant\u2122 button",
+        "t_start": 4.866779088973999
+    },
+    {
+        "text": "Hover above the next code cell, to show the Low Code Assistant\u2122 button",
+        "t_start": 9.828068971633911
+    },
+    {
+        "text": "Hover above the Low Code Assistant\u2122 button to expand the menu",
+        "t_start": 17.563424825668335
+    },
+    {
+        "text": "Click on 'Load Data'",
+        "t_start": 24.49683904647827
+    },
+    {
+        "text": "Go to the 'Datasets' tab to explore your filesystem",
+        "t_start": 28.822696208953857
+    },
+    {
+        "text": "Navigate to the right directory",
+        "t_start": 35.19093894958496
+    },
+    {
+        "text": "Click the file you want to open",
+        "t_start": 42.678245067596436
+    },
+    {
+        "text": "Click 'Insert code' to insert the code snippet into your notebook",
+        "t_start": 46.54453897476196
+    },
+    {
+        "text": "The code is inserted, and will be automatically executed",
+        "t_start": 52.20914697647095
+    },
+    {
+        "text": "Next, we will filter the data using the Low Code Assistant\u2122",
+        "t_start": 57.65174102783203
+    },
+    {
+        "text": "Hover above the next code cell, to show the Low Code Assistant\u2122 button",
+        "t_start": 61.90573310852051
+    },
+    {
+        "text": "Hover above the Low Code Assistant\u2122 button to expand the menu",
+        "t_start": 69.56992983818054
+    },
+    {
+        "text": "Click on \"Transformations\"",
+        "t_start": 76.54839992523193
+    },
+    {
+        "text": "Pick the right dataframe",
+        "t_start": 81.44771814346313
+    },
+    {
+        "text": "Hover above the dotted icon in the table to show the cell actions",
+        "t_start": 86.86626505851746
+    },
+    {
+        "text": "Click 'Filter values like this' to open the filter dialog",
+        "t_start": 94.09399390220642
+    },
+    {
+        "text": "Click 'Apply' to apply the filter",
+        "t_start": 100.47717094421387
+    },
+    {
+        "text": "Click the 'Show code' toggle to preview the code",
+        "t_start": 105.72784495353699
+    },
+    {
+        "text": "Click 'Insert code' to insert the code snippet into your notebook",
+        "t_start": 112.28806281089783
+    },
+    {
+        "text": "The code is inserted, and will be automatically executed",
+        "t_start": 117.95653486251831
+    },
+    {
+        "text": "Next, we will create two visualizations",
+        "t_start": 123.35035419464111
+    },
+    {
+        "text": "Hover above the next code cell, to show the Low Code Assistant\u2122 button",
+        "t_start": 127.00809693336487
+    },
+    {
+        "text": "Hover above the Low Code Assistant\u2122 button to expand the menu",
+        "t_start": 134.67724990844727
+    },
+    {
+        "text": "Click on 'Visualizations'",
+        "t_start": 141.63276505470276
+    },
+    {
+        "text": "Pick the right dataframe",
+        "t_start": 146.55706787109375
+    },
+    {
+        "text": "Click on the visualization you want to use, for instance scatter",
+        "t_start": 151.90703797340393
+    },
+    {
+        "text": "Configure the visualization",
+        "t_start": 159.84310698509216
+    },
+    {
+        "text": "Choose a variable name",
+        "t_start": 172.82990312576294
+    },
+    {
+        "text": "Click 'Insert code' to insert the code snippet into your notebook",
+        "t_start": 177.71242308616638
+    },
+    {
+        "text": "The code is inserted, and will be automatically executed",
+        "t_start": 183.3822259902954
+    },
+    {
+        "text": "Our second visualization, is done without the Low Code Assistant\u2122",
+        "t_start": 188.93172192573547
+    },
+    {
+        "text": "Create a histogram using the Low Code Assistant\u2122, or your own Python code.",
+        "t_start": 193.65507197380066
+    },
+    {
+        "text": "Hover above the next code cell, to show the Low Code Assistant\u2122 button",
+        "t_start": 203.37273001670837
+    },
+    {
+        "text": "Hover above the Low Code Assistant\u2122 button to expand the menu",
+        "t_start": 211.0962851047516
+    },
+    {
+        "text": "Click on 'App'",
+        "t_start": 218.01618099212646
+    },
+    {
+        "text": "Toggle the visualizations you want to add to the app.",
+        "t_start": 222.15914487838745
+    },
+    {
+        "text": "Optionally drag and resize the visualizations",
+        "t_start": 230.24625492095947
+    },
+    {
+        "text": "Click 'Insert code' to insert the code snippet into your notebook",
+        "t_start": 233.84734416007996
+    },
+    {
+        "text": "Hover above the next code cell, to show the Low Code Assistant\u2122 button",
+        "t_start": 239.88907194137573
+    },
+    {
+        "text": "Hover above the Low Code Assistant\u2122 button to expand the menu",
+        "t_start": 247.55430912971497
+    },
+    {
+        "text": "Click on 'Deploy'",
+        "t_start": 254.48451590538025
+    },
+    {
+        "text": "Click on 'Write script' to write the script for the application",
+        "t_start": 258.94162797927856
+    },
+    {
+        "text": "Click on 'Continue'",
+        "t_start": 265.29923605918884
+    },
+    {
+        "text": "Follow the instructions to synchronize the filesystem",
+        "t_start": 268.71443605422974
+    },
+    {
+        "text": "Click on 'Continue'",
+        "t_start": 272.42334604263306
+    },
+    {
+        "text": "Click on 'Start app', and wait till the app is running",
+        "t_start": 275.82540798187256
+    },
+    {
+        "text": "Click on 'Finish'",
+        "t_start": 287.5701150894165
+    },
+    {
+        "text": "Click on 'View app' to view the app",
+        "t_start": 290.84248208999634
+    },
+    {
+        "text": "The app can now be shared with others",
+        "t_start": 305.93229508399963
+    }
+]

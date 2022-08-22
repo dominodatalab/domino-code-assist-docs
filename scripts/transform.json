@@ -1,0 +1,50 @@
+[
+    {
+        "text": "Click the Low Code Assistant\u2122 button",
+        "t_start": 1.5770199298858643
+    },
+    {
+        "text": "Open a dataset using the Low Code Assistant\u2122, or your own Python code.",
+        "t_start": 7.073655843734741
+    },
+    {
+        "text": "Hover above the next code cell, to show the Low Code Assistant\u2122 button",
+        "t_start": 15.416052103042603
+    },
+    {
+        "text": "Hover above the Low Code Assistant\u2122 button to expand the menu",
+        "t_start": 22.191328048706055
+    },
+    {
+        "text": "Click on \"Transformations\"",
+        "t_start": 28.443839073181152
+    },
+    {
+        "text": "Pick the right dataframe",
+        "t_start": 32.394540786743164
+    },
+    {
+        "text": "Hover above the dotted icon in the table to show the cell actions",
+        "t_start": 40.04857397079468
+    },
+    {
+        "text": "Click 'Filter values like this' to open the filter dialog",
+        "t_start": 46.36728096008301
+    },
+    {
+        "text": "Click 'Apply' to apply the filter",
+        "t_start": 51.807209968566895
+    },
+    {
+        "text": "Click the 'Show code' toggle to preview the code",
+        "t_start": 57.606247901916504
+    },
+    {
+        "text": "Click 'Insert code' to insert the code snippet into your notebook",
+        "t_start": 64.72560906410217
+    },
+    {
+        "text": "The code is inserted, and will be automatically executed",
+        "t_start": 70.88725209236145
+    }
+]

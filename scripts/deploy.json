@@ -1,0 +1,86 @@
+[
+    {
+        "text": "Click the Low Code Assistant\u2122 button",
+        "t_start": 0.5023672580718994
+    },
+    {
+        "text": "Open a dataset using the Low Code Assistant\u2122, or your own Python code.",
+        "t_start": 5.4043800830841064
+    },
+    {
+        "text": "Create a histogram using the Low Code Assistant\u2122, or your own Python code.",
+        "t_start": 13.244802951812744
+    },
+    {
+        "text": "Create a scatter plot using the Low Code Assistant\u2122, or your own Python code.",
+        "t_start": 23.12481713294983
+    },
+    {
+        "text": "Hover above the next code cell, to show the Low Code Assistant\u2122 button",
+        "t_start": 33.80874991416931
+    },
+    {
+        "text": "Hover above the Low Code Assistant\u2122 button to expand the menu",
+        "t_start": 41.51902508735657
+    },
+    {
+        "text": "Click on 'App'",
+        "t_start": 48.45388889312744
+    },
+    {
+        "text": "Toggle the visualizations you want to add to the app.",
+        "t_start": 52.59006714820862
+    },
+    {
+        "text": "Optionally drag and resize the visualizations",
+        "t_start": 60.6616108417511
+    },
+    {
+        "text": "Click 'Insert code' to insert the code snippet into your notebook",
+        "t_start": 64.27374196052551
+    },
+    {
+        "text": "Hover above the next code cell, to show the Low Code Assistant\u2122 button",
+        "t_start": 69.9631359577179
+    },
+    {
+        "text": "Hover above the Low Code Assistant\u2122 button to expand the menu",
+        "t_start": 77.64507508277893
+    },
+    {
+        "text": "Click on 'Deploy'",
+        "t_start": 84.60806488990784
+    },
+    {
+        "text": "Click on 'Write script' to write the script for the application",
+        "t_start": 89.06380796432495
+    },
+    {
+        "text": "Click on 'Continue'",
+        "t_start": 95.41176104545593
+    },
+    {
+        "text": "Follow the instructions to synchronize the filesystem",
+        "t_start": 98.8306450843811
+    },
+    {
+        "text": "Click on 'Continue'",
+        "t_start": 102.53955292701721
+    },
+    {
+        "text": "Click on 'Start app', and wait till the app is running",
+        "t_start": 105.98848104476929
+    },
+    {
+        "text": "Click on 'Finish'",
+        "t_start": 117.49135994911194
+    },
+    {
+        "text": "Click on 'View app' to view the app",
+        "t_start": 120.79139614105225
+    },
+    {
+        "text": "The app can now be shared with others",
+        "t_start": 134.91384410858154
+    }
+]

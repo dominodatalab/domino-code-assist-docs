@@ -10,6 +10,7 @@ dependencies:
   - mkdocs-material
   - snowflake-connector-python=2.7.2
   - ffmpeg
+  - pydub
   - pip:
       - playwright
       - redshift-connector

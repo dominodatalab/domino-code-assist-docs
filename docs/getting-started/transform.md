@@ -55,7 +55,7 @@ Hover above a cell value containing `nan`, and you can then hover above the trip
 
 Click the menu item ![filter-like](../screenshots/general/assistant-transformation-filter-like.png){.docs-border} to open the dialog:
 
-![Choose dataframe](../screenshots/transform/08-filter-nan.png)
+![Choose dataframe](../screenshots/transform/08-filter-values-like.png)
 
 And click the ![apply](../screenshots/general/assistant-transformation-apply.png) button to filter the dataframe. Now we can see that we only 
 have values with `nan` for the `cabin` column.

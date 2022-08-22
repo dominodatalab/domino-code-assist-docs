@@ -70,13 +70,32 @@ To run all:
 ```bash
 $ python capture.py load-csv &&\
  python capture.py load-csv --no-general-screenshots &&\
+ python capture.py audio load-csv --no-general-screenshots &&\
  python capture.py load-redshift &&\
  python capture.py load-redshift --no-general-screenshots &&\
  python capture.py load-redshift-sql &&\
  python capture.py load-snowflake &&\
  python capture.py transform &&\
  python capture.py transform --no-general-screenshots &&\
+ python capture.py audio transform &&\
  python capture.py viz-scatter &&\
+ python capture.py audio viz-scatter &&\
  python capture.py app-create &&\
- python capture.py app-create --no-general-screenshots
+ python capture.py app-create --no-general-screenshots &&\
+ python capture.py app-create --no-general-screenshots &&\
+ python capture.py overview &&\
+ python capture.py audio overview &&\
+ python capture.py audio deploy &&\
+ echo "done"
 ```
+
+
+# Updating audio
+
+E.g. for load-csv see also the [./scripts/README.md](./scripts/README.md):
+
+   * `$ python capture.py load-csv --no-general-screenshots`
+   * Upload script/load-csv.txt to murf.ai using voice 'Amalia'.
+   * Click Export -> 'Split by Sub-Blocks', 'High', 'Stereo' -> Download and put the files in audio/load-csv
+   * Run `$ python capture.py load-csv --no-general-screenshots` again so we get the right timing (saved in audio/load-csv.json)
+   * Run `$ python capture.py audio load-csv` to insert the audio into the video.

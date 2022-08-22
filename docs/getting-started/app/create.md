@@ -78,7 +78,7 @@ scatter_age_fare
 
 If you now hover above the next code cell, you should see a blue icon ![assistant icon](../../screenshots/general/assistant-icon.png){.assistant-icon} to the right:
 
-![Assistant visible](../../screenshots/app-create/05-assistant-hover.png)
+![Assistant visible](../../screenshots/app-create/05-assistant-visible.png)
 
 If you hover above the ![assistant icon](../../screenshots/general/assistant-icon.png){.assistant-icon} icon, it will show a popup menu:
 

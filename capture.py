@@ -23,6 +23,17 @@ time_step = 500
 # time_step = 0
 
 
+def get_video_length(path):
+    cmd = f"ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 {path}"
+    import subprocess
+
+    print(cmd)
+    output = subprocess.check_output(cmd, shell=True)
+    length = float(output.strip())
+    return length
+
+
+
 class CaptureHelper:
     page: Page
 
@@ -163,12 +174,7 @@ class CaptureHelper:
             video_path_cut = video_path.parent / f"{self.name}-cut.mp4"
             shutil.move(video_path, video_path_raw)
 
-            cmd = f"ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 {video_path_raw}"
-            import subprocess
-
-            print(cmd)
-            output = subprocess.check_output(cmd, shell=True)
-            length = float(output.strip())
+            length = get_video_length(video_path_raw)
             speedup = length / (self.time_end - self.time_start)
 
             print("speedup", speedup)
@@ -1302,7 +1308,7 @@ def audio(name: str):
     offset = steps[0]["t_start"] * 1000
     offset = 0
     sound_all = AudioSegment.silent(
-        duration=steps[-1]["t_start"] * 1000 + len(segments[-1]) - offset
+        duration=get_video_length(f'docs/videos/{name}-cut.mp4') * 1000
     )
     for step, file, segments in zip(steps, files, segments):
         print(step, offset)

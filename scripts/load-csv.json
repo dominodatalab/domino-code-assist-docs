@@ -1,38 +1,38 @@
 [
     {
         "text": "Click the Low Code Assistant\u2122 button",
-        "t_start": 1.6077921390533447
+        "t_start": 1.6062860488891602
     },
     {
         "text": "Hover above the next code cell, to show the Low Code Assistant\u2122 button",
-        "t_start": 7.005163908004761
+        "t_start": 7.062711954116821
     },
     {
         "text": "Hover above the Low Code Assistant\u2122 button to expand the menu",
-        "t_start": 13.799299955368042
+        "t_start": 13.896281003952026
     },
     {
         "text": "Click on 'Load Data'",
-        "t_start": 20.13023614883423
+        "t_start": 20.171536922454834
     },
     {
         "text": "Go to the 'Datasets' tab to explore your filesystem",
-        "t_start": 24.785284996032715
+        "t_start": 24.8087260723114
     },
     {
         "text": "Navigate to the right directory",
-        "t_start": 30.165608167648315
+        "t_start": 30.189509868621826
     },
     {
         "text": "Click the file you want to open",
-        "t_start": 36.63410019874573
+        "t_start": 36.70927691459656
     },
     {
         "text": "Click 'Insert code' to insert the code snippet into your notebook",
-        "t_start": 39.52611494064331
+        "t_start": 39.60268187522888
     },
     {
         "text": "The code is inserted, and will be automatically executed",
-        "t_start": 45.690847873687744
+        "t_start": 45.77134585380554
     }
 ]

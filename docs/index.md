@@ -18,7 +18,7 @@ Domino Low Code Assistant™ (LCA) accelerates common routines in Jupyter notebo
 === "Loading a CSV file"
 
     <video controls autoplay>
-      <source src="https://user-images.githubusercontent.com/46192475/182823773-7af97491-89d4-44f3-9996-9b08900d38e1.mp4" type="video/mp4">
+      <source src="https://user-images.githubusercontent.com/1765949/185931922-ae73732e-d896-4602-93ea-7f80ef979ff7.mp4" type="video/mp4">
     </video>
 
 === "Loading data from Snowflake"

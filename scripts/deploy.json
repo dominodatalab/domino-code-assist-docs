@@ -1,86 +1,86 @@
 [
     {
         "text": "Click the Low Code Assistant\u2122 button",
-        "t_start": 0.5023672580718994
+        "t_start": 2.4736850261688232
     },
     {
         "text": "Open a dataset using the Low Code Assistant\u2122, or your own Python code.",
-        "t_start": 5.4043800830841064
+        "t_start": 7.876970052719116
     },
     {
         "text": "Create a histogram using the Low Code Assistant\u2122, or your own Python code.",
-        "t_start": 13.244802951812744
+        "t_start": 16.192559003829956
     },
     {
         "text": "Create a scatter plot using the Low Code Assistant\u2122, or your own Python code.",
-        "t_start": 23.12481713294983
+        "t_start": 25.186562061309814
     },
     {
         "text": "Hover above the next code cell, to show the Low Code Assistant\u2122 button",
-        "t_start": 33.80874991416931
+        "t_start": 34.822346925735474
     },
     {
         "text": "Hover above the Low Code Assistant\u2122 button to expand the menu",
-        "t_start": 41.51902508735657
+        "t_start": 41.600346088409424
     },
     {
         "text": "Click on 'App'",
-        "t_start": 48.45388889312744
+        "t_start": 47.92143678665161
     },
     {
         "text": "Toggle the visualizations you want to add to the app.",
-        "t_start": 52.59006714820862
+        "t_start": 49.9770450592041
     },
     {
         "text": "Optionally drag and resize the visualizations",
-        "t_start": 60.6616108417511
+        "t_start": 57.0423789024353
     },
     {
         "text": "Click 'Insert code' to insert the code snippet into your notebook",
-        "t_start": 64.27374196052551
+        "t_start": 61.14957594871521
     },
     {
         "text": "Hover above the next code cell, to show the Low Code Assistant\u2122 button",
-        "t_start": 69.9631359577179
+        "t_start": 67.321861743927
     },
     {
         "text": "Hover above the Low Code Assistant\u2122 button to expand the menu",
-        "t_start": 77.64507508277893
+        "t_start": 74.11552000045776
     },
     {
         "text": "Click on 'Deploy'",
-        "t_start": 84.60806488990784
+        "t_start": 80.38898777961731
     },
     {
         "text": "Click on 'Write script' to write the script for the application",
-        "t_start": 89.06380796432495
+        "t_start": 83.86334109306335
     },
     {
         "text": "Click on 'Continue'",
-        "t_start": 95.41176104545593
+        "t_start": 89.22792911529541
     },
     {
         "text": "Follow the instructions to synchronize the filesystem",
-        "t_start": 98.8306450843811
+        "t_start": 91.66470503807068
     },
     {
         "text": "Click on 'Continue'",
-        "t_start": 102.53955292701721
+        "t_start": 95.87636709213257
     },
     {
         "text": "Click on 'Start app', and wait till the app is running",
-        "t_start": 105.98848104476929
+        "t_start": 98.30278706550598
     },
     {
         "text": "Click on 'Finish'",
-        "t_start": 117.49135994911194
+        "t_start": 109.00298070907593
     },
     {
         "text": "Click on 'View app' to view the app",
-        "t_start": 120.79139614105225
+        "t_start": 111.30610990524292
     },
     {
         "text": "The app can now be shared with others",
-        "t_start": 134.91384410858154
+        "t_start": 123.96262407302856
     }
 ]

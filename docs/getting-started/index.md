@@ -21,3 +21,4 @@ The Domino Low Code Assistant™ (LCA) can help generate code for various tasks.
 ## Apps
 
   * [Creating an App](./app/create.md)
+  * [Deploying an App](./app/deploy.md)

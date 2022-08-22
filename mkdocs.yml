@@ -15,6 +15,7 @@ nav:
        - Scatter plot with Plotly: getting-started/viz/scatter.md
      - Apps:
        - App creation: getting-started/app/create.md
+       - Deploy an App: getting-started/app/deploy.md
    - install.md
 theme:
   name: material

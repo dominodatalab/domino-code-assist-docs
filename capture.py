@@ -38,7 +38,7 @@ class CaptureHelper:
     page: Page
 
     def __init__(
-        self, browser: Browser, name, port, animation_time, height=1024, fast=False
+        self, browser: Browser, name, port, animation_time, height=1024, fast=False, screenshots=True,
     ):
         self.browser = browser
         self.name = name
@@ -47,6 +47,7 @@ class CaptureHelper:
         self.height = height
         self.N = 0  # screenshot number
         self.fast = fast
+        self.screenshots = screenshots
         # TODO: this should actually happen at the server
         shutil.copy(
             "notebooks/empty.ipynb",
@@ -148,9 +149,10 @@ class CaptureHelper:
             if animation_time is None
             else animation_time * 1000
         )
-        self.page.screenshot(
-            path=f"docs/screenshots/{self.name}/{self.N:02}-{name}.png"
-        )
+        if self.screenshots:
+            self.page.screenshot(
+                path=f"docs/screenshots/{self.name}/{self.N:02}-{name}.png"
+            )
         self.page.wait_for_timeout(time_step)
         self.N += 1
 
@@ -1125,7 +1127,7 @@ def overview(
     port: int = 11111,
     headless: bool = True,
     animation_time: float = 0.3,
-    general_screenshots: bool = True,
+    screenshots: bool = False,
 ):
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=headless, timeout=timeout)
@@ -1134,11 +1136,12 @@ def overview(
             "overview",
             port=port,
             animation_time=animation_time,
+            screenshots=screenshots,
         )
         with helper:
 
             page = helper.page
-            if not general_screenshots:
+            if not screenshots:
                 helper.start_video()
             # a bit of rest
             page.wait_for_timeout(time_step)

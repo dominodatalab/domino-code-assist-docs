@@ -4,8 +4,10 @@ Domino Low Code Assistant™ (LCA) accelerates common routines in Jupyter notebo
 
 
 
+<video controls autoplay>
+  <source src="https://user-images.githubusercontent.com/1765949/185939829-2b99a7c9-10e7-4d67-8aa5-a2e1b9882a20.mp4" type="video/mp4">
+</video>
 
-<!-- ### Short demo -->
 
 <!-- This video shows how to
 
@@ -14,19 +16,6 @@ Domino Low Code Assistant™ (LCA) accelerates common routines in Jupyter notebo
   * Navigate to the `titanic.csv` file.
   * Click the file, to generate the `Pandas` code
  -->
-
-=== "Loading a CSV file"
-
-    <video controls autoplay>
-      <source src="https://user-images.githubusercontent.com/46192475/182823773-7af97491-89d4-44f3-9996-9b08900d38e1.mp4" type="video/mp4">
-    </video>
-
-=== "Loading data from Snowflake"
-
-    <video controls>
-      <source src="https://user-images.githubusercontent.com/46192475/182823489-e5c868b7-00eb-47e7-a16b-6727f4e26639.mp4" type="video/mp4">
-    </video>
-
 
 [Get started](getting-started/loading-data/){.md-button .md-button--primary}
 [Installation](install.md){.md-button .md-button--secondary}

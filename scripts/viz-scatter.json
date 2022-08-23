@@ -1,0 +1,46 @@
+[
+    {
+        "text": "Click the Low Code Assistant\u2122 button",
+        "t_start": 1.5566771030426025
+    },
+    {
+        "text": "Open a dataset using the Low Code Assistant\u2122, or your own Python code.",
+        "t_start": 7.093828201293945
+    },
+    {
+        "text": "Hover above the next code cell, to show the Low Code Assistant\u2122 button",
+        "t_start": 16.496965885162354
+    },
+    {
+        "text": "Hover above the Low Code Assistant\u2122 button to expand the menu",
+        "t_start": 23.175969123840332
+    },
+    {
+        "text": "Click on 'Visualizations'",
+        "t_start": 29.460569143295288
+    },
+    {
+        "text": "Pick the right dataframe",
+        "t_start": 33.45696806907654
+    },
+    {
+        "text": "Click on the visualization you want to use, for instance scatter",
+        "t_start": 37.85955500602722
+    },
+    {
+        "text": "Configure the visualization",
+        "t_start": 44.82491397857666
+    },
+    {
+        "text": "Choose a variable name",
+        "t_start": 58.17822504043579
+    },
+    {
+        "text": "Click 'Insert code' to insert the code snippet into your notebook",
+        "t_start": 63.58587121963501
+    },
+    {
+        "text": "The code is inserted, and will be automatically executed",
+        "t_start": 69.74678087234497
+    }
+]

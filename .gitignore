@@ -82,3 +82,8 @@ examples
 docs/videos
 
 .env
+
+# downloaded files
+audio/Project_*
+# intermediate generated files
+audio/*.mp3

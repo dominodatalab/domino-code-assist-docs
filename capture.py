@@ -1,11 +1,16 @@
 import contextlib
+import json
 import os
 import shutil
 import time
 from pathlib import Path
+from dominocode.settings import settings
+from pydub import AudioSegment
 
 import typer
 from playwright.sync_api import sync_playwright, Page, Browser
+from dominocode.playwright.assistant import AssistentHelper
+from dominocode.playwright import mouse_move_middle
 
 HERE = Path(__file__).parent
 app = typer.Typer()
@@ -18,28 +23,54 @@ time_step = 500
 # time_step = 0
 
 
+def get_video_length(path):
+    cmd = f"ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 {path}"
+    import subprocess
+
+    print(cmd)
+    output = subprocess.check_output(cmd, shell=True)
+    length = float(output.strip())
+    return length
+
+
+
 class CaptureHelper:
     page: Page
 
-    def __init__(self, browser: Browser, name, port, animation_time, height=720):
+    def __init__(
+        self, browser: Browser, name, port, animation_time, height=1024, fast=False
+    ):
         self.browser = browser
         self.name = name
         self.port = port
         self.animation_time = animation_time
         self.height = height
         self.N = 0  # screenshot number
+        self.fast = fast
         # TODO: this should actually happen at the server
         shutil.copy(
             "notebooks/empty.ipynb",
             f"notebooks/{self.name}.ipynb",
         )
+        os.makedirs("scripts", exist_ok=True)
+        self.script_file = Path("scripts") / f"{self.name}.txt"
+        self.script_file.unlink(missing_ok=True)
+        # list of timing to later attach the audio at the right moment
+        self.timings_steps = []
+
+        audio_files = Path(f"audio/{name}/").glob("*.mp3")
+        files = list(sorted(audio_files))
+        segments = [AudioSegment.from_file(file, format="mp3") for file in files]
+        self.delays = [len(segment) for segment in segments]
+        self.step_index = 0
 
     def __enter__(self):
         self.time_start = time.time()
         self.page = self.browser.new_page(
             device_scale_factor=2,
             record_video_dir="docs/videos",
-            viewport={"width": 1280, "height": self.height},
+            record_video_size={"width": 1024, "height": self.height},
+            viewport={"width": 1024, "height": self.height},
         )  # , record_video_size=ViewportSize(width=1000, height=1000))
         self.time_initial = time.time()
 
@@ -52,7 +83,13 @@ class CaptureHelper:
         self.page.locator("#kernellink").click()
         self.page.locator('span:has-text("Restart")').click()
         self.page.locator('button:has-text("Restart")').click()
-        self.assistant.wait_for()
+        self.assistant.initializer.wait_for()
+        self.inject_js_and_css()
+        # get rid of connected icon and make sure it's stable
+        self.page.wait_for_load_state("networkidle")
+        self.page.wait_for_timeout(200)
+
+    def inject_js_and_css(self):
         self.page.add_style_tag(
             content="""
         .record-info {
@@ -76,9 +113,6 @@ class CaptureHelper:
             document.body.appendChild(infoDiv)
         """
         )
-        # get rid of connected icon and make sure it's stable
-        self.page.wait_for_load_state("networkidle")
-        self.page.wait_for_timeout(200)
 
     def scroll_to_last_code_cell(self):
         last_code_cell = self.page.locator(".code_cell").last
@@ -106,10 +140,14 @@ class CaptureHelper:
 
     @property
     def assistant(self):
-        return self.page.locator('[aria-label="Low Code Assistant™"]')
+        return AssistentHelper(self.page)
 
-    def shot(self, name):
-        self.page.wait_for_timeout(self.animation_time * 1000)
+    def shot(self, name, animation_time=None):
+        self.page.wait_for_timeout(
+            self.animation_time * 1000
+            if animation_time is None
+            else animation_time * 1000
+        )
         self.page.screenshot(
             path=f"docs/screenshots/{self.name}/{self.N:02}-{name}.png"
         )
@@ -124,27 +162,338 @@ class CaptureHelper:
         video_path = Path(self.page.video.path())
         self.page.close()
         self.browser.close()
+        self.time_end = time.time()
+        print("video took", self.time_end - self.time_start, "seconds")
         if exception is None and self.time_initial:
-            print("Trimming", self.time_initial - self.time_start)
+            with (Path("scripts") / f"{self.name}.json").open("w") as f:
+                f.write(json.dumps(self.timings_steps, indent=4))
+            skip = self.time_initial - self.time_start
+            print("Trimming", skip)
             video_path_raw = video_path.parent / f"{self.name}-raw.webm"
-            video_path_cut = video_path.parent / f"{self.name}.webm"
-            video_path_cut_mp4 = video_path.parent / f"{self.name}.mp4"
+            video_path_speedup = video_path.parent / f"{self.name}-speedup.mp4"
+            video_path_cut = video_path.parent / f"{self.name}-cut.mp4"
             shutil.move(video_path, video_path_raw)
-            cmd = f"ffmpeg -y -i {video_path_raw}  -ss 2.38 -c copy {video_path_cut}"
+
+            length = get_video_length(video_path_raw)
+            speedup = length / (self.time_end - self.time_start)
+
+            print("speedup", speedup)
+            cmd = f'ffmpeg -y -i {video_path_raw} -filter:v "setpts={1/speedup}*PTS" -vcodec libx264 -crf 23 {video_path_speedup}'
+            print(cmd)
             os.system(cmd)
-            cmd = f"ffmpeg -y -i {video_path_cut} -vcodec libx264 -crf 23 {video_path_cut_mp4}"
+
+            cmd = f"ffmpeg -y -i {video_path_speedup}  -ss {self.time_initial - self.time_start} -vcodec libx264 -crf 23 {video_path_cut}"
+            print(cmd)
             os.system(cmd)
+
+    @contextlib.contextmanager
+    def step(self, text, default_duration):
+        duration = default_duration
+        audio_duration = None
+        skip = self.time_initial - self.time_start
+        if self.step_index < len(self.delays):
+            audio_duration = self.delays[self.step_index] / 1000
+            self.step_index += 1
+            duration = audio_duration
+        else:
+            print(
+                f"WARNING: no audio delay know, please rerun after generating audio at audio/{self.name}"
+            )
+        t0 = time.time()
+        self.timings_steps.append(dict(text=text, t_start=t0 - self.time_start - skip))
+        self.add_msg(text, duration=duration)
+        self.page.wait_for_timeout(duration * 1000)
+        yield
+        spend = time.time() - t0
+        print("step: ", duration, spend, text)
+        if not self.fast:
+            self.page.wait_for_timeout(500)
+        with self.script_file.open("a") as f:
+            text = text.replace("™", "")  # remove trademark in script
+            f.write(f"{text}\n")
+
+    # TODO: deduplicate this code with lca.Notebook
+    def last_cell_assistant_hover(self):
+        last_input = self.last_code_cell.locator(".input")
+        last_input.scroll_into_view_if_needed()
+        mouse_move_middle(self.page, last_input)
+        self.assistant.domino_logo.wait_for()
+        self.page.wait_for_timeout(100)
+        self.assistant.domino_logo.hover()
+        self.page.wait_for_timeout(100)
+
+    def remove_app_sh(self):
+        root = Path(settings.domino_working_dir)
+        path = root / "app.sh"
+        path.unlink(missing_ok=True)
+
+    def step_init(self):
+        with self.step("Click the Low Code Assistant™ button", 2.0):
+            self.assistant.initializer.click()
+            self.assistant.initialized_text.click()
+            self.shot("assistant-ready")
+
+    def step_cell_insert_code(self, code, msg, delay=7):
+        with self.step(msg, 2.0):
+            if not self.fast:
+                self.page.wait_for_timeout(1500)
+            self.insert_code(code)
+
+    def step_cell_insert_code_load_titanic(self):
+        path_csv = HERE / "mydata/titanic.csv"
+        code = f"""import pandas as pd
+
+df = pd.read_csv("{path_csv}")
+df.head(2)"""
+        self.step_cell_insert_code(
+            code,
+            "Open a dataset using the Low Code Assistant™, or your own Python code.",
+        )
+        self.page.locator("text=pclass").wait_for()
+
+    def step_hover_cell(self):
+        with self.step(
+            "Hover above the next code cell, to show the Low Code Assistant™ button",
+            2.0,
+        ):
+            self.scroll_to_last_code_cell()
+            mouse_move_middle(self.page, self.page.locator(".code_cell").last)
+            self.page.wait_for_load_state("networkidle")
+            self.shot("assistant-visible")
+
+    def step_hover_assistant_fab(self):
+        with self.step(
+            "Hover above the Low Code Assistant™ button to expand the menu", 2.5
+        ):
+            self.assistant.domino_logo.hover()
+            self.page.wait_for_timeout(500)
+            self.shot("assistant-expand")
+
+    def step_load_data_open(self):
+        with self.step("Click on 'Load Data'", 2.5):
+            self.assistant.load_data.menu_item.click()
+            self.shot("load-data")
+
+    def step_load_data_tab_dataset_open(self):
+        with self.step("Go to the 'Datasets' tab to explore your filesystem", 2.5):
+            self.assistant.load_data.dialog.locator("text=Datasets").click()
+            self.shot("load-data-datasets")
+
+    def step_load_data_tab_dataset_navigate(self):
+        with self.step("Navigate to the right directory", 2.5):
+            self.assistant.load_data.dialog.locator(
+                'div[role="list"] div:has-text("..")'
+            ).nth(1).click()
+            self.shot("load-data-datasets-dir-up")
+
+            self.page.wait_for_timeout(1000)
+
+            self.assistant.load_data.dialog.locator("text=mydata").click()
+            self.shot("load-data-datasets-dir-mydata")
+
+    def step_load_data_tab_dataset_titanic_open(self):
+        with self.step("Click the file you want to open", 2.5):
+            self.assistant.load_data.dialog.locator("text=titanic.csv").click()
+
+    def step_insert_code(self):
+        with self.step(
+            "Click 'Insert code' to insert the code snippet into your notebook", 2.5
+        ):
+            self.page.wait_for_timeout(1500)
+            self.page.locator("button:has-text('Insert code')").last.click()
+
+    def step_transform_open(self):
+        with self.step('Click on "Transformations"', 2.5):
+            self.assistant.transform.menu_item.click()
+            self.shot("transformations")
+
+    def step_transform_pick_df(self, df_name="df"):
+        with self.step("Pick the right dataframe", 2.5):
+            # we cannot use it before we need to do a screenshot in between
+            # self.assistant.transform.choose_dataframe(df_name)
+            self.page.locator('div[role="button"]:has-text("DataFrame")').click()
+            self.page.wait_for_timeout(1000)
+            self.shot("choose-dataframe")
+            self.page.locator(f'div[role="option"] >> text={df_name}').click()
+            self.page.wait_for_timeout(500)
+            self.shot("pick-dataframe")
+
+    def step_transform_table_cell_action_hover(self, row=10, column=10):
+        with self.step(
+            "Hover above the dotted icon in the table to show the cell actions", 2.5
+        ):
+            self.assistant.transform.table_cell(row, column + 1).hover()
+            self.page.wait_for_timeout(300)  # animation
+            self.shot("popup-menu")
+
+    def step_transform_filter_values_like_open(self):
+        with self.step(
+            "Click 'Filter values like this' to open the filter dialog", 2.5
+        ):
+            # self.assistant.transform.filter_values_like.click()
+            self.page.locator("text=Filter values like").first.click()
+            self.shot("filter-values-like")
+
+    def step_transform_filter_values_like_apply(self):
+        with self.step("Click 'Apply' to apply the filter", 2.5):
+            if not self.fast:
+                self.page.wait_for_timeout(1500)
+            self.assistant.transform.filter_like.apply.click()
+            self.shot("filtered")
+
+    def step_transform_toggle_code(self):
+        with self.step("Click the 'Show code' toggle to preview the code", 2.5):
+            if not self.fast:
+                self.page.wait_for_timeout(1500)
+
+    def step_viz_open(self):
+        with self.step("Click on 'Visualizations'", 2.5):
+            self.assistant.viz.menu_item.click()
+            self.shot("open")
+
+    def step_viz_pick_df(self, df_name="df"):
+        with self.step("Pick the right dataframe", 2.5):
+            self.assistant.viz.choose_dataframe(df_name)
+            self.page.wait_for_timeout(500)
+            self.shot("choose-dataframe")
+
+    def step_viz_choose(self, viz_name="Scatter"):
+        with self.step(
+            f"Click on the visualization you want to use, for instance {viz_name.lower()}",
+            2.5,
+        ):
+            self.assistant.viz.plot_type.click()
+            self.shot("choose-type")
+            self.assistant.viz.plot_type_option("Scatter").click()
+            self.shot("choose-type-scatter")
+
+    def step_viz_configure(self):
+        viz_dialog = self.assistant.viz.dialog
+        with self.step("Configure the visualization", 2.5):
+            viz_dialog.locator('div[role="button"]:has-text("X-axis")').click()
+            self.shot("choose-x")
+            self.page.locator('div[role="option"] >> text=age').click()
+            self.shot("choose-x-age")
+
+            viz_dialog.locator('div[role="button"]:has-text("Y-axis")').click()
+            self.shot("choose-y")
+            self.page.locator('div[role="option"] >> text=fare').last.click()
+            self.shot("choose-y-fare")
+
+            viz_dialog.locator('div[role="button"]:has-text("Color")').click()
+            self.shot("choose-color")
+            self.page.locator('div[role="option"] >> text=pclass').last.click()
+            self.shot("choose-color-pclass")
+
+            viz_dialog.locator("text=Options").click()
+            self.shot("expand-options")
+            viz_dialog.locator('div[role="button"]:has-text("Theme")').click()
+            self.shot("choose-theme")
+            self.page.locator('div[role="option"] >> text=ggplot2').first.click()
+            self.shot("choose-theme-ggplot2")
+
+    def step_viz_choose_var(self, name):
+        viz_dialog = self.assistant.viz.dialog
+        with self.step("Choose a variable name", 2.5):
+            viz_dialog.locator('text="Output variable" >> xpath=.. >> input').click()
+            self.shot("choose-name")
+            var_input = viz_dialog.locator(
+                'text="Output variable" >> xpath=.. >> input'
+            )
+            var_input.fill("")
+            var_input.type(name, delay=10)
+            self.shot(f"choose-name-{name}")
+
+    def step_cell_insert_code_histogram_survived(self):
+        with self.step(
+            "Create a histogram using the Low Code Assistant™, or your own Python code.",
+            3.5,
+        ):
+            self.scroll_to_last_code_cell()
+            self.insert_code(
+                """
+import plotly.express as px
+
+histogram_survived = px.histogram(df, x="survived")
+histogram_survived
+""".strip(),
+                delay=15,
+            )
+            self.page.wait_for_timeout(100)
+            self.page.locator(".plotly-graph-div").last.scroll_into_view_if_needed()
+            self.shot("create-viz-1")
+
+    def step_cell_insert_code_scatter_age_fare_survived(self):
+        with self.step(
+            "Create a scatter plot using the Low Code Assistant™, or your own Python code.",
+            3.5,
+        ):
+            self.scroll_to_last_code_cell()
+            self.page.wait_for_timeout(time_step)
+            self.insert_code(
+                """
+import plotly.express as px
+
+scatter_age_fare = px.scatter(df, x="age", y="fare", color="survived")
+scatter_age_fare
+""".strip(),
+                delay=15,
+            )
+            self.page.wait_for_timeout(100)
+            self.page.locator(".plotly-graph-div").last.scroll_into_view_if_needed()
+            self.shot("create-viz-2")
+
+    def step_app_open(self):
+        with self.step("Click on 'App'", 2.5):
+            self.assistant.app.menu_item.click()
+            # self.shot("open")
+
+    def step_app_toggle(self, names=[]):
+        with self.step("Toggle the visualizations you want to add to the app.", 4):
+            self.shot("app-before")
+            for name in names:
+                self.page.locator(f'_vue=v-switch[label="{name}"]').click()
+                self.page.wait_for_timeout(1000)
+
+    def step_deploy_open(self):
+        with self.step("Click on 'Deploy'", 2.5):
+            self.assistant.deploy.menu_item.click()
+            self.shot("open")
+
+    def step_deploy_write_script(self):
+        with self.step(
+            "Click on 'Write script' to write the script for the application", 2.5
+        ):
+            self.assistant.deploy.write_script.click()
+            self.shot("write-script")
+
+    def step_deploy_continue(self, n):
+        with self.step("Click on 'Continue'", 2.5):
+            self.assistant.deploy.continue_.locator(f"nth={n}").click()
+
+    def step_deploy_start_app(self):
+        with self.step("Click on 'Start app', and wait till the app is running", 2.5):
+            self.assistant.deploy.start_app.click()
+            self.assistant.deploy.app_running.wait_for()
+
+    def step_deploy_finish(self):
+        with self.step("Click on 'Finish'", 2.5):
+            self.assistant.deploy.finish.click()
+
+    def step_deploy_view_app(self):
+        with self.step("Click on 'View app' to view the app", 2.5):
+            anchor = self.assistant.deploy.view_app.locator("..")
+            anchor.evaluate("node => console.log")
+            anchor.evaluate("node => node.setAttribute('target', '_self')")
+            anchor.evaluate(
+                "node => node.setAttribute('href', 'https://trial.dominodatalab.com/modelproducts/62d57ca85ffd7972e1f36948')"
+            )
+            self.assistant.deploy.view_app.click()
+            self.shot("view-app")
 
 
 def general(locator, name):
     locator.screenshot(path=f"docs/screenshots/general/{name}.png")
-
-
-def mouse_move_middle(page, locator):
-    box = locator.bounding_box()
-    x, y = box["x"] + box["width"] / 2, box["y"] + box["height"] / 2
-    page.mouse.move(0, 0)
-    page.mouse.move(x, y, steps=1)
 
 
 @app.command()
@@ -215,7 +564,10 @@ def load_snowflake(
 
 @app.command()
 def load_redshift(
-    port: int = 11111, headless: bool = True, animation_time: float = 0.3, general_screenshots: bool = True
+    port: int = 11111,
+    headless: bool = True,
+    animation_time: float = 0.3,
+    general_screenshots: bool = True,
 ):
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=headless, timeout=timeout)
@@ -403,7 +755,19 @@ def load_redshift_sql(
 
 
 @app.command()
-def viz_scatter(port: int = 11111, headless: bool = True, animation_time: float = 0.3):
+def viz_scatter(
+    port: int = 11111,
+    headless: bool = True,
+    animation_time: float = 0.3,
+    general_screenshots: bool = True,
+    fast: bool = False,
+):
+    def screenshot_or_wait(selector, path):
+        if general_screenshots:
+            selector.screenshot(path=path)
+        else:
+            selector.wait_for()
+
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=headless, timeout=timeout)
         helper = CaptureHelper(
@@ -412,94 +776,53 @@ def viz_scatter(port: int = 11111, headless: bool = True, animation_time: float 
             port=port,
             animation_time=animation_time,
             height=1024,
+            fast=fast,
         )
         with helper:
             page = helper.page
-            helper.start_video()
+            if not general_screenshots:
+                helper.start_video()
             # a bit of rest
             page.wait_for_timeout(time_step)
 
             helper.shot("initial")
 
-            helper.assistant.click()
-            helper.add_msg("Click the Low Code Assistant™ button")
-            page.locator("text=Low Code Assistant™ initialized").wait_for()
-            helper.shot("assistant-ready")
+            helper.step_init()
 
-            page.wait_for_load_state("networkidle")
-            helper.shot("assistant-visible")
-
-            helper.add_msg("Load data using code, or the Assistant", 2.0)
-            path_csv = "../mydata/titanic.csv"
-            helper.insert_code(
-                f"""import pandas as pd
-df = pd.read_csv("{path_csv}")
-df.head(2)"""
-            )
-            page.locator("text=pclass").wait_for()
+            helper.step_cell_insert_code_load_titanic()
             helper.shot("load-data-code")
 
-            helper.add_msg("Open the visualization dialog from the assistant", 2.0)
-            mouse_move_middle(page, page.locator(".code_cell").last)
-            page.locator(".dominocode-assistant-menu").hover()
-            page.wait_for_timeout(animation_time * 1000)  # animation
-            helper.shot("assistant-expand")
+            helper.step_hover_cell()
+            helper.step_hover_assistant_fab()
 
-            page.locator("text=Visualizations").click()
-            helper.add_msg('Choose the previously created dataframe named: "df"', 2.0)
-            helper.shot("open")
+            helper.step_viz_open()
 
-            page.locator('div[role="button"]:has-text("DataFrame")').click()
-            helper.shot("choose-df")
-            page.locator('div[role="option"] div:has-text("df")').first.click()
-            helper.shot("choose-df-first")
+            helper.step_viz_pick_df("df")
+            helper.step_viz_choose("Scatter")
 
-            helper.add_msg("Choose a Plot Type", 2.0)
-            page.locator('div[role="button"]:has-text("Plot Type")').click()
-            helper.shot("choose-type")
-            page.locator('div[role="option"] >> text=Scatter').first.click()
-            helper.shot("choose-type-scatter")
+            helper.step_viz_configure()
 
-            helper.add_msg("Configure the plot", 4.0)
-            page.locator('div[role="button"]:has-text("X-axis")').click()
-            helper.shot("choose-x")
-            page.locator('div[role="option"] >> text=age').click()
-            helper.shot("choose-x-age")
-            page.locator('div[role="button"]:has-text("Y-axis")').click()
-            helper.shot("choose-y")
-            page.locator('div[role="option"] >> text=fare').last.click()
-            helper.shot("choose-y-fare")
+            helper.step_viz_choose_var("scatter_age_fare")
 
-            page.locator('div[role="button"]:has-text("Color")').click()
-            helper.shot("choose-color")
-            page.locator('div[role="option"] >> text=pclass').last.click()
-            helper.shot("choose-color-pclass")
-            page.locator("text=Options").click()
-            helper.shot("expand-options")
-            page.locator('div[role="button"]:has-text("Theme")').click()
-            helper.shot("choose-theme")
-            page.locator('div[role="option"] >> text=ggplot2').first.click()
-            helper.shot("choose-theme-ggplot2")
+            helper.step_insert_code()
 
-            # helper.add_msg('And give a variable name for later use', 2.)
-            page.locator('text="Output variable" >> xpath=.. >> input').click()
-            helper.shot("choose-name")
-            var_input = page.locator('text="Output variable" >> xpath=.. >> input')
-            var_input.fill("")
-            var_input.type("scatter1", delay=10)
-            helper.shot("choose-name-scatter1")
-
-            helper.add_msg("When done, insert the code", 2.0)
-            page.locator('button:has-text("Insert code")').click()
-            page.locator(".plotly-graph-div").wait_for()
-            # give some time to layout
-            page.wait_for_timeout(100)
-            page.locator(".plotly-graph-div").scroll_into_view_if_needed()
-            helper.shot("insert-code")
+            with helper.step(
+                "The code is inserted, and will be automatically executed", 2.5
+            ):
+                page.locator(".plotly-graph-div").wait_for()
+                page.wait_for_timeout(100)
+                page.locator(".plotly-graph-div").scroll_into_view_if_needed()
+                helper.scroll_to_last_code_cell()
+                helper.shot("insert-code")
 
 
 @app.command()
-def load_csv(port: int = 11111, headless: bool = True, animation_time: float = 0.3, general_screenshots: bool = True):
+def load_csv(
+    port: int = 11111,
+    headless: bool = True,
+    animation_time: float = 0.3,
+    general_screenshots: bool = True,
+):
     def screenshot_or_wait(selector, path):
         if general_screenshots:
             selector.screenshot(path=path)
@@ -524,245 +847,145 @@ def load_csv(port: int = 11111, headless: bool = True, animation_time: float = 0
 
             helper.shot("initial")
 
-            helper.assistant.click()
-            page.locator("text=Low Code Assistant™ initialized").wait_for()
-            helper.shot("assistant-ready")
+            helper.step_init()
 
-            mouse_move_middle(page, page.locator(".code_cell").last)
-            page.wait_for_load_state("networkidle")
-            helper.shot("assistant-visible")
+            helper.step_hover_cell()
 
-            screenshot_or_wait(page.locator(".dominocode-assistant-menu"), path="docs/screenshots/general/assistant-icon.png")
+            screenshot_or_wait(
+                helper.assistant.domino_logo,
+                path="docs/screenshots/general/assistant-icon.png",
+            )
 
-            page.locator(".dominocode-assistant-menu").hover()
-            page.wait_for_timeout(animation_time * 1000)  # animation
-            helper.shot("assistant-expand")
+            helper.step_hover_assistant_fab()
 
-            screenshot_or_wait(page.locator("text=Load Data >> xpath=../../.."), path="docs/screenshots/general/assistant-popup-menu.png")
+            screenshot_or_wait(
+                helper.assistant.load_data.menu_item.locator("xpath=../../.."),
+                path="docs/screenshots/general/assistant-popup-menu.png",
+            )
+            screenshot_or_wait(
+                helper.assistant.load_data.menu_item.locator("xpath=../.."),
+                path="docs/screenshots/general/assistant-load-data.png",
+            )
 
-            screenshot_or_wait(page.locator("text=Load Data >> xpath=../.."), path="docs/screenshots/general/assistant-load-data.png")
+            helper.step_load_data_open()
+            page.wait_for_timeout(time_step * 2)
 
-            page.locator("text=Load Data").click()
-            helper.shot("load-data")
+            helper.step_load_data_tab_dataset_open()
 
-            page.locator("text=Datasets").click()
-            helper.shot("load-data-datasets")
+            helper.step_load_data_tab_dataset_navigate()
 
-            page.locator('div[role="list"] div:has-text("..")').nth(1).click()
-            helper.shot("load-data-datasets-dir-up")
+            screenshot_or_wait(
+                page.locator("text=titanic.csv>> xpath=../.."),
+                path="docs/screenshots/general/assistant-dataset-titanic.png",
+            )
 
-            page.locator("text=mydata").click()
-            helper.shot("load-data-datasets-dir-mydata")
+            helper.step_load_data_tab_dataset_titanic_open()
 
-            screenshot_or_wait(page.locator("text=titanic.csv>> xpath=../.."), path="docs/screenshots/general/assistant-dataset-titanic.png")
+            helper.step_insert_code()
 
-            page.locator("text=titanic.csv").click()
-            page.wait_for_timeout(time_step)
-            page.locator("button:has-text('Insert code')").click()
-
-            helper.scroll_to_last_code_cell()
-            helper.shot("load-data-titanic")
+            with helper.step(
+                "The code is inserted, and will be automatically executed", 2.5
+            ):
+                helper.scroll_to_last_code_cell()
+                helper.shot("load-data-titanic")
 
             page.wait_for_timeout(time_step * 2)
 
 
 @app.command()
-def transform(port: int = 11111, headless: bool = True, animation_time: float = 0.3, general_screenshots: bool = True):
+def transform(
+    port: int = 11111,
+    headless: bool = True,
+    animation_time: float = 0.3,
+    general_screenshots: bool = True,
+):
     def screenshot_or_wait(selector, path):
         if general_screenshots:
             selector.screenshot(path=path)
         else:
             selector.wait_for()
 
-    # TODO: needs refactor to use the Helper
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=headless, timeout=timeout)
-        # recordVideo: { dir: 'videos/' }
-        time_start = time.time()
-        page = browser.new_page(
-            record_video_dir="docs/videos"
-        )  # , record_video_size=ViewportSize(width=1000, height=1000))
-        video_path = Path(page.video.path())
-        succes = False
-        shutil.copy(
-            "notebooks/empty.ipynb",
-            "notebooks/transform-demo.ipynb",
+        helper = CaptureHelper(
+            browser,
+            "transform",
+            port=port,
+            animation_time=animation_time,
         )
-        try:
-            page.set_default_timeout(timeout=timeout)
-            page.goto(f"http://localhost:{port}/notebooks/transform-demo.ipynb")
+        with helper:
 
-            # restart kernel
-            # page.locator("#kernellink").click()
-            # page.locator('span:has-text("Restart")').click()
-            # # page.locator('button:has-text("Restart")').click()
-            assistant = page.locator('[aria-label="Low Code Assistant™"]')
-            # box = assistant.bounding_box()
-            # get rid of connected icon and make sure it's stable
-            page.wait_for_load_state("networkidle")
-            page.wait_for_timeout(200)
-
-            N = 0
-            time_step = 500
-
-            # here is where we start the trim
-            time_initial = time.time()
-
+            page = helper.page
+            if not general_screenshots:
+                helper.start_video()
             page.wait_for_timeout(time_step)
-            page.screenshot(path=f"docs/screenshots/transform/{N:02}-initial.png")
-            page.wait_for_timeout(time_step)
-            N += 1
+            helper.shot("initial")
 
-            assistant.click()
-            page.locator("text=Low Code Assistant™ initialized").wait_for()
-            page.screenshot(
-                path=f"docs/screenshots/transform/{N:02}-assistant-ready.png"
-            )
-            N += 1
+            helper.step_init()
 
-            path_csv = HERE / "mydata/titanic.csv"
-            code = f"""import pandas as pd
+            helper.step_cell_insert_code_load_titanic()
 
-df = pd.read_csv("{path_csv}")
-df.head(2)"""
-            input = page.locator(".code_cell:last-of-type textarea").last
-            input.type(code, delay=7)
+            helper.step_hover_cell()
+            helper.step_hover_assistant_fab()
 
-            input = page.locator("text=In [ ]:").last
-            input.press("Shift+Enter")
-
-            page.locator("text=pclass").wait_for()
-
-            page.wait_for_timeout(time_step)
-            # page.evaluate("""window.scrollTo(0, document.body.scrollHeight);""")
-
-            last_code_cell = page.locator(".code_cell").last
-            last_code_cell.scroll_into_view_if_needed()
-            box = last_code_cell.bounding_box()
-            x, y = box["x"] + box["width"] / 2, box["y"] + box["height"] / 2
-            page.mouse.move(0, 0)
-            page.mouse.move(x, y, steps=1)
-            page.wait_for_load_state("networkidle")
-            page.wait_for_timeout(100)
-            page.screenshot(
-                path=f"docs/screenshots/transform/{N:02}-assistant-visible.png"
-            )
-            page.wait_for_timeout(time_step)
-            N += 1
-            # page.evaluate("""window.scrollTo(0, document.body.scrollHeight);""")
-
-            page.locator(".dominocode-assistant-menu").hover()
-            page.wait_for_timeout(animation_time * 1000)  # animation
-            page.screenshot(
-                path=f"docs/screenshots/transform/{N:02}-assistant-expand.png"
-            )
-            page.wait_for_timeout(time_step)
-            N += 1
-
-            screenshot_or_wait(page.locator("text=Transformations >> xpath=../.."), path="docs/screenshots/general/assistant-transformations.png")
-
-            page.locator("text=Transformations").click()
-            page.wait_for_timeout(animation_time * 1000)  # animation
-            page.screenshot(
-                path=f"docs/screenshots/transform/{N:02}-transformations.png"
-            )
-            page.wait_for_timeout(time_step)
-            N += 1
-
-            page.locator('div[role="button"]:has-text("DataFrame")').click()
-            page.wait_for_timeout(animation_time * 1000)  # animation
-            page.screenshot(
-                path=f"docs/screenshots/transform/{N:02}-choose-dataframe.png"
-            )
-            page.wait_for_timeout(time_step)
-            N += 1
-
-            # page.locator("div[role=\"option\"] >> text=df").dispatch_event("mousedown")
-            page.locator('div[role="option"] >> text=df').click()
-            page.locator('.solara-data-table__viewport').wait_for()
-            # page.locator("div[role=\"listbox\"]:has-text(\"df\")").dispatch_event("mousedown")
-            # page.locator("div[role=\"listbox\"]:has-text(\"df\")").click()
-            # page.locator("div[role=\"menuitem\"] i").click()
-
-            page.wait_for_timeout(animation_time * 1000)  # animation
-            page.screenshot(
-                path=f"docs/screenshots/transform/{N:02}-pick-dataframe.png"
-            )
-            page.wait_for_timeout(time_step)
-            N += 1
-
-            screenshot_or_wait(page.locator("text=Add transformation >> xpath=.."), path="docs/screenshots/general/assistant-transformation-add.png")
-
-            page.locator("tr:nth-child(10) td:nth-child(11) span .v-icon").click()
-            page.wait_for_timeout(animation_time * 1000)  # animation
-            page.screenshot(path=f"docs/screenshots/transform/{N:02}-popup-menu.png")
-            page.wait_for_timeout(time_step)
-            N += 1
-
-            screenshot_or_wait(page.locator("text=Filter values like >> xpath=../.."), path="docs/screenshots/general/assistant-transformation-filter-like.png")
-
-            page.locator("text=Filter values like").click()
-            page.locator(".v-dialog:not(.v-bottom-sheet) >> text=New dataframe name").wait_for()
-            page.wait_for_timeout(animation_time * 1000)  # animation
-            page.screenshot(path=f"docs/screenshots/transform/{N:02}-filter-nan.png")
-            page.wait_for_timeout(time_step)
-            N += 1
-
-            screenshot_or_wait(page.locator("text=Apply >> xpath=.."), path="docs/screenshots/general/assistant-transformation-apply.png")
-
-            page.locator("text=apply").click()
-            page.locator(".v-dialog:not(.v-bottom-sheet) >> text=New dataframe name").wait_for(state="detached")
-            page.wait_for_timeout(animation_time * 1000)  # animation
-            page.screenshot(path=f"docs/screenshots/transform/{N:02}-filtered.png")
-            page.wait_for_timeout(time_step)
-            N += 1
-
-            toggle = (
-                ".v-input--switch:last-of-type .v-input--selection-controls__ripple"
+            screenshot_or_wait(
+                helper.assistant.transform.menu_item.locator("xpath=../.."),
+                path="docs/screenshots/general/assistant-transformations.png",
             )
 
-            screenshot_or_wait(page.locator(f"{toggle} >> xpath=../.."), path="docs/screenshots/general/assistant-transformation-toggle-code.png")
-            page.locator(toggle).click()
-            page.wait_for_timeout(animation_time * 1000)  # animation
-            page.locator(".solara-code-highlight").scroll_into_view_if_needed()
-            page.screenshot(path=f"docs/screenshots/transform/{N:02}-show-code.png")
-            page.wait_for_timeout(time_step)
-            N += 1
+            helper.step_transform_open()
+            helper.step_transform_pick_df("df")
+            page.locator(".solara-data-table__viewport").wait_for()
 
-            screenshot_or_wait(page.locator('button:has-text("Insert code")'), path="docs/screenshots/general/assistant-transformation-insert-code.png")
-            page.locator('button:has-text("Insert code")').click()
-            page.locator("text=In [ ]:").last.scroll_into_view_if_needed()
-            page.wait_for_timeout(animation_time * 1000)  # animation
-            page.locator("text=In [ ]:").last.scroll_into_view_if_needed()
-            page.screenshot(path=f"docs/screenshots/transform/{N:02}-insert-code.png")
-            page.wait_for_timeout(time_step)
-            N += 1
+            screenshot_or_wait(
+                helper.assistant.transform.add_transformation,
+                path="docs/screenshots/general/assistant-transformation-add.png",
+            )
 
-            # # Click text=Datasets
-            # page.locator("text=Datasets").click()
-            # page.wait_for_timeout(animation_time*1000)  # animation
-            # page.screenshot(path=f"docs/screenshots/{N:02}-load-data-datasets.png")
-            # page.wait_for_timeout(time_step)
-            # N += 1
+            helper.step_transform_table_cell_action_hover(10, 10)
+            screenshot_or_wait(
+                page.locator("text=Filter values like >> xpath=../.."),
+                path="docs/screenshots/general/assistant-transformation-filter-like.png",
+            )
 
-            succes = True
-        finally:
-            page.close()
-            browser.close()
-            if succes and not general_screenshots:
-                print("Trimming", time_initial - time_start)
-                video_path_raw = video_path.parent / "transform-raw.webm"
-                video_path_cut = video_path.parent / "transform.webm"
-                video_path_cut_mp4 = video_path.parent / "transform.mp4"
-                shutil.move(video_path, video_path_raw)
-                cmd = (
-                    f"ffmpeg -y -i {video_path_raw}  -ss 2.38 -c copy {video_path_cut}"
+            helper.step_transform_filter_values_like_open()
+
+            helper.step_transform_filter_values_like_apply()
+            screenshot_or_wait(
+                page.locator("text=Apply >> xpath=.."),
+                path="docs/screenshots/general/assistant-transformation-apply.png",
+            )
+
+            with helper.step("Click the 'Show code' toggle to preview the code", 2.5):
+                page.wait_for_timeout(1500)
+                toggle = (
+                    ".v-input--switch:last-of-type .v-input--selection-controls__ripple"
                 )
-                os.system(cmd)
-                cmd = f"ffmpeg -y -i {video_path_cut} -vcodec libx264 -crf 23 {video_path_cut_mp4}"
-                os.system(cmd)
-            else:
-                os.remove(video_path)
+
+                screenshot_or_wait(
+                    helper.assistant.transform.dialog.locator(f"{toggle}").last.locator(
+                        "xpath=../.."
+                    ),
+                    path="docs/screenshots/general/assistant-transformation-toggle-code.png",
+                )
+                helper.assistant.transform.dialog.locator(toggle).last.click()
+                page.wait_for_timeout(animation_time * 1000)  # animation
+                page.locator(".solara-code-highlight").scroll_into_view_if_needed()
+                helper.shot("show-code")
+                page.wait_for_timeout(time_step)
+
+            screenshot_or_wait(
+                page.locator('button:has-text("Insert code")'),
+                path="docs/screenshots/general/assistant-transformation-insert-code.png",
+            )
+
+            helper.step_insert_code()
+
+            with helper.step(
+                "The code is inserted, and will be automatically executed", 2.5
+            ):
+                helper.scroll_to_last_code_cell()
+                helper.shot("insert-code")
 
 
 @app.command()
@@ -772,18 +995,6 @@ def app_create(
     animation_time: float = 0.3,
     general_screenshots: bool = False,
 ):
-    @contextlib.contextmanager
-    def step(text, duration):
-        t0 = time.time()
-        helper.add_msg(text, duration=duration)
-        page.wait_for_timeout(100)
-        yield
-        # helper.page.wait_for_timeout(time_step)
-        spend = time.time() - t0
-        print("duration", duration, spend, text)
-        helper.page.wait_for_timeout((duration - spend) * 1000)
-        helper.page.wait_for_timeout(time_step)
-
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=headless, timeout=timeout)
         helper = CaptureHelper(
@@ -803,100 +1014,28 @@ def app_create(
 
             helper.shot("initial")
 
-            with step("Click the Low Code Assistant button", 2.0):
-                helper.assistant.click()
-                page.locator("text=Low Code Assistant™ initialized").wait_for()
-                helper.shot("assistant-ready")
+            helper.step_init()
+            helper.step_cell_insert_code_load_titanic()
+            helper.shot("load-data")
 
-            with step("Load data using code, or the Assistant", 2.5):
-                helper.add_msg("Load data using code, or the Assistant", 2.0)
-                path_csv = "../mydata/titanic.csv"
-                helper.insert_code(
-                    f"""
-import pandas as pd
-df = pd.read_csv("{path_csv}")
-df.head(2)""".strip(),
-                    delay=15,
-                )
-                page.locator("text=pclass").wait_for()
-                helper.shot("load-data")
+            helper.step_cell_insert_code_histogram_survived()
+            helper.step_cell_insert_code_scatter_age_fare_survived()
 
-            with step(
-                "Create a histogram using the Low Code Assistant™, or your own Python code.",
-                3.5,
-            ):
-                helper.insert_code(
-                    """
-import plotly.express as px
-
-histogram_survived = px.histogram(df, x="survived")
-histogram_survived
-""".strip(),
-                    delay=15,
-                )
-                page.wait_for_timeout(100)
-                page.locator(".plotly-graph-div").last.scroll_into_view_if_needed()
-                helper.shot("create-viz-1")
-
-            with step(
-                "Create a scatter plot using the Low Code Assistant™, or your own Python code.",
-                3.5,
-            ):
-                helper.scroll_to_last_code_cell()
-                page.wait_for_timeout(time_step)
-                helper.insert_code(
-                    """
-import plotly.express as px
-
-scatter_age_fare = px.scatter(df, x="age", y="fare", color="survived")
-scatter_age_fare
-""".strip(),
-                    delay=15,
-                )
-                page.wait_for_timeout(100)
-                page.locator(".plotly-graph-div").last.scroll_into_view_if_needed()
-                helper.shot("create-viz-2")
-
-            with step(
-                "Hover above the next code cell to show the Low Code Assistant™ button",
-                1.5,
-            ):
-                helper.scroll_to_last_code_cell()
-                mouse_move_middle(page, page.locator(".code_cell").last)
-                helper.shot("assistant-hover")
-
-            with step(
-                "Hover above the Low Code Assistant™ button to expand the menu", 1.5
-            ):
-                page.locator(".dominocode-assistant-menu").hover()
-                helper.shot("assistant-expand")
-
-            locator = page.locator('div[role="listbox"] >> text=App >> xpath=../..')
+            helper.step_hover_cell()
+            helper.step_hover_assistant_fab()
+            locator = helper.assistant.app.menu_item
             if general_screenshots:
                 general(locator, "app-open")
-            else:
-                locator.wait_for()
-            with step("Click on 'App'", 1.5):
-                page.wait_for_timeout(1000)
-                page.locator('div[role="listbox"] >> text=App').click()
+            helper.step_app_open()
+            helper.step_app_toggle(["histogram_survived", "scatter_age_fare"])
 
-            with step("Toggle the visualizations you want to add to the app.", 4):
-                page.wait_for_timeout(1000)
-                helper.shot("app-before")
-                page.locator('_vue=v-switch[label="histogram_survived"]').click()
-                page.wait_for_timeout(1000)
-                page.locator('_vue=v-switch[label="scatter_age_fare"]').click()
-                page.wait_for_timeout(1000)
-
-            with step("Optionally drag and resize the visualizations", 1.5):
+            with helper.step("Optionally drag and resize the visualizations", 1.5):
                 pass
 
-            with step("When done, click 'Insert code'", 2.5):
-                page.wait_for_timeout(1000)
-                helper.shot("insert-code")
-                page.locator('button:has-text("Insert code")').click()
+            helper.step_insert_code()
+            helper.shot("insert-code")
 
-            with step("Edit the code, or click 'Preview'", 2.0):
+            with helper.step("Edit the code, or click 'Preview'", 2.0):
                 helper.scroll_to_last_code_cell()
             helper.shot("done")
             locator = page.locator('button:has-text("Preview")')
@@ -906,6 +1045,280 @@ scatter_age_fare
                 locator.wait_for()
 
             page.wait_for_timeout(time_step * 2)
+
+
+@app.command()
+def deploy(
+    port: int = 11111,
+    headless: bool = True,
+    animation_time: float = 0.3,
+    # general_screenshots: bool = True,
+):
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=headless, timeout=timeout)
+        helper = CaptureHelper(
+            browser,
+            "deploy",
+            port=port,
+            animation_time=animation_time,
+        )
+        with helper:
+
+            page = helper.page
+            # if not general_screenshots:
+            #     helper.start_video()
+            # a bit of rest
+            page.wait_for_timeout(time_step)
+
+            helper.step_init()
+            helper.step_cell_insert_code_load_titanic()
+
+            helper.step_cell_insert_code_histogram_survived()
+            helper.step_cell_insert_code_scatter_age_fare_survived()
+
+            if True:
+                helper.step_hover_cell()
+                helper.step_hover_assistant_fab()
+                helper.step_app_open()
+                helper.step_app_toggle(["histogram_survived", "scatter_age_fare"])
+
+                with helper.step("Optionally drag and resize the visualizations", 1.5):
+                    pass
+
+                helper.step_insert_code()
+
+                locator = page.locator('button:has-text("Preview")')
+            else:
+                helper.insert_code(" # fast path needs no real code")
+
+            helper.remove_app_sh()
+
+            helper.step_hover_cell()
+            helper.step_hover_assistant_fab()
+            helper.step_deploy_open()
+
+            helper.step_deploy_write_script()
+            helper.step_deploy_continue(0)
+
+            with helper.step(
+                "Follow the instructions to synchronize the filesystem", 2.5
+            ):
+                pass
+            helper.step_deploy_continue(0)
+
+            helper.step_deploy_start_app()
+            helper.step_deploy_finish()
+            helper.step_deploy_view_app()
+
+            page.wait_for_timeout(500)
+            page.locator("text=All Apps").wait_for()
+            # a locator for the iframe of the app, this depends on the deployed app
+            # so this may change
+            page.frame_locator("iframe").locator("text=Madison").wait_for()
+            helper.inject_js_and_css()
+            with helper.step("The app can now be shared with others", 2.5):
+                pass
+
+
+@app.command()
+def overview(
+    port: int = 11111,
+    headless: bool = True,
+    animation_time: float = 0.3,
+    general_screenshots: bool = True,
+):
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=headless, timeout=timeout)
+        helper = CaptureHelper(
+            browser,
+            "overview",
+            port=port,
+            animation_time=animation_time,
+        )
+        with helper:
+
+            page = helper.page
+            if not general_screenshots:
+                helper.start_video()
+            # a bit of rest
+            page.wait_for_timeout(time_step)
+
+            with helper.step(
+                "This video will demonstrate many of the features of Low Code Assistant™",
+                2.5,
+            ):
+                pass
+
+            # with helper.step("We will demonstrate deploying an app mixing ", 2.5):
+
+            # load data
+            helper.step_init()
+            if True:
+                helper.step_hover_cell()
+                helper.step_hover_assistant_fab()
+                helper.step_load_data_open()
+                helper.step_load_data_tab_dataset_open()
+                helper.step_load_data_tab_dataset_navigate()
+                helper.step_load_data_tab_dataset_titanic_open()
+                helper.step_insert_code()
+                with helper.step(
+                    "The code is inserted, and will be automatically executed", 2.5
+                ):
+                    helper.scroll_to_last_code_cell()
+                    helper.shot("load-data-titanic")
+            else:
+                helper.step_cell_insert_code_load_titanic()
+
+            with helper.step(
+                "Next, we will filter the data using the Low Code Assistant™", 2.5
+            ):
+                pass
+
+            # filter
+            if True:
+                helper.step_hover_cell()
+                helper.step_hover_assistant_fab()
+                helper.step_transform_open()
+                helper.step_transform_pick_df("df")
+                page.locator(".solara-data-table__viewport").wait_for()
+
+                helper.step_transform_table_cell_action_hover(10, 10)
+
+                helper.step_transform_filter_values_like_open()
+
+                helper.step_transform_filter_values_like_apply()
+
+                with helper.step(
+                    "Click the 'Show code' toggle to preview the code", 2.5
+                ):
+                    page.wait_for_timeout(1500)
+                    toggle = ".v-input--switch:last-of-type .v-input--selection-controls__ripple"
+
+                    helper.assistant.transform.dialog.locator(toggle).last.click()
+                    page.wait_for_timeout(animation_time * 1000)  # animation
+                    page.locator(".solara-code-highlight").scroll_into_view_if_needed()
+                    helper.shot("show-code")
+                    page.wait_for_timeout(time_step)
+
+                helper.step_insert_code()
+
+                with helper.step(
+                    "The code is inserted, and will be automatically executed", 2.5
+                ):
+                    helper.scroll_to_last_code_cell()
+                    helper.shot("insert-code")
+            else:
+                helper.insert_code("df = df[~df.cabin.isna()]")
+
+            # viz
+            if True:
+                with helper.step("Next, we will create two visualizations", 1.5):
+                    pass
+                helper.step_hover_cell()
+                helper.step_hover_assistant_fab()
+
+                helper.step_viz_open()
+
+                helper.step_viz_pick_df("df")
+                helper.step_viz_choose("Scatter")
+
+                helper.step_viz_configure()
+
+                helper.step_viz_choose_var("scatter_age_fare")
+
+                helper.step_insert_code()
+
+                with helper.step(
+                    "The code is inserted, and will be automatically executed", 2.5
+                ):
+                    page.locator(".plotly-graph-div").wait_for()
+                    page.wait_for_timeout(100)
+                    page.locator(".plotly-graph-div").scroll_into_view_if_needed()
+                    helper.scroll_to_last_code_cell()
+                    helper.shot("insert-code")
+            else:
+                helper.step_cell_insert_code_scatter_age_fare_survived()
+
+            with helper.step(
+                "Our second visualization, is done without the Low Code Assistant™", 1.5
+            ):
+                pass
+
+            helper.step_cell_insert_code_histogram_survived()
+
+            # create app
+            helper.step_hover_cell()
+            helper.step_hover_assistant_fab()
+            helper.step_app_open()
+            helper.step_app_toggle(["histogram_survived", "scatter_age_fare"])
+
+            with helper.step("Optionally drag and resize the visualizations", 1.5):
+                pass
+
+            helper.step_insert_code()
+
+            locator = page.locator('button:has-text("Preview")')
+            # if general_screenshots:
+            #     general(locator, "app-preview")
+            # else:
+            #     locator.wait_for()
+            locator.wait_for()
+
+            # deploy
+            helper.remove_app_sh()
+
+            helper.step_hover_cell()
+            helper.step_hover_assistant_fab()
+            helper.step_deploy_open()
+
+            helper.step_deploy_write_script()
+            helper.step_deploy_continue(0)
+
+            with helper.step(
+                "Follow the instructions to synchronize the filesystem", 2.5
+            ):
+                pass
+            helper.step_deploy_continue(0)
+
+            helper.step_deploy_start_app()
+            helper.step_deploy_finish()
+            helper.step_deploy_view_app()
+
+            page.wait_for_timeout(500)
+            page.locator("text=All Apps").wait_for()
+            # a locator for the iframe of the app, this depends on the deployed app
+            # so this may change
+            page.frame_locator("iframe").locator("text=Madison").wait_for()
+            helper.inject_js_and_css()
+            with helper.step("The app can now be shared with others", 2.5):
+                pass
+
+
+@app.command()
+def audio(name: str):
+    # print(name, directory)
+    from pydub import AudioSegment
+
+    files = Path(f"audio/{name}/").glob("*.mp3")
+    files = list(sorted(files))
+    print(files)
+    steps = json.loads(Path(f"scripts/{name}.json").read_text())
+    segments = [AudioSegment.from_file(file, format="mp3") for file in files]
+    sound_all = None
+    offset = steps[0]["t_start"] * 1000
+    offset = 0
+    sound_all = AudioSegment.silent(
+        duration=get_video_length(f'docs/videos/{name}-cut.mp4') * 1000
+    )
+    for step, file, segments in zip(steps, files, segments):
+        print(step, offset)
+        sound_all = sound_all.overlay(
+            segments, position=step["t_start"] * 1000 - offset
+        )
+    sound_all.export(f"audio/{name}.mp3", format="mp3")
+
+    cmd = f"ffmpeg -y -i docs/videos/{name}-cut.mp4 -i audio/{name}.mp3 -map 0:v -map 1:a -c:v copy -shortest docs/videos/{name}-audio.mp4"
+    os.system(cmd)
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@
 
 
 <video controls>
-    <source src="https://user-images.githubusercontent.com/46192475/182823255-546f81a9-f485-4b54-9bee-b0dc851b4da5.mp4" type="video/mp4">
+    <source src="https://user-images.githubusercontent.com/1765949/185930154-ed0319d3-f775-4db7-b3f8-7b38d0257979.mp4" type="video/mp4">
 </video>
 
 
@@ -78,7 +78,7 @@ scatter_age_fare
 
 If you now hover above the next code cell, you should see a blue icon ![assistant icon](../../screenshots/general/assistant-icon.png){.assistant-icon} to the right:
 
-![Assistant visible](../../screenshots/app-create/05-assistant-hover.png)
+![Assistant visible](../../screenshots/app-create/05-assistant-visible.png)
 
 If you hover above the ![assistant icon](../../screenshots/general/assistant-icon.png){.assistant-icon} icon, it will show a popup menu:
 

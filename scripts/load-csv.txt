@@ -1,0 +1,9 @@
+Click the Low Code Assistant button
+Hover above the next code cell, to show the Low Code Assistant button
+Hover above the Low Code Assistant button to expand the menu
+Click on 'Load Data'
+Go to the 'Datasets' tab to explore your filesystem
+Navigate to the right directory
+Click the file you want to open
+Click 'Insert code' to insert the code snippet into your notebook
+The code is inserted, and will be automatically executed

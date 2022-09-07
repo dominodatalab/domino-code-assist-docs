@@ -1,3 +1,21 @@
+v0.0.22
+====
+- feat: user replaceable dataframe in the app
+
+v0.0.21
+=======
+- feat: crossfilter option for plots
+- feat: search for snippets in external git repositories
+- fix: app start from failed state is not working
+- feat: support for 4.x
+- feat: option to select demo data
+
+v0.0.20
+=======
+- feat: code snippets
+- fix: handle quotes in string values of filter correctly
+- fix: replace auto quoting with a switch
+
 v0.0.19
 =======
 - fix: datasets directory is not always present

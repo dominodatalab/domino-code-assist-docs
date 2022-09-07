@@ -16,6 +16,8 @@ nav:
      - Apps:
        - App creation: getting-started/app/create.md
        - Deploy an App: getting-started/app/deploy.md
+     - Code snippets:
+       - Code snippets: getting-started/code-snippets.md
    - install.md
 theme:
   name: material

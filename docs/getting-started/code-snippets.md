@@ -13,6 +13,7 @@ Browse the available snippets and select the one you want to insert.
 
 A snippet library can be added by adding a git repository with snippets to your Domino project.
 ![Snippets repo](../screenshots/snippets/snippets_git_repos.png){: style="width: 1024px"}
+An example snippet library can be found here: [https://github.com/dominodatalab/low-code-assistant-snippets](https://github.com/dominodatalab/low-code-assistant-snippets)
 
 If credentials are required to access the repository, they can be setup in your account:
 

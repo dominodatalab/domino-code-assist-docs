@@ -1,3 +1,9 @@
+v0.0.23
+====
+feat: add reload button for snippets
+feat: edit snippets from LCA
+feat: builtin snippets
+
 v0.0.22
 ====
 - feat: user replaceable dataframe in the app

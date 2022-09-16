@@ -1,8 +1,12 @@
+v0.0.24
+====
+- fix: edit buttons outside viewport when snippet list is long
+
 v0.0.23
 ====
-feat: add reload button for snippets
-feat: edit snippets from LCA
-feat: builtin snippets
+- feat: add reload button for snippets
+- feat: edit snippets from LCA
+- feat: builtin snippets
 
 v0.0.22
 ====

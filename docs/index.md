@@ -7,6 +7,10 @@ Domino Low Code Assistant™ (LCA) accelerates common routines in Jupyter notebo
 <video controls autoplay>
   <source src="https://user-images.githubusercontent.com/1765949/185939829-2b99a7c9-10e7-4d67-8aa5-a2e1b9882a20.mp4" type="video/mp4">
 </video>
+<script>
+    var video = document.querySelector('video');
+    video.currentTime = 0.5;
+</script>
 
 
 <!-- This video shows how to

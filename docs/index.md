@@ -19,10 +19,3 @@ Domino Low Code Assistant™ (LCA) accelerates common routines in Jupyter notebo
 
 [Get started](getting-started/loading-data/){.md-button .md-button--primary}
 [Installation](install.md){.md-button .md-button--secondary}
-
-
-
-
-!!! warning "JupyterLab not yet supported"
-
-    Currently, the Low Code Assistant™ only works in the (classical) Jupyter notebook. JupyterLab is not yet supported.

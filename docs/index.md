@@ -6,7 +6,7 @@
 Low Code Assistant™ (LCA) provides point-and-click shortcuts for common data science boilerplate. 
 
 LCA is available in _private preview_ on any Domino 4.x-5.x platform - **ask your Domino account manger for access.
-**
+
 
 ![https://raw.githubusercontent.com/dominodatalab/low-code-jupyter-docs/main/LCA_GIF.gif](https://raw.githubusercontent.com/dominodatalab/low-code-jupyter-docs/main/LCA_GIF.gif)
 
@@ -44,10 +44,13 @@ Low Code Assistant™ (LCA) accelerates universal data analysis tasks by autogen
 
 A few tasks that LCA accelerates:
 
-1. ❄️ Import data from a business store like Snowflake, Redshift, or S3
-2. 🤠 Munge or "wrangle" data into a desired format
-3. 📊 Create and share data visualizations
-4. 🎚️ reate  and share data apps
+1. ❄️ Import data from a business store like 
+   1. [Snowflake](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/loading-data/snowflake/)
+   2. [Redshift](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/loading-data/redshift/)
+   3. S3
+2. 🤠 [Munge or "wrangle" data](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/transform/) into a desired format
+3. 📊 [Create and share data visualizations](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/viz/scatter/)
+4. 🎚️ [Create  and share data apps](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/app/create/)
 
 In tests with analysts new to Python (new graduates), Low Code Assistant (LCA) enhanced productivity by 20x:
 
@@ -86,5 +89,5 @@ In tests with analysts new to Python (new graduates), Low Code Assistant (LCA) e
   * Click the file, to generate the `Pandas` code
  -->
 
-[Get started](getting-started/loading-data/){.md-button .md-button--primary}
+[Get started](getting-started/loading-data/csv/){.md-button .md-button--primary}
 [Installation](install.md){.md-button .md-button--secondary}

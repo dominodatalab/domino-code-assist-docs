@@ -1,15 +1,21 @@
-# 🥜 Low Code Assistant™ (LCA) in a nutshell
+# Low Code Assistant™ (LCA) 
+
+
+# 🥜 In a nutshell
 
 Low Code Assistant™ (LCA) provides point-and-click shortcuts for common data science boilerplate. 
 
-LCA is available in _private preview_ on any Domino 4.x-5.x platform - **ask your Domino account manger to enable access.
+LCA is available in _private preview_ on any Domino 4.x-5.x platform - **ask your Domino account manger for access.
 **
+
 ![https://raw.githubusercontent.com/dominodatalab/low-code-jupyter-docs/main/LCA_GIF.gif](https://raw.githubusercontent.com/dominodatalab/low-code-jupyter-docs/main/LCA_GIF.gif)
 
-*
-*
-*
-*
+* * *
+
+<br />
+<br />
+<br />
+<br />
 
 # 🚦 Switch on Low Code Assistant™ (LCA)
 
@@ -25,10 +31,12 @@ Here, `[secret .whl link]` is provided by your Domino account manager. (_Domino 
 
 After this line is added. LCA appears automagically in your Jupyter toolbar. ✨
 
-*
-*
-*
-*
+* * *
+
+<br />
+<br />
+<br />
+<br />
 
 # 📈 Accelerate new Python/R analysts
 
@@ -49,14 +57,17 @@ In tests with analysts new to Python (new graduates), Low Code Assistant (LCA) e
 | Make a Dash/Shiny app where users can upload their own data       | 10x faster with LCA    | 2x faster with LCA    |
 | Publish & share an interactive dashboard                          | 20x faster with LCA    | 3x faster with LCA    |
 
-*
-*
-*
-*
+* * *
+
+<br />
+<br />
+<br />
+<br />
 
 # Low Code Assistant™ - Extended Screencast
 
-<video>
+
+<video controls autoplay>
   <source src="https://user-images.githubusercontent.com/1765949/185939829-2b99a7c9-10e7-4d67-8aa5-a2e1b9882a20.mp4" type="video/mp4">
 </video>
 <script>

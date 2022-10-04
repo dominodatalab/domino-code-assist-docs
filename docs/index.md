@@ -42,14 +42,14 @@ After this line is added, LCA appears automagically in your Jupyter toolbar. ✨
 
 Low Code Assistant™ (LCA) accelerates universal data analysis tasks by autogenerating Python or R code with point & click GUIs.
 
-A few tasks that LCA accelerates:
+For example, LCA can autogenerate Python or R code for these tasks:
 
 1. ❄️ Import data from a business store like S3, [Snowflake](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/loading-data/snowflake/), or [Redshift](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/loading-data/redshift/)
 2. 🤠 [Munge or "wrangle" data](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/transform/) into a desired format
 3. 📊 [Create and share data visualizations](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/viz/scatter/)
 4. 🎚️ [Create  and share data apps](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/app/create/)
 
-In tests with analysts new to Python (new graduates), Low Code Assistant (LCA) enhanced productivity by 20x:
+In tests with analysts new to Python (new graduates), Low Code Assistant (LCA) enhanced productivity by 5-20x:
 
   
 | Task                          | Python Novice - Productivity Gain       | Python Expert - Productivity Gain      |

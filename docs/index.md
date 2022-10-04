@@ -5,7 +5,7 @@
 
 Low Code Assistant™ (LCA) provides point-and-click shortcuts for common data science boilerplate. 
 
-LCA is available in _private preview_ on any Domino 4.x-5.x platform - **ask your Domino account manger for access.
+LCA is available in _private preview_ on any Domino 4.x-5.x platform - **ask your Domino account manger for access.**
 
 
 ![https://raw.githubusercontent.com/dominodatalab/low-code-jupyter-docs/main/LCA_GIF.gif](https://raw.githubusercontent.com/dominodatalab/low-code-jupyter-docs/main/LCA_GIF.gif)
@@ -44,7 +44,7 @@ Low Code Assistant™ (LCA) accelerates universal data analysis tasks by autogen
 
 A few tasks that LCA accelerates:
 
-1. ❄️ Import data from a business store likeS3, [Snowflake](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/loading-data/snowflake/), or [Redshift](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/loading-data/redshift/)
+1. ❄️ Import data from a business store like S3, [Snowflake](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/loading-data/snowflake/), or [Redshift](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/loading-data/redshift/)
 2. 🤠 [Munge or "wrangle" data](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/transform/) into a desired format
 3. 📊 [Create and share data visualizations](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/viz/scatter/)
 4. 🎚️ [Create  and share data apps](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/app/create/)

@@ -29,7 +29,7 @@ RUN pip install [secret .whl link]
 
 Here, `[secret .whl link]` is provided by your Domino account manager. (_Domino staff, please find this installation link on [GitHub](https://github.com/dominodatalab/low-code-assistant/blob/main/CHANGELOG.md) or [Google Drive](https://docs.google.com/document/d/1nfR9nZ2OrmnJrG8vvKNuLRsyDmj2Is2_ynZh1PMNXXA/edit?usp=sharing)._)
 
-After this line is added, LCA appears automagically in your Jupyter toolbar. ✨
+After this line is added. LCA appears automagically in your Jupyter toolbar. ✨
 
 * * *
 
@@ -40,14 +40,12 @@ After this line is added, LCA appears automagically in your Jupyter toolbar. ✨
 
 # 📈 Accelerate new Python/R analysts
 
-Low Code Assistant™ (LCA) accelerates universal data analysis tasks by autogenerating Python or R code with point & click GUIs.
-
-A few tasks that LCA accelerates:
+Low Code Assistant™ (LCA) accelerates universal data analysis tasks by autogenerating Python or R code with point & click GUIs:
 
 1. ❄️ Import data from a business store like Snowflake, Redshift, or S3
 2. 🤠 Munge or "wrangle" data into a desired format
-3. 📊 Create and share data visualizations
-4. 🎚️ reate  and share data apps
+3. 📊 Craete and share data visualizations
+4. 🎚️ Create and share data apps
 
 In tests with analysts new to Python (new graduates), Low Code Assistant (LCA) enhanced productivity by 20x:
 

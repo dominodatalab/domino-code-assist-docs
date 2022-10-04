@@ -19,7 +19,7 @@ LCA is available in _private preview_ on any Domino 4.x-5.x platform - **ask you
 
 # 🚦 Switch on Low Code Assistant™ (LCA)
 
-To enable LCA, simply add this line to the Docker file of your default Domino compute environment.
+To enable LCA, add this line to the default environment Docker file:
 
 ```py
 
@@ -44,10 +44,7 @@ Low Code Assistant™ (LCA) accelerates universal data analysis tasks by autogen
 
 A few tasks that LCA accelerates:
 
-1. ❄️ Import data from a business store like 
-   1. [Snowflake](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/loading-data/snowflake/)
-   2. [Redshift](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/loading-data/redshift/)
-   3. S3
+1. ❄️ Import data from a business store likeS3, [Snowflake](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/loading-data/snowflake/), or [Redshift](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/loading-data/redshift/)
 2. 🤠 [Munge or "wrangle" data](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/transform/) into a desired format
 3. 📊 [Create and share data visualizations](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/viz/scatter/)
 4. 🎚️ [Create  and share data apps](https://dominodatalab.github.io/low-code-jupyter-docs/getting-started/app/create/)

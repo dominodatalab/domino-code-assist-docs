@@ -25,6 +25,11 @@ Here, `[secret .whl link]` is provided by your Domino account manager. (_Domino 
 
 After this line is added. LCA appears automagically in your Jupyter toolbar. ✨
 
+*
+*
+*
+*
+
 # 📈 Accelerate new Python/R analysts
 
 Low Code Assistant™ (LCA) accelerates universal data analysis tasks by autogenerating Python or R code with point & click GUIs:
@@ -44,6 +49,10 @@ In tests with analysts new to Python (new graduates), Low Code Assistant (LCA) e
 | Make a Dash/Shiny app where users can upload their own data       | 10x faster with LCA    | 2x faster with LCA    |
 | Publish & share an interactive dashboard                          | 20x faster with LCA    | 3x faster with LCA    |
 
+*
+*
+*
+*
 
 # Low Code Assistant™ - Extended Screencast
 

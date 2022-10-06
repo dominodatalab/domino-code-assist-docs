@@ -1,6 +1,6 @@
 # low-code-jupyter-docs
 
-This repository only contains the documentation for dominocode.
+This repository only contains the documentation for low_code_assistant.
 
 The live documentation is at https://dominodatalab.github.io/low-code-jupyter-docs/
 # Develop documentation
@@ -37,7 +37,7 @@ mkdocs gh-deploy
 
 # Generating video/screenshots
 
-This is required when the dominocode assistant looks different.
+This is required when the low_code_assistant assistant looks different.
 
 ```bash
 $ conda env create -f environment.yml

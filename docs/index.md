@@ -23,13 +23,13 @@ To enable LCA, add this line to the default environment Docker file:
 
 ```py
 
-RUN pip install [secret .whl link]
+RUN pip install https://vve589t3tspu.s3.us-west-2.amazonaws.com/1/low_code_assistant-latest-py2.py3-none-any.whl
 
 ```
 
-Here, `[secret .whl link]` is provided by your Domino account manager. (_Domino staff, please find this installation link on [GitHub](https://github.com/dominodatalab/low-code-assistant/blob/main/CHANGELOG.md) or [Google Drive](https://docs.google.com/document/d/1nfR9nZ2OrmnJrG8vvKNuLRsyDmj2Is2_ynZh1PMNXXA/edit?usp=sharing)._)
-
 After this line is added, LCA appears automagically in your Jupyter toolbar. ✨
+
+See also the [Installation instructions](/install) for different ways to install LCA (In an existing workspace, or a Project)
 
 * * *
 

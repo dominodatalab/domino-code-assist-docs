@@ -60,7 +60,7 @@ Now create a new workspace with "Jupyter" or "JupyterLab" and the Low Code Assis
 
 ### I do not have a requirements.txt file
 
-Download our [requirements.txt file by right clicking this link and choose "Save link as" or "Save as" or "](/requirements.txt)
+Download our [requirements.txt file by right clicking this link and choose "Save link as" or "Save as" or "](https://raw.githubusercontent.com/dominodatalab/low-code-jupyter-docs/main/docs/requirements.txt)
 
 
 #### Navigate to `Files`

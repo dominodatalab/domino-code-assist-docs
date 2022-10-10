@@ -3,9 +3,19 @@
 
 # 🥜 In a nutshell
 
-Low Code Assistant™ (LCA) provides point-and-click shortcuts for common data science boilerplate. 
+Low Code Assistant™ (LCA) provides point-and-click shortcuts for common data science boilerplate.
 
-LCA is available as a _beta feature_ on any Domino 4.x-5.x platform - please see **"🚦 Switch on Low Code Assistant" below to get started.**
+You can try LCA right now by running this command in Jupyter notebook or JupyterLab (refresh your browser tab after the command finishes running):
+```
+!python -m pip install --user https://vve589t3tspu.s3.us-west-2.amazonaws.com/1/low_code_assistant-latest-py2.py3-none-any.whl
+```
+A blue button with the Domino logo will appear in your Jupyter toolbar - click this button to initialize the Assistant.
+
+<img width="235" alt="image" src="https://user-images.githubusercontent.com/102775996/194938704-31d77f3f-1081-497c-9f0b-fa04001fd20a.png">
+
+***
+
+LCA is currently available as a _beta feature_ for any Domino 4.x-5.x platform - please see **"🚦 Switch on Low Code Assistant"** below for all installation options.
 
 To enable LCA for RStudio on Domino, please refer to [Low Code Assistant for R](https://github.com/dominodatalab/low-code-assistant-rstudio).
 

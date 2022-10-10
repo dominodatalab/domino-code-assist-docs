@@ -1,6 +1,6 @@
 # Installation
 
-## Enable Low Code Assistant in Jupyter/JupyterLab
+## Enabling Low Code Assistant in Jupyter/JupyterLab
 
 If you already have a workspace with "Jupyter" or "JupyterLab", you can enable Low Code Assistant (LCA) right now in your existing workspace. Run the following command in a notebook code cell:
 
@@ -15,10 +15,10 @@ After the installation completes, refresh your browser tab -- then the "Low Code
 
 This is the easiest way to get started with LCA, but if you restart you workspace, you will need to reinstall Low Code Assistant again. To enable LCA more permanantly, please follow the instructions for:
 
- * [Installing in a project](#in-a-project)
- * [Installing in a Compute environment](#in-a-project)
+ * [Installing in a project](#enabling-low-code-assistant-in-a-domino-project)
+ * [Installing in a Compute environment](#enabling-low-code-assistant-in-a-domino-compute-environment)
 
-## Enable Low Code Assistant in a Domino Project
+## Enabling Low Code Assistant in a Domino Project
 
 When a workspace is created, a `requirements.txt` file will be used to install Python packages into your new environment. 
 We can use this to install Low Code Assistant into any workspace created within a project.
@@ -83,7 +83,7 @@ It might take a few seconds, but you should see the `requirements.txt` file in y
 
 Now create a new workspace with "Jupyter" or "JupyterLab" and the Low Code Assistant button should be available.
 
-## Enable Low Code Assistant in. a Domino Compute environment
+## Enabling Low Code Assistant in a Domino Compute environment
 
 1. Go to the customer’s Domino Standard Environment (under Environments in the side navigation bar)
 2. Add this line to the end of the env’s Dockerfile setup (but before the last USER ubuntu command):

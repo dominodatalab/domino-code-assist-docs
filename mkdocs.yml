@@ -2,22 +2,22 @@ site_name: ''
 site_url: https://dominolowcode.github.io/
 nav:
    - index.md
-     - Tutorials: index.md
-     - Loading data:
-       - CSV to Pandas: loading-data/csv.md
-       - Snowflake to Pandas: loading-data/snowflake.md
-       - Redshift to Pandas: loading-data/redshift.md
-       - SQL with editor to Pandas: loading-data/sql.md
-     - Transforming data:
-       - Filter NaN values: transform.md
-     - Visualizing data:
-       - Scatter plot with Plotly: viz/scatter.md
-     - Apps:
-       - App creation: app/create.md
-       - Deploy an App: app/deploy.md
-       - Upload data to an App: app/upload.md
-     - Code snippets:
-       - Code snippets: code-snippets.md
+   - Tutorials: index.md
+   - Loading data:
+      - CSV to Pandas: loading-data/csv.md
+      - Snowflake to Pandas: loading-data/snowflake.md
+      - Redshift to Pandas: loading-data/redshift.md
+      - SQL with editor to Pandas: loading-data/sql.md
+   - Transforming data:
+      - Filter NaN values: transform.md
+   - Visualizing data:
+      - Scatter plot with Plotly: viz/scatter.md
+   - Apps:
+      - App creation: app/create.md
+      - Deploy an App: app/deploy.md
+      - Upload data to an App: app/upload.md
+   - Code snippets:
+      - Code snippets: code-snippets.md
 theme:
   name: material
   favicon: favicon.png

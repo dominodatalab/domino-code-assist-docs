@@ -3,7 +3,7 @@ site_url: https://dominolowcode.github.io/
 nav:
    - index.md
    - Getting started:
-     - Overview: getting-started/index.md
+     - Tutorials: getting-started/index.md
      - Loading data:
        - CSV to Pandas: getting-started/loading-data/csv.md
        - Snowflake to Pandas: getting-started/loading-data/snowflake.md

@@ -50,3 +50,5 @@ plugins:
     - redirects:
         redirect_maps:
             'docs/install.md': 'docs/index.md'
+            'install.md': 'index.md'
+            'docs/install.md': 'index.md'

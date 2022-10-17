@@ -3,7 +3,7 @@
 
 # 🏃 Quickstart
 
-Low Code Assistant™ (LCA) provides GUI shortcuts for common analysis boilerplate. LCA can be used on any Domino 4.x-5.x platform.
+Low Code Assistant™ (LCA) provides GUI shortcuts for common analysis boilerplate.
 
 To get started,
 

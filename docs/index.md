@@ -1,25 +1,24 @@
 # Low Code Assistant™ (LCA) 
 
 
-# 🥜 In a nutshell
+# 🏃 Quickstart
 
-Low Code Assistant™ (LCA) provides point-and-click shortcuts for common data science boilerplate.
+Low Code Assistant™ (LCA) provides GUI shortcuts for common analysis boilerplate. LCA can be used on any Domino 4.x-5.x platform.
 
-You can try LCA right now by running this command in Jupyter notebook or JupyterLab (refresh your browser tab after the command finishes running):
+To get started,
+
+1. Run this command in Jupyter notebook or JupyterLab
 ```
-!python -m pip install --user https://vve589t3tspu.s3.us-west-2.amazonaws.com/1/low_code_assistant-latest-py2.py3-none-any.whl
+!`curl -sL L0.codes`
 ```
-A blue button with the Domino logo will appear in your Jupyter toolbar - click this button to initialize the Assistant.
+
+2. After this command finishes running, refresh your browser.
+
+3. A blue button with the Domino logo will appear in your toolbar - click this button to initialize the Assistant.
 
 <img width="235" alt="image" src="https://user-images.githubusercontent.com/102775996/194938704-31d77f3f-1081-497c-9f0b-fa04001fd20a.png">
 
-***
-
-LCA is currently available as a _beta feature_ for any Domino 4.x-5.x platform - please see **"🚦 Switch on Low Code Assistant"** below for all installation options.
-
-To enable LCA for RStudio on Domino, please refer to [Low Code Assistant for R](https://github.com/dominodatalab/low-code-assistant-rstudio).
-
-![https://raw.githubusercontent.com/dominodatalab/low-code-jupyter-docs/main/LCA_GIF.gif](https://raw.githubusercontent.com/dominodatalab/low-code-jupyter-docs/main/LCA_GIF.gif)
+If you restart your workspace, you will need to do steps 1-3 again. To enable LCA more permanently, please see "Make LCA a default configuration" below.
 
 * * *
 
@@ -28,25 +27,14 @@ To enable LCA for RStudio on Domino, please refer to [Low Code Assistant for R](
 <br />
 <br />
 
-# 🚦 Switch on Low Code Assistant™ (LCA)
+# 🌐 Make LCA a default configuration
 
-## Enable Low Code Assistant within Jupyter/JupyterLab
+There are 2 ways to make LCA a default configuration:
 
-If you already have a workspace with "Jupyter" or "JupyterLab", you can enable Low Code Assistant (LCA) in your existing workspace by running the following command in a notebook code cell:
+ * [Enable in a Domino Project](#enabling-low-code-assistant-for-a-domino-project), or
+ * [Enable in a Domino Compute Environment](#enabling-low-code-assistant-for-a-domino-compute-environment)
 
-```
-!python -m pip install --user https://vve589t3tspu.s3.us-west-2.amazonaws.com/1/low_code_assistant-latest-py2.py3-none-any.whl
-```
-![pip install in cell](screenshots/install/workspace-in-cell.png)
-
-After this installation command is finished running, please refresh your browser tab. Then you will see the "Low Code Assistant" button in your Jupyter toolbar. Click on this button to initialize the Assistant.
-
-![after refresh](screenshots/install/workspace-after-refresh-highlight.png)
-
-This  is the easiest way to get started, but if you restart your workspace, you will need to re-enable Low Code Assistant again. To enable LCA more permanently, please follow the instructions below for:
-
- * [Installing in a project](#enabling-low-code-assistant-for-a-domino-project)
- * [Installing in a Compute environment](#enabling-low-code-assistant-for-a-domino-compute-environment)
+Enabling LCA in your organization's most used compute environments (CE) is the fastest way to deploy LCA for your organization. This way, LCA will appear automatically in any Jupyter toolbar that is built from that CE. However, the CE will need to be rebuilt everytime there is an LCA update. If CE's are not rebuilt weekly, we recommend enabling LCA atthe project-level.
 
 ## Enabling Low Code Assistant for a Domino Project
 
@@ -125,8 +113,7 @@ Now create a new workspace with "Jupyter" or "JupyterLab" and the Low Code Assis
 4. Save the default environment Dockerfile.
 5. **That’s it! You’re done!**
 
-The LCA toolbar button will now show up in the Jupyter toolbar for your customer.
-Be sure to add LCA to any other env’s that are frequently used by your customer.
+The LCA toolbar button will now show up in the Jupyter toolbar. Be sure to add LCA to any other env’s that are frequently used.
 
 * * *
 
@@ -137,7 +124,7 @@ Be sure to add LCA to any other env’s that are frequently used by your custome
 
 # 📈 Accelerate new Python/R analysts
 
-Low Code Assistant™ (LCA) accelerates universal data analysis tasks by autogenerating Python or R code with point & click GUIs.
+Low Code Assistant™ (LCA) accelerates common data analysis tasks by autogenerating Python or R code with point & click GUIs.
 
 For example, LCA can autogenerate Python or R code for these tasks:
 

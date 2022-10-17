@@ -1,4 +1,4 @@
-site_name: ''
+site_name: 'Low Code Assistant - Only on Domino'
 site_url: https://dominolowcode.github.io/
 nav:
    - index.md
@@ -46,5 +46,7 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-redirects:
-  'install.md': 'index.md'
+plugins:
+    - redirects:
+        redirect_maps:
+            'docs/install.md': 'docs/index.md'

@@ -2,3 +2,4 @@ typer
 mkdocs
 mkdocs-material
 playwright
+mkdocs-redirects

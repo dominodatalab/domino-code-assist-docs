@@ -32,9 +32,7 @@ If you restart your workspace, you will need to do steps 1-3 again. To enable LC
 There are 2 ways to make LCA a default configuration:
 
  * [Enable in a Domino Project](#enabling-low-code-assistant-for-a-domino-project), or
- * [Enable in a Domino Compute Environment](#enabling-low-code-assistant-for-a-domino-compute-environment)
-
-Enabling LCA in your organization's most used compute environments (CE) is the fastest way to deploy LCA for your organization. This way, LCA will appear automatically in any Jupyter toolbar that is built from that CE. However, the CE will need to be rebuilt everytime there is an LCA update. If CE's are not rebuilt weekly, we recommend enabling LCA atthe project-level.
+ * [Enable in a Domino Compute Environment](#enabling-low-code-assistant-for-a-domino-compute-environment) (recommended)
 
 ## Enabling Low Code Assistant for a Domino Project
 
@@ -150,25 +148,3 @@ In tests with analysts new to Python (new graduates), Low Code Assistant (LCA) e
 <br />
 <br />
 
-# Low Code Assistant™ - Extended Screencast
-
-
-<video controls autoplay>
-  <source src="https://user-images.githubusercontent.com/1765949/185939829-2b99a7c9-10e7-4d67-8aa5-a2e1b9882a20.mp4" type="video/mp4">
-</video>
-<script>
-    var video = document.querySelector('video');
-    video.currentTime = 0.5;
-</script>
-
-
-<!-- This video shows how to
-
-  * Initialize the Low Code Assistant™
-  * Open the *'Load data'* UI from the Low Code Assistant™
-  * Navigate to the `titanic.csv` file.
-  * Click the file, to generate the `Pandas` code
- -->
-
-[Get started](getting-started/loading-data/csv/){.md-button .md-button--primary}
-[Installation](install.md){.md-button .md-button--secondary}

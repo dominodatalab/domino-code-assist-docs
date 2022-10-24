@@ -99,3 +99,23 @@ E.g. for load-csv see also the [./scripts/README.md](./scripts/README.md):
    * Click Export -> 'Split by Sub-Blocks', 'High', 'Stereo' -> Download and put the files in audio/load-csv
    * Run `$ python capture.py load-csv --no-general-screenshots` again so we get the right timing (saved in audio/load-csv.json)
    * Run `$ python capture.py audio load-csv` to insert the audio into the video.
+
+# Screenshots
+
+To get a consistent window size for screenshots:
+
+1. Identify the browser window (assuming Firefox since it has nice screenshot capability).
+
+```bash
+$ wmctrl -l
+0x0360003d  0 propane Domino — Mozilla Firefox
+```
+
+2. Resize the window.
+
+```bash
+$ wmctrl -i -r 0x0360003d -e 0,0,0,1252,1037
+```
+
+3. Open Developer Tools and pop it out to a separate window.
+4. Run the `:screenshot` command in the Console. You can specify options (see [this](https://firefox-source-docs.mozilla.org/devtools-user/taking_screenshots/index.html)).

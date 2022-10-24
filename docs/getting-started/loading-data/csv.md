@@ -8,7 +8,7 @@ The following video includes all the steps explained below
 
 ## Check installation
 
-If you have followed the [installation instructions](../../install.md), you should see a blue <span style="background-color: #2D71C7; color: white; padding: 3px 10px 3px 10px">Low Code Assistant™</span> button in the toolbar of your Jupyter notebook.
+If you have followed the [installation instructions](../../install.md), you should see a blue <span class="blue-button">Low Code Assistant™</span> button in the toolbar of your Jupyter notebook.
 ![Navigate to files](../../screenshots/load-csv/00-initial.png)
 
 ## Initialize the Low Code Assistant™

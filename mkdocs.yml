@@ -4,11 +4,13 @@ nav:
    - index.md
    - Getting started:
      - Tutorials: getting-started/index.md
-     - Loading data:
-       - CSV to Pandas: getting-started/loading-data/csv.md
-       - Snowflake to Pandas: getting-started/loading-data/snowflake.md
-       - Redshift to Pandas: getting-started/loading-data/redshift.md
-       - SQL with editor to Pandas: getting-started/loading-data/sql.md
+     - Loading Data:
+       - Loading Data from CSV: getting-started/loading-data/csv.md
+       - Loading Data with SQL: getting-started/loading-data/sql.md
+       - Loading Data from Snowflake: getting-started/loading-data/snowflake.md
+       - Loading Data from Redshift: getting-started/loading-data/redshift.md
+       - Loading Data from BigQuery: getting-started/loading-data/bigquery.md
+       - Loading Data from S3: getting-started/loading-data/s3.md
      - Transforming data:
        - Filter NaN values: getting-started/transform.md
      - Visualizing data:

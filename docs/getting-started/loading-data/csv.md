@@ -1,4 +1,4 @@
-# Loading data
+# Loading Data from CSV
 
 The following video includes all the steps explained below
 

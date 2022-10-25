@@ -57,3 +57,7 @@ Specify the project, region, dataset and table that you want to load. Click the 
 The required code will be inserted into a cell and immediately executed.
 
 <img class="screenshot" src="../../../screenshots/bigquery-inserted-code.png">
+
+<video controls>
+    <source src="https://user-images.githubusercontent.com/6134409/197819314-3b83455e-371a-4058-9e2d-d806ee216da2.mp4" type="video/mp4">
+</video>

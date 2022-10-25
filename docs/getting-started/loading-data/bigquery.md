@@ -36,7 +36,7 @@ The BigQuery project will appear under the list of data sources.
 
 <img class="screenshot" src="../../../screenshots/s3-added.png">
 
-## Load Data from BigQuery Data Source
+## Load Data from BigQuery
 
 Click the <span class="blue-button">Low Code Assistant™</span> button in the toolbar. It will insert a code snippet in a new code cell and execute it.
 

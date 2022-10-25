@@ -87,3 +87,4 @@ docs/videos
 audio/Project_*
 # intermediate generated files
 audio/*.mp3
+low-code-jupyter-docs.code-workspace

@@ -1,26 +1,25 @@
 site_name: ''
 site_url: https://dominolowcode.github.io/
 nav:
-   - index.md
-   - Getting started:
-     - Tutorials: getting-started/index.md
-     - Loading Data:
-       - Loading Data from CSV: getting-started/loading-data/csv.md
-       - Loading Data with SQL: getting-started/loading-data/sql.md
-       - Loading Data from Snowflake: getting-started/loading-data/snowflake.md
-       - Loading Data from Redshift: getting-started/loading-data/redshift.md
-       - Loading Data from BigQuery: getting-started/loading-data/bigquery.md
-       - Loading Data from S3: getting-started/loading-data/s3.md
-     - Transforming data:
-       - Filter NaN values: getting-started/transform.md
-     - Visualizing data:
-       - Scatter plot with Plotly: getting-started/viz/scatter.md
-     - Apps:
-       - App creation: getting-started/app/create.md
-       - Deploy an App: getting-started/app/deploy.md
-       - Upload data to an App: getting-started/app/upload.md
-     - Code snippets:
-       - Code snippets: getting-started/code-snippets.md
+    - index.md
+    - Installing:  install.md
+    - Loading Data:
+      - Loading Data from CSV: loading-data/csv.md
+      - Loading Data with SQL: loading-data/sql.md
+      - Loading Data from Snowflake: loading-data/snowflake.md
+      - Loading Data from Redshift: loading-data/redshift.md
+      - Loading Data from BigQuery: loading-data/bigquery.md
+      - Loading Data from S3: loading-data/s3.md
+    - Transformation:
+      - Filter NaN values: transform/filter-nan.md
+    - Visualization:
+      - Scatter plot with Plotly: visualization/scatter.md
+    - Apps:
+      - App creation: app/create.md
+      - Deploy an App: app/deploy.md
+      - Upload data to an App: app/upload.md
+    - Code snippets:
+      - Code snippets: code-snippets//code-snippets.md
 theme:
   name: material
   favicon: favicon.png
@@ -53,9 +52,9 @@ plugins:
             'docs/install.md': 'docs/index.md'
             'install.md': 'index.md'
             'docs/install.md': 'index.md'
-            'data-from-csv-in-python.md': 'getting-started/loading-data/csv.md'
-            'data-from-sql-in-python.md': 'getting-started/loading-data/sql.md'
-            'connect-to-snowflake-in-python.md': 'getting-started/loading-data/snowflake.md'
-            'connect-to-redshift-in-python.md': 'getting-started/loading-data/redshift.md'
-            'connect-to-bigquery-in-python.md': 'getting-started/loading-data/bigquery.md'
-            'connect-to-s3-in-python.md': 'getting-started/loading-data/s3.md'
+            'data-from-csv-in-python.md': 'loading-data/csv.md'
+            'data-from-sql-in-python.md': 'loading-data/sql.md'
+            'connect-to-snowflake-in-python.md': 'loading-data/snowflake.md'
+            'connect-to-redshift-in-python.md': 'loading-data/redshift.md'
+            'connect-to-bigquery-in-python.md': 'loading-data/bigquery.md'
+            'connect-to-s3-in-python.md': 'loading-data/s3.md'

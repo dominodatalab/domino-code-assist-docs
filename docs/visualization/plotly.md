@@ -1,4 +1,4 @@
-# Scatter plot
+# Plots with Plotly
 
 
 <video controls>

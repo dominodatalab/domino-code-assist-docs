@@ -13,7 +13,7 @@ nav:
     - Transformation:
       - Filter NaN values: transform/filter-nan.md
     - Visualization:
-      - Scatter plot with Plotly: visualization/scatter.md
+      - Plots with Plotly: visualization/plotly.md
     - Apps:
       - App creation: app/create.md
       - Deploy an App: app/deploy.md

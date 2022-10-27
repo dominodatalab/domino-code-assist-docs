@@ -27,7 +27,7 @@ Select "Git Credentials"
 
 ## Snippet format
 
-LCA looks for snippets in a "snippets" folder in the root of the repository. Any python files in this folder will be loaded as snippets.
+LCA looks for snippets in a `"snippets"` folder in the root of the repository. Any python files in this folder will be loaded as snippets.
 The sub folder structure will be maintained in the LCA menu.
 
 Example:

@@ -8,7 +8,7 @@ The following video includes all the steps explained below
 
 ## Initialize the Low Code Assistant™
 
-We start similarly as in [Loading data](loading-data/csv.md) by initializing the Low Code Assistant™.
+We start similarly as in [Loading data](../loading-data/csv.md) by initializing the Low Code Assistant™.
 
 ![Assistant ready](../screenshots/transform/01-assistant-ready.png)
 

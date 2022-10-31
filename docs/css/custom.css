@@ -27,12 +27,14 @@
   background-color: #2D71C7;
   color: white;
   padding: 3px 10px 3px 10px;
+  white-space: nowrap;
 }
 
 .green-button {
   background-color: #5ebe5e;
   color: white;
   padding: 3px 10px 3px 10px;
+  white-space: nowrap;
 }
 
 img.screenshot {

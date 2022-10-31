@@ -3,6 +3,7 @@ site_url: https://dominolowcode.github.io/
 nav:
     - index.md
     - Installing:  install.md
+    - Settings:  settings.md
     - Loading Data:
       - Loading Data from CSV: loading-data/csv.md
       - Loading Data with SQL: loading-data/sql.md

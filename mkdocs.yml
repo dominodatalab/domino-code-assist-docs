@@ -18,8 +18,11 @@ nav:
       - App creation: app/create.md
       - Deploy an App: app/deploy.md
       - Upload data to an App: app/upload.md
-    - Code snippets:
-      - Code snippets: code-snippets//code-snippets.md
+    - Code Snippets:
+      - Code Snippets: snippets/code-snippets.md
+      - Using Snippets: snippets/snippets-using.md
+      - Adding Snippets: snippets/snippets-adding.md
+      - Editing Snippets: snippets/snippets-editing.md
 theme:
   name: material
   favicon: favicon.png

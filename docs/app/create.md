@@ -41,7 +41,7 @@ df.head(2)
 
 ### Adding a histogram
 
-Create a histogram using the Low Code Assistant™, as described in [Scatter Plot](../visualization/scatter.md) or adding your own code. In our example we add the following code ourselves:
+Create a histogram using the Low Code Assistant™, as described in [Scatter Plot](../visualization/plotly.md) or adding your own code. In our example we add the following code ourselves:
 
 ```python
 import plotly.express as px
@@ -59,7 +59,7 @@ histogram_survived
 
 ### Adding a scatter plot
 
-Create a scatter plot using the Low Code Assistant™, as described in [Scatter Plot](../visualization/scatter.md). In our example we add the following code ourselves:
+Create a scatter plot using the Low Code Assistant™, as described in [Scatter Plot](../visualization/plotly.md). In our example we add the following code ourselves:
 
 ```python
 import plotly.express as px

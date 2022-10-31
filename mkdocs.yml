@@ -31,6 +31,7 @@ theme:
   features:
     - content.tabs.link
     - navigation.expand
+  custom_dir: overrides
 extra_css:
   - css/termynal.css
   - css/custom.css

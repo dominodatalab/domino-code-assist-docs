@@ -45,3 +45,13 @@ img.screenshot {
 video {
   width: 100%;
 }
+
+.sticky-banner {
+  background-color: lightblue;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.sticky-banner > h3 {
+  margin-top: 0;
+}

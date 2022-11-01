@@ -11,7 +11,7 @@ To get started,
 
 1. Run this command in Jupyter notebook or JupyterLab
 ```
-!`curl -sL L0.codes`
+!pip install low_code_assistant
 ```
 
 2. After this command finishes running, refresh your browser.

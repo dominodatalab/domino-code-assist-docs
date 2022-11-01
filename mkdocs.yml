@@ -1,29 +1,29 @@
-site_name: ''
+site_name: ""
 site_url: https://dominolowcode.github.io/
 nav:
-    - index.md
-    - Installing:  install.md
-    - Settings:  settings.md
-    - Loading Data:
+  - index.md
+  - Installing: install.md
+  - Settings: settings.md
+  - Loading Data:
       - Loading Data from CSV: loading-data/csv.md
       - Loading Data with SQL: loading-data/sql.md
       - Loading Data from Snowflake: loading-data/snowflake.md
       - Loading Data from Redshift: loading-data/redshift.md
       - Loading Data from BigQuery: loading-data/bigquery.md
       - Loading Data from S3: loading-data/s3.md
-    - Transformation:
+  - Transformation:
       - Filter NaN values: transform/filter-nan.md
-    - Visualization:
+  - Visualization:
       - Plots with Plotly: visualization/plotly.md
-    - Apps:
+  - Apps:
       - App creation: app/create.md
       - Deploy an App: app/deploy.md
       - Upload data to an App: app/upload.md
-    - Code Snippets:
+  - Code Snippets:
       - Code Snippets: snippets/code-snippets.md
       - Using Snippets: snippets/snippets-using.md
       - Adding Snippets: snippets/snippets-adding.md
-      - Editing Snippets: snippets/snippets-editing.md
+      - Creating Snippets: snippets/snippets-creating.md
 theme:
   name: material
   favicon: favicon.png
@@ -43,7 +43,7 @@ repo_name: low-code-jupyter-docs
 markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
-      alternate_style: true 
+      alternate_style: true
   - attr_list
   - md_in_html
   - admonition
@@ -52,14 +52,12 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
 plugins:
-    - redirects:
-        redirect_maps:
-            'docs/install.md': 'docs/index.md'
-            'install.md': 'index.md'
-            'docs/install.md': 'index.md'
-            'data-from-csv-in-python.md': 'loading-data/csv.md'
-            'data-from-sql-in-python.md': 'loading-data/sql.md'
-            'connect-to-snowflake-in-python.md': 'loading-data/snowflake.md'
-            'connect-to-redshift-in-python.md': 'loading-data/redshift.md'
-            'connect-to-bigquery-in-python.md': 'loading-data/bigquery.md'
-            'connect-to-s3-in-python.md': 'loading-data/s3.md'
+  - redirects:
+      redirect_maps:
+        "docs/install.md": "index.md"
+        "data-from-csv-in-python.md": "loading-data/csv.md"
+        "data-from-sql-in-python.md": "loading-data/sql.md"
+        "connect-to-snowflake-in-python.md": "loading-data/snowflake.md"
+        "connect-to-redshift-in-python.md": "loading-data/redshift.md"
+        "connect-to-bigquery-in-python.md": "loading-data/bigquery.md"
+        "connect-to-s3-in-python.md": "loading-data/s3.md"

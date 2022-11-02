@@ -5,7 +5,7 @@
 If you already have a workspace with "Jupyter" or "JupyterLab", you can enable Low Code Assistant (LCA) right now in your existing workspace. Run the following command in a notebook code cell:
 
 ```
-!pip install low_code_assistant
+!pip install --user low-code-assistant
 ```
 
 ![pip install in cell](screenshots/install/workspace-in-cell.png)

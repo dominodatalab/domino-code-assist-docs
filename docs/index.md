@@ -5,7 +5,7 @@
 
 Low Code Assistant™ (LCA) provides GUI shortcuts for common analysis boilerplate.
 
-> *Requirements:* JupyterLab 3 or Jupyter - Python 3.8 or higher
+> *Requirements:* JupyterLab 3 or Jupyter - Python 3.6 or higher
 
 To get started,
 
@@ -41,7 +41,7 @@ There are 2 ways to make LCA a default configuration:
 When a workspace is created, a `requirements.txt` file will be used to install Python packages into your new environment. 
 We can use this to install Low Code Assistant into any workspace created within a project.
 
-> *Requirements:* JupyterLab 3 or Jupyter - Python 3.8 or higher
+> *Requirements:* JupyterLab 3 or Jupyter - Python 3.6 or higher
 
 ### Check if you have a requirements.txt
 
@@ -106,7 +106,7 @@ Now create a new workspace with "Jupyter" or "JupyterLab" and the Low Code Assis
 
 ## Enabling Low Code Assistant for a Domino Compute Environment
 
-> *Requirements:* JupyterLab 3 or Jupyter - Python 3.8 or higher
+> *Requirements:* JupyterLab 3 or Jupyter - Python 3.6 or higher
 
 1. Go to the customer’s Domino Standard Environment (under Environments in the side navigation bar)
 2. Add this line to the end of the env’s Dockerfile setup (but before the last USER ubuntu command):

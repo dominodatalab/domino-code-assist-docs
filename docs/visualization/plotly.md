@@ -2,14 +2,57 @@
 
 === "Python"
 
-    ``` c
-    #include <stdio.h>
+    Open a Jupyter workspace.
 
-    int main(void) {
-      printf("Hello world!\n");
-      return 0;
-    }
-    ```
+    <img class="screenshot" src="../../screenshots/jupyer-session-fresh.png">
+
+    Press the <span class="blue-button">Low Code Assistane</span> button.
+
+    <img class="screenshot" src="../../screenshots/jupyer-lca-code.png">
+
+    Once the Low Code Assistant™ has been initialised if you hover above a code cell, you will see the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png">. If you hover above the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png">, it will show a popup menu. Select the _Load Data_ item from the menu.
+
+    <img class="screenshot" src="../../screenshots/jupyer-lca-menu.png">
+
+    The _LCA Load Data_ dialog will open.
+
+    <img class="screenshot" src="../../screenshots/jupyer-lca-load-data.png">
+
+    Click on the _Demo Data_ tab.
+
+    <img class="screenshot" src="../../screenshots/jupyer-lca-load-data-demo-data.png">
+
+    Choose a dataset. Optionally specify a custom variable name. Press the <span class="blue-button">Insert Code</span> button.
+
+    <img class="screenshot" src="../../screenshots/jupyer-lca-load-data-demo-data-list.png">
+
+    The required code with be inserted into the notebook cell.
+
+    <img class="screenshot" src="../../screenshots/jupyer-lca-load-data-demo-data-iris-code.png">
+
+    Hover above the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png"> and select the _Visualization_ item from the menu.
+
+    <img class="screenshot" src="../../screenshots/jupyer-lca-menu-visualization.png">
+
+    The _LCA Visualization_ dialog will open.
+
+    <img class="screenshot" src="../../screenshots/jupyer-lca-data-visualization.png">
+
+    Select a data frame from the dropdown selector.
+
+    <img class="screenshot" src="../../screenshots/jupyer-lca-data-visualization-dropdown.png">
+
+    Select a plot type from the dropdown selector.
+
+    <img class="screenshot" src="../../screenshots/jupyer-lca-data-visualization-plot-type.png">
+
+    Specify the parameters for the plot. Press the <span class="blue-button">Apply</span> button.
+
+    <img class="screenshot" src="../../screenshots/jupyer-lca-data-visualization-plot-parameters.png">
+
+    The required code with be inserted into the notebook.
+
+    <img class="screenshot" src="../../screenshots/jupyer-lca-data-visualization-code.png">
 
 === "R"
 

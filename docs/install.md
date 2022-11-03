@@ -96,3 +96,11 @@ Now create a new workspace with "Jupyter" or "JupyterLab" and the Low Code Assis
 
 The LCA toolbar button will now show up in the Jupyter toolbar for your customer.
 Be sure to add LCA to any other env’s that are frequently used by your customer.
+
+## Rebuilding the Compute Environment
+
+1. Go to the _Environments_ page (the cube icon in the left-side-bar).
+2. Open your LCA environment definition.
+3. Click the <span class="white-button">Edit Definition</span> button.
+4. Scroll to the bottom and check :fontawesome-regular-square: _Full rebuild without cache_.
+5. Click the <span class="white-button">Build</span> button.

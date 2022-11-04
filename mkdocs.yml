@@ -4,6 +4,8 @@ nav:
   - index.md
   - Installing: install.md
   - Settings: settings.md
+  - Project:
+      - Files: project/files.md
   - Loading Data:
       - Loading Data from CSV: loading-data/csv.md
       - Loading Data with SQL: loading-data/sql.md

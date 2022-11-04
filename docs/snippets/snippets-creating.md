@@ -1,44 +1,4 @@
-# Code Snippets
-
-## Using snippets
-
-<div>Choose "Insert snippets" from the Low Code Assistant™ menu to insert code snippets into your notebook.</div>
-![Snippets Context Menu](../screenshots/snippets/lca_context_menu.png){: style="width: 299px"}
-
-Browse the available snippets and select the one you want to insert.
-![Snippets Main](../screenshots/snippets/snippets_main.png){: style="width: 1024px"}
-![Snippets Code](../screenshots/snippets/snippets_sub.png){: style="width: 1024px"}
-
-## Adding snippets
-
-A snippet library can be added by adding a git repository with snippets to your Domino project.
-![Snippets repo](../screenshots/snippets/snippets_git_repos.png){: style="width: 1024px"}
-An example snippet library can be found here: [https://github.com/dominodatalab/low-code-assistant-snippets](https://github.com/dominodatalab/low-code-assistant-snippets)
-
-If credentials are required to access the repository, they can be setup in your account:
-
-<div>Select "Account Settings"</div>
-![Account Settings](../screenshots/snippets/account_settings_menu.png){: style="width: 347px"}
-
-Select "Git Credentials"
-![Account Page](../screenshots/snippets/snippet_git_account_page.png){: style="width: 1024px"}
-
-![Git credentials](../screenshots/snippets/snippets_git_credentials.png){: style="width: 1024px"}
-
-## Snippet format
-
-LCA looks for snippets in a `"snippets"` folder in the root of the repository. Any python files in this folder will be loaded as snippets.
-The sub folder structure will be maintained in the LCA menu.
-
-Example:
-<pre>
-MySnippets
- ├── .git
- ├── snippets
-      ├── my_snippet.py
-      ├── subfolder
-           ├── my_other_snippet.py
-</pre>
+# Creating Snippets
 
 ## Editing snippets
 

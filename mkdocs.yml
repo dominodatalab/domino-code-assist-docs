@@ -22,7 +22,6 @@ nav:
       - Deploy an App: app/deploy.md
       - Upload data to an App: app/upload.md
   - Code Snippets:
-      - Code Snippets: snippets/code-snippets.md
       - Using Snippets: snippets/snippets-using.md
       - Adding Snippets: snippets/snippets-adding.md
       - Creating Snippets: snippets/snippets-creating.md

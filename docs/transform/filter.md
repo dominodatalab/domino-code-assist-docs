@@ -46,7 +46,7 @@ A quick filter allows you to rapidly select a subset of rows. It only allows for
 
 ## Manual Filter
 
-A manual filter allows you to apply multiple operations. We are going to retain only records where `Embarked` is `"S"` and `Pclass` is less than 3.
+A manual filter allows you to apply multiple operations. We are going to retain only records where `Embarked` is `"S"` and `Pclass` is less than 3. We'll do this by chaining multiple filtering operations.
 
 === "Python"
 
@@ -62,12 +62,12 @@ A manual filter allows you to apply multiple operations. We are going to retain 
 
     <img class="screenshot" src="../../screenshots/jupyter-titanic-filter-manual-pclass.png">
 
-    The preview will be updated to show only those records where `Embarked` is `"S"` and `Pclass` is less than 3.  Press the <span class="blue-button">Insert Code</span> button.
+    The preview will be updated to show only those records where `Embarked` is `"S"` and `Pclass` is less than 3. Press the <span class="blue-button">Insert Code</span> button.
 
     <img class="screenshot" src="../../screenshots/jupyter-titanic-filter-manual-pclass-preview.png">
 
     The required code will be inserted into the notebook and immediately executed.
-    
+
     <img class="screenshot" src="../../screenshots/jupyter-titanic-filter-manual-insert-code.png">
 
 === "R"

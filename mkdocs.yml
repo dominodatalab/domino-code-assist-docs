@@ -14,7 +14,9 @@ nav:
       - Loading Data from BigQuery: loading-data/bigquery.md
       - Loading Data from S3: loading-data/s3.md
   - Transformation:
-      - Filter NaN values: transform/filter-nan.md
+      - Filtering Data: transform/filter.md
+      - Grouping & Aggregating: transform/group-aggregate.md
+      - Chaining Transformations: transform/chaining.md
   - Visualization:
       - Plots with Plotly: visualization/plotly.md
   - Apps:

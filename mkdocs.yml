@@ -2,8 +2,8 @@ site_name: ""
 site_url: https://dominolowcode.github.io/
 nav:
   - index.md
-  - Installing: install.md
-  - "INITIALISE 🔥": initialise.md
+  - Install: install.md
+  - Initialize: initialise.md
   - Settings: settings.md
   - Project:
       - Files: project/files.md

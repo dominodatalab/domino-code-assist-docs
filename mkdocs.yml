@@ -10,10 +10,10 @@ nav:
   - Loading Data:
       - Loading Data from CSV: loading-data/csv.md
       - Loading Data with SQL: loading-data/sql.md
-      - Loading Data from Snowflake: loading-data/snowflake.md
-      - Loading Data from Redshift: loading-data/redshift.md
       - Loading Data from BigQuery: loading-data/bigquery.md
       - Loading Data from S3: loading-data/s3.md
+      - Loading Data from Redshift: loading-data/redshift.md
+      - Loading Data from Snowflake: loading-data/snowflake.md
   - Transformation:
       - Filtering Data: transform/filter.md
       - Grouping & Aggregating: transform/group-aggregate.md

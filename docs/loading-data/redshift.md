@@ -35,7 +35,7 @@ The Redshift cluster will be added to the list of available data sources.
 <img class="screenshot" src="../../screenshots/redshift-cluster-settings.png">
 <img class="screenshot" src="../../screenshots/redshift-data-sources-list.png">
 
-## Load Data from BigQuery
+## Load Data from Redshift
 
 === "Python"
 

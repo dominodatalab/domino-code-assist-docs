@@ -50,7 +50,7 @@ The BigQuery project will appear under the list of data sources.
 
     <img class="screenshot" src="../../screenshots/bigquery-lca-menu.png">
 
-    Under the drop-down list of data sources you will find the data source which we created earlier. Select it.
+    Under the drop-down list of data sources you will find the BigQuery data source which we created earlier. Select it.
 
     <img class="screenshot" src="../../screenshots/bigquery-lca-data-sources.png">
 

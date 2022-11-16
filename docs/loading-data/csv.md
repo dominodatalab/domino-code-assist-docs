@@ -1,8 +1,6 @@
 # Loading Data from CSV
 
-<video controls>
-    <source src="https://user-images.githubusercontent.com/46192475/182823773-7af97491-89d4-44f3-9996-9b08900d38e1.mp4" type="video/mp4">
-</video>
+<!-- https://user-images.githubusercontent.com/46192475/182823773-7af97491-89d4-44f3-9996-9b08900d38e1.mp4 -->
 
 ## Uploading a CSV File
 

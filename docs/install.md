@@ -8,6 +8,12 @@ If you already have a workspace with "Jupyter" or "JupyterLab", you can enable L
 !pip install --user low-code-assistant
 ```
 
+To upgrade an existing version do:
+
+```
+!pip install --user --upgrade low-code-assistant
+```
+
 ![pip install in cell](screenshots/install/workspace-in-cell.png)
 
 After the installation completes, refresh your browser tab -- then the "Low Code Assistant" button will appear in the Jupyter toolbar. Click this button to initialize the Assistant.

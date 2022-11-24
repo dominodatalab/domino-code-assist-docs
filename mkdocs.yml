@@ -24,6 +24,7 @@ nav:
       - App creation: app/create.md
       - Examples:
           - Stocks App: app/example/stock.md
+          - Drug Classification App: app/example/drug-classification.md
       - Deploy an App: app/deploy.md
       - Upload data to an App: app/upload.md
   - Code Snippets:

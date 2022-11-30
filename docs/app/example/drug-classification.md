@@ -1,5 +1,13 @@
 # Drug Classification App
 
+## Background
+
+## Requirements
+
+{!app/example/include-requirements.md!}
+
+## Tutorial
+
 Initialise the Low Code Assistant™.
 
 <img class="screenshot" src="../../../screenshots/app-example-drug-classification-initialise.png">

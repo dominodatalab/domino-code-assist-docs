@@ -1,5 +1,14 @@
 # Stock App
 
+## Background
+
+## Requirements
+
+{!app/example/include-requirements.md!}
+
+## Tutorial
+
+
 Initialise the Low Code Assistant™.
 
 <img class="screenshot" src="../../../screenshots/app-example-stock-initialise.png">

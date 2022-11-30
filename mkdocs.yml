@@ -58,6 +58,8 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - markdown_include.include:
+      base_path: docs
 plugins:
   - redirects:
       redirect_maps:
@@ -68,3 +70,6 @@ plugins:
         "connect-to-redshift-in-python.md": "loading-data/redshift.md"
         "connect-to-bigquery-in-python.md": "loading-data/bigquery.md"
         "connect-to-s3-in-python.md": "loading-data/s3.md"
+  - exclude:
+      regex:
+        - ".*include.*"

@@ -3,3 +3,5 @@ mkdocs
 mkdocs-material
 playwright
 mkdocs-redirects
+markdown-include==0.8.0
+mkdocs-exclude==1.0.2

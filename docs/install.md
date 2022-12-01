@@ -1,6 +1,16 @@
 # Installation
 
-## Enabling Low Code Assistant in Jupyter/JupyterLab
+## Check Python Version
+
+To check the version of Python in your environment, run the following:
+
+```python
+from platform import python_version
+
+python_version()
+```
+
+## Enabling Low Code Assistant in Jupyter
 
 If you already have a workspace with "Jupyter" or "JupyterLab", you can enable Low Code Assistant (LCA) right now in your existing workspace. Run the following command in a notebook code cell:
 
@@ -24,6 +34,18 @@ This is the easiest way to get started with LCA, but if you restart you workspac
 
  * [Installing in a project](#enabling-low-code-assistant-in-a-domino-project)
  * [Installing in a Compute environment](#enabling-low-code-assistant-in-a-domino-compute-environment)
+
+## Check LCA Version
+
+To check the version of LCA installed, run the following:
+
+```python
+import low_code_assistant
+
+low_code_assistant.__version__
+```
+
+Follow [these instructions](#enabling-low-code-assistant-in-jupyter) to upgrade your LCA installation.
 
 ## Enabling Low Code Assistant in a Domino Project
 

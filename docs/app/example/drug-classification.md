@@ -1,6 +1,10 @@
 # Drug Classification App
 
+<img class="screenshot" src="../../../screenshots/drug-classification.gif">
+
 ## Background
+
+This tutorial will show you how to build a simple app using drug classification data. The app will allow you to interactively explore the relationship between drug and Sodium/Potassium ratio and age of recipient. The app includes both a visualisation and a table, along with dropdown filters which allow you to select a subset of drugs and a minimum Sodium/Potassium ratio.
 
 ## Requirements
 

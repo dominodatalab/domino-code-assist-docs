@@ -1,6 +1,10 @@
 # Stock App
 
+<img class="screenshot" src="../../../screenshots/stocks.gif">
+
 ## Background
+
+This tutorial will show you how to build a simple app using stock price data. The app will allow you to interactively explore the stock prices for Apple (AAPL), Facebook (FB) and Google (GOOGL) versus time. The app includes both a visualisation and a table, along with a dropdown filter which allows you to select a subset of the stocks.
 
 ## Requirements
 

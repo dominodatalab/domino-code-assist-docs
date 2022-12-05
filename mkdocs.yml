@@ -63,6 +63,7 @@ markdown_extensions:
 plugins:
   - redirects:
       redirect_maps:
+        "getting-started.md": "index.md"
         "docs/install.md": "index.md"
         "data-from-csv-in-python.md": "loading-data/csv.md"
         "data-from-sql-in-python.md": "loading-data/sql.md"

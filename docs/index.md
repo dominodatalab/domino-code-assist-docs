@@ -1,4 +1,4 @@
-# Low Code Assistant™ (LCA) 
+# Low Code Assistant (LCA) 
 
 The Low Code Assistant provides a simple point-and-click interface for generating Python/R code. It aims to enable those not familiar with writing code to become productive in Domino Data Lab as quickly as possible.
 
@@ -6,7 +6,7 @@ The Low Code Assistant provides a simple point-and-click interface for generatin
 
 ## Test
 
-Low Code Assistant™ (LCA) provides GUI shortcuts for common analysis boilerplate.
+Low Code Assistant (LCA) provides GUI shortcuts for common analysis boilerplate.
 
 > *Requirements:* JupyterLab 3 or Jupyter - Python 3.6 or higher
 
@@ -27,7 +27,7 @@ If you restart your workspace, you will need to do steps 1-3 again. To enable LC
 
 # 📈 Accelerate new Python/R analysts
 
-Low Code Assistant™ (LCA) accelerates common data analysis tasks by autogenerating Python or R code with point & click GUIs.
+Low Code Assistant (LCA) accelerates common data analysis tasks by autogenerating Python or R code with point & click GUIs.
 
 For example, LCA can autogenerate Python or R code for these tasks:
 

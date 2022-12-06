@@ -16,7 +16,7 @@ The Low Code Assistant (LCA) can be used with either Python or R.
 
       <img class="screenshot" src="../../screenshots/lca-install-jupyter.png">
 
-      After the installation completes, refresh your browser tab. The <span class="blue-button">Low Code Assistant™</span> button will appear in the Jupyter toolbar. Click this button to initialize the assistant.
+      After the installation completes, refresh your browser tab. The <span class="blue-button">Low Code Assistant</span> button will appear in the Jupyter toolbar. Click this button to initialize the assistant.
 
       <img class="screenshot" src="../../screenshots/lca-installed-jupyter.png">
 

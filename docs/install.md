@@ -14,11 +14,11 @@ The Low Code Assistant (LCA) can be used with either Python or R.
       !pip install --user low-code-assistant
       ```
 
-      <img class="screenshot" src="../../screenshots/lca-install-jupyter.png">
+      <img class="screenshot" src="../screenshots/lca-install-jupyter.png">
 
       After the installation completes, refresh your browser tab. The <span class="blue-button">Low Code Assistant</span> button will appear in the Jupyter toolbar. Click this button to initialize the assistant.
 
-      <img class="screenshot" src="../../screenshots/lca-installed-jupyter.png">
+      <img class="screenshot" src="../screenshots/lca-installed-jupyter.png">
 
       To upgrade an existing version do:
 
@@ -37,13 +37,13 @@ The Low Code Assistant (LCA) can be used with either Python or R.
       remotes::install_github("dominodatalab/low-code-assistant-rstudio")
       ```
 
-      You may be prompted up update dependencies. Choose the appropriate option. The installation will take a fwe minutes.
+      You may be prompted to update dependencies. Choose the appropriate option. The installation will take a fwe minutes.
 
-      <img class="screenshot" src="../../screenshots/lca-install-rstudio.png">
+      <img class="screenshot" src="../screenshots/lca-install-rstudio.png">
 
       After the installation completes, refresh your browser tab. Unde the _Addins_ menu option you should now see an _ASSISTDOMINO_ section with various actions listed below. You can also confirm that the `{assistDomino}` package has been installed.
 
-      <img class="screenshot" src="../../screenshots/lca-installed-rstudio.png">
+      <img class="screenshot" src="../screenshots/lca-installed-rstudio.png">
 
 This is the easiest way to get started with LCA, but if you restart you workspace, you will need to reinstall Low Code Assistant again. To enable LCA more permanantly, [make it the default configuration](#make-lca-default-configuration).
 
@@ -67,35 +67,35 @@ Depending on whether or not you have a `requirements.txt` file follow the approp
 
 === "I have a requirements.txt"
 
-      <img class="screenshot" src="../../screenshots/requirements-location.png">
+      <img class="screenshot" src="../screenshots/requirements-location.png">
 
       1. Click on the `requirements.txt` file link.
       2. Click the <span class="white-button">Edit</span> button.
 
-         <img class="screenshot" src="../../screenshots/requirements-edit-button.png">
+         <img class="screenshot" src="../screenshots/requirements-edit-button.png">
 
       3. Add the `low-code-assistant` package to your `requirements.txt` file. You can specify a version like `low-code-assistant==0.4.1`. If you don't specify a version then the latest version will be installed.
 
-         <img class="screenshot" src="../../screenshots/requirements-edit.png">
+         <img class="screenshot" src="../screenshots/requirements-edit.png">
 
       4. Click the <span class="white-button">Save</span> button.
 
 === "I don't have a requirements.txt"
 
-      <img class="screenshot" src="../../screenshots/requirements-missing.png">
+      <img class="screenshot" src="../screenshots/requirements-missing.png">
 
       1. Download our [requirements.txt](requirements.txt).
       2. Press the _Upload_ button. Either drag and drop or browse to find the `requirements.txt` file.
 
-         <img class="screenshot" src="../../screenshots/requirements-upload-select.png">
+         <img class="screenshot" src="../screenshots/requirements-upload-select.png">
 
       3. Click the <span class="blue-button">Upload</span> button.
       
-         <img class="screenshot" src="../../screenshots/requirements-upload.png">
+         <img class="screenshot" src="../screenshots/requirements-upload.png">
 
       4. Confirm that the `requirements.txt` file has been successfully uploaded.
 
-         <img class="screenshot" src="../../screenshots/requirements-location.png">
+         <img class="screenshot" src="../screenshots/requirements-location.png">
 
 Now create a new _Jupyter_ or _JupyterLab_ workspace with and the Low Code Assistant button will be available.
 

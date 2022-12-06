@@ -30,6 +30,21 @@ The Low Code Assistant (LCA) can be used with either Python or R.
 
       If you do not already have an _RStudio_ workspace, then create on now. Launch the workspace.
 
+      Run the following command in the RStudio console:
+
+      ```r
+      install.packages("remotes")
+      remotes::install_github("dominodatalab/low-code-assistant-rstudio")
+      ```
+
+      You may be prompted up update dependencies. Choose the appropriate option. The installation will take a fwe minutes.
+
+      <img class="screenshot" src="../../screenshots/lca-install-rstudio.png">
+
+      After the installation completes, refresh your browser tab. Unde the _Addins_ menu option you should now see an _ASSISTDOMINO_ section with various actions listed below. You can also confirm that the `{assistDomino}` package has been installed.
+
+      <img class="screenshot" src="../../screenshots/lca-installed-rstudio.png">
+
 This is the easiest way to get started with LCA, but if you restart you workspace, you will need to reinstall Low Code Assistant again. To enable LCA more permanantly, [make it the default configuration](#make-lca-default-configuration).
 
 ## Make LCA the Default Configuration {#make-lca-default-configuration}
@@ -46,78 +61,54 @@ Enabling LCA in your organization's most used compute environments (CE) is the f
 When a workspace is created, a `requirements.txt` file will be used to install Python packages into your new environment. 
 We can use this to install Low Code Assistant into any workspace created within a project.
 
-### Check if you have a requirements.txt
+Check if you have a `requirements.txt` file. Navigate to _Files_. You should see something like the image below. If there are many files then you can search for the `requirements.txt` file.
 
-Navigate to "Files", so you should see the following:
-![](screenshots/install/open-requirements-txt.png)
+Depending on whether or not you have a `requirements.txt` file follow the appropriate instructions below.
 
-You may or may not already have a `requirements.txt` file
+=== "I have a requirements.txt"
 
-### I have a requirements.txt file
+      <img class="screenshot" src="../../screenshots/requirements-location.png">
 
-#### Click on the `requirements.txt` file,
-![click-open](screenshots/install/requirements-txt-open-highlight.png)
+      1. Click on the `requirements.txt` file link.
+      2. Click the <span class="white-button">Edit</span> button.
 
-#### Click the edit Button
+         <img class="screenshot" src="../../screenshots/requirements-edit-button.png">
 
-![click](screenshots/install/requirements-txt-click-edit-highlight.png)
+      3. Add the `low-code-assistant` package to your `requirements.txt` file. You can specify a version like `low-code-assistant==0.4.1`. If you don't specify a version then the latest version will be installed.
 
-#### Add the LCA url to your `requirements.txt` file:
+         <img class="screenshot" src="../../screenshots/requirements-edit.png">
 
-Put the following text in your requirements.txt file.
-```
-https://vve589t3tspu.s3.us-west-2.amazonaws.com/1/low_code_assistant-latest-py2.py3-none-any.whl
-```
+      4. Click the <span class="white-button">Save</span> button.
 
-And click "Save".
+=== "I don't have a requirements.txt"
 
-![added](screenshots/install/requirements-txt-save-highlight.png)
+      <img class="screenshot" src="../../screenshots/requirements-missing.png">
 
-Now create a new workspace with "Jupyter" or "JupyterLab" and the Low Code Assistant button should be available.
+      1. Download our [requirements.txt](requirements.txt).
+      2. Press the _Upload_ button. Either drag and drop or browse to find the `requirements.txt` file.
 
-### I do not have a requirements.txt file
+         <img class="screenshot" src="../../screenshots/requirements-upload-select.png">
 
-Download our [requirements.txt file by right clicking this link and choose "Save link as" or "Save as" or "](https://raw.githubusercontent.com/dominodatalab/low-code-jupyter-docs/main/docs/requirements.txt)
+      3. Click the <span class="blue-button">Upload</span> button.
+      
+         <img class="screenshot" src="../../screenshots/requirements-upload.png">
 
+      4. Confirm that the `requirements.txt` file has been successfully uploaded.
 
-#### Navigate to `Files`
+         <img class="screenshot" src="../../screenshots/requirements-location.png">
 
-
-![Navigate to files](screenshots/install/no-requirements-txt-upload-click.png)
-
-#### Click on upload
-
-![Navigate to files](screenshots/install/no-requirements-txt-upload-click-highlight.png)
-
-#### Drag and drop the requirements.txt file you downloaded
-
-![dragged](screenshots/install/no-requirements-txt-upload-dragged.png)
-
-
-#### Click upload
-
-![dragged](screenshots/install/no-requirements-txt-upload-dragged-highlight.png)
-
-#### Confirm your requirements.txt file is uploaded
-
-It might take a few seconds, but you should see the `requirements.txt` file in you "Files" list.
-
-![dragged](screenshots/install/no-requirements-txt-uploaded-highlight.png)
-
-Now create a new workspace with "Jupyter" or "JupyterLab" and the Low Code Assistant button should be available.
+Now create a new _Jupyter_ or _JupyterLab_ workspace with and the Low Code Assistant button will be available.
 
 ## Enable LCA in a Domino Compute Environment {#enable-lca-domino-compute-environment}
 
-1. Go to the customer’s Domino Standard Environment (under Environments in the side navigation bar)
-2. Add this line to the end of the env’s Dockerfile setup (but before the last USER ubuntu command):
-   <pre><code>
-   RUN pip install https://vve589t3tspu.s3.us-west-2.amazonaws.com/1/low_code_assistant-latest-py2.py3-none-any.whl
-   </code></pre>
-4. Save the default environment Dockerfile.
-5. **That’s it! You’re done!**
+1. Go to the Domino Standard Environment (under Environments in the side navigation bar).
+2. Add this line to the end of the environment's `Dockerfile` setup (but before the last `USER ubuntu` command):
+    ```
+    RUN pip install low-code-assistant
+    ```
+3. Save the default environment `Dockerfile`.
 
-The LCA toolbar button will now show up in the Jupyter toolbar for your customer.
-Be sure to add LCA to any other env’s that are frequently used by your customer.
+The LCA toolbar button will now show up in the Jupyter toolbar. Add LCA to any other frequently used environments.
 
 ## Rebuilding the Compute Environment
 
@@ -129,6 +120,8 @@ Be sure to add LCA to any other env’s that are frequently used by your custome
 
 ## Check Versions
 
+It can be useful to know the precise version of Python and LCA which are running in your environment.
+
 ### Check Python Version
 
 To check the version of Python in your environment, run the following:
@@ -139,7 +132,7 @@ from platform import python_version
 python_version()
 ```
 
-## Check LCA Version
+### Check LCA Version
 
 To check the version of LCA installed, run the following:
 

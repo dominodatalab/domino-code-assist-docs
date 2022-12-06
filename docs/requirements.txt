@@ -1,1 +1,1 @@
-https://vve589t3tspu.s3.us-west-2.amazonaws.com/1/low_code_assistant-latest-py2.py3-none-any.whl
+low-code-assistant

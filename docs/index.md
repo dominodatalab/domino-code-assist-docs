@@ -1,5 +1,6 @@
 # Low Code Assistant™ (LCA) 
 
+The Low Code Assistant provides a simple point-and-click interface for generating Python/R code. It aims to enable those not familiar with writing code to become productive in Domino Data Lab as quickly as possible.
 
 # 🏃 Quickstart
 

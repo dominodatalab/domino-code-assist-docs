@@ -25,25 +25,6 @@ To get started,
 
 If you restart your workspace, you will need to do steps 1-3 again. To enable LCA more permanently, please see "Make LCA a default configuration" below.
 
-* * *
-
-<br />
-<br />
-<br />
-<br />
-
-# 🌐 Make LCA a default configuration
-
-There are 2 ways to make LCA a default configuration:
-
- * [Enable in a Domino Project](#enabling-low-code-assistant-for-a-domino-project), or
- * [Enable in a Domino Compute Environment](#enabling-low-code-assistant-for-a-domino-compute-environment) (recommended)
-
-<br />
-<br />
-<br />
-<br />
-
 # 📈 Accelerate new Python/R analysts
 
 Low Code Assistant™ (LCA) accelerates common data analysis tasks by autogenerating Python or R code with point & click GUIs.

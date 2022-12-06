@@ -1,53 +1,47 @@
 # Installation
 
-## Check Python Version
+## Enabling Low Code Assistant
 
-To check the version of Python in your environment, run the following:
+The Low Code Assistant (LCA) can be used with either Python or R.
 
-```python
-from platform import python_version
+=== "Python"
 
-python_version()
-```
+      If you do not already have a _Jupyter_ or _JupyterLab_ workspace, then create on now. Launch the workspace.
 
-## Enabling Low Code Assistant in Jupyter
+      Run the following command in a notebook code cell:
 
-If you already have a workspace with "Jupyter" or "JupyterLab", you can enable Low Code Assistant (LCA) right now in your existing workspace. Run the following command in a notebook code cell:
+      ```
+      !pip install --user low-code-assistant
+      ```
 
-```
-!pip install --user low-code-assistant
-```
+      <img class="screenshot" src="../../screenshots/lca-install-jupyter.png">
 
-To upgrade an existing version do:
+      After the installation completes, refresh your browser tab. The <span class="blue-button">Low Code Assistant™</span> button will appear in the Jupyter toolbar. Click this button to initialize the assistant.
 
-```
-!pip install --user --upgrade low-code-assistant
-```
+      <img class="screenshot" src="../../screenshots/lca-installed-jupyter.png">
 
-![pip install in cell](screenshots/install/workspace-in-cell.png)
+      To upgrade an existing version do:
 
-After the installation completes, refresh your browser tab -- then the "Low Code Assistant" button will appear in the Jupyter toolbar. Click this button to initialize the Assistant.
+      ```
+      !pip install --user --upgrade low-code-assistant
+      ```
 
-![after refresh](screenshots/install/workspace-after-refresh-highlight.png)
+=== "R"
 
-This is the easiest way to get started with LCA, but if you restart you workspace, you will need to reinstall Low Code Assistant again. To enable LCA more permanantly, please follow the instructions for:
+      If you do not already have an _RStudio_ workspace, then create on now. Launch the workspace.
 
- * [Installing in a project](#enabling-low-code-assistant-in-a-domino-project)
- * [Installing in a Compute environment](#enabling-low-code-assistant-in-a-domino-compute-environment)
+This is the easiest way to get started with LCA, but if you restart you workspace, you will need to reinstall Low Code Assistant again. To enable LCA more permanantly, [make it the default configuration](#make-lca-default-configuration).
 
-## Check LCA Version
+## Make LCA the Default Configuration {#make-lca-default-configuration}
 
-To check the version of LCA installed, run the following:
+There are 2 ways to make LCA a default configuration:
 
-```python
-import low_code_assistant
+ * [Enable in a Domino Project](#enable-lca-domino-project), or
+ * [Enable in a Domino Compute Environment](#enable-lca-domino-compute-environment)
 
-low_code_assistant.__version__
-```
+Enabling LCA in your organization's most used compute environments (CE) is the fastest way to deploy LCA. This way, LCA will appear automatically in any Jupyter or RStudio toolbar that is built from that CE. However, the CE will need to be rebuilt everytime there is an LCA update. If CE's are not rebuilt weekly, we recommend enabling LCA at the project-level.
 
-Follow [these instructions](#enabling-low-code-assistant-in-jupyter) to upgrade your LCA installation.
-
-## Enabling Low Code Assistant in a Domino Project
+## Enable LCA in a Domino Project {#enable-lca-domino-project}
 
 When a workspace is created, a `requirements.txt` file will be used to install Python packages into your new environment. 
 We can use this to install Low Code Assistant into any workspace created within a project.
@@ -112,7 +106,7 @@ It might take a few seconds, but you should see the `requirements.txt` file in y
 
 Now create a new workspace with "Jupyter" or "JupyterLab" and the Low Code Assistant button should be available.
 
-## Enabling Low Code Assistant in a Domino Compute environment
+## Enable LCA in a Domino Compute Environment {#enable-lca-domino-compute-environment}
 
 1. Go to the customer’s Domino Standard Environment (under Environments in the side navigation bar)
 2. Add this line to the end of the env’s Dockerfile setup (but before the last USER ubuntu command):
@@ -132,3 +126,27 @@ Be sure to add LCA to any other env’s that are frequently used by your custome
 3. Click the <span class="white-button">Edit Definition</span> button.
 4. Scroll to the bottom and check :fontawesome-regular-square: _Full rebuild without cache_.
 5. Click the <span class="white-button">Build</span> button.
+
+## Check Versions
+
+### Check Python Version
+
+To check the version of Python in your environment, run the following:
+
+```python
+from platform import python_version
+
+python_version()
+```
+
+## Check LCA Version
+
+To check the version of LCA installed, run the following:
+
+```python
+import low_code_assistant
+
+low_code_assistant.__version__
+```
+
+Follow [these instructions](#enabling-low-code-assistant-in-jupyter) to upgrade your LCA installation.

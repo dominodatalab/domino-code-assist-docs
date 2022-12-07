@@ -44,7 +44,31 @@
 
     <img class="screenshot" src="../../screenshots/rstudio-menu-load-data-upload-code.png">
 
-## Using a CSV File from a Workspace
+## CSV File from an URL
+
+=== "Python"
+
+    This feature is not yet implemented in the Python version of LCA.
+
+=== "R"
+
+    Press the _Addin_ button. Select _LCA Load Data_ from the menu. Click on the _URL_ option.
+
+    <img class="screenshot" src="../../screenshots/rstudio-menu-load-data-url.png">
+
+    Paste the URL for a CSV file.
+
+    <img class="screenshot" src="../../screenshots/rstudio-menu-load-data-url-paste.png">
+
+    Press the <span class="blue-button">Insert Code</span> button. The required code will be inserted into a script.
+
+    <img class="screenshot" src="../../screenshots/rstudio-menu-load-data-url-insert-code.png">
+
+    Run the code and the data will be pulled from the URL and stored in a variable.
+
+    <img class="screenshot" src="../../screenshots/rstudio-menu-load-data-url-run.png">
+
+## CSV File from a Workspace
 
 === "Python"
 

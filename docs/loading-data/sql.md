@@ -41,6 +41,8 @@ This example shows how to load data using custom SQL and demonstrates the auto c
 
 === "R"
 
+    This feature is not yet implemented in the R version of LCA.
+
 ## SQL & Snowflake
 
 === "Python"
@@ -70,3 +72,5 @@ This example shows how to load data using custom SQL and demonstrates the auto c
     <img class="screenshot" src="../../screenshots/sql-snowflake-inserted-code.png">
 
 === "R"
+
+    This feature is not yet implemented in the R version of LCA.

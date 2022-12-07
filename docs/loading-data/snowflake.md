@@ -55,3 +55,5 @@ The Snowflake connection will appear under the list of data sources.
     <img class="screenshot" src="../../screenshots/snowflake-lca-inserted-code.png">
 
 === "R"
+
+    This feature is not yet implemented in the R version of LCA.

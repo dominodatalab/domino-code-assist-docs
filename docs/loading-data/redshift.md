@@ -64,3 +64,5 @@ The Redshift cluster will be added to the list of available data sources.
     <img class="screenshot" src="../../screenshots/jupyter-redshift-cluster-code-inserted.png">
 
 === "R"
+
+    This feature is not yet implemented in the R version of LCA.

@@ -63,3 +63,5 @@ The BigQuery project will appear under the list of data sources.
     <img class="screenshot" src="../../screenshots/bigquery-inserted-code.png">
 
 === "R"
+
+    This feature is not yet implemented in the R version of LCA.

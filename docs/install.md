@@ -138,14 +138,20 @@ Now create a new _Jupyter_ or _JupyterLab_ workspace with and the Low Code Assis
 
 ## LCA in Compute Environment {#enable-lca-domino-compute-environment}
 
-1. Go to the Domino Standard Environment (under Environments in the side navigation bar).
+1. Go to the Domino Standard Environment (under _Environments_ in the side navigation bar).
 2. Add this line to the end of the environment's `Dockerfile` setup (but before the last `USER ubuntu` command):
-    ```
-    RUN pip install low-code-assistant
-    ```
-3. Save the default environment `Dockerfile`.
 
-The LCA toolbar button will now show up in the Jupyter toolbar. Add LCA to any other frequently used environments.
+    === "Python"
+        ```
+        RUN pip install low-code-assistant
+        ```
+    === "R"
+        ```
+        RUN R -e 'remotes::install_github("dominodatalab/low-code-assistant-rstudio", upgrade = "always")'
+        ```
+
+3. Save the default environment `Dockerfile`.
+4. Click the _Build_ button.
 
 ## Rebuild Compute Environment
 

@@ -1,6 +1,6 @@
 # Installation
 
-## Enabling Low Code Assistant
+## Install the Low Code Assistant
 
 The Low Code Assistant (LCA) can be used with either Python or R.
 
@@ -47,7 +47,7 @@ The Low Code Assistant (LCA) can be used with either Python or R.
 
 This is the easiest way to get started with LCA, but if you restart you workspace, you will need to reinstall Low Code Assistant again. To enable LCA more permanantly, [make it the default configuration](#make-lca-default-configuration).
 
-## Make LCA the Default Configuration {#make-lca-default-configuration}
+## LCA Default Configuration {#make-lca-default-configuration}
 
 There are 2 ways to make LCA a default configuration:
 
@@ -56,7 +56,7 @@ There are 2 ways to make LCA a default configuration:
 
 Enabling LCA in your organization's most used compute environments (CE) is the fastest way to deploy LCA. This way, LCA will appear automatically in any Jupyter or RStudio toolbar that is built from that CE. However, the CE will need to be rebuilt everytime there is an LCA update. If CE's are not rebuilt weekly, we recommend enabling LCA at the project-level.
 
-## Enable LCA in a Domino Project {#enable-lca-domino-project}
+## LCA in Project {#enable-lca-domino-project}
 
 When a workspace is created, a `requirements.txt` file will be used to install Python packages into your new environment. 
 We can use this to install Low Code Assistant into any workspace created within a project.
@@ -99,7 +99,7 @@ Depending on whether or not you have a `requirements.txt` file follow the approp
 
 Now create a new _Jupyter_ or _JupyterLab_ workspace with and the Low Code Assistant button will be available.
 
-## Enable LCA in a Domino Compute Environment {#enable-lca-domino-compute-environment}
+## LCA in Compute Environment {#enable-lca-domino-compute-environment}
 
 1. Go to the Domino Standard Environment (under Environments in the side navigation bar).
 2. Add this line to the end of the environment's `Dockerfile` setup (but before the last `USER ubuntu` command):
@@ -110,7 +110,7 @@ Now create a new _Jupyter_ or _JupyterLab_ workspace with and the Low Code Assis
 
 The LCA toolbar button will now show up in the Jupyter toolbar. Add LCA to any other frequently used environments.
 
-## Rebuilding the Compute Environment
+## Rebuild Compute Environment
 
 1. Go to the _Environments_ page (the cube icon in the left-side-bar).
 2. Open your LCA environment definition.

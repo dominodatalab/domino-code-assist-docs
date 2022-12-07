@@ -44,6 +44,42 @@ A quick filter allows you to rapidly select a subset of rows. It only allows for
 
 === "R"
 
+    The _Titanic_ data have been assigned to a variable named `df`.
+
+    <img class="screenshot" src="../../screenshots/rstudio-load-data-datasets-titanic.png">
+
+    Press the _Addin_ button. Select _LCA Transformations_ from the menu.
+
+    <img class="screenshot" src="../../screenshots/rstudio-menu-transformations.png">
+
+    Choose the data that you want to work on.
+
+    <img class="screenshot" src="../../screenshots/rstudio-titanic-transformations-filtered-choose-data.png">
+
+    A preview of the data will be shown.
+
+    <img class="screenshot" src="../../screenshots/rstudio-titanic-transformations-filtered-data.png">
+
+    Hover over a cell in the column that you want to filter on. A filter icon will appear. Click on the icon.
+
+    <img class="screenshot" src="../../screenshots/rstudio-titanic-transformations-filtered-quick-icon.png">
+
+    In the quick filter dialog you can select the column to filter on, the value to filter for and an operator.
+
+    <img class="screenshot" src="../../screenshots/rstudio-titanic-transformations-filtered-default-operator.png">
+
+    We'll select all records where the `Cabin` field is not empty. Press the <span class="blue-button">Apply</span> button.
+
+    <img class="screenshot" src="../../screenshots/rstudio-titanic-transformations-filtered-change-operator.png">
+
+    The preview will be updated with the filtered data. Press the <span class="blue-button">Insert Code</span> button.
+
+    <img class="screenshot" src="../../screenshots/rstudio-titanic-transformations-filtered-preview.png">
+
+    The required code will be inserted into the script. Execute the code to apply the filter.
+
+    <img class="screenshot" src="../../screenshots/rstudio-titanic-transformations-filtered.png">
+
 ## Manual Filter
 
 A manual filter allows you to apply multiple operations. We are going to retain only records where `Embarked` is `"S"` and `Pclass` is less than 3. We'll do this by chaining multiple filtering operations.

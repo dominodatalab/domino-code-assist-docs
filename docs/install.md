@@ -73,6 +73,8 @@ This is the easiest way to get started with LCA, but if you restart you workspac
 
 ## LCA Default Configuration {#make-lca-default-configuration}
 
+If you restart your workspace, then you will need to repeat the installation steps. To enable LCA more permanently you can add it to the default configuration.
+
 There are 2 ways to make LCA a default configuration:
 
  * [Enable in a Domino Project](#enable-lca-domino-project), or

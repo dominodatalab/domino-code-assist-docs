@@ -33,11 +33,22 @@ The Low Code Assistant (LCA) can be used with either Python or R.
       Run the following command in the RStudio console:
 
       ```r
-      install.packages("remotes")
       remotes::install_github("dominodatalab/low-code-assistant-rstudio")
       ```
 
+      That assumes that the `{remotes}` package is already installed. if it isn't then you can install as follows and then try again.
+
+      ```r
+      install.packages("remotes")
+      ```
+
       You may be prompted to update dependencies. Choose the appropriate option. The installation will take a fwe minutes.
+
+      if you want to automatically upgrade packages then you can run the following:
+
+      ```r
+      remotes::install_github("dominodatalab/low-code-assistant-rstudio", upgrade = "always")
+      ```
 
       <img class="screenshot" src="../screenshots/lca-install-rstudio.png">
 

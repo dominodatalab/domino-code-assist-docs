@@ -3,7 +3,6 @@ site_url: https://dominolowcode.github.io/
 nav:
   - index.md
   - Install: install.md
-  - Initialize: initialise.md
   - Settings: settings.md
   - Project:
       - Files: project/files.md
@@ -64,6 +63,7 @@ plugins:
   - redirects:
       redirect_maps:
         "getting-started.md": "index.md"
+        "initialise.md": "install.md"
         "docs/install.md": "index.md"
         "data-from-csv-in-python.md": "loading-data/csv.md"
         "data-from-sql-in-python.md": "loading-data/sql.md"

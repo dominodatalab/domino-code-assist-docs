@@ -41,11 +41,35 @@ The Low Code Assistant (LCA) can be used with either Python or R.
 
       <img class="screenshot" src="../screenshots/lca-install-rstudio.png">
 
-      After the installation completes, refresh your browser tab. Unde the _Addins_ menu option you should now see an _ASSISTDOMINO_ section with various actions listed below. You can also confirm that the `{assistDomino}` package has been installed.
+      After the installation completes, refresh your browser tab. Under the _Addins_ menu option you should now see an _ASSISTDOMINO_ section with various actions listed below. You can also confirm that the `{assistDomino}` package has been installed by searching in the _Packages_ tab.
 
       <img class="screenshot" src="../screenshots/lca-installed-rstudio.png">
 
 This is the easiest way to get started with LCA, but if you restart you workspace, you will need to reinstall Low Code Assistant again. To enable LCA more permanantly, [make it the default configuration](#make-lca-default-configuration).
+
+## Initialize
+
+=== "Python"
+
+    If you have followed the [installation instructions](./install.md), you should see a blue <span class="blue-button">Low Code Assistant</span> button in the toolbar of your Jupyter notebook.
+
+    <img class="screenshot" src="../screenshots/lca-toolbar-button.png">
+
+    The Low Code Assistant can be started by clicking the <span style="background-color: #2D71C7; color: white; padding: 3px 10px 3px 10px">Low Code Assistant</span> button in the toolbar. It will insert a code snippet in a new code cell and execute it.
+
+    <img class="screenshot" src="../screenshots/lca-toolbar-button-code.png">
+
+    If you now hover above a code cell, you should see a blue icon  <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png"> to the right.
+
+    <img class="screenshot" src="../screenshots/lca-icon.png">
+
+    If you hover above the  <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png"> icon, it will show a popup menu.
+
+    <img class="screenshot" src="../screenshots/lca-icon-hover-menu.png">
+
+=== "R"
+
+    There is no initialization required in R. Various LCA actions will be listed under the _Addins_ menu option.
 
 ## LCA Default Configuration {#make-lca-default-configuration}
 

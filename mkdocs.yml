@@ -3,9 +3,6 @@ site_url: https://dominolowcode.github.io/
 nav:
   - index.md
   - Install: install.md
-  - Settings: settings.md
-  - Project:
-      - Files: project/files.md
   - Loading Data:
       - Loading Data from CSV: loading-data/csv.md
       - Loading Data from BigQuery: loading-data/bigquery.md
@@ -30,6 +27,9 @@ nav:
       - Using Snippets: snippets/snippets-using.md
       - Adding Snippets: snippets/snippets-adding.md
       - Creating Snippets: snippets/snippets-creating.md
+  - Domino Platform:
+      - Settings: settings.md
+      - Files: project/files.md
 theme:
   name: material
   favicon: favicon.png

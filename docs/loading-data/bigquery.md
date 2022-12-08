@@ -1,3 +1,7 @@
+<div class="sticky-banner sticky-banner-warning">
+    Support for BigQuery is only available in Domino version 5.2 and above.
+</div>
+
 # Loading Data from BigQuery
 
 <!-- https://user-images.githubusercontent.com/6134409/197819314-3b83455e-371a-4058-9e2d-d806ee216da2.mp4 -->

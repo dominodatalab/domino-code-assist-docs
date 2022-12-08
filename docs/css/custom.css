@@ -62,6 +62,9 @@ video {
   border-radius: 10px;
   margin-bottom: 10px;
 }
+.sticky-banner-warning {
+  background-color: rgb(248, 215, 218);
+}
 .sticky-banner > h3 {
   margin-top: 0;
 }

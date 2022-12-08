@@ -107,3 +107,31 @@ A manual filter allows you to apply multiple operations. We are going to retain 
     <img class="screenshot" src="../../screenshots/jupyter-titanic-filter-manual-insert-code.png">
 
 === "R"
+
+    Press the  <span class="blue-button">ADD TRANSFORMATION</span> button.
+
+    <img class="screenshot" src="../../screenshots/rstudio-filter-manual-add-transformation.png">
+
+    A dialog will appear which allows you to choose the type and details of the transformation.
+
+    <img class="screenshot" src="../../screenshots/rstudio-filter-manual-transformation-dialog.png">
+
+    Choose the _Filter rows_ transformation type. Select the `Embarked` column, set the operation to `==` and the value to `S`. Press the  <span class="blue-button">Apply</span> button.
+
+    <img class="screenshot" src="../../screenshots/rstudio-filter-manual-filter-embarked.png">
+
+    The preview will be updated, showing only the records where `Embarked` is `S`. Press the  <span class="blue-button">ADD TRANSFORMATION</span> button again to add another transformation.
+
+    <img class="screenshot" src="../../screenshots/rstudio-filter-manual-add-another-transformation.png">
+
+    Choose the _Filter rows_ transformation type. Select the `Pclass` column, set the operation to `<` and the value to `3`. Press the  <span class="blue-button">Apply</span> button.
+
+    <img class="screenshot" src="../../screenshots/rstudio-filter-manual-filter-pclass.png">
+
+    The preview will be updated, showing only the records where `Embarked` is `S` and `Pclass` is less than 3. Press the <span class="blue-button">Insert Code</span> button.
+
+    <img class="screenshot" src="../../screenshots/rstudio-filter-manual-filter-preview-updated.png">
+
+    The required code will be inserted into the script.
+
+    <img class="screenshot" src="../../screenshots/rstudio-filter-manual-filter-code-inserted.png">

@@ -1,5 +1,7 @@
 # Using Snippets
 
+<img class="screenshot" src="../../screenshots/snippets.gif">
+
 ## What are Snippets?
 
 A _snippet_ is a small chunk of reusable text or code. Snippets are generally used to capture frequently used content. This content can then easily be inserted into a project.

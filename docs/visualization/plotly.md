@@ -1,5 +1,7 @@
 # Plots with Plotly
 
+<img class="screenshot" src="../../screenshots/penguins-3d-scatter.gif">
+
 === "Python"
 
     Open a Jupyter workspace.

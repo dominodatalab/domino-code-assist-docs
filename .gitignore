@@ -18,7 +18,7 @@ misc/experiments/
 /.coverage
 /coverage.xml
 site/
-
+videos/
 Untitled*.ipynb
 
 /experiments/*

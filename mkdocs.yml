@@ -22,6 +22,8 @@ nav:
           - Drug Classification App: app/example/drug-classification.md
           - Stocks App: app/example/stock.md
       - Deploy an App: app/deploy.md
+      - Examples:
+          - Embed App in Tableau: app/embed-tableau.md
       - Upload data to an App: app/upload.md
   - Code Snippets:
       - Using Snippets: snippets/snippets-using.md

@@ -1,4 +1,4 @@
-# Plots with Plotly
+# Creating Plots
 
 <img class="screenshot" src="../../screenshots/penguins-3d-scatter.gif">
 
@@ -62,47 +62,39 @@
 
     <img class="screenshot" src="../../screenshots/rstudio-session-fresh.png">
 
-    Click on the <span class="white-button">Addins</span> button and choose the _LCA Data Selector_ option.
+    Click on the <span class="white-button">Addins</span> button and choose the _LCA Load Data_ option.
 
-    <img class="screenshot" src="../../screenshots/rstudio-lca-menu-data-selector.png">
+    <img class="screenshot" src="../../screenshots/rstudio-lca-menu-load-data.png">
 
-    The _LCA Data Selector_ dialog will open.
+    The _LCA Load Data_ dialog will open.
 
-    <img class="screenshot" src="../../screenshots/rstudio-lca-data-selector.png">
+    <img class="screenshot" src="../../screenshots/rstudio-lca-load-data.png">
 
     Click on the _Demo Data_ tab.
 
-    <img class="screenshot" src="../../screenshots/rstudio-lca-data-selector-demo-data.png">
+    <img class="screenshot" src="../../screenshots/rstudio-lca-load-data-demo-data.png">
 
-    Choose a dataset from the dropdown selector. Optionally specify a custom variable name.
+    Choose the _penguins_ dataset. Optionally specify a custom variable name. A sample of the data will be displayed in the dialog along with the code required to load the data. Press the <span class="blue-button">Insert Code</span> button.
 
-    <img class="screenshot" src="../../screenshots/rstudio-lca-data-selector-demo-data-dropdown.png">
-
-    A sample of the data will be displayed in the dialog along with the code required to load the data. Press the <span class="blue-button">Apply</span> button.
-
-    <img class="screenshot" src="../../screenshots/rstudio-lca-data-selector-demo-data-iris.png">
+    <img class="screenshot" src="../../screenshots/rstudio-lca-load-data-demo-data-penguins.png">
 
     The required code with be inserted into the script.
 
-    <img class="screenshot" src="../../screenshots/rstudio-lca-data-selector-demo-data-iris-code.png">
+    <img class="screenshot" src="../../screenshots/rstudio-lca-load-data-demo-data-penguins-code.png">
 
-    Click on the <span class="white-button">Addins</span> button and choose the _LCA Data Visualization_ option.
+    Click on the <span class="white-button">Addins</span> button and choose the _LCA Visualizations_ option.
 
     <img class="screenshot" src="../../screenshots/rstudio-lca-menu-data-visualization.png">
 
-    The _LCA Data Visualization_ dialog will open.
+    The _LCA Data Visualization_ dialog will open. Select a data frame to visualize.
 
     <img class="screenshot" src="../../screenshots/rstudio-lca-data-visualization.png">
 
-    Select a data frame from the dropdown selector.
+    The visualization construction dialog will appear.
 
-    <img class="screenshot" src="../../screenshots/rstudio-lca-data-visualization-dropdown.png">
+    <img class="screenshot" src="../../screenshots/rstudio-lca-data-visualization-start.png">
 
-    Choose a plot type.
-
-    <img class="screenshot" src="../../screenshots/rstudio-lca-data-visualization-plot-type.png">
-
-    Specify the parameters for the plot. Press the <span class="blue-button">Apply</span> button.
+    Drag variables onto the plot fields. A preview of the plot will appear in the dialog. Press the <span class="blue-button">Insert Code</span> button.
 
     <img class="screenshot" src="../../screenshots/rstudio-lca-data-visualization-plot-parameters.png">
 
@@ -110,6 +102,6 @@
 
     <img class="screenshot" src="../../screenshots/rstudio-lca-data-visualization-code.png">
 
-<video controls>
-    <source src="https://user-images.githubusercontent.com/1765949/185933193-8d75e882-0192-4aa1-8b85-ce2ba56670ce.mp4" type="video/mp4">
-</video>
+    Execute the new code. The plot will be assigned to a variable, `plot`. To see the plot you'll need to evaluate that variable.
+
+    <img class="screenshot" src="../../screenshots/rstudio-lca-data-visualization-code-show.png">

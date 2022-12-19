@@ -15,7 +15,7 @@ nav:
       - Grouping & Aggregating: transform/group-aggregate.md
       - Chaining Transformations: transform/chaining.md
   - Visualization:
-      - Plots with Plotly: visualization/plotly.md
+      - Creating Plots: visualization/create-plot.md
   - Apps:
       - App creation: app/create.md
       - Examples:

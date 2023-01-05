@@ -6,7 +6,7 @@ The Low Code Assistant (LCA) can be used with either Python or R.
 
 === "Python"
 
-      If you do not already have a _Jupyter_ or _JupyterLab_ workspace, then create on now. Launch the workspace.
+      If you do not already have a _Jupyter_ or _JupyterLab_ workspace, then create one now. Launch the workspace.
 
       Run the following command in a notebook code cell:
 
@@ -28,7 +28,7 @@ The Low Code Assistant (LCA) can be used with either Python or R.
 
 === "R"
 
-      If you do not already have an _RStudio_ workspace, then create on now. Launch the workspace.
+      If you do not already have an _RStudio_ workspace, then create one now. Launch the workspace.
 
       Run the following command in the RStudio console:
 
@@ -36,15 +36,15 @@ The Low Code Assistant (LCA) can be used with either Python or R.
       remotes::install_github("dominodatalab/low-code-assistant-rstudio")
       ```
 
-      That assumes that the `{remotes}` package is already installed. if it isn't then you can install as follows and then try again.
+      That assumes that the `{remotes}` package is already installed. If it isn't then you can install as follows and then try again.
 
       ```r
       install.packages("remotes")
       ```
 
-      You may be prompted to update dependencies. Choose the appropriate option. The installation will take a fwe minutes.
+      You may be prompted to update dependencies. Choose the appropriate option. The installation will take a few minutes.
 
-      if you want to automatically upgrade packages then you can run the following:
+      If you want to automatically upgrade packages then you can run the following:
 
       ```r
       remotes::install_github("dominodatalab/low-code-assistant-rstudio", upgrade = "always")
@@ -56,7 +56,7 @@ The Low Code Assistant (LCA) can be used with either Python or R.
 
       <img class="screenshot" src="../screenshots/lca-installed-rstudio.png">
 
-This is the easiest way to get started with LCA, but if you restart you workspace, you will need to reinstall Low Code Assistant again. To enable LCA more permanantly, [make it the default configuration](#make-lca-default-configuration).
+This is the easiest way to get started with LCA, but if you restart your workspace, you will need to reinstall Low Code Assistant again. To enable LCA more permanantly, [make it the default configuration](#make-lca-default-configuration).
 
 ## Initialize
 

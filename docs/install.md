@@ -1,3 +1,7 @@
+<div class="sticky-banner sticky-banner-warning">
+    The Low Code Assistant (LCA) is automatically installed in Domino version 5.5 and above.
+</div>
+
 # Installation
 
 ## Install the Low Code Assistant

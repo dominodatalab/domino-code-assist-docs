@@ -57,16 +57,20 @@ video {
 }
 
 .sticky-banner {
-  background-color: lightblue;
+  background-color: rgb(45, 113, 199);
+  color: white;
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 10px;
 }
 .sticky-banner-warning {
-  background-color: rgb(248, 215, 218);
+  background-color: #df0000;
 }
 .sticky-banner > h3 {
   margin-top: 0;
+}
+.sticky-banner a {
+  color: white;
 }
 
 .md-typeset .twemoji > svg {

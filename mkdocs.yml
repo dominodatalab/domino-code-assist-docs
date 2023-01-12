@@ -1,5 +1,6 @@
 site_name: ""
 site_url: https://dominolowcode.github.io/
+edit_uri: ""
 nav:
   - index.md
   - Install: install.md

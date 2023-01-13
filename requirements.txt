@@ -1,6 +1,6 @@
 typer
 mkdocs
-mkdocs-material
+mkdocs-material==9.0.4
 playwright
 mkdocs-redirects
 markdown-include==0.8.0

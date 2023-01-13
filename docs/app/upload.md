@@ -34,7 +34,7 @@ This will give slightly different code than what you are expected to see when yo
 
 ### Adding a histogram
 
-Create a histogram using the Low Code Assistant™, as described in [Scatter Plot](../visualization/plotly.md) or add your own code. In our example we add the following code ourselves:
+Create a histogram using the Low Code Assistant™, as described in [Scatter Plot](../visualization/create-plot.md) or add your own code. In our example we add the following code ourselves:
 
 ```python
 import plotly.express as px

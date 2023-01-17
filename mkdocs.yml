@@ -30,6 +30,7 @@ nav:
   - Code Snippets:
       - Using Snippets: snippets/snippets-using.md
       - Working with Snippets: snippets/snippets-working.md
+      - Creating Snippets: snippets/snippets-creating.md
   - Domino Platform:
       - Settings: settings.md
       - Files: project/files.md

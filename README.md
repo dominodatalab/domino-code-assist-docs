@@ -99,3 +99,20 @@ E.g. for load-csv see also the [./scripts/README.md](./scripts/README.md):
    * Click Export -> 'Split by Sub-Blocks', 'High', 'Stereo' -> Download and put the files in audio/load-csv
    * Run `$ python capture.py load-csv --no-general-screenshots` again so we get the right timing (saved in audio/load-csv.json)
    * Run `$ python capture.py audio load-csv` to insert the audio into the video.
+
+## Consistent Window Size
+
+Find the relevant window ID.
+
+```
+$ wmctrl -l
+0x0400000a  0 propane Terminal
+0x06a00056 -1 propane DBeaver 22.3.2 - <localhost> Script-62 
+0x03a0110f -1 propane Domino — Mozilla Firefox
+```
+
+Resize the window.
+
+```
+$ wmctrl -ir 0x03a0110f -e 0,0,0,1252,1087
+```

@@ -34,7 +34,13 @@ The capability to edit snippets is not enabled by default. It has to be explicit
 
 === "Python"
 
-     Documentation pending.
+     The last item in the LCA menu is _Insert snippet_. The icon to the right of this item will be greyed out by default. Click on the icon to enable editing.
+
+     <img class="screenshot" src="../../screenshots/jupyter-snippets-enable-editing.png">
+
+     When editing is enabled a <span class="white-button-blue-text">+ SAVE AS SNIPPET</span> button will be visible on the active cell.
+
+     <img class="screenshot" src="../../screenshots/jupyter-snippets-save-as-snippet.png">
 
 === "R"
 

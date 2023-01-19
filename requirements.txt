@@ -5,3 +5,4 @@ playwright
 mkdocs-redirects
 markdown-include==0.8.0
 mkdocs-exclude==1.0.2
+pysubs2==1.6.0

@@ -116,3 +116,18 @@ Resize the window.
 ```
 $ wmctrl -ir 0x03a0110f -e 0,0,0,1252,1087
 ```
+
+## Converting MP4 to GIF
+
+```
+ffmpeg -i screencast.mp4  -r 5 'frames/frame-%03d.png'
+gifski -o screencast.gif --fps 5 --width 1280 --quality 100 frames/*.png
+```
+
+## Recording Videos
+
+1. Launch Kazam.
+2. Browser to fullscreen.
+3. Start Kazam via Windows-Ctrl-R.
+4. Do demo.
+5. Stop Kazam via Windows-Ctrl-F.

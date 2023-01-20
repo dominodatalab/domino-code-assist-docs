@@ -83,6 +83,7 @@ The Low Code Assistant (LCA) can be used with either Python or R.
     4. Add the following line to the end of the `Dockerfile` section (but before the last USER ubuntu command):
     ```
     RUN R -e 'remotes::install_github("dominodatalab/low-code-assistant-rstudio", upgrade = "always")'
+    RUN chown -R ubuntu:ubuntu /usr/local/lib/R/site-library
     ```
     5. Click the _Build_ button at the bottom of the page
 

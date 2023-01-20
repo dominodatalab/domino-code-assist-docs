@@ -8,7 +8,6 @@
 *.pdf
 *.fld
 *.vtk
-*.mp4
 */**/*.pyc
 *.pyc
 jenkins/jenkins.war
@@ -18,7 +17,6 @@ misc/experiments/
 /.coverage
 /coverage.xml
 site/
-videos/
 Untitled*.ipynb
 
 /experiments/*
@@ -88,3 +86,8 @@ audio/Project_*
 # intermediate generated files
 audio/*.mp3
 low-code-jupyter-docs.code-workspace
+
+# videos
+*.gif
+*.png
+*.avi

@@ -11,3 +11,5 @@ videos/quick-visualisation/quick-visualisation.gif filter=lfs diff=lfs merge=lfs
 videos/quick-load-data-s3/quick-load-data-s3.gif filter=lfs diff=lfs merge=lfs -text
 videos/quick-transformations/quick-transformations-title.gif filter=lfs diff=lfs merge=lfs -text
 videos/quick-transformations/quick-transformations.gif filter=lfs diff=lfs merge=lfs -text
+videos/quick-visualisation/quick-visualisation-title.gif filter=lfs diff=lfs merge=lfs -text
+videos/quick-load-data-s3/quick-load-data-s3-title.gif filter=lfs diff=lfs merge=lfs -text

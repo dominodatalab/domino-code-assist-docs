@@ -88,6 +88,6 @@ audio/*.mp3
 low-code-jupyter-docs.code-workspace
 
 # videos
-*.gif
+# *.gif
 *.png
 *.avi

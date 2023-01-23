@@ -3,21 +3,54 @@ import glob
 import re
 import os
 import os.path
+import tempfile
 import sys
 from PIL import Image
+import yaml
+from yaml.loader import SafeLoader
+import logging
 
-PADDING = 70
-FONTSIZE = 50
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="%(asctime)s [%(levelname)7s] %(message)s",
+)
+logging.getLogger("PIL").setLevel(logging.WARNING)
+
+
+# LOAD CONFIGURATION YAML ---------------------------------------------------------------------------------------------
+
+FOLDER = os.path.normpath(sys.argv[1])
+
+CONFIG = os.path.join(FOLDER, "config.yml")
+
+with open(CONFIG) as f:
+    config = yaml.load(f, Loader=SafeLoader)
+
+TITLE = config.get("title")
+
+# LOAD CAPTIONS -------------------------------------------------------------------------------------------------------
+
+try:
+    with tempfile.NamedTemporaryFile("wt", suffix=".sub") as f:
+        f.write(config["captions"])
+        f.seek(0)
+        subs = pysubs2.load(f.name, encoding="utf-8", fps=1)
+except KeyError:
+    subs = None
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+PADDING = 80
+FONTSIZE = 60
 FPS = 5
 IMAGE_FORMAT = "png"
 
-MP4 = sys.argv[1]
-SUB = re.sub("mp4", "sub", MP4)
+MP4 = os.path.join(FOLDER, "video.mp4")
 
-MP4_FOLDER = os.path.dirname(MP4)
-FRAMES_FOLDER = os.path.join(MP4_FOLDER, "frames")
+FRAMES_FOLDER = os.path.join(FOLDER, "frames")
 
-GIF = os.path.join(MP4_FOLDER, os.path.split(MP4_FOLDER)[-1] + ".gif")
+GIF = os.path.join(FOLDER, os.path.split(FOLDER)[-1] + ".gif")
+GIF_TITLE = os.path.join(FOLDER, os.path.split(FOLDER)[-1] + "-title.gif")
 
 try:
     os.mkdir(FRAMES_FOLDER)
@@ -26,7 +59,7 @@ except FileExistsError:
 
 # SPLIT VIDEO INTO FRAMES ---------------------------------------------------------------------------------------------
 
-print("Splitting MP4 into frames... ", end="", flush=True)
+logging.info("Splitting MP4 into frames... ")
 CMD = [
     "ffmpeg",
     "-hide_banner",
@@ -39,28 +72,28 @@ CMD = [
 CMD = " ".join(CMD)
 
 os.system(CMD)
-print("Done!")
+logging.info("Done!")
 
 FILES = glob.glob(f"{FRAMES_FOLDER}/" + ("[0-9]" * 5) + f"-frame.{IMAGE_FORMAT}")
 FILES.sort()
 
-print(f"Created {len(FILES)} frames.")
+logging.info(f"Created {len(FILES)} frames.")
 
 # LOAD SUBTITLES ------------------------------------------------------------------------------------------------------
 
-subs = pysubs2.load(SUB, encoding="utf-8", fps=1)
-
 # Convert times (milliseconds) to frame number.
 #
-for line in subs:
-    line.end = int(line.end / 1000)
-    line.start = int(line.start / 1000)
+if subs:
+    for line in subs:
+        line.end = int(line.end / 1000)
+        line.start = int(line.start / 1000)
 
 
 def subtitle(frame_number):
-    for line in subs:
-        if frame_number >= line.start and frame_number <= line.end:
-            return line.text
+    if subs:
+        for line in subs:
+            if frame_number >= line.start and frame_number <= line.end:
+                return line.text
 
 
 # ADD SUBTITLES -------------------------------------------------------------------------------------------------------
@@ -74,15 +107,13 @@ def frame_number(filename):
         return None
 
 
-PADDED = []
-
 for frame in FILES:
     n = frame_number(frame)
     text = subtitle(n)
 
     padded = re.sub("/frame-", "/frame-padded-", frame)
 
-    print(str(n) + ": " + (text or ""))
+    logging.debug(str(n) + ": " + (text or ""))
 
     CMD = [
         "convert",
@@ -94,24 +125,20 @@ for frame in FILES:
         "-font Arial",
         f"-pointsize {FONTSIZE}",
         f"-annotate +0+8 '{text}'" if text else "",
-        padded,
+        frame,
     ]
     CMD = " ".join(CMD)
 
     os.system(CMD)
 
-    PADDED.append(padded)
-
-# Replicate last frame.
-#
-PADDED = PADDED + PADDED[-1:] * (FPS * 2)
-
 # FIND IMAGE SIZE -----------------------------------------------------------------------------------------------------
 
 widths, heights = set(), set()
 
-for padded in list(set(PADDED)):
+for padded in FILES:
     img = Image.open(padded)
+    #
+    logging.debug(f"{padded:<20}: {img.width}x{img.height}")
     #
     widths.add(img.width)
     heights.add(img.height)
@@ -124,38 +151,76 @@ PADDED_HEIGHT = list(heights)[0]
 
 # CREATE COVER --------------------------------------------------------------------------------------------------------
 
-# convert -size 1920x1150 canvas:black label-background.png
-# convert label-background.png -fill white -font Arial -pointsize 120 -gravity center -annotate +0+0 'Importing Data from S3' -fill "#0072cd" -pointsize 48 -gravity southeast -annotate +32+16 'http://dominodatalab.com/' -pointsize 72 -annotate +32+64 "Domino Data Lab" label-title.png
-# convert label-title.png \( domino-logo.png -scale 22% \) -gravity southeast -geometry +32+80 -composite 00000-title.png
+CMD = [
+    "convert",
+    f"-size {PADDED_WIDTH}x{PADDED_HEIGHT}",
+    "canvas:black",
+    "label-background.png",
+]
+
+os.system(" ".join(CMD))
+
+CMD = [
+    "convert",
+    "label-background.png",
+    "-fill white",
+    "-font Arial",
+    "-pointsize 120",
+    "-gravity north",
+    f"-annotate +0+450 '{TITLE}'",
+    "-fill '#bbbbbb'",
+    "-pointsize 64",
+    f"-annotate +0+595 'with Low Code Assistant (LCA)'",
+    "-fill '#0072cd'",
+    "-pointsize 48",
+    "-gravity southeast",
+    "-annotate +32+16 'http://dominodatalab.com/'",
+    "label-title.png",
+]
+
+os.system(" ".join(CMD))
+
+CMD = [
+    "convert",
+    "label-title.png",
+    "\( domino-logo.png -scale 22% \)",
+    "-gravity southeast",
+    "-geometry +32+80",
+    f"-composite {FRAMES_FOLDER}/00000-title.png",
+]
+
+os.system(" ".join(CMD))
 
 TITLE = os.path.join(FRAMES_FOLDER, "00000-title.png")
 
 # CREATE GIF ----------------------------------------------------------------------------------------------------------
 
-CMD = (
-    [
+# Replicate last frame.
+#
+FILES = FILES + FILES[-1:] * (FPS * 2)
+
+
+def create_gif(gif, title=False):
+    CMD = [
         "gifski",
         "-q",
-        f"-o {GIF}",
+        f"-o {gif}",
         f"--fps {FPS}",
         "--width 1280",
         "--quality 100",
     ]
-    + [TITLE] * 5
-    + PADDED
-)
-CMD = " ".join(CMD)
 
-print(CMD)
+    if title:
+        CMD += [TITLE] * 10
 
-os.system(CMD)
+    CMD += FILES
 
-print(f"Output file: {GIF}")
+    CMD = " ".join(CMD)
 
-# CLEANUP -------------------------------------------------------------------------------------------------------------
+    os.system(CMD)
 
-# for padded in PADDED:
-#     try:
-#         os.remove(padded)
-#     except FileNotFoundError:
-#         pass
+    logging.info(f"Output file: {gif}")
+
+
+create_gif(GIF, title=False)
+create_gif(GIF_TITLE, title=True)

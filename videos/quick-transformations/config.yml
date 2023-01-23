@@ -1,0 +1,13 @@
+title: Tranforming Data
+captions: |
+  {1}{5}Start with some data.
+  {19}{30}Get rid of the records with missing values.
+  {32}{44}Use the quick filter tool.
+  {70}{75}Data preview updated.
+  {82}{120}Select only columns of interest.
+  {124}{135}Data preview updated.
+  {139}{185}Generate summary statistics.
+  {195}{230}Add more statistics.
+  {245}{255}Preview the code.
+  {256}{261}Code is inserted into the next cell.
+  {262}{271}Data are updated.

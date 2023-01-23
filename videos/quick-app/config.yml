@@ -1,0 +1,10 @@
+title: Creating an App
+captions: |
+  {1}{10}Got a nice visualization? Turn it into an app!
+  {11}{60}First add a cross-filter (optional).
+  {70}{100}Test the cross-filter.
+  {110}{119}Now create an app.
+  {120}{135}Select which widgets to include in the app.
+  {140}{220}Arrange the widgets.
+  {230}{240}Code is inserted into the next cell.
+  {250}{318}Preview the app.

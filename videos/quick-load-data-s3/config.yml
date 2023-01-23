@@ -1,0 +1,8 @@
+title: Importing Data from S3
+captions: |
+  {1}{10}Easily load data from a variety of sources.
+  {22}{30}Choose a data source.
+  {39}{46}Choose a specific data set.
+  {46}{67}Specify a variable name (optional).
+  {74}{80}Code is inserted into the next cell.
+  {81}{87}Data are loaded.

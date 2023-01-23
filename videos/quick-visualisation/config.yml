@@ -1,0 +1,10 @@
+title: Visualization
+captions: |
+  {1}{5}Start with some data.
+  {6}{11}Create a visualization.
+  {19}{26}Choose from a variety of plot types.
+  {33}{65}Specify the plot dimensions.
+  {70}{78}Take a look at the preview.
+  {82}{98}Tweak the theme (optional).
+  {115}{125}Code is inserted into the next cell.
+  {134}{150}Add more code to customize the plot.

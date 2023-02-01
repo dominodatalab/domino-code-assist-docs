@@ -114,11 +114,11 @@ The Low Code Assistant (LCA) can be used with either Python or R.
 
     <img class="screenshot" src="../screenshots/lca-toolbar-button-code.png">
 
-    If you now hover above a code cell, you should see a blue icon  <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png"> to the right.
+    If you now hover above a code cell, you should see a blue icon  <img alt="assistant icon" class="assistant-icon" src="../screenshots/general/assistant-icon.png"> to the right.
 
     <img class="screenshot" src="../screenshots/lca-icon.png">
 
-    If you hover above the  <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png"> icon, it will show a popup menu.
+    If you hover above the  <img alt="assistant icon" class="assistant-icon" src="../screenshots/general/assistant-icon.png"> icon, it will show a popup menu.
 
     <img class="screenshot" src="../screenshots/lca-icon-hover-menu.png">
 
@@ -202,7 +202,7 @@ Now create a new _Jupyter_ or _JupyterLab_ workspace with and the Low Code Assis
 1. Go to the _Environments_ page (the cube icon in the left-side-bar).
 2. Open your LCA environment definition.
 3. Click the <span class="white-button">Edit Definition</span> button.
-4. Scroll to the bottom and check :fontawesome-regular-square: _Full rebuild without cache_.
+4. Scroll to the bottom and check :fontawesome-regular-square-check: _Full rebuild without cache_.
 5. Click the <span class="white-button">Build</span> button.
 
 ## Check Versions

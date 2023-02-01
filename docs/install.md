@@ -1,3 +1,7 @@
+---
+toc_children: False
+---
+
 <div class="sticky-banner sticky-banner-warning">
     The Low Code Assistant (LCA) is automatically installed in Domino version 5.5 and above.
 </div>
@@ -38,36 +42,25 @@ The Low Code Assistant (LCA) can be used with either Python or R.
     - [installing in a Domino Compute environment](#domino-compute-environment) (recommended) and
     - [installing from source](#source).
 
-    ### RStudio Workspace
+    ### RStudio Workspace {-}
 
     If you do not already have an _RStudio_ workspace, then create on now. Launch the workspace.
 
-    If you do not have the `{remotes}` package installed, then install it now by running the following command in the RStudio console.
+    If you do not have the `{devtools}` package installed, then install it now by running the following command in the RStudio console.
 
     ```r
-    install.packages("remotes")
+    install.packages("devtools")
     ```
 
     Now install the LCA package.
 
     ```r
-    remotes::install_github("dominodatalab/low-code-assistant-rstudio")
+    pkg <- tempfile(fileext = '.tar.gz')
+    download.file('https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z', pkg)
+    devtools::install_local(pkg, upgrade = 'always')
     ```
-
-    You may be prompted to update dependencies. Choose the appropriate option. The installation will take a few minutes.
 
     🚨 If you encounter a timeout error during the installation, then make sure that you've selected a harware tier that allows egress. Otherwise, your workspace will not be able to reach GitHub to download the package.
-
-    <img class="screenshot" src="../screenshots/lca-install-rstudio.png">
-
-    If you want to automatically upgrade packages then you can run the following:
-
-    ```r
-    remotes::install_github(
-        "dominodatalab/low-code-assistant-rstudio",
-        upgrade = "always"
-    )
-    ```
 
     After the installation completes, refresh your browser tab. Under the _Addins_ menu option you should now see an _ASSISTDOMINO_ section with various actions listed below. You can also confirm that the `{assistDomino}` package has been installed by searching in the _Packages_ tab.
 
@@ -80,9 +73,9 @@ The Low Code Assistant (LCA) can be used with either Python or R.
     1. Select _Environments_ from the side navigation bar.
     2. Choose the environment in which LCA for R package should be installed.
     3. Click the _Edit Definition_ button.
-    4. Add the following line to the end of the `Dockerfile` section (but before the last USER ubuntu command):
+    4. Add the following line to the end of the `Dockerfile` section (but before the last `USER ubuntu` command):
     ```
-    RUN R -e 'remotes::install_github("dominodatalab/low-code-assistant-rstudio", upgrade = "always")'
+    RUN R -e "pkg <- tempfile(fileext = '.tar.gz'); download.file('https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z', pkg); devtools::install_local(pkg, upgrade = 'always');"
     RUN chown -R ubuntu:ubuntu /usr/local/lib/R/site-library
     ```
     5. Click the _Build_ button at the bottom of the page

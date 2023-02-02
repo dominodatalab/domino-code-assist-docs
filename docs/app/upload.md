@@ -34,7 +34,7 @@ This will give slightly different code than what you are expected to see when yo
 
 ### Adding a histogram
 
-Create a histogram using the Low Code Assistant™, as described in [Scatter Plot](../visualization/create-plot.md) or add your own code. In our example we add the following code ourselves:
+Create a histogram using the Low Code Assistant (LCA), as described in [Scatter Plot](../visualization/create-plot.md) or add your own code. In our example we add the following code ourselves:
 
 ```python
 import plotly.express as px
@@ -69,7 +69,7 @@ Once the app is deployed, you can view the app, and should see a screen like thi
 
 MISSING SCREENSHOT
 
-Now drag a different CSV file into the file drop zone, and the Low Code Assistant™ app will re-execute the whole notebook, but with the data from the uploaded file:
+Now drag a different CSV file into the file drop zone, and the LCA app will re-execute the whole notebook, but with the data from the uploaded file:
 
 <video controls style="width: 800px">
     <source src="https://user-images.githubusercontent.com/1765949/189431994-1e0b2f11-96ce-4584-ad11-982c7715f573.mp4" type="video/mp4">

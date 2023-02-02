@@ -3,7 +3,7 @@ toc_children: False
 ---
 
 <div class="sticky-banner sticky-banner-warning">
-    The Low Code Assistant (LCA) is automatically installed in Domino version 5.5 and above.
+    LCA is automatically installed in Domino version 5.5 and above.
 </div>
 
 # Installation
@@ -66,7 +66,7 @@ The Low Code Assistant (LCA) can be used with either Python or R.
 
     <img class="screenshot" src="../screenshots/lca-installed-rstudio.png">
 
-    This is the easiest way to get started with LCA, but if you restart you workspace, you will need to reinstall Low Code Assistant again. To enable LCA more permanantly, [make it the default configuration](#make-lca-default-configuration).
+    This is the easiest way to get started with LCA, but if you restart you workspace, you will need to reinstall LCA. To enable LCA more permanantly, [make it the default configuration](#make-lca-default-configuration).
 
     ### Domino Compute Environment
 
@@ -110,7 +110,7 @@ The Low Code Assistant (LCA) can be used with either Python or R.
 
     <img class="screenshot" src="../screenshots/lca-toolbar-button.png">
 
-    The Low Code Assistant can be started by clicking the <span style="background-color: #2D71C7; color: white; padding: 3px 10px 3px 10px">Low Code Assistant</span> button in the toolbar. It will insert a code snippet in a new code cell and execute it.
+    LCA can be started by clicking the <span class="blue-button">Low Code Assistant</span> button in the toolbar. It will insert a code snippet in a new code cell and execute it.
 
     <img class="screenshot" src="../screenshots/lca-toolbar-button-code.png">
 
@@ -140,7 +140,7 @@ Enabling LCA in your organization's most used compute environments (CE) is the f
 ## LCA in Project {#enable-lca-domino-project}
 
 When a workspace is created, a `requirements.txt` file will be used to install Python packages into your new environment. 
-We can use this to install Low Code Assistant into any workspace created within a project.
+We can use this to install LCA into any workspace created within a project.
 
 Check if you have a `requirements.txt` file. Navigate to _Files_. You should see something like the image below. If there are many files then you can search for the `requirements.txt` file.
 
@@ -178,7 +178,7 @@ Depending on whether or not you have a `requirements.txt` file follow the approp
 
          <img class="screenshot" src="../screenshots/requirements-location.png">
 
-Now create a new _Jupyter_ or _JupyterLab_ workspace with and the Low Code Assistant button will be available.
+Now create a new _Jupyter_ or _JupyterLab_ workspace with and the LCA button will be available.
 
 ## LCA in Compute Environment {#enable-lca-domino-compute-environment}
 

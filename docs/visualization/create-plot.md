@@ -12,7 +12,7 @@
 
     <img class="screenshot" src="../../screenshots/jupyter-lca-code.png">
 
-    Once the Low Code Assistant™ has been initialised if you hover above a code cell, you will see the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png">. If you hover above the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png">, it will show a popup menu. Select the _Load Data_ item from the menu.
+    Once the Low Code Assistant (LCA) has been initialised if you hover above a code cell, you will see the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png">. If you hover above the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png">, it will show a popup menu. Select the _Load Data_ item from the menu.
 
     <img class="screenshot" src="../../screenshots/jupyter-lca-menu.png">
 

@@ -2,7 +2,7 @@
 
 There are many bits of code which are used often but not often enough to be committed to memory. Even the most experienced developers will inevitably need to search to find the code fragment. The resulting context switching negatively impacts productivity.
 
-Snippets to the rescue! Snippets are useful bits of code which are readily accessible via LCA. A number of handy snippets are included with the LCA distribution. You can add your own snippets and share them with your team.
+Snippets to the rescue! Snippets are useful bits of code which are readily accessible via the Low Code Assistant (LCA). A number of handy snippets are included with the LCA distribution. You can add your own snippets and share them with your team.
 
 <img class="screenshot" src="../../screenshots/snippets.gif">
 

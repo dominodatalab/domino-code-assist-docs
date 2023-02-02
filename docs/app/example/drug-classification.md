@@ -12,16 +12,15 @@ This tutorial will show you how to build a simple app using drug classification 
 
 ## Tutorial
 
-Initialise the Low Code Assistant™.
+Initialise the Low Code Assistant (LCA).
 
 <img class="screenshot" src="../../../screenshots/app-example-drug-classification-initialise.png">
 
-Use the Low Code Assistant™ to load the drug classification data.
+Use LCA to load the drug classification data.
 
 <img class="screenshot" src="../../../screenshots/app-example-drug-classification-load-data.png">
 
-Use the Low Code Assistant™ to create a visualization. Flip the _Enable crossfilter_ toggle so that the visualization will become responsive to crossfilters. Click the <span class="blue-button">INSERT CODE</span> button.
-
+Use LCA to create a visualization. Flip the _Enable crossfilter_ toggle so that the visualization will become responsive to crossfilters. Click the <span class="blue-button">INSERT CODE</span> button.
 
 <img class="screenshot" src="../../../screenshots/app-example-drug-classification-create-visualization.png">
 
@@ -29,7 +28,7 @@ The code will be inserted into the notebook and immediately executed to create t
 
 <img class="screenshot" src="../../../screenshots/app-example-drug-classification-visualization-inserted.png">
 
-Use the Low Code Assistant™ to create a crossfilter. We'll create a filter which will allow us to select one or more drug classes. Flip the _Multiple_ toggle to ensure that more than one option can be selected. Click the <span class="blue-button">INSERT CODE</span> button.
+Use LCA to create a crossfilter. We'll create a filter which will allow us to select one or more drug classes. Flip the _Multiple_ toggle to ensure that more than one option can be selected. Click the <span class="blue-button">INSERT CODE</span> button.
 
 <img class="screenshot" src="../../../screenshots/app-example-drug-classification-create-crossfilter-drug.png">
 
@@ -41,7 +40,7 @@ The code for both of the crossfilters will now be present in the notebook. Use t
 
 <img class="screenshot" src="../../../screenshots/app-example-drug-classification-crossfilter-inserted.png">
 
-Use the Low Code Assistant™ to create an app. Select, move and resize widgets until you have the required layout. Click the <span class="blue-button">INSERT CODE</span> button.
+Use LCA to create an app. Select, move and resize widgets until you have the required layout. Click the <span class="blue-button">INSERT CODE</span> button.
 
 <img class="screenshot" src="../../../screenshots/app-example-drug-classification-create-app.png">
 

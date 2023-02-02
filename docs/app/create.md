@@ -7,7 +7,7 @@
 
 ## Loading CSV data into a Pandas DataFrame
 
-Load a dataset using the Low Code Assistant™, as described in [Getting started](../../) or by adding your own code. In our example we add the following code ourselves:
+Load a dataset using the Low Code Assistant (LCA), as described in [Getting started](../../) or by adding your own code. In our example we add the following code ourselves:
 ```python
 import pandas as pd
 df = pd.read_csv("../mydata/titanic.csv")
@@ -20,7 +20,7 @@ df.head(2)
 
 ### Adding a histogram
 
-Create a histogram using the Low Code Assistant™, as described in [Scatter Plot](../visualization/create-plot.md) or adding your own code. In our example we add the following code ourselves:
+Create a histogram using LCA, as described in [Scatter Plot](../visualization/create-plot.md) or adding your own code. In our example we add the following code ourselves:
 
 ```python
 import plotly.express as px
@@ -38,7 +38,7 @@ histogram_survived
 
 ### Adding a scatter plot
 
-Create a scatter plot using the Low Code Assistant™, as described in [Scatter Plot](../visualization/create-plot.md). In our example we add the following code ourselves:
+Create a scatter plot using LCA, as described in [Scatter Plot](../visualization/create-plot.md). In our example we add the following code ourselves:
 
 ```python
 import plotly.express as px

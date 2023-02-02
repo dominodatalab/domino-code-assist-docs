@@ -63,8 +63,7 @@ If you hover above the ![assistant icon](../screenshots/general/assistant-icon.p
 
 ![Assistant expand](../screenshots/app-create/06-assistant-expand.png)
 
-
-Click on the App button ![app open button](../screenshots/general/app-open.png){.retina-image .docs-border} to open the app configurator.
+Select the _App_ item from the popup menu to open the app configurator.
 
 ![Assistant expand](../screenshots/app-create/07-app-before.png)
 
@@ -81,6 +80,6 @@ When ready, click 'Insert code'.
 ![Assistant expand](../screenshots/app-create/09-done.png)
 
 The configuration is added in code to your notebook. The code can be edited, and a preview can be shown
-by clicking the ![preview button](../screenshots/general/app-preview.png){.retina-image} button.
+by clicking the <span class="blue-button">Preview</span> button.
 
 

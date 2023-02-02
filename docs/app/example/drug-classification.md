@@ -60,11 +60,11 @@ Use a crossfilter to vary the lower cutoff for the `Na_to_K` column.
 
 <img class="screenshot" src="../../../screenshots/app-example-drug-classification-app-preview-slider.png">
 
-We can use the same model to build a simple Machine Learning model to predict the drug class. First let's take another look at the data in `df`.
+We can use the same data to build a simple Machine Learning model to predict the drug class. First let's take another look at the data in `df`.
 
 <img class="screenshot" src="../../../screenshots/app-example-drug-classification-data-reminder.png">
 
-We'll create a model to predict `Drug` using the remaining columns. We'll need to import some more packages and then split the data in predictors, `X`, and target, `y`.
+We'll create a model to predict `Drug` using the remaining columns. We'll need to import some more packages and then split the data in predictors, `X`, and target, `y`. Insert the following code into a new cell in the notebook.
 
 ```python
 from sklearn.tree import DecisionTreeClassifier
@@ -78,7 +78,7 @@ y = df.iloc[:,5]
 
 <img class="screenshot" src="../../../screenshots/app-example-drug-classification-sklearn.png">
 
-The categorical columns, `Sex`, `BP` and `Cholesterol` need to be dummy (one-hot) encoded.
+The categorical columns, `Sex`, `BP` and `Cholesterol` need to be dummy (one-hot) encoded. Insert the following code into a new cell in the notebook.
 
 ```python
 sex = pd.get_dummies(X['Sex'])
@@ -90,7 +90,7 @@ X = pd.concat([X[['Age']], sex, bp, cholesterol], axis='columns')
 
 <img class="screenshot" src="../../../screenshots/app-example-drug-classification-dummy-encoding.png">
 
-The target column, `y`, also needs to be encoded.
+The target column, `y`, also needs to be encoded. Insert the following code into a new cell in the notebook.
 
 ```python
 encoder = LabelEncoder()
@@ -100,7 +100,7 @@ y = encoder.fit_transform(y)
 
 <img class="screenshot" src="../../../screenshots/app-example-drug-classification-dummy-target.png">
 
-Now split the data into training and testing sets then build a model using the training set.
+Now split the data into training and testing sets then build a model using the training set. Insert the following code into a new cell in the notebook.
 
 ```python
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state = 0)
@@ -110,7 +110,7 @@ tree = DecisionTreeClassifier(max_depth = 2).fit(X_train, y_train)
 
 <img class="screenshot" src="../../../screenshots/app-example-drug-classification-model-train.png">
 
-Finally, use the model to make predictions for the testing set and then calculate the model accuracy on the testing set.
+Finally, use the model to make predictions for the testing set and then calculate the model accuracy on the testing set. Insert the following code into a new cell in the notebook.
 
 ```python
 tree.predict(X_test)
@@ -121,3 +121,5 @@ round(tree.score(X_test, y_test), 4)
 <img class="screenshot" src="../../../screenshots/app-example-drug-classification-model-test.png">
 
 The model is not terribly accurate, but given the size of the data it's not too bad! Simply guessing would yield an accuracy of only 25% and the model achieves 50%.
+
+In principle this model could be included in the app. See the [Stocks App](../stock) for an example of how this can be done.

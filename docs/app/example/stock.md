@@ -53,13 +53,13 @@ Use the crossfilter to change the selected tickets. Observe the effect on the vi
 
 <img class="screenshot" src="../../../screenshots/app-example-stock-preview-selected.png">
 
-Now we're going to use the Prophet package to build a simple time series model for predicting future stock prices. First install the package.
+Now we're going to use the Prophet package to build a simple time series model for predicting future stock prices. First install the package by running the following command in a new cell in the notebook.
 
 ```
 !pip install prophet
 ```
 
-Then import the package and reduce the level of logging.
+Then import the package and reduce the level of logging as follows:
 
 ```python
 from prophet import Prophet
@@ -72,7 +72,7 @@ logging.getLogger('cmdstanpy').setLevel(logging.WARNING)
 
 <img class="screenshot" src="../../../screenshots/app-example-stock-install-prophet.png">
 
-Now prepare the data for Prophet, which expects the time column to be called `ds` and the value column to be called `y`. We'll be building a separate model for each ticker, so we'll group the data by `ticker`.
+Now prepare the data for Prophet, which expects the time column to be called `ds` and the value column to be called `y`. We'll be building a separate model for each ticker, so we'll group the data by `ticker` as follows:
 
 ```python
 df.rename(columns={"date": "ds", "close": "y"}, inplace=True)
@@ -81,7 +81,7 @@ df = df[["ticker", "ds", "y"]].groupby('ticker')
 
 <img class="screenshot" src="../../../screenshots/app-example-stock-prophet-prepare-data.png">
 
-Now create a function which will build a model and create predictions for a single ticker. Then apply that function to all of the tickers. The results are stored in a list of `DataFrame` objects.
+Insert the following code into a new cell in the notebook. Create a function which will build a model and create predictions for a single ticker. Then apply that function to all of the tickers. The results are stored in a list of `DataFrame` objects.
 
 ```python
 def train_and_forecast(ticker):
@@ -104,7 +104,7 @@ for ticker in ['AAPL', 'FB', 'GOOGL']:
 
 <img class="screenshot" src="../../../screenshots/app-example-stock-prophet-create-models.png">
 
-Now concatenate the predictions for all of the tickers. Then add a `future` column which indicates that these are predictions.
+Now insert the following code to concatenate the predictions for all of the tickers and add a `future` column which indicates that these are predictions.
 
 ```python
 stocks_forecast = pd.concat(stocks_forecast)
@@ -120,7 +120,7 @@ Use the `head()` method to check on the data.
 
 <img class="screenshot" src="../../../screenshots/app-example-stock-prophet-prepare-predictions.png">
 
-Prepare the original data so that it has a consistent format and then concatenate the original data and predictions.
+Prepare the original data so that it has a consistent format and then concatenate the original data and predictions as follows:
 
 ```python
 df = df[["ticker", "ds", "y"]]

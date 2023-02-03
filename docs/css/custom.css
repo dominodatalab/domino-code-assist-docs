@@ -8,6 +8,10 @@
     border: 1px solid black;
   }
 
+li > img {
+  margin-top: 8px;
+}
+
 .assistant-icon {
     width: 18px;
     height: 18px;

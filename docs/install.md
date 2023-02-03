@@ -1,7 +1,3 @@
----
-toc_children: False
----
-
 <div class="sticky-banner sticky-banner-warning">
     LCA is automatically installed in Domino version 5.5 and above.
 </div>
@@ -12,9 +8,22 @@ toc_children: False
 
 The Low Code Assistant (LCA) can be used with either Python or R.
 
-=== "Python"
+There are three distinct approaches to installing the package for either Python or R:
 
-      If you do not already have a _Jupyter_ or _JupyterLab_ workspace, then create one now. Launch the workspace.
+- [Install in a Workspace](#install-in-workspace)
+- [Install in a Project](#install-in-project)
+- [Install in a Compute Environment](#install-in-compute-environment)
+- [Install from Source](#install-from-source)
+
+The first approach is the easiest way to get started with LCA. But if you restart you workspace, then you will need to reinstall LCA. The second and third approaches will enable LCA more permanantly.
+
+### Install in Workspace
+
+If you do not already have a Jupyter, JupyterLab or RStudio workspace, then create and launch one now.
+
+The next steps will depend on whether you are working with Python (Jupyter or JupyterLab) or R (RStudio workspace).
+
+=== "Python"
 
       Run the following command in a notebook code cell:
 
@@ -28,23 +37,13 @@ The Low Code Assistant (LCA) can be used with either Python or R.
 
       <img class="screenshot" src="../screenshots/lca-installed-jupyter.png">
 
-      To upgrade an existing version do:
+      To upgrade an existing installation do:
 
       ```
       !pip install --user --upgrade low-code-assistant
       ```
 
 === "R"
-
-    There are three distinct approaches to installing the R package:
-
-    - [installing in a Domino RStudio workspace](#rstudio-workspace)
-    - [installing in a Domino Compute environment](#domino-compute-environment) (recommended) and
-    - [installing from source](#source).
-
-    ### RStudio Workspace {-}
-
-    If you do not already have an _RStudio_ workspace, then create on now. Launch the workspace.
 
     If you do not have the `{devtools}` package installed, then install it now by running the following command in the RStudio console.
 
@@ -66,9 +65,44 @@ The Low Code Assistant (LCA) can be used with either Python or R.
 
     <img class="screenshot" src="../screenshots/lca-installed-rstudio.png">
 
-    This is the easiest way to get started with LCA, but if you restart you workspace, you will need to reinstall LCA. To enable LCA more permanantly, [make it the default configuration](#make-lca-default-configuration).
+### Install in Project
 
-    ### Domino Compute Environment
+=== "Python"
+
+    A `requirements.txt` file is used to install Python packages into a new workspace created within a project. Navigate to _Files_ to check whether you have a `requirements.txt` file.
+
+    <img class="screenshot" src="../screenshots/requirements-location.png">
+
+    If you _do_ have a `requirements.txt` file then it will be listed (possibly among a selection of other files) then proceed as follows:
+
+    1. Click on the `requirements.txt` file link.
+    2. Click the <span class="white-button">Edit</span> button.
+    <img class="screenshot" src="../screenshots/requirements-edit-button.png">
+    3. Add the `low-code-assistant` package to your `requirements.txt` file. You can specify a version like `low-code-assistant==0.4.1`. If you don't specify a version then the latest version will be installed.
+    <img class="screenshot" src="../screenshots/requirements-edit.png">
+    4. Click the <span class="white-button">Save</span> button.
+
+    If you _don't_ have a `requirements.txt` file then do the following:
+
+    1. Download our [requirements.txt](requirements.txt).
+    2. Press the _Upload_ button. Either drag and drop or browse to find the `requirements.txt` file.
+    <img class="screenshot" src="../screenshots/requirements-upload-select.png">
+    3. Click the <span class="blue-button">Upload</span> button.
+    <img class="screenshot" src="../screenshots/requirements-upload.png">
+    4. Confirm that the `requirements.txt` file has been successfully uploaded.
+    <img class="screenshot" src="../screenshots/requirements-location.png">
+
+    Now create a new _Jupyter_ or _JupyterLab_ workspace with and the LCA button will be available.
+
+=== "R"
+
+### Install in Compute Environment
+
+Enabling LCA in your organization's most used compute environments (CE) is the fastest way to deploy LCA. This way, LCA will appear automatically in any Jupyter or RStudio toolbar that is built from that CE. However, the CE will need to be rebuilt everytime there is an LCA update. If CE's are not rebuilt weekly, we recommend enabling LCA at the project-level.
+
+=== "Python"
+
+=== "R"
 
     1. Select _Environments_ from the side navigation bar.
     2. Choose the environment in which LCA for R package should be installed.
@@ -82,24 +116,32 @@ The Low Code Assistant (LCA) can be used with either Python or R.
 
     This will install LCA for R in every workspace that uses the Domino environment.
 
-    ### Source
+### Install from Source
 
-    In some situations you will not be able to run `remotes::install_github()` because your environment won't permit a connection to GitHub. In this case you can still install LCA from source.
+This is the preferred approach in an [air-gapped environment](https://en.wikipedia.org/wiki/Air_gap_(networking)) where you are unable to connect to the internet to install the package using  of the previous approaches.
 
-    1. Clone [this Git repository](https://github.com/dominodatalab/low-code-assistant-rstudio) to any computer that has access to GitHub and has R installed. Alternatively you can download a [ZIP archive](https://github.com/dominodatalab/low-code-assistant-rstudio/archive/refs/heads/master.zip) and unpack it.
-    2. Open an R session inside the root of this project.
-    3. Make sure the `{devtools}` and `{remotes}` R packages are installed.
-    ```r
-    install.packages(c("devtools", "remotes"))
+=== "Python"
+
+    1. Download the package onto your local machine. It would make sense to run this command in an empty directory because it will result in a large number of files being downloaded.s
     ```
-    4. Build the package.
-    ```r
-    devtools::build()
+    pip download low-code-assistant
     ```
-    5. That will have created a file named `assistDomino_<version>.tar.gz` in the parent directory. Copy this file to your Domino project.
-    6. In Domino, you can now use the file from the previous step to install.
-    ```r
-    remotes::install_local("path/to/assistDomino_<version>.tar.gz")
+    2. Get somebody on your IT team to transfer all of the files downloaded in the previous step across to your Domino environment.
+    3. In your Domino environment run the following command to install the package. You might need to update the version of the package to be consistent with the files that you downloaded (the command below is for version 1.0.3).
+    ```
+    pip install low_code_assistant-1.0.3-py2.py3-none-any.whl
+    ```
+
+=== "R"
+
+    1. Download the package source from https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z onto your local machine. One might do this as follows:
+    ```
+    wget https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z -O lca-rstudio.tar.gz
+    ```
+    2. Get somebody on your IT team to transfer the downloaded file from the previous step across to your Domino environment.
+    3. In your Domino environment run the following command to install the package.s
+    ```
+    R -e 'remotes::install_local("lca-rstudio.tar.gz")'
     ```
 
 ## Initialize
@@ -125,60 +167,6 @@ The Low Code Assistant (LCA) can be used with either Python or R.
 === "R"
 
     There is no initialization required in R. Various LCA actions will be listed under the _Addins_ menu option.
-
-## LCA Default Configuration {#make-lca-default-configuration}
-
-If you restart your workspace, then you will need to repeat the installation steps. To enable LCA more permanently you can add it to the default configuration.
-
-There are 2 ways to make LCA a default configuration:
-
- * [Enable in a Domino Project](#enable-lca-domino-project), or
- * [Enable in a Domino Compute Environment](#enable-lca-domino-compute-environment)
-
-Enabling LCA in your organization's most used compute environments (CE) is the fastest way to deploy LCA. This way, LCA will appear automatically in any Jupyter or RStudio toolbar that is built from that CE. However, the CE will need to be rebuilt everytime there is an LCA update. If CE's are not rebuilt weekly, we recommend enabling LCA at the project-level.
-
-## LCA in Project {#enable-lca-domino-project}
-
-When a workspace is created, a `requirements.txt` file will be used to install Python packages into your new environment. 
-We can use this to install LCA into any workspace created within a project.
-
-Check if you have a `requirements.txt` file. Navigate to _Files_. You should see something like the image below. If there are many files then you can search for the `requirements.txt` file.
-
-Depending on whether or not you have a `requirements.txt` file follow the appropriate instructions below.
-
-=== "I have a requirements.txt"
-
-      <img class="screenshot" src="../screenshots/requirements-location.png">
-
-      1. Click on the `requirements.txt` file link.
-      2. Click the <span class="white-button">Edit</span> button.
-
-         <img class="screenshot" src="../screenshots/requirements-edit-button.png">
-
-      3. Add the `low-code-assistant` package to your `requirements.txt` file. You can specify a version like `low-code-assistant==0.4.1`. If you don't specify a version then the latest version will be installed.
-
-         <img class="screenshot" src="../screenshots/requirements-edit.png">
-
-      4. Click the <span class="white-button">Save</span> button.
-
-=== "I don't have a requirements.txt"
-
-      <img class="screenshot" src="../screenshots/requirements-missing.png">
-
-      1. Download our [requirements.txt](requirements.txt).
-      2. Press the _Upload_ button. Either drag and drop or browse to find the `requirements.txt` file.
-
-         <img class="screenshot" src="../screenshots/requirements-upload-select.png">
-
-      3. Click the <span class="blue-button">Upload</span> button.
-      
-         <img class="screenshot" src="../screenshots/requirements-upload.png">
-
-      4. Confirm that the `requirements.txt` file has been successfully uploaded.
-
-         <img class="screenshot" src="../screenshots/requirements-location.png">
-
-Now create a new _Jupyter_ or _JupyterLab_ workspace with and the LCA button will be available.
 
 ## LCA in Compute Environment {#enable-lca-domino-compute-environment}
 

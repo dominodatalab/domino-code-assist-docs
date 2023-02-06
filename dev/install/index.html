@@ -1,0 +1,1291 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://dominolowcode.github.io/latest/install/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../loading-data/csv/">
+      
+      <link rel="icon" href="../favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
+    
+    
+      
+        <title>Install - LCA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9c788c91.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/termynal.css">
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+<!-- To verify ownership wth ahrefs. -->
+<meta name="ahrefs-site-verification" content="5beb2a50cc56d5bbc747076475ee7043648bdfb68b80c1fa91ab6a531dd84ef6">
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LCA" class="md-header__button md-logo" aria-label="LCA" data-md-component="logo">
+      
+  <img src="https://dominodatalab.github.io/api-docs/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LCA
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Install
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dominodatalab/low-code-jupyter-docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    low-code-jupyter-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LCA" class="md-nav__button md-logo" aria-label="LCA" data-md-component="logo">
+      
+  <img src="https://dominodatalab.github.io/api-docs/logo.png" alt="logo">
+
+    </a>
+    LCA
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dominodatalab/low-code-jupyter-docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    low-code-jupyter-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Low Code Assistant (LCA)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Install
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Install
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-low-code-assistant" class="md-nav__link">
+    Install the Low Code Assistant
+  </a>
+  
+    <nav class="md-nav" aria-label="Install the Low Code Assistant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-in-workspace" class="md-nav__link">
+    Install in Workspace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-in-project" class="md-nav__link">
+    Install in Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-in-compute-environment" class="md-nav__link">
+    Install in Compute Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-from-source" class="md-nav__link">
+    Install from Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialize" class="md-nav__link">
+    Initialize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-lca-domino-compute-environment" class="md-nav__link">
+    LCA in Compute Environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rebuild-compute-environment" class="md-nav__link">
+    Rebuild Compute Environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-versions" class="md-nav__link">
+    Check Versions
+  </a>
+  
+    <nav class="md-nav" aria-label="Check Versions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-python-version" class="md-nav__link">
+    Check Python Version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-lca-version" class="md-nav__link">
+    Check LCA Version
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          Loading Data
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Loading Data" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Loading Data
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../loading-data/csv/" class="md-nav__link">
+        Loading Data from CSV
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../loading-data/bigquery/" class="md-nav__link">
+        Loading Data from BigQuery
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../loading-data/s3/" class="md-nav__link">
+        Loading Data from S3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../loading-data/redshift/" class="md-nav__link">
+        Loading Data from Redshift
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../loading-data/snowflake/" class="md-nav__link">
+        Loading Data from Snowflake
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../loading-data/sql/" class="md-nav__link">
+        Loading Data with SQL
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          Transformation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Transformation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Transformation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transform/filter/" class="md-nav__link">
+        Filtering Data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transform/group-aggregate/" class="md-nav__link">
+        Grouping & Aggregating
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transform/chaining/" class="md-nav__link">
+        Chaining Transformations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="false">
+          Visualization
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Visualization" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Visualization
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visualization/create-plot/" class="md-nav__link">
+        Creating Plots
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          Apps
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Apps" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Apps
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app/create/" class="md-nav__link">
+        App creation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_2" tabindex="0" aria-expanded="false">
+          Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app/example/drug-classification/" class="md-nav__link">
+        Drug Classification App
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app/example/stock/" class="md-nav__link">
+        Stocks App
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app/deploy/" class="md-nav__link">
+        Deploy an App
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_4" tabindex="0" aria-expanded="false">
+          Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app/embed-tableau/" class="md-nav__link">
+        Embed App in Tableau
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app/upload/" class="md-nav__link">
+        Upload data to an App
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" tabindex="0" aria-expanded="false">
+          Code Snippets
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Code Snippets" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Code Snippets
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snippets/snippets-using/" class="md-nav__link">
+        Using Snippets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snippets/snippets-working/" class="md-nav__link">
+        Working with Snippets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snippets/snippets-creating/" class="md-nav__link">
+        Creating Snippets
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" tabindex="0" aria-expanded="false">
+          Domino Platform
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Domino Platform" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Domino Platform
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project/files/" class="md-nav__link">
+        Files
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-low-code-assistant" class="md-nav__link">
+    Install the Low Code Assistant
+  </a>
+  
+    <nav class="md-nav" aria-label="Install the Low Code Assistant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-in-workspace" class="md-nav__link">
+    Install in Workspace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-in-project" class="md-nav__link">
+    Install in Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-in-compute-environment" class="md-nav__link">
+    Install in Compute Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-from-source" class="md-nav__link">
+    Install from Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialize" class="md-nav__link">
+    Initialize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-lca-domino-compute-environment" class="md-nav__link">
+    LCA in Compute Environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rebuild-compute-environment" class="md-nav__link">
+    Rebuild Compute Environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-versions" class="md-nav__link">
+    Check Versions
+  </a>
+  
+    <nav class="md-nav" aria-label="Check Versions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-python-version" class="md-nav__link">
+    Check Python Version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-lca-version" class="md-nav__link">
+    Check LCA Version
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div class="sticky-banner">
+    <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg></span> <strong>Domino Platform Admins</strong> Please rebuild your compute environments every week to get the latest LCA features and fixes. See <a href="../install#rebuilding-the-compute-environment">installation instructions</a>.
+</div>
+<div class="sticky-banner sticky-banner-warning">
+    LCA is automatically installed in Domino version 5.5 and above.
+</div>
+
+<h1 id="installation">Installation</h1>
+<h2 id="install-the-low-code-assistant">Install the Low Code Assistant</h2>
+<p>The Low Code Assistant (LCA) can be used with either Python or R.</p>
+<p>There are three distinct approaches to installing the package for either Python or R:</p>
+<ul>
+<li><a href="#install-in-workspace">Install in a Workspace</a></li>
+<li><a href="#install-in-project">Install in a Project</a></li>
+<li><a href="#install-in-compute-environment">Install in a Compute Environment</a></li>
+<li><a href="#install-from-source">Install from Source</a></li>
+</ul>
+<p>The first approach is the easiest way to get started with LCA. But if you restart you workspace, then you will need to reinstall LCA. The second and third approaches will enable LCA more permanantly.</p>
+<h3 id="install-in-workspace">Install in Workspace</h3>
+<p>If you do not already have a Jupyter, JupyterLab or RStudio workspace, then create and launch one now.</p>
+<p>The next steps will depend on whether you are working with Python (Jupyter or JupyterLab) or R (RStudio workspace).</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label><label for="__tabbed_1_2">R</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Run the following command in a notebook code cell:</p>
+<div class="highlight"><pre><span></span><code>!pip install --user low-code-assistant
+</code></pre></div>
+<p><img class="screenshot" src="../screenshots/lca-install-jupyter.png"></p>
+<p>After the installation completes, refresh your browser tab. The <span class="blue-button">Low Code Assistant</span> button will appear in the Jupyter toolbar. Click this button to initialize the assistant.</p>
+<p><img class="screenshot" src="../screenshots/lca-installed-jupyter.png"></p>
+<p>To upgrade an existing installation do:</p>
+<div class="highlight"><pre><span></span><code>!pip install --user --upgrade low-code-assistant
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>If you do not have the <code>{devtools}</code> package installed, then install it now by running the following command in the RStudio console.</p>
+<div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;devtools&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Now install the LCA package.</p>
+<div class="highlight"><pre><span></span><code><span class="n">pkg</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">tempfile</span><span class="p">(</span><span class="n">fileext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;.tar.gz&#39;</span><span class="p">)</span>
+<span class="nf">download.file</span><span class="p">(</span><span class="s">&#39;https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">pkg</span><span class="p">)</span>
+<span class="n">devtools</span><span class="o">::</span><span class="nf">install_local</span><span class="p">(</span><span class="n">pkg</span><span class="p">,</span><span class="w"> </span><span class="n">upgrade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;always&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>🚨 If you encounter a timeout error during the installation, then make sure that you've selected a harware tier that allows egress. Otherwise, your workspace will not be able to reach GitHub to download the package.</p>
+<p>After the installation completes, refresh your browser tab. Under the <em>Addins</em> menu option you should now see an <em>ASSISTDOMINO</em> section with various actions listed below. You can also confirm that the <code>{assistDomino}</code> package has been installed by searching in the <em>Packages</em> tab.</p>
+<p><img class="screenshot" src="../screenshots/lca-installed-rstudio.png"></p>
+</div>
+</div>
+</div>
+<h3 id="install-in-project">Install in Project</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Python</label><label for="__tabbed_2_2">R</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>A <code>requirements.txt</code> file is used to install Python packages into a new workspace created within a project. Navigate to <em>Files</em> to check whether you have a <code>requirements.txt</code> file.</p>
+<p><img class="screenshot" src="../screenshots/requirements-location.png"></p>
+<p>If you <em>do</em> have a <code>requirements.txt</code> file then it will be listed (possibly among a selection of other files) then proceed as follows:</p>
+<ol>
+<li>Click on the <code>requirements.txt</code> file link.</li>
+<li>Click the <span class="white-button">Edit</span> button.
+<img class="screenshot" src="../screenshots/requirements-edit-button.png"></li>
+<li>Add the <code>low-code-assistant</code> package to your <code>requirements.txt</code> file. You can specify a version like <code>low-code-assistant==0.4.1</code>. If you don't specify a version then the latest version will be installed.
+<img class="screenshot" src="../screenshots/requirements-edit.png"></li>
+<li>Click the <span class="white-button">Save</span> button.</li>
+</ol>
+<p>If you <em>don't</em> have a <code>requirements.txt</code> file then do the following:</p>
+<ol>
+<li>Download our <a href="../requirements.txt">requirements.txt</a>.</li>
+<li>Press the <em>Upload</em> button. Either drag and drop or browse to find the <code>requirements.txt</code> file.
+<img class="screenshot" src="../screenshots/requirements-upload-select.png"></li>
+<li>Click the <span class="blue-button">Upload</span> button.
+<img class="screenshot" src="../screenshots/requirements-upload.png"></li>
+<li>Confirm that the <code>requirements.txt</code> file has been successfully uploaded.
+<img class="screenshot" src="../screenshots/requirements-location.png"></li>
+</ol>
+<p>Now create a new <em>Jupyter</em> or <em>JupyterLab</em> workspace with and the LCA button will be available.</p>
+</div>
+<div class="tabbed-block"></div>
+</div>
+</div>
+<h3 id="install-in-compute-environment">Install in Compute Environment</h3>
+<p>Enabling LCA in your organization's most used compute environments (CE) is the fastest way to deploy LCA. This way, LCA will appear automatically in any Jupyter or RStudio toolbar that is built from that CE. However, the CE will need to be rebuilt everytime there is an LCA update. If CE's are not rebuilt weekly, we recommend enabling LCA at the project-level.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Python</label><label for="__tabbed_3_2">R</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+<div class="tabbed-block">
+<ol>
+<li>Select <em>Environments</em> from the side navigation bar.</li>
+<li>Choose the environment in which LCA for R package should be installed.</li>
+<li>Click the <em>Edit Definition</em> button.</li>
+<li>Add the following line to the end of the <code>Dockerfile</code> section (but before the last <code>USER ubuntu</code> command):
+<div class="highlight"><pre><span></span><code>RUN R -e &quot;pkg &lt;- tempfile(fileext = &#39;.tar.gz&#39;); download.file(&#39;https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z&#39;, pkg); devtools::install_local(pkg, upgrade = &#39;always&#39;);&quot;
+RUN chown -R ubuntu:ubuntu /usr/local/lib/R/site-library
+</code></pre></div></li>
+<li>Click the <em>Build</em> button at the bottom of the page</li>
+</ol>
+<p>This will install LCA for R in every workspace that uses the Domino environment.</p>
+</div>
+</div>
+</div>
+<h3 id="install-from-source">Install from Source</h3>
+<p>This is the preferred approach in an <a href="https://en.wikipedia.org/wiki/Air_gap_(networking)">air-gapped environment</a> where you are unable to connect to the internet to install the package using  of the previous approaches.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Python</label><label for="__tabbed_4_2">R</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>Download the package onto your local machine. It would make sense to run this command in an empty directory because it will result in a large number of files being downloaded.s
+<div class="highlight"><pre><span></span><code>pip download low-code-assistant
+</code></pre></div></li>
+<li>Get somebody on your IT team to transfer all of the files downloaded in the previous step across to your Domino environment.</li>
+<li>In your Domino environment run the following command to install the package. You might need to update the version of the package to be consistent with the files that you downloaded (the command below is for version 1.0.3).
+<div class="highlight"><pre><span></span><code>pip install low_code_assistant-1.0.3-py2.py3-none-any.whl
+</code></pre></div></li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>Download the package source from https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z onto your local machine. One might do this as follows:
+<div class="highlight"><pre><span></span><code>wget https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z -O lca-rstudio.tar.gz
+</code></pre></div></li>
+<li>Get somebody on your IT team to transfer the downloaded file from the previous step across to your Domino environment.</li>
+<li>In your Domino environment run the following command to install the package.s
+<div class="highlight"><pre><span></span><code>R -e &#39;remotes::install_local(&quot;lca-rstudio.tar.gz&quot;)&#39;
+</code></pre></div></li>
+</ol>
+</div>
+</div>
+</div>
+<h2 id="initialize">Initialize</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Python</label><label for="__tabbed_5_2">R</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>If you have followed the <a href="./">installation instructions</a>, you should see a blue <span class="blue-button">Low Code Assistant</span> button in the toolbar of your Jupyter notebook.</p>
+<p><img class="screenshot" src="../screenshots/lca-toolbar-button.png"></p>
+<p>LCA can be started by clicking the <span class="blue-button">Low Code Assistant</span> button in the toolbar. It will insert a code snippet in a new code cell and execute it.</p>
+<p><img class="screenshot" src="../screenshots/lca-toolbar-button-code.png"></p>
+<p>If you now hover above a code cell, you should see a blue icon  <img alt="assistant icon" class="assistant-icon" src="../screenshots/general/assistant-icon.png"> to the right.</p>
+<p><img class="screenshot" src="../screenshots/lca-icon.png"></p>
+<p>If you hover above the  <img alt="assistant icon" class="assistant-icon" src="../screenshots/general/assistant-icon.png"> icon, it will show a popup menu.</p>
+<p><img class="screenshot" src="../screenshots/lca-icon-hover-menu.png"></p>
+</div>
+<div class="tabbed-block">
+<p>There is no initialization required in R. Various LCA actions will be listed under the <em>Addins</em> menu option.</p>
+</div>
+</div>
+</div>
+<h2 id="enable-lca-domino-compute-environment">LCA in Compute Environment</h2>
+<ol>
+<li>Go to the Domino Standard Environment (under <em>Environments</em> in the side navigation bar).</li>
+<li>
+<p>Add this line to the end of the environment's <code>Dockerfile</code> setup (but before the last <code>USER ubuntu</code> command):</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Python</label><label for="__tabbed_6_2">R</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>RUN pip install low-code-assistant
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>RUN R -e &#39;remotes::install_github(&quot;dominodatalab/low-code-assistant-rstudio&quot;, upgrade = &quot;always&quot;)&#39;
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Save the default environment <code>Dockerfile</code>.</p>
+</li>
+<li>Click the <em>Build</em> button.</li>
+</ol>
+<h2 id="rebuild-compute-environment">Rebuild Compute Environment</h2>
+<ol>
+<li>Go to the <em>Environments</em> page (the cube icon in the left-side-bar).</li>
+<li>Open your LCA environment definition.</li>
+<li>Click the <span class="white-button">Edit Definition</span> button.</li>
+<li>Scroll to the bottom and check <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M211.8 339.8c-10.9 10.9-28.7 10.9-39.6 0l-64-64c-10.93-10.9-10.93-28.7 0-39.6 10.9-10.9 28.7-10.9 39.6 0l44.2 44.2 108.2-108.2c10.9-10.9 28.7-10.9 39.6 0 10.9 10.9 10.9 28.7 0 39.6l-128 128zM0 96c0-35.35 28.65-64 64-64h320c35.3 0 64 28.65 64 64v320c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64V96zm48 0v320c0 8.8 7.16 16 16 16h320c8.8 0 16-7.2 16-16V96c0-8.84-7.2-16-16-16H64c-8.84 0-16 7.16-16 16z"/></svg></span> <em>Full rebuild without cache</em>.</li>
+<li>Click the <span class="white-button">Build</span> button.</li>
+</ol>
+<h2 id="check-versions">Check Versions</h2>
+<p>It can be useful to know the precise version of Python and LCA which are running in your environment.</p>
+<h3 id="check-python-version">Check Python Version</h3>
+<p>To check the version of Python in your environment, run the following:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">platform</span> <span class="kn">import</span> <span class="n">python_version</span>
+
+<span class="n">python_version</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="check-lca-version">Check LCA Version</h3>
+<p>To check the version of LCA installed, run the following:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">low_code_assistant</span>
+
+<span class="n">low_code_assistant</span><span class="o">.</span><span class="n">__version__</span>
+</code></pre></div>
+<p>Follow <a href="#enabling-low-code-assistant-in-jupyter">these instructions</a> to upgrade your LCA installation.</p>
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link", "navigation.expand"], "search": "../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ba449ae6.min.js"></script>
+      
+        <script src="../js/termynal.js"></script>
+      
+        <script src="../js/custom.js"></script>
+      
+    
+  </body>
+</html>

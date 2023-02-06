@@ -96,11 +96,15 @@ The next steps will depend on whether you are working with Python (Jupyter or Ju
 
 === "R"
 
+    Documentation pending.
+
 ### Install in Compute Environment
 
-Enabling LCA in your organization's most used compute environments (CE) is the fastest way to deploy LCA. This way, LCA will appear automatically in any Jupyter or RStudio toolbar that is built from that CE. However, the CE will need to be rebuilt everytime there is an LCA update. If CE's are not rebuilt weekly, we recommend enabling LCA at the project-level.
+Enabling LCA in your organization's most used compute environments (CE) is the fastest way to deploy LCA. This way, LCA will appear automatically in any Jupyter or RStudio toolbar that is built from that CE. However, the CE will need to be rebuilt every time there is an LCA update. If CE's are not rebuilt weekly, we recommend enabling LCA at the project-level.
 
 === "Python"
+
+    Documentation pending.
 
 === "R"
 
@@ -168,53 +172,20 @@ This is the preferred approach in an [air-gapped environment](https://en.wikiped
 
     There is no initialization required in R. Various LCA actions will be listed under the _Addins_ menu option.
 
-## LCA in Compute Environment {#enable-lca-domino-compute-environment}
-
-1. Go to the Domino Standard Environment (under _Environments_ in the side navigation bar).
-2. Add this line to the end of the environment's `Dockerfile` setup (but before the last `USER ubuntu` command):
-
-    === "Python"
-        ```
-        RUN pip install low-code-assistant
-        ```
-    === "R"
-        ```
-        RUN R -e 'remotes::install_github("dominodatalab/low-code-assistant-rstudio", upgrade = "always")'
-        ```
-
-3. Save the default environment `Dockerfile`.
-4. Click the _Build_ button.
-
-## Rebuild Compute Environment
-
-1. Go to the _Environments_ page (the cube icon in the left-side-bar).
-2. Open your LCA environment definition.
-3. Click the <span class="white-button">Edit Definition</span> button.
-4. Scroll to the bottom and check :fontawesome-regular-square-check: _Full rebuild without cache_.
-5. Click the <span class="white-button">Build</span> button.
-
-## Check Versions
-
-It can be useful to know the precise version of Python and LCA which are running in your environment.
-
-### Check Python Version
-
-To check the version of Python in your environment, run the following:
-
-```python
-from platform import python_version
-
-python_version()
-```
-
-### Check LCA Version
+## Check Version
 
 To check the version of LCA installed, run the following:
 
-```python
-import low_code_assistant
+=== "Python"
 
-low_code_assistant.__version__
-```
+    ```python
+    import low_code_assistant
 
-Follow [these instructions](#enabling-low-code-assistant-in-jupyter) to upgrade your LCA installation.
+    low_code_assistant.__version__
+    ```
+
+=== "R"
+
+    ```r
+    packageVersion("assistDomino")
+    ```

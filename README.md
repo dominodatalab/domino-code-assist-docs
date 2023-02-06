@@ -31,9 +31,7 @@ Now you can edit the markdown files, and the documentation page should reload.
 
 ## Publish
 
-```bash
-mkdocs gh-deploy
-```
+Using [mike](https://github.com/jimporter/mike) to handle versions.
 
 # Generating video/screenshots
 

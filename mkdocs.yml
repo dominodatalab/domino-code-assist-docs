@@ -1,4 +1,4 @@
-site_name: "LCA"
+site_name: "Low Code Assistant"
 site_url: https://dominolowcode.github.io/
 site_dir: site
 edit_uri: ""
@@ -42,6 +42,9 @@ theme:
     - content.tabs.link
     - navigation.expand
   custom_dir: overrides
+extra:
+  version:
+    provider: mike
 extra_css:
   - css/termynal.css
   - css/custom.css
@@ -78,3 +81,8 @@ plugins:
   - exclude:
       regex:
         - ".*include.*"
+  - mike:
+      canonical_version: "latest"
+      version_selector: true
+      css_dir: css
+      javascript_dir: js

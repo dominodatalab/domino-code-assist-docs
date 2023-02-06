@@ -41,19 +41,19 @@ jobs:
           name: site
           path: site/
       - run: linkchecker site/index.html
-  deploy:
-    runs-on: ubuntu-latest
-    needs: [check-links]
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Install Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.x
-      - name: Install Python dependencies
-        run: |
-          pip install -r requirements.txt
-      - name: Test deploy
-        run: mkdocs gh-deploy --force --clean --verbose
+  # deploy:
+  #   runs-on: ubuntu-latest
+  #   needs: [check-links]
+  #   if: github.ref == 'refs/heads/main'
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v3
+  #     - name: Install Python
+  #       uses: actions/setup-python@v4
+  #       with:
+  #         python-version: 3.x
+  #     - name: Install Python dependencies
+  #       run: |
+  #         pip install -r requirements.txt
+  #     - name: Test deploy
+  #       run: mkdocs gh-deploy --force --clean --verbose

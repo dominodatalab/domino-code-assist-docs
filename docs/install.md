@@ -33,7 +33,7 @@ The next steps will depend on whether you are working with Python (Jupyter or Ju
 
       <img class="screenshot" src="../screenshots/lca-install-jupyter.png">
 
-      After the installation completes, refresh your browser tab. The <span class="blue-button">Low Code Assistant</span> button will appear in the Jupyter toolbar. Click this button to initialize the assistant.
+      After the installation completes, refresh your browser tab. The <span class="blue-button">Low Code Assistant</span> button will appear in the Jupyter toolbar. Click this button to initialize Code Assist.
 
       <img class="screenshot" src="../screenshots/lca-installed-jupyter.png">
 
@@ -54,8 +54,10 @@ The next steps will depend on whether you are working with Python (Jupyter or Ju
     Now install the Code Assist package.
 
     ```r
+    remove.packages("assistDomino")
     pkg <- tempfile(fileext = '.tar.gz')
-    download.file('https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z', pkg)
+    url <- 'https://drive.google.com/uc?id=1P-rHA8CJ78XztstXaBZug-6g80j69zJB'
+    download.file(url, pkg)
     devtools::install_local(pkg, upgrade = 'always')
     ```
 
@@ -113,7 +115,7 @@ Enabling Code Assist in your organization's most used compute environments (CE) 
     3. Click the _Edit Definition_ button.
     4. Add the following line to the end of the `Dockerfile` section (but before the last `USER ubuntu` command):
     ```
-    RUN R -e "pkg <- tempfile(fileext = '.tar.gz'); download.file('https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z', pkg); devtools::install_local(pkg, upgrade = 'always');"
+    RUN R -e "pkg <- tempfile(fileext = '.tar.gz'); download.file('https://drive.google.com/uc?id=1P-rHA8CJ78XztstXaBZug-6g80j69zJB', pkg); devtools::install_local(pkg, upgrade = 'always');"
     RUN chown -R ubuntu:ubuntu /usr/local/lib/R/site-library
     ```
     5. Click the _Build_ button at the bottom of the page
@@ -140,7 +142,7 @@ This is the preferred approach in an [air-gapped environment](https://en.wikiped
 
     1. Download the package source from https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z onto your local machine. One might do this as follows:
     ```
-    wget https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z -O lca-rstudio.tar.gz
+    wget https://drive.google.com/uc?id=1P-rHA8CJ78XztstXaBZug-6g80j69zJB -O lca-rstudio.tar.gz
     ```
     2. Get somebody on your IT team to transfer the downloaded file from the previous step across to your Domino environment.
     3. In your Domino environment run the following command to install the package.s
@@ -160,11 +162,11 @@ This is the preferred approach in an [air-gapped environment](https://en.wikiped
 
     <img class="screenshot" src="../screenshots/lca-toolbar-button-code.png">
 
-    If you now hover above a code cell, you should see a blue icon  <img alt="assistant icon" class="assistant-icon" src="../screenshots/general/assistant-icon.png"> to the right.
+    If you now hover above a code cell, you should see the <img alt="assistant icon" class="assistant-icon" src="../screenshots/general/assistant-icon.png"> icon to the right.
 
     <img class="screenshot" src="../screenshots/lca-icon.png">
 
-    If you hover above the  <img alt="assistant icon" class="assistant-icon" src="../screenshots/general/assistant-icon.png"> icon, it will show a popup menu.
+    If you hover above the <img alt="assistant icon" class="assistant-icon" src="../screenshots/general/assistant-icon.png"> icon, it will show a popup menu.
 
     <img class="screenshot" src="../screenshots/lca-icon-hover-menu.png">
 

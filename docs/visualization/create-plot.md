@@ -12,7 +12,7 @@
 
     <img class="screenshot" src="../../screenshots/jupyter-lca-code.png">
 
-    Once Code Assist has been initialised if you hover above a code cell, you will see the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png">. If you hover above the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png">, it will show a popup menu. Select the _Load Data_ item from the menu.
+    Once Code Assist has been initialised if you hover above a code cell, you will see the <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png"> icon. If you hover above the <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png"> icon, it will show a popup menu. Select the _Load Data_ item from the menu.
 
     <img class="screenshot" src="../../screenshots/jupyter-lca-menu.png">
 
@@ -32,7 +32,7 @@
 
     <img class="screenshot" src="../../screenshots/jupyter-lca-load-data-demo-data-iris-code.png">
 
-    Hover above the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png"> and select the _Visualization_ item from the menu.
+    Hover above the <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png"> icon and select the _Visualization_ item from the menu.
 
     <img class="screenshot" src="../../screenshots/jupyter-lca-menu-visualization.png">
 

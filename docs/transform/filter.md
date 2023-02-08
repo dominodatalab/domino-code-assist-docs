@@ -14,7 +14,7 @@ A quick filter allows you to rapidly select a subset of rows. It only allows for
 
     <img class="screenshot" src="../../screenshots/jupyter-load-data-datasets-titanic.png">
 
-    Hover over the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png">. Select the _Transformations_ item from the popup menu.
+    Hover over the <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png"> icon. Select the _Transformations_ item from the popup menu.
 
     <img class="screenshot" src="../../screenshots/jupyter-load-data-datasets-titanic-menu.png">
 

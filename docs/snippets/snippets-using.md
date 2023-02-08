@@ -16,7 +16,7 @@ Before inserting a snippet you first need to find and select it.
 
 === "Python"
 
-    Hover over the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png">, it will show a popup menu. Select the _Insert snippet_ item from the menu.
+    Hover over the <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png"> icon, it will show a popup menu. Select the _Insert snippet_ item from the menu.
 
     <img class="screenshot" src="../../screenshots/snippets-menu-insert-snippet.png">
 

@@ -6,7 +6,7 @@
 
 === "Python"
 
-    Hover over the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png">. Select the _Load data_ item from the popup menu.
+    Hover over the <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png"> icon. Select the _Load data_ item from the popup menu.
 
     <img class="screenshot" src="../../screenshots/jupyter-load-data-data-sources.png">
 
@@ -72,7 +72,7 @@
 
 === "Python"
 
-    Hover over the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png">. Select the _Load data_ item from the popup menu. Select the _Datasets_ tab.
+    Hover over the Code Assist icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png">. Select the _Load data_ item from the popup menu. Select the _Datasets_ tab.
 
     <img class="screenshot" src="../../screenshots/jupyter-load-data-datasets.png">
 

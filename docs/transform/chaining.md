@@ -6,7 +6,7 @@ We have [already seen](filter.md#manual-filter) how multiple filtering operation
 
 === "Python"
 
-    Hover over the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png">. Select the _Transformations_ item from the popup menu. Select the _Groupby and aggregate_ option.
+    Hover over the <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png"> icon. Select the _Transformations_ item from the popup menu. Select the _Groupby and aggregate_ option.
 
     Specify `Pclass` and `Embarked` as the columns to group by. Choose `Fare` as the column to aggregate. Select `mean` as the aggregator function. Press the <span class="white-button-blue-text">Add Transformation</span> button.
 

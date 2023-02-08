@@ -4,7 +4,7 @@ For this tutorial we'll use the _Titanic_ data.
 
 === "Python"
 
-    Hover over the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png">. Select the _Transformations_ item from the popup menu. Select the _Groupby and aggregate_ option.
+    Hover over the <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png"> icon. Select the _Transformations_ item from the popup menu. Select the _Groupby and aggregate_ option.
 
     <img class="screenshot" src="../../screenshots/jupyter-transformation-groupby-aggregate.png">
 

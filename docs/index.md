@@ -1,13 +1,13 @@
-# Code Assist
+# Summary
 
 Code Assist provides a simple, intuitive point-and-click interface for generating Python or R code. It aims to enable those not familiar with writing code to quickly become productive in Domino Data Lab. For those more familiar with writing code, Code Assist accelerates common data analysis tasks.
 
 Code Assist can generate code for these tasks:
 
-1. Import data from Cloud stores like [S3](/loading-data/redshift/), [Snowflake](/loading-data/snowflake/), [BigQuery](/loading-data/bigquery/) or [Redshift](/loading-data/redshift/).
-2. Wrangle data with operations like [filtering](/transform/filter) and [aggregation](/transform/group-aggregate).
-3. Create [visualizations](/visualization/plotly).
-4. Create and easily deploy [data apps](/app/create).
+1. Import data from Cloud stores like [S3](./loading-data/s3/), [Snowflake](./loading-data/snowflake/), [BigQuery](./loading-data/bigquery/) or [Redshift](./loading-data/redshift/).
+2. Wrangle data with operations like [filtering](./transform/filter) and [aggregation](./transform/group-aggregate).
+3. Create [visualizations](./visualization/create-plot).
+4. Create and easily deploy [data apps](./app/create).
 
 ## Benefits
 

@@ -2,7 +2,7 @@
 
 This repository only contains the documentation for low_code_assistant.
 
-The live documentation is at https://dominodatalab.github.io/low-code-jupyter-docs/
+The live documentation is at https://dominodatalab.github.io/domino-code-assist-docs/.
 # Develop documentation
 
 ## Install dependencies:

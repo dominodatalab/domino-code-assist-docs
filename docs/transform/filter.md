@@ -48,7 +48,7 @@ A quick filter allows you to rapidly select a subset of rows. It only allows for
 
     <img class="screenshot" src="../../screenshots/rstudio-load-data-datasets-titanic.png">
 
-    Press the _Addin_ button. Select _LCA Transformations_ from the menu.
+    Press the _Addin_ button. Select _Transformations_ from the menu.
 
     <img class="screenshot" src="../../screenshots/rstudio-menu-transformations.png">
 

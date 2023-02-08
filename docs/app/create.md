@@ -1,13 +1,12 @@
 # Create an App
 
-
 <video controls>
     <source src="https://user-images.githubusercontent.com/1765949/185930154-ed0319d3-f775-4db7-b3f8-7b38d0257979.mp4" type="video/mp4">
 </video>
 
 ## Loading CSV data into a Pandas DataFrame
 
-Load a dataset using the Low Code Assistant (LCA), as described in [Getting started](../../) or by adding your own code. In our example we add the following code ourselves:
+Load a dataset using Code Assist, as described in [Getting started](../../) or by adding your own code. In our example we add the following code ourselves:
 ```python
 import pandas as pd
 df = pd.read_csv("../mydata/titanic.csv")
@@ -20,7 +19,7 @@ df.head(2)
 
 ### Adding a histogram
 
-Create a histogram using LCA, as described in [Scatter Plot](../visualization/create-plot.md) or adding your own code. In our example we add the following code ourselves:
+Create a histogram using Code Assist, as described in [Scatter Plot](../visualization/create-plot.md) or adding your own code. In our example we add the following code ourselves:
 
 ```python
 import plotly.express as px
@@ -38,7 +37,7 @@ histogram_survived
 
 ### Adding a scatter plot
 
-Create a scatter plot using LCA, as described in [Scatter Plot](../visualization/create-plot.md). In our example we add the following code ourselves:
+Create a scatter plot using Code Assist, as described in [Scatter Plot](../visualization/create-plot.md). In our example we add the following code ourselves:
 
 ```python
 import plotly.express as px

@@ -1,12 +1,12 @@
 <div class="sticky-banner sticky-banner-warning">
-    LCA is automatically installed in Domino version 5.5 and above.
+    Code Assist is automatically installed in Domino version 5.5 and above.
 </div>
 
 # Installation
 
 ## Install the Low Code Assistant
 
-The Low Code Assistant (LCA) can be used with either Python or R.
+The Code Assist can be used with either Python or R.
 
 There are three distinct approaches to installing the package for either Python or R:
 
@@ -15,7 +15,7 @@ There are three distinct approaches to installing the package for either Python 
 - [Install in a Compute Environment](#install-in-compute-environment)
 - [Install from Source](#install-from-source)
 
-The first approach is the easiest way to get started with LCA. But if you restart you workspace, then you will need to reinstall LCA. The second and third approaches will enable LCA more permanantly.
+The first approach is the easiest way to get started with Code Assist. But if you restart you workspace, then you will need to reinstall Code Assist. The second and third approaches will enable Code Assist more permanantly.
 
 ### Install in Workspace
 
@@ -51,7 +51,7 @@ The next steps will depend on whether you are working with Python (Jupyter or Ju
     install.packages("devtools")
     ```
 
-    Now install the LCA package.
+    Now install the Code Assist package.
 
     ```r
     pkg <- tempfile(fileext = '.tar.gz')
@@ -92,7 +92,7 @@ The next steps will depend on whether you are working with Python (Jupyter or Ju
     4. Confirm that the `requirements.txt` file has been successfully uploaded.
     <img class="screenshot" src="../screenshots/requirements-location.png">
 
-    Now create a new _Jupyter_ or _JupyterLab_ workspace with and the LCA button will be available.
+    Now create a new _Jupyter_ or _JupyterLab_ workspace with and the Code Assist button will be available.
 
 === "R"
 
@@ -100,7 +100,7 @@ The next steps will depend on whether you are working with Python (Jupyter or Ju
 
 ### Install in Compute Environment
 
-Enabling LCA in your organization's most used compute environments (CE) is the fastest way to deploy LCA. This way, LCA will appear automatically in any Jupyter or RStudio toolbar that is built from that CE. However, the CE will need to be rebuilt every time there is an LCA update. If CE's are not rebuilt weekly, we recommend enabling LCA at the project-level.
+Enabling Code Assist in your organization's most used compute environments (CE) is the fastest way to deploy Code Assist. This way, Code Assist will appear automatically in any Jupyter or RStudio toolbar that is built from that CE. However, the CE will need to be rebuilt every time there is an Code Assist update. If CE's are not rebuilt weekly, we recommend enabling Code Assist at the project-level.
 
 === "Python"
 
@@ -109,7 +109,7 @@ Enabling LCA in your organization's most used compute environments (CE) is the f
 === "R"
 
     1. Select _Environments_ from the side navigation bar.
-    2. Choose the environment in which LCA for R package should be installed.
+    2. Choose the environment in which Code Assist for R package should be installed.
     3. Click the _Edit Definition_ button.
     4. Add the following line to the end of the `Dockerfile` section (but before the last `USER ubuntu` command):
     ```
@@ -118,7 +118,7 @@ Enabling LCA in your organization's most used compute environments (CE) is the f
     ```
     5. Click the _Build_ button at the bottom of the page
 
-    This will install LCA for R in every workspace that uses the Domino environment.
+    This will install Code Assist for R in every workspace that uses the Domino environment.
 
 ### Install from Source
 
@@ -156,7 +156,7 @@ This is the preferred approach in an [air-gapped environment](https://en.wikiped
 
     <img class="screenshot" src="../screenshots/lca-toolbar-button.png">
 
-    LCA can be started by clicking the <span class="blue-button">Low Code Assistant</span> button in the toolbar. It will insert a code snippet in a new code cell and execute it.
+    Code Assist can be started by clicking the <span class="blue-button">Low Code Assistant</span> button in the toolbar. It will insert a code snippet in a new code cell and execute it.
 
     <img class="screenshot" src="../screenshots/lca-toolbar-button-code.png">
 
@@ -170,11 +170,11 @@ This is the preferred approach in an [air-gapped environment](https://en.wikiped
 
 === "R"
 
-    There is no initialization required in R. Various LCA actions will be listed under the _Addins_ menu option.
+    There is no initialization required in R. Various Code Assist actions will be listed under the _Addins_ menu option.
 
 ## Check Version
 
-To check the version of LCA installed, run the following:
+To check the version of Code Assist installed, run the following:
 
 === "Python"
 

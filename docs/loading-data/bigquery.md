@@ -13,7 +13,7 @@ To load data from BigQuery you'll need to have
 
 ## Add a BigQuery Data Source
 
-Before you can use the Low Code Assistant (LCA) to access data from BigQuery you'll need to add a suitable data source.
+Before you can use Code Assist to access data from BigQuery you'll need to add a suitable data source.
 
 Click the _Data_ option in the left-hand menu. Click the <span class="blue-button">+ Add a Data Source</span> button.
 
@@ -50,7 +50,7 @@ The BigQuery project will appear under the list of data sources.
 
     <img class="screenshot" src="../../screenshots/bigquery-lca.png">
 
-    Once LCA has been initialised if you hover above a code cell, you will see the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png">. If you hover above the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png">, it will show a popup menu. Select the _Load Data_ item from the menu.
+    Once Code Assist has been initialised if you hover above a code cell, you will see the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png">. If you hover above the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png">, it will show a popup menu. Select the _Load Data_ item from the menu.
 
     <img class="screenshot" src="../../screenshots/bigquery-lca-menu.png">
 
@@ -68,4 +68,4 @@ The BigQuery project will appear under the list of data sources.
 
 === "R"
 
-    This feature is not yet implemented in the R version of LCA.
+    This feature is not yet implemented in the R version of Code Assist.

@@ -2,7 +2,7 @@
 
 There are many bits of code which are used often but not often enough to be committed to memory. Even the most experienced developers will inevitably need to search to find the code fragment. The resulting context switching negatively impacts productivity.
 
-Snippets to the rescue! Snippets are useful bits of code which are readily accessible via the Low Code Assistant (LCA). A number of handy snippets are included with the LCA distribution. You can add your own snippets and share them with your team.
+Snippets to the rescue! Snippets are useful bits of code which are readily accessible via Code Assist. A number of handy snippets are included with the Code Assist distribution. You can add your own snippets and share them with your team.
 
 <img class="screenshot" src="../../screenshots/snippets.gif">
 
@@ -34,11 +34,11 @@ Before inserting a snippet you first need to find and select it.
 
 === "R"
 
-    Suppose that you have loaded some data and want to filter a specific subset of rows. You could do this using the LCA, but you could also do it directly in code. Snippets can help you get started with appropriate code which can easily be adapted to your use case.
+    Suppose that you have loaded some data and want to filter a specific subset of rows. You could do this using Code Assist, but you could also do it directly in code. Snippets can help you get started with appropriate code which can easily be adapted to your use case.
 
     <img class="screenshot" src="../../screenshots/rstudio-snippets-penguin-data.png">
     
-    Click on the Addins button and choose the _LCA Snippets_ option.
+    Click on the Addins button and choose the _Snippets_ option.
 
     <img class="screenshot" src="../../screenshots/rstudio-lca-menu-snippets.png">
 

@@ -8,7 +8,7 @@ An example snippet library can be found [here](https://github.com/dominodatalab/
 
 ## Snippet Format
 
-LCA looks for snippets in a `snippets/` folder in the root of the repository or project. Any `.py` (Python) or `.R` files below this folder will be loaded as snippets. The sub-folder structure will be maintained in the LCA menu. See, for example, the folder structure illustrated below.
+Code Assist looks for snippets in a `snippets/` folder in the root of the repository or project. Any `.py` (Python) or `.R` files below this folder will be loaded as snippets. The sub-folder structure will be maintained in the Code Assist menu. See, for example, the folder structure illustrated below.
 
 <pre>
  ├── .git
@@ -25,7 +25,7 @@ LCA looks for snippets in a `snippets/` folder in the root of the repository or 
 Snippets can be edited:
 
    - In the git repository with your regular git workflow for this repo.
-   - In the notebook using LCA.
+   - In the notebook using Code Assist.
    - With VSCode by opening a workspace with VSCode for this project in Domino.
 
 ### Enable Editing
@@ -34,7 +34,7 @@ The capability to edit snippets is not enabled by default. It has to be explicit
 
 === "Python"
 
-     The last item in the LCA menu is _Insert snippet_. The icon to the right of this item will be greyed out by default. Click on the icon to enable editing.
+     The last item in the Code Assist menu is _Insert snippet_. The icon to the right of this item will be greyed out by default. Click on the icon to enable editing.
 
      <img class="screenshot" src="../../screenshots/jupyter-snippets-enable-editing.png">
 

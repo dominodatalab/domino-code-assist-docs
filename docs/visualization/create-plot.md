@@ -12,11 +12,11 @@
 
     <img class="screenshot" src="../../screenshots/jupyter-lca-code.png">
 
-    Once the Low Code Assistant (LCA) has been initialised if you hover above a code cell, you will see the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png">. If you hover above the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png">, it will show a popup menu. Select the _Load Data_ item from the menu.
+    Once Code Assist has been initialised if you hover above a code cell, you will see the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png">. If you hover above the assistant icon <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png">, it will show a popup menu. Select the _Load Data_ item from the menu.
 
     <img class="screenshot" src="../../screenshots/jupyter-lca-menu.png">
 
-    The _LCA Load Data_ dialog will open.
+    The _Load Data_ dialog will open.
 
     <img class="screenshot" src="../../screenshots/jupyter-lca-load-data.png">
 
@@ -36,7 +36,7 @@
 
     <img class="screenshot" src="../../screenshots/jupyter-lca-menu-visualization.png">
 
-    The _LCA Visualization_ dialog will open.
+    The _Visualization_ dialog will open.
 
     <img class="screenshot" src="../../screenshots/jupyter-lca-data-visualization.png">
 
@@ -62,11 +62,11 @@
 
     <img class="screenshot" src="../../screenshots/rstudio-session-fresh.png">
 
-    Click on the <span class="white-button">Addins</span> button and choose the _LCA Load Data_ option.
+    Click on the <span class="white-button">Addins</span> button and choose the _Load Data_ option.
 
     <img class="screenshot" src="../../screenshots/rstudio-lca-menu-load-data.png">
 
-    The _LCA Load Data_ dialog will open.
+    The _Load Data_ dialog will open.
 
     <img class="screenshot" src="../../screenshots/rstudio-lca-load-data.png">
 
@@ -82,11 +82,11 @@
 
     <img class="screenshot" src="../../screenshots/rstudio-lca-load-data-demo-data-penguins-code.png">
 
-    Click on the <span class="white-button">Addins</span> button and choose the _LCA Visualizations_ option.
+    Click on the <span class="white-button">Addins</span> button and choose the _Visualizations_ option.
 
     <img class="screenshot" src="../../screenshots/rstudio-lca-menu-data-visualization.png">
 
-    The _LCA Data Visualization_ dialog will open. Select a data frame to visualize.
+    The _Data Visualization_ dialog will open. Select a data frame to visualize.
 
     <img class="screenshot" src="../../screenshots/rstudio-lca-data-visualization.png">
 

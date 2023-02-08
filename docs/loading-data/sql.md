@@ -41,7 +41,7 @@ This example shows how to load data using custom SQL and demonstrates the auto c
 
 === "R"
 
-    This feature is not yet implemented in the R version of LCA.
+    This feature is not yet implemented in the R version of Code Assist.
 
 ## SQL & Snowflake
 
@@ -73,4 +73,4 @@ This example shows how to load data using custom SQL and demonstrates the auto c
 
 === "R"
 
-    This feature is not yet implemented in the R version of LCA.
+    This feature is not yet implemented in the R version of Code Assist.

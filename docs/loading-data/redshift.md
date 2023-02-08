@@ -6,7 +6,7 @@ To load data from Redshift you'll need to have access to a Redshift cluster cont
 
 ## Add a Redshift Data Source
 
-Before you can use the Low Code Assistant (LCA) to access data from Redshift you'll need to add a suitable data source. Click the _Data_ option in the left-hand menu. Click the <span class="blue-button">+ Create a Data Source</span> button.
+Before you can use Code Assist to access data from Redshift you'll need to add a suitable data source. Click the _Data_ option in the left-hand menu. Click the <span class="blue-button">+ Create a Data Source</span> button.
 
 <img class="screenshot" src="../../screenshots/redshift-create-data-source.png">
 
@@ -43,7 +43,7 @@ The Redshift cluster will be added to the list of available data sources.
 
     <img class="screenshot" src="../../screenshots/jupyter-redshift-cluster-data-sources.png">
 
-    Initialize LCA and select the _Load data_ option.
+    Initialize Code Assist and select the _Load data_ option.
 
     <img class="screenshot" src="../../screenshots/jupyter-redshift-cluster-load-data.png">
 
@@ -65,4 +65,4 @@ The Redshift cluster will be added to the list of available data sources.
 
 === "R"
 
-    This feature is not yet implemented in the R version of LCA.
+    This feature is not yet implemented in the R version of Code Assist.

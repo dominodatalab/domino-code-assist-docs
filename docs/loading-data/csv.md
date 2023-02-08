@@ -28,7 +28,7 @@
 
     <img class="screenshot" src="../../screenshots/rstudio.png">
 
-    Select _LCA Load Data_ from the menu.
+    Select _Load Data_ from the menu.
 
     <img class="screenshot" src="../../screenshots/rstudio-menu-load-data.png">
     
@@ -48,11 +48,11 @@
 
 === "Python"
 
-    This feature is not yet implemented in the Python version of LCA.
+    This feature is not yet implemented in the Python version of Code Assist.
 
 === "R"
 
-    Press the _Addin_ button. Select _LCA Load Data_ from the menu. Click on the _URL_ option.
+    Press the _Addin_ button. Select _Load Data_ from the menu. Click on the _URL_ option.
 
     <img class="screenshot" src="../../screenshots/rstudio-menu-load-data-url.png">
 
@@ -86,7 +86,7 @@
 
 === "R"
 
-    Press the _Addin_ button. Select _LCA Load Data_ from the menu. Select the _Datasets_ option.
+    Press the _Addin_ button. Select _Load Data_ from the menu. Select the _Datasets_ option.
 
     <img class="screenshot" src="../../screenshots/rstudio-menu-load-data-datasets.png">
 

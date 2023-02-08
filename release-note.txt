@@ -1,8 +1,0 @@
-The Low Code Assistant (LCA) provides a simple, intuitive point-and-click interface for generating Python or R code. It aims to enable those not familiar with writing code to quickly become productive in Domino Data Lab. For those more familiar with writing code, LCA accelerates common data analysis tasks.
-
-LCA can generate code for these tasks:
-
-1. Import data from a Cloud stores like S3, Snowflake, BigQuery or Redshift.
-2. Wrangle data via filtering and aggregation.
-3. Create interactive visualizations.
-4. Create and easily deploy data apps.

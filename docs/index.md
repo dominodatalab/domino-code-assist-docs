@@ -4,11 +4,10 @@ The Low Code Assistant (LCA) provides a simple, intuitive point-and-click interf
 
 LCA can generate code for these tasks:
 
-1. Import data from a Cloud stores like [S3](/loading-data/redshift/), [Snowflake](/loading-data/snowflake/), [BigQuery](/loading-data/bigquery/) or [Redshift](/loading-data/redshift/).
+1. Import data from Cloud stores like [S3](/loading-data/redshift/), [Snowflake](/loading-data/snowflake/), [BigQuery](/loading-data/bigquery/) or [Redshift](/loading-data/redshift/).
 2. Wrangle data with operations like [filtering](/transform/filter) and [aggregation](/transform/group-aggregate).
 3. Create [visualizations](/visualization/plotly).
-4. Create [data apps](/app/create).
-5. Quickly and easily deploy data apps.
+4. Create and easily deploy [data apps](/app/create).
 
 ## Benefits
 

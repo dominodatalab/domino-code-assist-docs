@@ -13,3 +13,6 @@ videos/quick-transformations/quick-transformations-title.gif filter=lfs diff=lfs
 videos/quick-transformations/quick-transformations.gif filter=lfs diff=lfs merge=lfs -text
 videos/quick-visualisation/quick-visualisation-title.gif filter=lfs diff=lfs merge=lfs -text
 videos/quick-load-data-s3/quick-load-data-s3-title.gif filter=lfs diff=lfs merge=lfs -text
+videos/automl-addendum.mp4 filter=lfs diff=lfs merge=lfs -text
+videos/automl-classical.mp4 filter=lfs diff=lfs merge=lfs -text
+videos/automl-foundational.mp4 filter=lfs diff=lfs merge=lfs -text

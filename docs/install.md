@@ -4,7 +4,7 @@
 
 # Installation
 
-## Install the Low Code Assistant
+## Install Code Assist
 
 The Code Assist can be used with either Python or R.
 
@@ -17,7 +17,7 @@ There are three distinct approaches to installing the package for either Python 
 
 The first approach is the easiest way to get started with Code Assist. But if you restart you workspace, then you will need to reinstall Code Assist. The second and third approaches will enable Code Assist more permanantly.
 
-### Install in Workspace
+### Install in a Workspace
 
 If you do not already have a Jupyter, JupyterLab or RStudio workspace, then create and launch one now.
 
@@ -65,7 +65,7 @@ The next steps will depend on whether you are working with Python (Jupyter or Ju
 
     <img class="screenshot" src="../screenshots/lca-installed-rstudio.png">
 
-### Install in Project
+### Install in a Project
 
 === "Python"
 
@@ -98,7 +98,7 @@ The next steps will depend on whether you are working with Python (Jupyter or Ju
 
     Documentation pending.
 
-### Install in Compute Environment
+### Install in a Compute Environment
 
 Enabling Code Assist in your organization's most used compute environments (CE) is the fastest way to deploy Code Assist. This way, Code Assist will appear automatically in any Jupyter or RStudio toolbar that is built from that CE. However, the CE will need to be rebuilt every time there is an Code Assist update. If CE's are not rebuilt weekly, we recommend enabling Code Assist at the project-level.
 

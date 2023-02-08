@@ -1011,7 +1011,7 @@
 <div class="highlight"><pre><span></span><code>!pip install --user low-code-assistant
 </code></pre></div>
 <p><img class="screenshot" src="../screenshots/lca-install-jupyter.png"></p>
-<p>After the installation completes, refresh your browser tab. The <span class="blue-button">Low Code Assistant</span> button will appear in the Jupyter toolbar. Click this button to initialize the assistant.</p>
+<p>After the installation completes, refresh your browser tab. The <span class="blue-button">Low Code Assistant</span> button will appear in the Jupyter toolbar. Click this button to initialize Code Assist.</p>
 <p><img class="screenshot" src="../screenshots/lca-installed-jupyter.png"></p>
 <p>To upgrade an existing installation do:</p>
 <div class="highlight"><pre><span></span><code>!pip install --user --upgrade low-code-assistant
@@ -1022,8 +1022,10 @@
 <div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;devtools&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>Now install the Code Assist package.</p>
-<div class="highlight"><pre><span></span><code><span class="n">pkg</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">tempfile</span><span class="p">(</span><span class="n">fileext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;.tar.gz&#39;</span><span class="p">)</span>
-<span class="nf">download.file</span><span class="p">(</span><span class="s">&#39;https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">pkg</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nf">remove.packages</span><span class="p">(</span><span class="s">&quot;assistDomino&quot;</span><span class="p">)</span>
+<span class="n">pkg</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">tempfile</span><span class="p">(</span><span class="n">fileext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;.tar.gz&#39;</span><span class="p">)</span>
+<span class="n">url</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&#39;https://drive.google.com/uc?id=1P-rHA8CJ78XztstXaBZug-6g80j69zJB&#39;</span>
+<span class="nf">download.file</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">pkg</span><span class="p">)</span>
 <span class="n">devtools</span><span class="o">::</span><span class="nf">install_local</span><span class="p">(</span><span class="n">pkg</span><span class="p">,</span><span class="w"> </span><span class="n">upgrade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;always&#39;</span><span class="p">)</span>
 </code></pre></div>
 <p>🚨 If you encounter a timeout error during the installation, then make sure that you've selected a harware tier that allows egress. Otherwise, your workspace will not be able to reach GitHub to download the package.</p>
@@ -1077,7 +1079,7 @@
 <li>Choose the environment in which Code Assist for R package should be installed.</li>
 <li>Click the <em>Edit Definition</em> button.</li>
 <li>Add the following line to the end of the <code>Dockerfile</code> section (but before the last <code>USER ubuntu</code> command):
-<div class="highlight"><pre><span></span><code>RUN R -e &quot;pkg &lt;- tempfile(fileext = &#39;.tar.gz&#39;); download.file(&#39;https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z&#39;, pkg); devtools::install_local(pkg, upgrade = &#39;always&#39;);&quot;
+<div class="highlight"><pre><span></span><code>RUN R -e &quot;pkg &lt;- tempfile(fileext = &#39;.tar.gz&#39;); download.file(&#39;https://drive.google.com/uc?id=1P-rHA8CJ78XztstXaBZug-6g80j69zJB&#39;, pkg); devtools::install_local(pkg, upgrade = &#39;always&#39;);&quot;
 RUN chown -R ubuntu:ubuntu /usr/local/lib/R/site-library
 </code></pre></div></li>
 <li>Click the <em>Build</em> button at the bottom of the page</li>
@@ -1104,7 +1106,7 @@ RUN chown -R ubuntu:ubuntu /usr/local/lib/R/site-library
 <div class="tabbed-block">
 <ol>
 <li>Download the package source from https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z onto your local machine. One might do this as follows:
-<div class="highlight"><pre><span></span><code>wget https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z -O lca-rstudio.tar.gz
+<div class="highlight"><pre><span></span><code>wget https://drive.google.com/uc?id=1P-rHA8CJ78XztstXaBZug-6g80j69zJB -O lca-rstudio.tar.gz
 </code></pre></div></li>
 <li>Get somebody on your IT team to transfer the downloaded file from the previous step across to your Domino environment.</li>
 <li>In your Domino environment run the following command to install the package.s
@@ -1122,9 +1124,9 @@ RUN chown -R ubuntu:ubuntu /usr/local/lib/R/site-library
 <p><img class="screenshot" src="../screenshots/lca-toolbar-button.png"></p>
 <p>Code Assist can be started by clicking the <span class="blue-button">Low Code Assistant</span> button in the toolbar. It will insert a code snippet in a new code cell and execute it.</p>
 <p><img class="screenshot" src="../screenshots/lca-toolbar-button-code.png"></p>
-<p>If you now hover above a code cell, you should see a blue icon  <img alt="assistant icon" class="assistant-icon" src="../screenshots/general/assistant-icon.png"> to the right.</p>
+<p>If you now hover above a code cell, you should see the <img alt="assistant icon" class="assistant-icon" src="../screenshots/general/assistant-icon.png"> icon to the right.</p>
 <p><img class="screenshot" src="../screenshots/lca-icon.png"></p>
-<p>If you hover above the  <img alt="assistant icon" class="assistant-icon" src="../screenshots/general/assistant-icon.png"> icon, it will show a popup menu.</p>
+<p>If you hover above the <img alt="assistant icon" class="assistant-icon" src="../screenshots/general/assistant-icon.png"> icon, it will show a popup menu.</p>
 <p><img class="screenshot" src="../screenshots/lca-icon-hover-menu.png"></p>
 </div>
 <div class="tabbed-block">

@@ -8,6 +8,10 @@
     border: 1px solid black;
   }
 
+li > img {
+  margin-top: 8px;
+}
+
 .assistant-icon {
     width: 18px;
     height: 18px;
@@ -75,4 +79,8 @@ video {
 
 .md-typeset .twemoji > svg {
   width: 1.25em;
+}
+
+.md-header__topic:first-child {
+  font-weight: 400;
 }

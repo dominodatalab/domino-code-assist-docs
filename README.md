@@ -1,6 +1,6 @@
 # low-code-jupyter-docs
 
-This repository only contains the documentation for low_code_assistant.
+This repository contains the documentation for Domino Code Assist.
 
 The live documentation is at https://dominodatalab.github.io/domino-code-assist-docs/.
 # Develop documentation
@@ -35,7 +35,7 @@ Using [mike](https://github.com/jimporter/mike) to handle versions.
 
 # Generating video/screenshots
 
-This is required when the low_code_assistant assistant looks different.
+This is required when Code Assist looks different.
 
 ```bash
 $ conda env create -f environment.yml

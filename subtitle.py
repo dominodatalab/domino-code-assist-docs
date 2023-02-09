@@ -3,6 +3,7 @@ import glob
 import re
 import os
 import os.path
+import shutil
 import tempfile
 import sys
 from PIL import Image
@@ -52,6 +53,13 @@ FRAMES_FOLDER = os.path.join(FOLDER, "frames")
 GIF = os.path.join(FOLDER, os.path.split(FOLDER)[-1] + ".gif")
 GIF_TITLE = os.path.join(FOLDER, os.path.split(FOLDER)[-1] + "-title.gif")
 
+# Delete frames folder (and all old frames files!).
+try:
+    shutil.rmtree(FRAMES_FOLDER)
+except FileNotFoundError:
+    pass
+
+# Create frames folder.
 try:
     os.mkdir(FRAMES_FOLDER)
 except FileExistsError:

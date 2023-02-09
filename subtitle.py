@@ -206,7 +206,7 @@ def create_gif(gif, title=False):
         "-q",
         f"-o {gif}",
         f"--fps {FPS}",
-        "--width 1280",
+        f"--width {PADDED_WIDTH}",
         "--quality 100",
     ]
 

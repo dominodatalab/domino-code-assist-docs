@@ -1,13 +1,12 @@
 title: Tranforming Data
 captions: |
-  {1}{5}Start with some data.
-  {19}{30}Get rid of the records with missing values.
-  {32}{44}Use the quick filter tool.
-  {70}{75}Data preview updated.
-  {82}{120}Select only columns of interest.
-  {124}{135}Data preview updated.
-  {139}{185}Generate summary statistics.
-  {195}{230}Add more statistics.
-  {245}{255}Preview the code.
-  {256}{261}Code is inserted into the next cell.
-  {262}{271}Data are updated.
+  {1}{10}Start with some data.
+  {22}{30}Get rid of the records with missing values.
+  {32}{59}Use the quick filter tool.
+  {60}{70}Data preview updated.
+  {74}{109}Select only columns of interest.
+  {110}{124}Data preview updated.
+  {130}{172}Generate summary statistics.
+  {173}{216}Add more statistics.
+  {232}{250}Preview the code.
+  {251}{266}Code is inserted and data are updated.

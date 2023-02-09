@@ -224,3 +224,35 @@ def create_gif(gif, title=False):
 
 create_gif(GIF, title=False)
 create_gif(GIF_TITLE, title=True)
+
+# CREATE MP4 ----------------------------------------------------------------------------------------------------------
+
+
+def create_mp4(gif, mp4):
+    img = Image.open(gif)
+
+    CMD = [
+        "ffmpeg",
+        "-hide_banner",
+        "-loglevel error",
+        "-y",
+        f"-i {gif}",
+        f"-s {img.width}x{img.height}",
+        "-vcodec libx264",
+        f"-crf {FPS}",
+        mp4,
+    ]
+
+    CMD = " ".join(CMD)
+
+    os.system(CMD)
+
+    logging.info(f"Output file: {mp4}")
+
+
+MP4 = re.sub("gif$", "mp4", GIF)
+MP4_TITLE = re.sub("gif$", "mp4", GIF_TITLE)
+
+
+create_mp4(GIF, MP4)
+create_mp4(GIF_TITLE, MP4_TITLE)

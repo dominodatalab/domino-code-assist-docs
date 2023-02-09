@@ -26,4 +26,9 @@ The benefits of Code Assist can be divided into four categories:
 3. **Building Skills** Generating Python and R code interactively via Code Assist is a powerful learning tool. It flattens the learning curve and makes complex topics easily accessible.
 4. **Tweakability** The code produced by Code Assist may not precisely do what's required. However, it's a useful first draft which can then be tweaked to get percisely what's needed.
 
+## Appetizer
 
+Below are images showing what Code Assist looks like in Jupyer and RStudio running on Domino Data Lab.
+
+<img class="screenshot" src="../screenshots/dca-init-jupyter.png">
+<img class="screenshot" src="../screenshots/dca-init-rstudio.png">

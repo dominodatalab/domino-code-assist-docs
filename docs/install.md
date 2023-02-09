@@ -56,7 +56,7 @@ The next steps will depend on whether you are working with Python (Jupyter or Ju
     ```r
     remove.packages("assistDomino")
     pkg <- tempfile(fileext = '.tar.gz')
-    url <- 'https://drive.google.com/uc?id=1P-rHA8CJ78XztstXaBZug-6g80j69zJB'
+    url <- 'https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z'
     download.file(url, pkg)
     devtools::install_local(pkg, upgrade = 'always')
     ```
@@ -115,7 +115,7 @@ Enabling Code Assist in your organization's most used compute environments (CE) 
     3. Click the _Edit Definition_ button.
     4. Add the following line to the end of the `Dockerfile` section (but before the last `USER ubuntu` command):
     ```
-    RUN R -e "pkg <- tempfile(fileext = '.tar.gz'); download.file('https://drive.google.com/uc?id=1P-rHA8CJ78XztstXaBZug-6g80j69zJB', pkg); devtools::install_local(pkg, upgrade = 'always');"
+    RUN R -e "pkg <- tempfile(fileext = '.tar.gz'); download.file('https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z', pkg); devtools::install_local(pkg, upgrade = 'always');"
     RUN chown -R ubuntu:ubuntu /usr/local/lib/R/site-library
     ```
     5. Click the _Build_ button at the bottom of the page

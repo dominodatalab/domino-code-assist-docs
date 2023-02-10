@@ -1008,11 +1008,7 @@
 <div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;devtools&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>Now install the Code Assist package.</p>
-<div class="highlight"><pre><span></span><code><span class="n">pkg</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">tempfile</span><span class="p">(</span><span class="n">fileext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;.tar.gz&#39;</span><span class="p">)</span>
-<span class="n">url</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&#39;https://mirrors.domino.tech/dca/assistdomino_latest.tar.gz&#39;</span>
-<span class="nf">download.file</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">pkg</span><span class="p">)</span>
-<span class="n">devtools</span><span class="o">::</span><span class="nf">install_local</span><span class="p">(</span><span class="n">pkg</span><span class="p">,</span><span class="w"> </span><span class="n">upgrade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;always&#39;</span><span class="p">)</span>
-<span class="nf">file.remove</span><span class="p">(</span><span class="n">pkg</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">devtools</span><span class="o">::</span><span class="nf">install_url</span><span class="p">(</span><span class="s">&quot;https://mirrors.domino.tech/dca/assistdomino_latest.tar.gz&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">upgrade</span><span class="o">=</span><span class="s">&quot;always&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>🚨 If you encounter a timeout error during the installation, then make sure that you've selected a harware tier that allows egress. Otherwise, your workspace will not be able to reach GitHub to download the package.</p>
 <p>After the installation completes, refresh your browser tab. Under the <em>Addins</em> menu option you should now see an <em>ASSISTDOMINO</em> section with various actions listed below. You can also confirm that the <code>{assistDomino}</code> package has been installed by searching in the <em>Packages</em> tab.</p>
@@ -1065,7 +1061,7 @@
 <li>Choose the environment in which Code Assist for R package should be installed.</li>
 <li>Click the <em>Edit Definition</em> button.</li>
 <li>Add the following line to the end of the <code>Dockerfile</code> section (but before the last <code>USER ubuntu</code> command):
-<div class="highlight"><pre><span></span><code>RUN R -e &quot;pkg &lt;- tempfile(fileext = &#39;.tar.gz&#39;); url &lt;- &#39;https://mirrors.domino.tech/dca/assistdomino_latest.tar.gz&#39;; download.file(url, pkg); devtools::install_local(pkg, upgrade = &#39;always&#39;); file.remove(pkg);&quot;
+<div class="highlight"><pre><span></span><code>RUN R -e &#39;devtools::install_url(&quot;https://mirrors.domino.tech/dca/assistdomino_latest.tar.gz&quot;, upgrade=&quot;always&quot;)&#39;
 RUN chown -R ubuntu:ubuntu /usr/local/lib/R/site-library
 </code></pre></div></li>
 <li>Click the <em>Build</em> button at the bottom of the page</li>
@@ -1091,12 +1087,12 @@ RUN chown -R ubuntu:ubuntu /usr/local/lib/R/site-library
 </div>
 <div class="tabbed-block">
 <ol>
-<li>Download the package source from https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z onto your local machine. One might do this as follows:
-<div class="highlight"><pre><span></span><code>wget https://drive.google.com/uc?id=1P-rHA8CJ78XztstXaBZug-6g80j69zJB -O lca-rstudio.tar.gz
+<li>Download the package source from https://mirrors.domino.tech/dca/assistdomino_latest.tar.gz onto your local machine. One might do this as follows:
+<div class="highlight"><pre><span></span><code>wget https://mirrors.domino.tech/dca/assistdomino_latest.tar.gz
 </code></pre></div></li>
-<li>Get somebody on your IT team to transfer the downloaded file from the previous step across to your Domino environment.</li>
+<li>Get somebody on your IT team to transfer the downloaded file (<code>assistdomino_latest.tar.gz</code>) from the previous step across to your Domino environment.</li>
 <li>In your Domino environment run the following command to install the package.s
-<div class="highlight"><pre><span></span><code>R -e &#39;remotes::install_local(&quot;lca-rstudio.tar.gz&quot;)&#39;
+<div class="highlight"><pre><span></span><code>R -e &#39;remotes::install_local(&quot;assistdomino_latest.tar.gz&quot;)&#39;
 </code></pre></div></li>
 </ol>
 </div>

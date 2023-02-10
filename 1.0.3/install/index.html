@@ -802,20 +802,6 @@
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../snippets/snippets-creating/" class="md-nav__link">
-        Creating Snippets
-      </a>
-    </li>
-  
-
-            
-          
         </ul>
       </nav>
     </li>
@@ -1022,11 +1008,11 @@
 <div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;devtools&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>Now install the Code Assist package.</p>
-<div class="highlight"><pre><span></span><code><span class="nf">remove.packages</span><span class="p">(</span><span class="s">&quot;assistDomino&quot;</span><span class="p">)</span>
-<span class="n">pkg</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">tempfile</span><span class="p">(</span><span class="n">fileext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;.tar.gz&#39;</span><span class="p">)</span>
-<span class="n">url</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&#39;https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="n">pkg</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">tempfile</span><span class="p">(</span><span class="n">fileext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;.tar.gz&#39;</span><span class="p">)</span>
+<span class="n">url</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&#39;https://mirrors.domino.tech/dca/assistdomino_latest.tar.gz&#39;</span>
 <span class="nf">download.file</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">pkg</span><span class="p">)</span>
 <span class="n">devtools</span><span class="o">::</span><span class="nf">install_local</span><span class="p">(</span><span class="n">pkg</span><span class="p">,</span><span class="w"> </span><span class="n">upgrade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;always&#39;</span><span class="p">)</span>
+<span class="nf">file.remove</span><span class="p">(</span><span class="n">pkg</span><span class="p">)</span>
 </code></pre></div>
 <p>🚨 If you encounter a timeout error during the installation, then make sure that you've selected a harware tier that allows egress. Otherwise, your workspace will not be able to reach GitHub to download the package.</p>
 <p>After the installation completes, refresh your browser tab. Under the <em>Addins</em> menu option you should now see an <em>ASSISTDOMINO</em> section with various actions listed below. You can also confirm that the <code>{assistDomino}</code> package has been installed by searching in the <em>Packages</em> tab.</p>
@@ -1079,7 +1065,7 @@
 <li>Choose the environment in which Code Assist for R package should be installed.</li>
 <li>Click the <em>Edit Definition</em> button.</li>
 <li>Add the following line to the end of the <code>Dockerfile</code> section (but before the last <code>USER ubuntu</code> command):
-<div class="highlight"><pre><span></span><code>RUN R -e &quot;pkg &lt;- tempfile(fileext = &#39;.tar.gz&#39;); download.file(&#39;https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z&#39;, pkg); devtools::install_local(pkg, upgrade = &#39;always&#39;);&quot;
+<div class="highlight"><pre><span></span><code>RUN R -e &quot;pkg &lt;- tempfile(fileext = &#39;.tar.gz&#39;); url &lt;- &#39;https://mirrors.domino.tech/dca/assistdomino_latest.tar.gz&#39;; download.file(url, pkg); devtools::install_local(pkg, upgrade = &#39;always&#39;); file.remove(pkg);&quot;
 RUN chown -R ubuntu:ubuntu /usr/local/lib/R/site-library
 </code></pre></div></li>
 <li>Click the <em>Build</em> button at the bottom of the page</li>

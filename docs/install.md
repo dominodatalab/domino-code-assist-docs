@@ -54,11 +54,7 @@ The next steps will depend on whether you are working with Python (Jupyter or Ju
     Now install the Code Assist package.
 
     ```r
-    remove.packages("assistDomino")
-    pkg <- tempfile(fileext = '.tar.gz')
-    url <- 'https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z'
-    download.file(url, pkg)
-    devtools::install_local(pkg, upgrade = 'always')
+    devtools::install_url("https://mirrors.domino.tech/dca/assistdomino_latest.tar.gz", upgrade="always")
     ```
 
     🚨 If you encounter a timeout error during the installation, then make sure that you've selected a harware tier that allows egress. Otherwise, your workspace will not be able to reach GitHub to download the package.
@@ -115,7 +111,7 @@ Enabling Code Assist in your organization's most used compute environments (CE) 
     3. Click the _Edit Definition_ button.
     4. Add the following line to the end of the `Dockerfile` section (but before the last `USER ubuntu` command):
     ```
-    RUN R -e "pkg <- tempfile(fileext = '.tar.gz'); download.file('https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z', pkg); devtools::install_local(pkg, upgrade = 'always');"
+    RUN R -e 'devtools::install_url("https://mirrors.domino.tech/dca/assistdomino_latest.tar.gz", upgrade="always")'
     RUN chown -R ubuntu:ubuntu /usr/local/lib/R/site-library
     ```
     5. Click the _Build_ button at the bottom of the page
@@ -140,14 +136,14 @@ This is the preferred approach in an [air-gapped environment](https://en.wikiped
 
 === "R"
 
-    1. Download the package source from https://drive.google.com/uc?id=1xayKv7cbCFIcbyzUTYuWJEczBixA5D1Z onto your local machine. One might do this as follows:
+    1. Download the package source from https://mirrors.domino.tech/dca/assistdomino_latest.tar.gz onto your local machine. One might do this as follows:
     ```
-    wget https://drive.google.com/uc?id=1P-rHA8CJ78XztstXaBZug-6g80j69zJB -O lca-rstudio.tar.gz
+    wget https://mirrors.domino.tech/dca/assistdomino_latest.tar.gz
     ```
-    2. Get somebody on your IT team to transfer the downloaded file from the previous step across to your Domino environment.
+    2. Get somebody on your IT team to transfer the downloaded file (`assistdomino_latest.tar.gz`) from the previous step across to your Domino environment.
     3. In your Domino environment run the following command to install the package.s
     ```
-    R -e 'remotes::install_local("lca-rstudio.tar.gz")'
+    R -e 'remotes::install_local("assistdomino_latest.tar.gz")'
     ```
 
 ## Initialize

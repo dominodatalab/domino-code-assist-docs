@@ -24,11 +24,7 @@
 
 === "R"
 
-    Press the _Addin_ button.
-
-    <img class="screenshot" src="../../screenshots/rstudio.png">
-
-    Select _Load Data_ from the menu.
+    Press the _Addin_ button. Select _DCA Load Data_ from the menu.
 
     <img class="screenshot" src="../../screenshots/rstudio-menu-load-data.png">
     
@@ -36,7 +32,7 @@
 
     <img class="screenshot" src="../../screenshots/rstudio-menu-load-data-upload.png">
 
-    The first few lines from the file will be displayed. Press the <span class="blue-button">Apply</span> button.
+    The first few lines from the file will be displayed. Press the <span class="blue-button">Insert Code</span> button.
 
     <img class="screenshot" src="../../screenshots/rstudio-menu-load-data-upload-glimpse.png">
 
@@ -52,7 +48,7 @@
 
 === "R"
 
-    Press the _Addin_ button. Select _Load Data_ from the menu. Click on the _URL_ option.
+    Press the _Addin_ button. Select _DCA Load Data_ from the menu. Click on the _URL_ option.
 
     <img class="screenshot" src="../../screenshots/rstudio-menu-load-data-url.png">
 
@@ -60,13 +56,9 @@
 
     <img class="screenshot" src="../../screenshots/rstudio-menu-load-data-url-paste.png">
 
-    Press the <span class="blue-button">Insert Code</span> button. The required code will be inserted into a script.
+    Press the <span class="blue-button">Insert Code</span> button. The required code will be inserted into a script. The data will be pulled from the URL and stored in a variable.
 
     <img class="screenshot" src="../../screenshots/rstudio-menu-load-data-url-insert-code.png">
-
-    Run the code and the data will be pulled from the URL and stored in a variable.
-
-    <img class="screenshot" src="../../screenshots/rstudio-menu-load-data-url-run.png">
 
 ## CSV File from a Workspace
 
@@ -94,10 +86,6 @@
 
     <img class="screenshot" src="../../screenshots/rstudio-menu-load-data-datasets-locate.png">
 
-    The first few lines from the selected file will be displayed. Press the <span class="blue-button">Apply</span> button.
-
-    <img class="screenshot" src="../../screenshots/rstudio-menu-load-data-datasets-glimpse.png">
-
-    The required code will be inserted into the script.
+    The first few lines from the selected file will be displayed. Press the <span class="blue-button">Insert Code</span> button. The required code will be inserted into the script.
 
     <img class="screenshot" src="../../screenshots/rstudio-menu-load-data-datasets-code.png">

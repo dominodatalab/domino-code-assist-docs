@@ -48,7 +48,7 @@ A quick filter allows you to rapidly select a subset of rows. It only allows for
 
     <img class="screenshot" src="../../screenshots/rstudio-load-data-datasets-titanic.png">
 
-    Press the _Addin_ button. Select _Transformations_ from the menu.
+    Press the _Addin_ button. Select _DCA Transformations_ from the menu.
 
     <img class="screenshot" src="../../screenshots/rstudio-menu-transformations.png">
 
@@ -56,19 +56,11 @@ A quick filter allows you to rapidly select a subset of rows. It only allows for
 
     <img class="screenshot" src="../../screenshots/rstudio-titanic-transformations-filtered-choose-data.png">
 
-    A preview of the data will be shown.
-
-    <img class="screenshot" src="../../screenshots/rstudio-titanic-transformations-filtered-data.png">
-
-    Hover over a cell in the column that you want to filter on. A filter icon will appear. Click on the icon.
+    A preview of the data will be shown. Hover over a cell in the column that you want to filter on. A filter icon will appear. Click on the icon.
 
     <img class="screenshot" src="../../screenshots/rstudio-titanic-transformations-filtered-quick-icon.png">
 
-    In the quick filter dialog you can select the column to filter on, the value to filter for and an operator.
-
-    <img class="screenshot" src="../../screenshots/rstudio-titanic-transformations-filtered-default-operator.png">
-
-    We'll select all records where the `Cabin` field is not empty. Press the <span class="blue-button">Apply</span> button.
+    In the quick filter dialog you can select the column to filter on, the value to filter for and an operator. We'll select all records where the `Cabin` field is not empty. Press the <span class="blue-button">Apply</span> button.
 
     <img class="screenshot" src="../../screenshots/rstudio-titanic-transformations-filtered-change-operator.png">
 
@@ -77,8 +69,6 @@ A quick filter allows you to rapidly select a subset of rows. It only allows for
     <img class="screenshot" src="../../screenshots/rstudio-titanic-transformations-filtered-preview.png">
 
     The required code will be inserted into the script. Execute the code to apply the filter.
-
-    <img class="screenshot" src="../../screenshots/rstudio-titanic-transformations-filtered.png">
 
 ## Manual Filter
 

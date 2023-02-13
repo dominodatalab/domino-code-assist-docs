@@ -62,7 +62,7 @@
 
     <img class="screenshot" src="../../screenshots/rstudio-session-fresh.png">
 
-    Click on the <span class="white-button">Addins</span> button and choose the _Load Data_ option.
+    Click on the <span class="white-button">Addins</span> button and choose the _DCA Load Data_ option.
 
     <img class="screenshot" src="../../screenshots/rstudio-lca-menu-load-data.png">
 
@@ -86,7 +86,7 @@
 
     <img class="screenshot" src="../../screenshots/rstudio-lca-menu-data-visualization.png">
 
-    The _Data Visualization_ dialog will open. Select a data frame to visualize.
+    The _DCA Data Visualization_ dialog will open. Select a data frame to visualize.
 
     <img class="screenshot" src="../../screenshots/rstudio-lca-data-visualization.png">
 
@@ -98,10 +98,6 @@
 
     <img class="screenshot" src="../../screenshots/rstudio-lca-data-visualization-plot-parameters.png">
 
-    The required code with be inserted into the script.
+    The required code with be inserted into the script. The plot will be assigned to a variable, `plot`.
 
     <img class="screenshot" src="../../screenshots/rstudio-lca-data-visualization-code.png">
-
-    Execute the new code. The plot will be assigned to a variable, `plot`. To see the plot you'll need to evaluate that variable.
-
-    <img class="screenshot" src="../../screenshots/rstudio-lca-data-visualization-code-show.png">

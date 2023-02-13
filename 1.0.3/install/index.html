@@ -457,6 +457,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../transform/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../transform/filter/" class="md-nav__link">
         Filtering Data
       </a>
@@ -994,13 +1008,13 @@
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Run the following command in a notebook code cell:</p>
-<div class="highlight"><pre><span></span><code>!pip install --user low-code-assistant
+<div class="highlight"><pre><span></span><code>!pip install --user domino-code-assist
 </code></pre></div>
 <p><img class="screenshot" src="../screenshots/lca-install-jupyter.png"></p>
-<p>After the installation completes, refresh your browser tab. The <span class="blue-button">Low Code Assistant</span> button will appear in the Jupyter toolbar. Click this button to initialize Code Assist.</p>
+<p>After the installation completes, refresh your browser tab. The <span class="blue-button">Domino Code Assist</span> button will appear in the Jupyter toolbar. Click this button to initialize Code Assist.</p>
 <p><img class="screenshot" src="../screenshots/lca-installed-jupyter.png"></p>
 <p>To upgrade an existing installation do:</p>
-<div class="highlight"><pre><span></span><code>!pip install --user --upgrade low-code-assistant
+<div class="highlight"><pre><span></span><code>!pip install --user --upgrade domino-code-assist
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1027,7 +1041,7 @@
 <li>Click on the <code>requirements.txt</code> file link.</li>
 <li>Click the <span class="white-button">Edit</span> button.
 <img class="screenshot" src="../screenshots/requirements-edit-button.png"></li>
-<li>Add the <code>low-code-assistant</code> package to your <code>requirements.txt</code> file. You can specify a version like <code>low-code-assistant==0.4.1</code>. If you don't specify a version then the latest version will be installed.
+<li>Add the <code>domino-code-assist</code> package to your <code>requirements.txt</code> file. You can specify a version like <code>domino-code-assist==0.4.1</code>. If you don't specify a version then the latest version will be installed.
 <img class="screenshot" src="../screenshots/requirements-edit.png"></li>
 <li>Click the <span class="white-button">Save</span> button.</li>
 </ol>
@@ -1077,11 +1091,11 @@ RUN chown -R ubuntu:ubuntu /usr/local/lib/R/site-library
 <div class="tabbed-block">
 <ol>
 <li>Download the package onto your local machine. It would make sense to run this command in an empty directory because it will result in a large number of files being downloaded.s
-<div class="highlight"><pre><span></span><code>pip download low-code-assistant
+<div class="highlight"><pre><span></span><code>pip download domino-code-assist
 </code></pre></div></li>
 <li>Get somebody on your IT team to transfer all of the files downloaded in the previous step across to your Domino environment.</li>
 <li>In your Domino environment run the following command to install the package. You might need to update the version of the package to be consistent with the files that you downloaded (the command below is for version 1.0.3).
-<div class="highlight"><pre><span></span><code>pip install low_code_assistant-1.0.3-py2.py3-none-any.whl
+<div class="highlight"><pre><span></span><code>pip install domino_code_assist-1.0.4-py2.py3-none-any.whl
 </code></pre></div></li>
 </ol>
 </div>
@@ -1102,9 +1116,9 @@ RUN chown -R ubuntu:ubuntu /usr/local/lib/R/site-library
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Python</label><label for="__tabbed_5_2">R</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>If you have followed the <a href="./">installation instructions</a>, you should see a blue <span class="blue-button">Low Code Assistant</span> button in the toolbar of your Jupyter notebook.</p>
+<p>If you have followed the <a href="./">installation instructions</a>, you should see a blue <span class="blue-button">Domino Code Assist</span> button in the toolbar of your Jupyter notebook.</p>
 <p><img class="screenshot" src="../screenshots/lca-toolbar-button.png"></p>
-<p>Code Assist can be started by clicking the <span class="blue-button">Low Code Assistant</span> button in the toolbar. It will insert a code snippet in a new code cell and execute it.</p>
+<p>Code Assist can be started by clicking the <span class="blue-button">Domino Code Assist</span> button in the toolbar. It will insert a code snippet in a new code cell and execute it.</p>
 <p><img class="screenshot" src="../screenshots/lca-toolbar-button-code.png"></p>
 <p>If you now hover above a code cell, you should see the <img alt="assistant icon" class="assistant-icon" src="../screenshots/general/assistant-icon.png"> icon to the right.</p>
 <p><img class="screenshot" src="../screenshots/lca-icon.png"></p>
@@ -1121,9 +1135,9 @@ RUN chown -R ubuntu:ubuntu /usr/local/lib/R/site-library
 <div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Python</label><label for="__tabbed_6_2">R</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">low_code_assistant</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">domino_code_assist</span>
 
-<span class="n">low_code_assistant</span><span class="o">.</span><span class="n">__version__</span>
+<span class="n">domino_code_assist</span><span class="o">.</span><span class="n">__version__</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">

@@ -38,7 +38,7 @@ Before inserting a snippet you first need to find and select it.
 
     <img class="screenshot" src="../../screenshots/rstudio-snippets-penguin-data.png">
     
-    Click on the Addins button and choose the _Snippets_ option.
+    Click on the Addins button and choose the _DCA Snippets_ option.
 
     <img class="screenshot" src="../../screenshots/rstudio-lca-menu-snippets.png">
 

@@ -4,7 +4,7 @@ There are many bits of code which are used often but not often enough to be comm
 
 Snippets to the rescue! Snippets are useful bits of code which are readily accessible via Code Assist. A number of handy snippets are included with the Code Assist distribution. You can add your own snippets and share them with your team.
 
-<img class="screenshot" src="../../screenshots/snippets.gif">
+<img class="screenshot" src="../../videos/quick-snippets/quick-snippets-title.gif">
 
 ## What are Snippets?
 

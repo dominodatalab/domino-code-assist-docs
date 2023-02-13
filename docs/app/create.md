@@ -1,8 +1,6 @@
 # Create an App
 
-<video controls>
-    <source src="https://user-images.githubusercontent.com/1765949/185930154-ed0319d3-f775-4db7-b3f8-7b38d0257979.mp4" type="video/mp4">
-</video>
+<img class="screenshot" src="../../videos/quick-app/quick-app-title.gif">
 
 ## Loading CSV data into a Pandas DataFrame
 

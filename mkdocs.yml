@@ -13,6 +13,7 @@ nav:
       - Loading Data from Snowflake: loading-data/snowflake.md
       - Loading Data with SQL: loading-data/sql.md
   - Transformation:
+      - Introduction: transform/introduction.md
       - Filtering Data: transform/filter.md
       - Grouping & Aggregating: transform/group-aggregate.md
       - Chaining Transformations: transform/chaining.md

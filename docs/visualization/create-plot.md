@@ -1,6 +1,6 @@
 # Creating Plots
 
-<img class="screenshot" src="../../screenshots/penguins-3d-scatter.gif">
+<img class="screenshot" src="../../videos/quick-visualisation/quick-visualisation-title.gif">
 
 === "Python"
 

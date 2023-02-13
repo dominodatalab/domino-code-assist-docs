@@ -28,19 +28,19 @@ The next steps will depend on whether you are working with Python (Jupyter or Ju
       Run the following command in a notebook code cell:
 
       ```
-      !pip install --user low-code-assistant
+      !pip install --user domino-code-assist
       ```
 
       <img class="screenshot" src="../screenshots/lca-install-jupyter.png">
 
-      After the installation completes, refresh your browser tab. The <span class="blue-button">Low Code Assistant</span> button will appear in the Jupyter toolbar. Click this button to initialize Code Assist.
+      After the installation completes, refresh your browser tab. The <span class="blue-button">Domino Code Assist</span> button will appear in the Jupyter toolbar. Click this button to initialize Code Assist.
 
       <img class="screenshot" src="../screenshots/lca-installed-jupyter.png">
 
       To upgrade an existing installation do:
 
       ```
-      !pip install --user --upgrade low-code-assistant
+      !pip install --user --upgrade domino-code-assist
       ```
 
 === "R"
@@ -76,18 +76,18 @@ The next steps will depend on whether you are working with Python (Jupyter or Ju
     1. Click on the `requirements.txt` file link.
     2. Click the <span class="white-button">Edit</span> button.
     <img class="screenshot" src="../screenshots/requirements-edit-button.png">
-    3. Add the `low-code-assistant` package to your `requirements.txt` file. You can specify a version like `low-code-assistant==0.4.1`. If you don't specify a version then the latest version will be installed.
+    3. Add the `domino-code-assist` package to your `requirements.txt` file. You can specify a version like `domino-code-assist==0.4.1`. If you don't specify a version then the latest version will be installed.
     <img class="screenshot" src="../screenshots/requirements-edit.png">
     4. Click the <span class="white-button">Save</span> button.
 
     If you _don't_ have a `requirements.txt` file then do the following:
 
-    1. Download our [requirements.txt](requirements.txt).
-    2. Press the _Upload_ button. Either drag and drop or browse to find the `requirements.txt` file.
+    5. Download our [requirements.txt](requirements.txt).
+    6. Press the _Upload_ button. Either drag and drop or browse to find the `requirements.txt` file.
     <img class="screenshot" src="../screenshots/requirements-upload-select.png">
-    3. Click the <span class="blue-button">Upload</span> button.
+    7. Click the <span class="blue-button">Upload</span> button.
     <img class="screenshot" src="../screenshots/requirements-upload.png">
-    4. Confirm that the `requirements.txt` file has been successfully uploaded.
+    8. Confirm that the `requirements.txt` file has been successfully uploaded.
     <img class="screenshot" src="../screenshots/requirements-location.png">
 
     Now create a new _Jupyter_ or _JupyterLab_ workspace with and the Code Assist button will be available.
@@ -126,12 +126,12 @@ This is the preferred approach in an [air-gapped environment](https://en.wikiped
 
     1. Download the package onto your local machine. It would make sense to run this command in an empty directory because it will result in a large number of files being downloaded.s
     ```
-    pip download low-code-assistant
+    pip download domino-code-assist
     ```
     2. Get somebody on your IT team to transfer all of the files downloaded in the previous step across to your Domino environment.
     3. In your Domino environment run the following command to install the package. You might need to update the version of the package to be consistent with the files that you downloaded (the command below is for version 1.0.3).
     ```
-    pip install low_code_assistant-1.0.3-py2.py3-none-any.whl
+    pip install domino_code_assist-1.0.4-py2.py3-none-any.whl
     ```
 
 === "R"
@@ -150,11 +150,11 @@ This is the preferred approach in an [air-gapped environment](https://en.wikiped
 
 === "Python"
 
-    If you have followed the [installation instructions](./install.md), you should see a blue <span class="blue-button">Low Code Assistant</span> button in the toolbar of your Jupyter notebook.
+    If you have followed the [installation instructions](./install.md), you should see a blue <span class="blue-button">Domino Code Assist</span> button in the toolbar of your Jupyter notebook.
 
     <img class="screenshot" src="../screenshots/lca-toolbar-button.png">
 
-    Code Assist can be started by clicking the <span class="blue-button">Low Code Assistant</span> button in the toolbar. It will insert a code snippet in a new code cell and execute it.
+    Code Assist can be started by clicking the <span class="blue-button">Domino Code Assist</span> button in the toolbar. It will insert a code snippet in a new code cell and execute it.
 
     <img class="screenshot" src="../screenshots/lca-toolbar-button-code.png">
 
@@ -177,9 +177,9 @@ To check the version of Code Assist installed, run the following:
 === "Python"
 
     ```python
-    import low_code_assistant
+    import domino_code_assist
 
-    low_code_assistant.__version__
+    domino_code_assist.__version__
     ```
 
 === "R"

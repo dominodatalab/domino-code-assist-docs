@@ -8,7 +8,7 @@
 
     <img class="screenshot" src="../../screenshots/jupyter-session-fresh.png">
 
-    Press the <span class="blue-button">Low Code Assistane</span> button.
+    Press the <span class="blue-button">Domino Code Assist</span> button.
 
     <img class="screenshot" src="../../screenshots/jupyter-lca-code.png">
 

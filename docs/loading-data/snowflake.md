@@ -34,7 +34,7 @@ The Snowflake connection will appear under the list of data sources.
 
 === "Python"
 
-    Click the <span class="blue-button">Low Code Assistant™</span> button in the toolbar. It will insert a code snippet in a new code cell and execute it.
+    Click the <span class="blue-button">Domino Code Assist™</span> button in the toolbar. It will insert a code snippet in a new code cell and execute it.
 
     <img class="screenshot" src="../../screenshots/snowflake-lca.png">
 

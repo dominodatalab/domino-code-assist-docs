@@ -4,7 +4,7 @@
 
 ### Open dialog
 
-Hover above the ![assistant icon](../screenshots/general/assistant-icon.png){.assistant-icon} icon and click the ![Load data](../screenshots/general/assistant-load-data.png){.docs-border .menu-item} menu item, which will open the `Load Data` dialog.
+Hover above the ![assistant icon](../screenshots/general/assistant-icon.png){.assistant-icon} icon and click the <span class="white-button">Load Data</span> menu item, which will open the `Load Data` dialog.
 
 ![Load data](../screenshots/load-csv/04-load-data.png)
 
@@ -46,7 +46,7 @@ histogram_survived
 
 ## Open the App configurator
 
-Click on the App button ![app open button](../screenshots/general/app-open.png){.retina-image .docs-border} to open the app configurator.
+Click on the App button <span class="white-button">App</span> to open the app configurator.
 
 ![Assistant expand](../screenshots/app-upload/app-pre-open.png)
 

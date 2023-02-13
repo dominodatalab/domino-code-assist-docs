@@ -11,17 +11,13 @@
         <link rel="canonical" href="https://dominolowcode.github.io/latest/app/upload/">
       
       
-        <link rel="prev" href="../embed-tableau/">
-      
-      
-        <link rel="next" href="../../snippets/snippets-using/">
       
       <link rel="icon" href="../../favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
     
     
       
-        <title>Upload data to an App - Domino Code Assist</title>
+        <title>Upload data to an app - Domino Code Assist</title>
       
     
     
@@ -112,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Upload data to an App
+              Upload data to an app
             
           </span>
         </div>
@@ -481,20 +477,20 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       
       
-        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="true">
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
           Apps
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -643,136 +639,6 @@
           
         </ul>
       </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Upload data to an App
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Upload data to an App
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#loading-csv-data-into-a-pandas-dataframe" class="md-nav__link">
-    Loading CSV data into a Pandas DataFrame
-  </a>
-  
-    <nav class="md-nav" aria-label="Loading CSV data into a Pandas DataFrame">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#open-dialog" class="md-nav__link">
-    Open dialog
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#select-datasets-tab" class="md-nav__link">
-    Select Datasets tab
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#open-file" class="md-nav__link">
-    Open file
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#creating-visualizations" class="md-nav__link">
-    Creating visualizations
-  </a>
-  
-    <nav class="md-nav" aria-label="Creating visualizations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adding-a-histogram" class="md-nav__link">
-    Adding a histogram
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#open-the-app-configurator" class="md-nav__link">
-    Open the App configurator
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure-the-app" class="md-nav__link">
-    Configure the app
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deploy-the-app" class="md-nav__link">
-    Deploy the app
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#result" class="md-nav__link">
-    Result
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1058,7 +924,7 @@
 <p>Create a histogram using Code Assist, as described in <a href="../../visualization/create-plot/">Scatter Plot</a> or add your own code. In our example we add the following code ourselves:</p>
 <p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
 
-<span class="n">histogram_survived</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;survived&quot;</span><span class="p">)</span>
+<span class="n">histogram_survived</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Survived&quot;</span><span class="p">)</span>
 <span class="n">histogram_survived</span>
 </code></pre></div>
 <img alt="Create histogram" src="../../screenshots/app-upload/histogram-added.png" /></p>

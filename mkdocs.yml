@@ -27,7 +27,7 @@ nav:
       - Deploy an App: app/deploy.md
       - Examples:
           - Embed App in Tableau: app/embed-tableau.md
-      - Upload data to an App: app/upload.md
+      # - Upload data to an App: app/upload.md
   - Code Snippets:
       - Using Snippets: snippets/snippets-using.md
       - Working with Snippets: snippets/snippets-working.md

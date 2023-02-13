@@ -38,7 +38,7 @@ Create a histogram using Code Assist, as described in [Scatter Plot](../visualiz
 ```python
 import plotly.express as px
 
-histogram_survived = px.histogram(df, x="survived")
+histogram_survived = px.histogram(df, x="Survived")
 histogram_survived
 ```
 ![Create histogram](../screenshots/app-upload/histogram-added.png)

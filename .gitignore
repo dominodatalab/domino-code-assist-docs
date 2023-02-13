@@ -77,7 +77,6 @@ build/
 
 tmp
 examples
-docs/videos
 
 .env
 

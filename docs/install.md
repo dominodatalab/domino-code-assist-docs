@@ -122,6 +122,8 @@ Enabling Code Assist in your organization's most used compute environments (CE) 
 
 This is the preferred approach in an [air-gapped environment](https://en.wikipedia.org/wiki/Air_gap_(networking)) where you are unable to connect to the internet to install the package using  of the previous approaches.
 
+If your Domino deployment does not have open access to the internet (you're in an [air-gapped environment](https://en.wikipedia.org/wiki/Air_gap_(networking))), then DCA and any of its dependencies will fail to download. In this case, you will need to resort to an alternate method of installing DCA.
+
 === "Python"
 
     1. Download the package onto your local machine. It would make sense to run this command in an empty directory because it will result in a large number of files being downloaded.s
@@ -136,15 +138,12 @@ This is the preferred approach in an [air-gapped environment](https://en.wikiped
 
 === "R"
 
-    1. Download the package source from https://mirrors.domino.tech/dca/assistdomino_latest.tar.gz onto your local machine. One might do this as follows:
+    1. Download a ZIP archive from https://mirrors.domino.tech/dca/dca_sources.zip onto your local machine. One might do this as follows:
     ```
-    wget https://mirrors.domino.tech/dca/assistdomino_latest.tar.gz
+    wget https://mirrors.domino.tech/dca/dca_sources.zip
     ```
-    2. Get somebody on your IT team to transfer the downloaded file (`assistdomino_latest.tar.gz`) from the previous step across to your Domino environment.
-    3. In your Domino environment run the following command to install the package.s
-    ```
-    R -e 'remotes::install_local("assistdomino_latest.tar.gz")'
-    ```
+    2. Get somebody on your IT team to transfer the downloaded file (`dca_sources.zip`) from the previous step across to your Domino environment.
+    3. Once the ZIP archive has been unpacked you can install the packages.
 
 ## Initialize
 

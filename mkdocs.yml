@@ -20,7 +20,7 @@ nav:
   - Visualization:
       - Creating Plots: visualization/create-plot.md
   - Apps:
-      - App creation: app/create.md
+      - Create an App: app/create.md
       - Examples:
           - Drug Classification App: app/example/drug-classification.md
           - Stocks App: app/example/stock.md

@@ -1,82 +1,37 @@
 # Create an App
 
+An app is a convenient way to combine a selection of components into a single view. One or more of these components can be combined into an app: visualizations, cross-filters and data tables.
+
 <img class="screenshot" src="../../videos/quick-app/quick-app-title.gif">
 
-## Loading CSV data into a Pandas DataFrame
+Here's a step-by-step recipe for creating a simple app to examine the penguins data. It assumes that you have already done the following:
 
-Load a dataset using Code Assist, as described in [Getting started](../../) or by adding your own code. In our example we add the following code ourselves:
-```python
-import pandas as pd
-df = pd.read_csv("../mydata/titanic.csv")
-df.head(2)
-```
+- loaded the penguins data
+- created a scatter plot of body mass versus bill length colored by species and
+- created a cross-filter selector on island.
 
-![Load data](../screenshots/app-create/02-load-data.png)
+Hover over the <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png"> icon. Select the _App_ item from the popup menu.
 
-## Creating visualizations
+<img class="screenshot" src="../../screenshots/dca-menu-app.png">
 
-### Adding a histogram
+In the app configuration widget you can select which components to include in the app by simply toggling them on and off. **Note:** You'll only see components which have been defined in the notebook.
 
-Create a histogram using Code Assist, as described in [Scatter Plot](../visualization/create-plot.md) or adding your own code. In our example we add the following code ourselves:
+<img class="screenshot" src="../../screenshots/app-configurator.png">
 
-```python
-import plotly.express as px
+When you have selected the required components they'll all be added to the app canvase, but they'll probably not be suitably arranged. We'll fix that next.
 
-histogram_survived = px.histogram(df, x="survived")
-histogram_survived
-```
-![Create histogram](../screenshots/app-create/03-create-viz-1.png)
+<img class="screenshot" src="../../screenshots/app-configurator-widgets-selected.png">
 
+Arrange the widgets by dragging and resizing.
 
-!!! info "Last expression"
+<img class="screenshot" src="../../screenshots/app-configurator-widgets-arranged.png">
 
-    Note that the last expression (`histogram_survived`) causes the visual to display in the Jupyter notebook.
+When you are happy with the app layout press the <span class="blue-button">RUN</span> button to add the code to the notebook.
 
+<img class="screenshot" src="../../screenshots/app-code-inserted.png">
 
-### Adding a scatter plot
+Press the <span class="white-button-blue-text">PREVIEW APP</span> button to see an interactive preview of the app.
 
-Create a scatter plot using Code Assist, as described in [Scatter Plot](../visualization/create-plot.md). In our example we add the following code ourselves:
+<img class="screenshot" src="../../screenshots/app-preview.png">
 
-```python
-import plotly.express as px
-
-scatter_age_fare = px.scatter(df, x="age", y="fare", color="survived")
-scatter_age_fare
-```
-![Create scatter](../screenshots/app-create/04-create-viz-2.png)
-
-
-!!! info "Last expression"
-
-    Note that the last expression (`scatter_age_fare`) causes the visual to display in the Jupyter notebook.
-
-## Open the App configurator
-
-If you now hover above the next code cell, you should see a blue icon ![assistant icon](../screenshots/general/assistant-icon.png){.assistant-icon} to the right:
-
-![Assistant visible](../screenshots/app-create/05-assistant-visible.png)
-
-If you hover above the ![assistant icon](../screenshots/general/assistant-icon.png){.assistant-icon} icon, it will show a popup menu:
-
-![Assistant expand](../screenshots/app-create/06-assistant-expand.png)
-
-Select the _App_ item from the popup menu to open the app configurator.
-
-![Assistant expand](../screenshots/app-create/07-app-before.png)
-
-## Configure the app
-
-Toggle the visualization matching the variables found in the notebook to add them to the app.
-Optionally drag and resize the apps.
-![Assistant expand](../screenshots/app-create/08-insert-code.png)
-
-## Insert the code
-
-When ready, click 'Insert code'.
-
-![Assistant expand](../screenshots/app-create/09-done.png)
-
-The configuration is added in code to your notebook. The code can be edited, and a preview can be shown
-by clicking the <span class="blue-button">Preview</span> button.
-
-
+At this point you can interact wit the app but you can't share it with others yet. To do that you'll need to [deploy the app](../deploy).

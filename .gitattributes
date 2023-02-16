@@ -16,3 +16,10 @@ videos/quick-load-data-s3/quick-load-data-s3-title.gif filter=lfs diff=lfs merge
 videos/automl-addendum.mp4 filter=lfs diff=lfs merge=lfs -text
 videos/automl-classical.mp4 filter=lfs diff=lfs merge=lfs -text
 videos/automl-foundational.mp4 filter=lfs diff=lfs merge=lfs -text
+docs/videos/quick-app-deploy/video.mp4 filter=lfs diff=lfs merge=lfs -text
+docs/videos/quick-app-deploy/video-original-1.mp4 filter=lfs diff=lfs merge=lfs -text
+docs/videos/quick-app-deploy/video-original-2.mp4 filter=lfs diff=lfs merge=lfs -text
+docs/videos/quick-app-deploy/quick-app-deploy.mp4 filter=lfs diff=lfs merge=lfs -text
+docs/videos/quick-app-deploy/quick-app-deploy-title.mp4 filter=lfs diff=lfs merge=lfs -text
+docs/videos/quick-app-deploy/quick-app-deploy.gif filter=lfs diff=lfs merge=lfs -text
+docs/videos/quick-app-deploy/quick-app-deploy-title.gif filter=lfs diff=lfs merge=lfs -text

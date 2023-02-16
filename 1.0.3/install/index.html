@@ -602,7 +602,7 @@
   
     <li class="md-nav__item">
       <a href="../app/create/" class="md-nav__link">
-        App creation
+        Create an App
       </a>
     </li>
   
@@ -1072,6 +1072,7 @@ RUN chown -R ubuntu:ubuntu /usr/local/lib/R/site-library
 </div>
 <h3 id="install-from-source">Install from Source</h3>
 <p>This is the preferred approach in an <a href="https://en.wikipedia.org/wiki/Air_gap_(networking)">air-gapped environment</a> where you are unable to connect to the internet to install the package using  of the previous approaches.</p>
+<p>If your Domino deployment does not have open access to the internet (you're in an <a href="https://en.wikipedia.org/wiki/Air_gap_(networking)">air-gapped environment</a>), then DCA and any of its dependencies will fail to download. In this case, you will need to resort to an alternate method of installing DCA.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Python</label><label for="__tabbed_4_2">R</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1087,13 +1088,11 @@ RUN chown -R ubuntu:ubuntu /usr/local/lib/R/site-library
 </div>
 <div class="tabbed-block">
 <ol>
-<li>Download the package source from https://mirrors.domino.tech/dca/assistdomino_latest.tar.gz onto your local machine. One might do this as follows:
-<div class="highlight"><pre><span></span><code>wget https://mirrors.domino.tech/dca/assistdomino_latest.tar.gz
+<li>Download a ZIP archive from https://mirrors.domino.tech/dca/dca_sources.zip onto your local machine. One might do this as follows:
+<div class="highlight"><pre><span></span><code>wget https://mirrors.domino.tech/dca/dca_sources.zip
 </code></pre></div></li>
-<li>Get somebody on your IT team to transfer the downloaded file (<code>assistdomino_latest.tar.gz</code>) from the previous step across to your Domino environment.</li>
-<li>In your Domino environment run the following command to install the package.s
-<div class="highlight"><pre><span></span><code>R -e &#39;remotes::install_local(&quot;assistdomino_latest.tar.gz&quot;)&#39;
-</code></pre></div></li>
+<li>Get somebody on your IT team to transfer the downloaded file (<code>dca_sources.zip</code>) from the previous step across to your Domino environment.</li>
+<li>Once the ZIP archive has been unpacked you can install the packages.</li>
 </ol>
 </div>
 </div>

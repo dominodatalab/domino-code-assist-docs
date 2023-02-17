@@ -14,7 +14,7 @@
         <link rel="prev" href="../filter/">
       
       
-        <link rel="next" href="../chaining/">
+        <link rel="next" href="../../visualization/create-plot/">
       
       <link rel="icon" href="../../favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
@@ -409,20 +409,6 @@
         Grouping & Aggregating
       </a>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../chaining/" class="md-nav__link">
-        Chaining Transformations
-      </a>
     </li>
   
 
@@ -831,17 +817,27 @@
     <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg></span> <strong>Domino Platform Admins</strong> Please rebuild your compute environments every week to get the latest Code Assist features and fixes. See <a href="../../install#rebuilding-the-compute-environment">installation instructions</a>.
 </div>
 <h1 id="grouping-aggregating">Grouping &amp; Aggregating</h1>
-<p>For this tutorial we'll use the <em>Titanic</em> data.</p>
+<p>For this tutorial we'll use the <em>Palmer Penguins</em> data. We have already filtered out some records wih missing data and selected a subset of columns.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label><label for="__tabbed_1_2">R</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Hover over the <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png"> icon. Select the <em>Transformations</em> item from the popup menu. Select the <em>Groupby and aggregate</em> option.</p>
-<p><img class="screenshot" src="../../screenshots/jupyter-transformation-groupby-aggregate.png"></p>
-<p>We are going to calculate some summary statistics for the <code>Fare</code> column broken down by <code>Pclass</code>. Specify <code>Pclass</code> as the column to group by. Choose <code>Fare</code> as the column to aggregate. Select <code>mean</code> as the aggregator function.</p>
-<p><img class="screenshot" src="../../screenshots/jupyter-transformation-groupby-aggregate-mean.png"></p>
-<p>You can include more aggregations. We'll add in <code>min</code> and <code>max</code>. Press the <span class="white-button-blue-text">Add Transformation</span> button.</p>
-<p><img class="screenshot" src="../../screenshots/jupyter-transformation-groupby-aggregate-more-aggregations.png"></p>
-<p>The preview will be updated with the summary data. Press the <span class="blue-button">Insert Code</span> button.</p>
+<p>This is what the data currently looks like.</p>
+<p><img class="screenshot" src="../../screenshots/jupyter-transformation-groupby-aggregate-initial-data.png"></p>
+<p>Hover over the <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png"> icon. Select the <em>Transformations</em> item from the popup menu.</p>
+<p><img class="screenshot" src="../../screenshots/jupyter-transformation-groupby-aggregate-menu.png"></p>
+<p>The transformations widget will open.</p>
+<p><img class="screenshot" src="../../screenshots/jupyter-transformation-groupby-aggregate-widget.png"></p>
+<p>Select the <em>Groupby and aggregate</em> transformation option.</p>
+<p><img class="screenshot" src="../../screenshots/jupyter-transformation-groupby-aggregate-select.png"></p>
+<p>Choose one or more columns to group by. These will determine the buckets that the results are allocated to. Generally you'll want to select columns with discrete values.</p>
+<p><img class="screenshot" src="../../screenshots/jupyter-transformation-groupby-aggregate-grouping-variables.png"></p>
+<p>Choose the column to aggregate. Generally you'll want to select a column with numeric values.</p>
+<p><img class="screenshot" src="../../screenshots/jupyter-transformation-groupby-aggregate-aggregate-variable.png"></p>
+<p>Select an aggregation function.</p>
+<p><img class="screenshot" src="../../screenshots/jupyter-transformation-groupby-aggregate-aggregate-function.png"></p>
+<p>You can add more aggregations. It's not necessary to choose the same column to aggregate.</p>
+<p><img class="screenshot" src="../../screenshots/jupyter-transformation-groupby-aggregate-other-aggregates.png"></p>
+<p>Preview the results. Press the <span class="blue-button">RUN</span> button.</p>
 <p><img class="screenshot" src="../../screenshots/jupyter-transformation-groupby-aggregate-preview.png"></p>
 <p>The required code will be inserted into the notebook and immediately executed.</p>
 <p><img class="screenshot" src="../../screenshots/jupyter-transformation-groupby-aggregate-insert-code.png"></p>

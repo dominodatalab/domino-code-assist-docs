@@ -84,3 +84,13 @@ video {
 .md-header__topic:first-child {
   font-weight: 400;
 }
+
+hr.summary {
+  border: 10px solid lightgrey;
+  border-radius: 0;
+  height: 0;
+}
+
+article.md-typeset > h1 {
+  margin-bottom: 0.5em;
+}

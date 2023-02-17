@@ -10,9 +10,9 @@ The Code Assist can be used with either Python or R.
 
 There are three distinct approaches to installing the package for either Python or R:
 
-- [Install in a Workspace](#install-in-workspace)
-- [Install in a Project](#install-in-project)
-- [Install in a Compute Environment](#install-in-compute-environment)
+- [Install in a Workspace](#install-in-a-workspace)
+- [Install in a Project](#install-in-a-project)
+- [Install in a Compute Environment](#install-in-a-compute-environment)
 - [Install from Source](#install-from-source)
 
 The first approach is the easiest way to get started with Code Assist. But if you restart you workspace, then you will need to reinstall Code Assist. The second and third approaches will enable Code Assist more permanantly.

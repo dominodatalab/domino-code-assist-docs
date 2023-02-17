@@ -16,7 +16,7 @@ nav:
       - Introduction: transform/introduction.md
       - Filtering Data: transform/filter.md
       - Grouping & Aggregating: transform/group-aggregate.md
-      - Chaining Transformations: transform/chaining.md
+      # - Chaining Transformations: transform/chaining.md
   - Visualization:
       - Creating Plots: visualization/create-plot.md
   - Apps:

@@ -23,3 +23,8 @@ docs/videos/quick-app-deploy/quick-app-deploy.mp4 filter=lfs diff=lfs merge=lfs 
 docs/videos/quick-app-deploy/quick-app-deploy-title.mp4 filter=lfs diff=lfs merge=lfs -text
 docs/videos/quick-app-deploy/quick-app-deploy.gif filter=lfs diff=lfs merge=lfs -text
 docs/videos/quick-app-deploy/quick-app-deploy-title.gif filter=lfs diff=lfs merge=lfs -text
+docs/videos/quick-transformations/quick-transformations.mp4 filter=lfs diff=lfs merge=lfs -text
+docs/videos/quick-transformations/quick-transformations-title.mp4 filter=lfs diff=lfs merge=lfs -text
+docs/videos/quick-transformations/video.mp4 filter=lfs diff=lfs merge=lfs -text
+docs/videos/quick-transformations/quick-transformations.gif filter=lfs diff=lfs merge=lfs -text
+docs/videos/quick-transformations/quick-transformations-title.gif filter=lfs diff=lfs merge=lfs -text

@@ -30,5 +30,5 @@ The benefits of Code Assist can be divided into four categories:
 
 Below are images showing what Code Assist looks like in Jupyer and RStudio running on Domino Data Lab.
 
-<img class="screenshot" src="../../screenshots/dca-init-jupyter.png">
-<img class="screenshot" src="../../screenshots/dca-init-rstudio.png">
+<img class="screenshot" src="./screenshots/dca-init-jupyter.png">
+<img class="screenshot" src="./screenshots/dca-init-rstudio.png">

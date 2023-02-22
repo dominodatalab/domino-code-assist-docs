@@ -45,3 +45,39 @@ For this tutorial we'll use the _Palmer Penguins_ data. We have already filtered
     <img class="screenshot" src="../../screenshots/jupyter-transformation-groupby-aggregate-insert-code.png">
 
 === "R"
+
+    This is what the data currently looks like.
+
+    <img class="screenshot" src="../../screenshots/rstudio-transformation-groupby-aggregate-initial-data.png">
+
+    Press the _Addin_ button. Select _DCA Transformations_ from the menu to launch the transformations wizard.
+
+    <img class="screenshot" src="../../screenshots/rstudio-menu-transformations.png"">
+
+    Choose the data that you want to work on.
+
+    <img class="screenshot" src="../../screenshots/rstudio-penguins-transformations-filtered-choose-data.png">
+
+    A preview of the data will be shown. Press the <span class="blue-button">ADD TRANSFORMATION</span> button.
+
+    <img class="screenshot" src="../../screenshots/rstudio-penguins-transformations-data-preview.png">
+
+    Select _Group & Aggregate_ from the dropdown menu.
+
+    <img class="screenshot" src="../../screenshots/rstudio-penguins-transformations-actions.png">
+
+    Now choose the columns that the results will be grouped by. We'll group by `species`, `island` and `sex`.
+
+    <img class="screenshot" src="../../screenshots/rstudio-penguins-transformations-select-grouping.png">
+
+    Next choose the column which will be aggregated and the aggregation operation. You can select multiple columns for aggregation. We'll calculate the minimu, maximum and mean values of `body_mass_g` for each group. Press the <span class="blue-button">Apply</span> button.
+
+    <img class="screenshot" src="../../screenshots/rstudio-penguins-transformations-select-aggregate.png">
+
+    The data preview in the transformations wizard will be updated with the aggregated results. Press the <span class="blue-button">Insert Code</span> button.
+
+    <img class="screenshot" src="../../screenshots/rstudio-penguins-transformations-aggregate-results-preview.png">
+
+    The required code will be inserted into the script and the aggregated results stored in a new variable.
+
+    <img class="screenshot" src="../../screenshots/Domino — Mozilla Firefox_0044.png">

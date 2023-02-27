@@ -2,122 +2,122 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://dominolowcode.github.io/latest/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dominolowcode.github.io/latest/install/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dominolowcode.github.io/latest/settings/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dominolowcode.github.io/latest/app/create/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dominolowcode.github.io/latest/app/deploy/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dominolowcode.github.io/latest/app/embed-tableau/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dominolowcode.github.io/latest/app/upload/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dominolowcode.github.io/latest/app/example/drug-classification/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dominolowcode.github.io/latest/app/example/stock/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dominolowcode.github.io/latest/loading-data/bigquery/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dominolowcode.github.io/latest/loading-data/csv/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dominolowcode.github.io/latest/loading-data/redshift/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dominolowcode.github.io/latest/loading-data/s3/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dominolowcode.github.io/latest/loading-data/snowflake/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dominolowcode.github.io/latest/loading-data/sql/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dominolowcode.github.io/latest/project/files/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dominolowcode.github.io/latest/snippets/snippets-creating/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dominolowcode.github.io/latest/snippets/snippets-using/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dominolowcode.github.io/latest/snippets/snippets-working/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dominolowcode.github.io/latest/transform/chaining/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dominolowcode.github.io/latest/transform/filter/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dominolowcode.github.io/latest/transform/group-aggregate/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dominolowcode.github.io/latest/transform/introduction/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dominolowcode.github.io/latest/visualization/create-plot/</loc>
-         <lastmod>2023-02-22</lastmod>
+         <lastmod>2023-02-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

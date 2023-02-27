@@ -1062,30 +1062,42 @@ RUN chown -R ubuntu:ubuntu /usr/local/lib/R/site-library
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Python</label><label for="__tabbed_4_2">R</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><img class="screenshot" src="../screenshots/air-gapped-install-jupyter.png"></p>
 <ol>
-<li>Download the package onto your local machine. It would make sense to run this command in an empty directory because it will result in a large number of files being downloaded.</li>
-<li>THIS NEEDS TO BE RUN ON AN EXISTING (CONNECTED) DOMINO ENVIRONMENT.
-<div class="highlight"><pre><span></span><code>pip wheel --wheel-dir dca-archive domino-code-assist
-</code></pre></div></li>
-<li>Add all of the downloaded files to a ZIP archive.
-<div class="highlight"><pre><span></span><code>zip -r dca-archive.zip dca-archive/*
-</code></pre></div></li>
-<li>Upload the <code>dca-archive.zip</code> archive (you can do this from the Jupyter file browser).</li>
-<li>Get somebody on your IT team to transfer all of the files downloaded in the previous step across to your Domino environment.</li>
-<li>In your Domino environment run the following command to install the package. You might need to update the version of the package to be consistent with the files that you downloaded (the command below is for version 1.0.5).
-<div class="highlight"><pre><span></span><code>pip install --user domino_code_assist-1.0.5-py2.py3-none-any.whl
-pip install --user --no-index --find-links=. domino_code_assist-1.0.5-py2.py3-none-any.whl
-</code></pre></div></li>
+<li>
+<p>An archive containing the DCA package and all of its dependencies has been shared on <a href="https://mirrors.domino.tech/">https://mirrors.domino.tech/</a>. The archives are named according to the required versions of DCA and Python. For example:</p>
+<ul>
+<li><code>dca-1.0.5-python-3.9.zip</code> — DCA-1.0.5 and Python-3.9</li>
+<li><code>dca-1.0.5-python-3.8.zip</code> — DCA-1.0.5 and Python-3.8</li>
+<li><code>dca-1.0.4-python-3.9.zip</code> — DCA-1.0.4 and Python-3.9</li>
+</ul>
+</li>
+<li>
+<p>Find the version of Python running in your Domino workspace and then download the appropriate archive. For example, DCA-1.0.5 for Python-3.9 would be downloaded from <a href="https://mirrors.domino.tech/dca/python/dca-1.0.5-python-3.9.zip">https://mirrors.domino.tech/dca/python/dca-1.0.5-python-3.9.zip</a>.</p>
+</li>
+<li>Upload the archive onto Domino.</li>
+<li>In a Jupyter workspace on Domino run the following commands to install the package.</li>
 </ol>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check current folder. Should be /mnt.</span>
+<span class="o">%</span><span class="n">pwd</span>
+<span class="c1"># Unzip the archive (assumes that the archive is in /mnt).</span>
+<span class="err">!</span><span class="n">unzip</span> <span class="o">-</span><span class="n">q</span> <span class="n">dca</span><span class="o">-</span><span class="mf">1.0.5</span><span class="o">-</span><span class="n">python</span><span class="o">-</span><span class="mf">3.9</span><span class="o">.</span><span class="n">zip</span>
+<span class="c1"># Change into the resulting folder.</span>
+<span class="o">%</span><span class="n">cd</span> <span class="n">dca</span><span class="o">-</span><span class="n">archive</span>
+<span class="c1"># Check for the DCA package filename.</span>
+<span class="err">!</span><span class="n">ls</span> <span class="o">*</span><span class="n">domino_code_assist</span><span class="o">*</span>
+<span class="c1"># Install the package and all dependencies.</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span> <span class="n">domino_code_assist</span><span class="o">-</span><span class="mf">1.0.5</span><span class="o">-</span><span class="n">py2</span><span class="o">.</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+</code></pre></div>
+<p><img class="screenshot" src="../screenshots/dca-install-python-air-gapped.png"></p>
 </div>
 <div class="tabbed-block">
 <ol>
-<li>Download a ZIP archive from https://mirrors.domino.tech/dca/dca_sources.zip onto your local machine. One might do this as follows:
+<li>Download a ZIP archive from <a href="https://mirrors.domino.tech/dca/dca_sources.zip">https://mirrors.domino.tech/dca/dca_sources.zip</a> onto your local machine. One might do this as follows:
 <div class="highlight"><pre><span></span><code>wget https://mirrors.domino.tech/dca/dca_sources.zip
 </code></pre></div></li>
-<li>Get somebody on your IT team to transfer the downloaded file (<code>dca_sources.zip</code>) from the previous step across to your Domino environment.</li>
-<li>Once the ZIP archive has been unpacked you can install the packages.</li>
+<li>Upload the archive onto Domino.</li>
+<li>Unpack the archive on Domino.</li>
+<li>In a RStudio workspace on Domino install the package.</li>
 </ol>
 </div>
 </div>

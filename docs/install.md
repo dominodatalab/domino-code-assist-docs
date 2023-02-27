@@ -126,7 +126,7 @@ If your Domino deployment does not have open access to the internet (you're in a
 
 === "Python"
 
-    1. An archive containing the DCA package and all of its dependencies has been shared on [https://mirrors.domino.tech/](https://mirrors.domino.tech/). The archives are named according to the required versions of DCA and Python. For example:
+    1. An archive containing the DCA package and all of its dependencies has been shared on <https://mirrors.domino.tech/>. The archives are named according to the required versions of DCA and Python. For example:
 
         - `dca-1.0.5-python-3.9.zip` — DCA-1.0.5 and Python-3.9
         - `dca-1.0.5-python-3.8.zip` — DCA-1.0.5 and Python-3.8
@@ -152,12 +152,13 @@ If your Domino deployment does not have open access to the internet (you're in a
 
 === "R"
 
-    1. Download a ZIP archive from https://mirrors.domino.tech/dca/dca_sources.zip onto your local machine. One might do this as follows:
+    1. Download a ZIP archive from <https://mirrors.domino.tech/dca/dca_sources.zip> onto your local machine. One might do this as follows:
     ```
     wget https://mirrors.domino.tech/dca/dca_sources.zip
     ```
-    2. Get somebody on your IT team to transfer the downloaded file (`dca_sources.zip`) from the previous step across to your Domino environment.
-    3. Once the ZIP archive has been unpacked you can install the packages.
+    2. Upload the archive onto Domino.
+    3. Unpack the archive on Domino.
+    4. In a RStudio workspace on Domino install the package.
 
 ## Initialize
 

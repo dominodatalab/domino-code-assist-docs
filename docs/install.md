@@ -126,15 +126,29 @@ If your Domino deployment does not have open access to the internet (you're in a
 
 === "Python"
 
-    1. Download the package onto your local machine. It would make sense to run this command in an empty directory because it will result in a large number of files being downloaded.s
+    1. An archive containing the DCA package and all of its dependencies has been shared on [https://mirrors.domino.tech/](https://mirrors.domino.tech/). The archives are named according to the required versions of DCA and Python. For example:
+
+        - `dca-1.0.5-python-3.9.zip` — DCA-1.0.5 and Python-3.9
+        - `dca-1.0.5-python-3.8.zip` — DCA-1.0.5 and Python-3.8
+        - `dca-1.0.4-python-3.9.zip` — DCA-1.0.4 and Python-3.9
+    2. Find the version of Python running in your Domino workspace and then download the appropriate archive. For example, DCA-1.0.5 for Python-3.9 would be downloaded from <https://mirrors.domino.tech/dca/python/dca-1.0.5-python-3.9.zip>.
+    3. Upload the archive onto Domino.
+    4. In a Jupyter workspace on Domino environment run the following commands to install the package.
+
+    ```python
+    # Check current folder. Should be /mnt.
+    %pwd
+    # Unzip the archive.
+    !unzip -q dca-1.0.5-python-3.9.zip
+    # Change into the resulting folder.
+    %cd dca-archive
+    # Check for the DCA package filename.
+    !ls *domino_code_assist*
+    # Install the package and all dependencies.
+    !pip install --user --no-index --find-links=. domino_code_assist-1.0.5-py2.py3-none-any.whl
     ```
-    pip download domino-code-assist
-    ```
-    2. Get somebody on your IT team to transfer all of the files downloaded in the previous step across to your Domino environment.
-    3. In your Domino environment run the following command to install the package. You might need to update the version of the package to be consistent with the files that you downloaded (the command below is for version 1.0.3).
-    ```
-    pip install domino_code_assist-1.0.4-py2.py3-none-any.whl
-    ```
+
+    <img class="screenshot" src="../screenshots/dca-install-python-air-gapped.png">
 
 === "R"
 

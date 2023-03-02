@@ -90,3 +90,5 @@ low-code-jupyter-docs.code-workspace
 # videos
 # *.gif
 *.avi
+*-frame.png
+*-title.png

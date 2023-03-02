@@ -1,21 +1,19 @@
 <div class="sticky-banner sticky-banner-warning">
-    Code Assist is automatically installed in Domino version 5.5 and above.
+    Domino Code Assist is automatically installed in Domino version 5.5 and above.
 </div>
 
 # Installation
 
-## Install Code Assist
+## Install Domino Code Assist
 
-The Code Assist can be used with either Python or R.
-
-There are three distinct approaches to installing the package for either Python or R:
+There are four distinct approaches to installing Domino Code Assist (DCA) for either Python or R:
 
 - [Install in a Workspace](#install-in-a-workspace)
 - [Install in a Project](#install-in-a-project)
-- [Install in a Compute Environment](#install-in-a-compute-environment)
-- [Install from Source](#install-from-source)
+- [Install in a Compute Environment](#install-in-a-compute-environment) or
+- [Install from Source](#install-from-source).
 
-The first approach is the easiest way to get started with Code Assist. But if you restart you workspace, then you will need to reinstall Code Assist. The second and third approaches will enable Code Assist more permanantly.
+The first approach is the easiest way to get started with DCA. But if you restart you workspace, then you will need to reinstall DCA. The second and third approaches will enable DCA more permanently.
 
 ### Install in a Workspace
 
@@ -33,7 +31,7 @@ The next steps will depend on whether you are working with Python (Jupyter or Ju
 
       <img class="screenshot" src="../screenshots/lca-install-jupyter.png">
 
-      After the installation completes, refresh your browser tab. The <span class="blue-button">Domino Code Assist</span> button will appear in the Jupyter toolbar. Click this button to initialize Code Assist.
+      After the installation completes, refresh your browser tab. The <span class="blue-button">Domino Code Assist</span> button will appear in the Jupyter toolbar. Click this button to initialize DCA.
 
       <img class="screenshot" src="../screenshots/lca-installed-jupyter.png">
 
@@ -51,7 +49,7 @@ The next steps will depend on whether you are working with Python (Jupyter or Ju
     install.packages("devtools")
     ```
 
-    Now install the Code Assist package.
+    Now install the DCA package.
 
     ```r
     devtools::install_url("https://mirrors.domino.tech/dca/assistdomino_latest.tar.gz", upgrade="always")
@@ -90,7 +88,7 @@ The next steps will depend on whether you are working with Python (Jupyter or Ju
     8. Confirm that the `requirements.txt` file has been successfully uploaded.
     <img class="screenshot" src="../screenshots/requirements-location.png">
 
-    Now create a new _Jupyter_ or _JupyterLab_ workspace with and the Code Assist button will be available.
+    Now create a new _Jupyter_ or _JupyterLab_ workspace with and the <span class="blue-button">Domino Code Assist</span> button will be available.
 
 === "R"
 
@@ -98,7 +96,7 @@ The next steps will depend on whether you are working with Python (Jupyter or Ju
 
 ### Install in a Compute Environment
 
-Enabling Code Assist in your organization's most used compute environments (CE) is the fastest way to deploy Code Assist. This way, Code Assist will appear automatically in any Jupyter or RStudio toolbar that is built from that CE. However, the CE will need to be rebuilt every time there is an Code Assist update. If CE's are not rebuilt weekly, we recommend enabling Code Assist at the project-level.
+Enabling DCA in your organization's most used compute environments (CE) is the fastest way to deploy DCA. This way, DCA will appear automatically in any Jupyter or RStudio toolbar that is built from that CE. However, the CE will need to be rebuilt every time there is an DCA update. If CE's are not rebuilt weekly, we recommend enabling DCA at the project-level.
 
 === "Python"
 
@@ -107,7 +105,7 @@ Enabling Code Assist in your organization's most used compute environments (CE) 
 === "R"
 
     1. Select _Environments_ from the side navigation bar.
-    2. Choose the environment in which Code Assist for R package should be installed.
+    2. Choose the environment in which DCA for R package should be installed.
     3. Click the _Edit Definition_ button.
     4. Add the following line to the end of the `Dockerfile` section (but before the last `USER ubuntu` command):
     ```
@@ -116,7 +114,7 @@ Enabling Code Assist in your organization's most used compute environments (CE) 
     ```
     5. Click the _Build_ button at the bottom of the page
 
-    This will install Code Assist for R in every workspace that uses the Domino environment.
+    This will install DCA for R in every workspace that uses the Domino environment.
 
 ### Install from Source
 
@@ -134,7 +132,6 @@ If your Domino deployment does not have open access to the internet (you're in a
     2. Find the version of Python running in your Domino workspace and then download the appropriate archive. For example, DCA-1.0.5 for Python-3.9 would be downloaded from <https://mirrors.domino.tech/dca/python/dca-1.0.5-python-3.9.zip>.
     3. Upload the archive onto Domino.
     4. In a Jupyter workspace on Domino run the following commands to install the package.
-
     ```python
     # Check current folder. Should be /mnt.
     %pwd
@@ -142,10 +139,16 @@ If your Domino deployment does not have open access to the internet (you're in a
     !unzip -q dca-1.0.5-python-3.9.zip
     # Change into the resulting folder.
     %cd dca-archive
-    # Check for the DCA package filename.
-    !ls *domino_code_assist*
+    # Check for the DCA package filename (optional).
+    !ls domino_code_assist*
     # Install the package and all dependencies.
-    !pip install --user domino_code_assist-1.0.5-py2.py3-none-any.whl
+    !pip install --user --no-index --find-links=. domino_code_assist*.whl
+    ```
+    There might be some errors generated by `pip` but you can usually ignore them.
+
+    5. Test that you are able to import the package.
+    ```python
+    import domino_code_assist
     ```
 
     <img class="screenshot" src="../screenshots/dca-install-python-air-gapped.png">
@@ -164,11 +167,11 @@ If your Domino deployment does not have open access to the internet (you're in a
 
 === "Python"
 
-    If you have followed the [installation instructions](./install.md), you should see a blue <span class="blue-button">Domino Code Assist</span> button in the toolbar of your Jupyter notebook.
+    If you have followed the [installation instructions](./install.md), you should see a blue <span class="blue-button">Domino DCA</span> button in the toolbar of your Jupyter notebook.
 
     <img class="screenshot" src="../screenshots/lca-toolbar-button.png">
 
-    Code Assist can be started by clicking the <span class="blue-button">Domino Code Assist</span> button in the toolbar. It will insert a code snippet in a new code cell and execute it.
+    DCA can be started by clicking the <span class="blue-button">Domino Code Assist</span> button in the toolbar. It will insert a code snippet in a new code cell and execute it.
 
     <img class="screenshot" src="../screenshots/lca-toolbar-button-code.png">
 
@@ -182,11 +185,11 @@ If your Domino deployment does not have open access to the internet (you're in a
 
 === "R"
 
-    There is no initialization required in R. Various Code Assist actions will be listed under the _Addins_ menu option.
+    There is no initialization required in R. Various DCA actions will be listed under the _Addins_ menu option.
 
 ## Check Version
 
-To check the version of Code Assist installed, run the following:
+To check the version of DCA installed, run the following:
 
 === "Python"
 

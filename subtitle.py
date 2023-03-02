@@ -48,6 +48,8 @@ IMAGE_FORMAT = "png"
 
 MP4 = os.path.join(FOLDER, "video.mp4")
 
+DOMINO_LOGO_PATH = "docs/domino-logo.png"
+
 FRAMES_FOLDER = os.path.join(FOLDER, "frames")
 
 GIF = os.path.join(FOLDER, os.path.split(FOLDER)[-1] + ".gif")
@@ -191,7 +193,7 @@ os.system(" ".join(CMD))
 CMD = [
     "convert",
     "label-title.png",
-    "\( domino-logo.png -scale 22% \)",
+    f"\( {DOMINO_LOGO_PATH} -scale 22% \)",
     "-gravity southeast",
     "-geometry +32+80",
     f"-composite {FRAMES_FOLDER}/00000-title.png",

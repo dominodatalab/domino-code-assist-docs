@@ -1,8 +1,6 @@
 # Deploy an App
 
-Deploy Python apps directly from a Jupyter notebook with a single click. Domino Code Assist makes it simple to turn Jupyter notebook analyses into shareable apps, without ever leaving the Jupyter notebook IDE.
-
-<hr class="summary">
+> Deploy Python apps directly from a Jupyter notebook with a single click. Domino Code Assist makes it simple to turn Jupyter notebook analyses into shareable apps, without ever leaving the Jupyter notebook IDE.
 
 Once you've created an app you'll probably want to share it with others. To do this you'll need to deploy the app. There will then be a public URL associated with the app which can be accessed by anybody, even without a Domino account.
 

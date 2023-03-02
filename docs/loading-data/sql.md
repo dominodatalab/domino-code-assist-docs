@@ -6,71 +6,59 @@ This example shows how to load data using custom SQL and demonstrates the auto c
 
 ## SQL & Redshift
 
-=== "Python"
+Select Redshift from the drop-down list of data sources.
 
-    Select Redshift from the drop-down list of data sources.
+<img class="screenshot" src="../../screenshots/sql-data-source-redshift.png">
 
-    <img class="screenshot" src="../../screenshots/sql-data-source-redshift.png">
+Choose the database and schema, then toggle on _Use query_.
 
-    Choose the database and schema, then toggle on _Use query_.
+<img class="screenshot" src="../../screenshots/sql-redshift-parameters.png">
 
-    <img class="screenshot" src="../../screenshots/sql-redshift-parameters.png">
+Type the query into the _Query_ box. For example:
 
-    Type the query into the _Query_ box. For example:
+```sql
+select listid, eventname, venuename, venuecity, priceperticket, numtickets
+from listing
+inner join event
+on
+    listing.eventid = event.eventid
+inner join venue
+on
+    event.venueid = venue.venueid
+where
+    venuecity = 'New York City';
+```
 
-    ```sql
-    select listid, eventname, venuename, venuecity, priceperticket, numtickets
-    from listing
-    inner join event
-    on
-        listing.eventid = event.eventid
-    inner join venue
-    on
-        event.venueid = venue.venueid
-    where
-        venuecity = 'New York City';
-    ```
+Click the <span class="blue-button">INSERT CODE</span> button.
 
-    Click the <span class="blue-button">INSERT CODE</span> button.
+<img class="screenshot" src="../../screenshots/sql-redshift-query.png">
 
-    <img class="screenshot" src="../../screenshots/sql-redshift-query.png">
+The required code will be inserted into a cell and immediately executed.
 
-    The required code will be inserted into a cell and immediately executed.
-
-    <img class="screenshot" src="../../screenshots/sql-redshift-inserted-code.png">
-
-=== "R"
-
-    This feature is not yet implemented in the R version of Code Assist.
+<img class="screenshot" src="../../screenshots/sql-redshift-inserted-code.png">
 
 ## SQL & Snowflake
 
-=== "Python"
+Select Snowflake from the drop-down list of data sources.
 
-    Select Snowflake from the drop-down list of data sources.
+<img class="screenshot" src="../../screenshots/sql-data-source-snowflake.png">
 
-    <img class="screenshot" src="../../screenshots/sql-data-source-snowflake.png">
+Choose the database and schema, then toggle on _Use query_.
 
-    Choose the database and schema, then toggle on _Use query_.
+<img class="screenshot" src="../../screenshots/sql-snowflake-parameters.png">
 
-    <img class="screenshot" src="../../screenshots/sql-snowflake-parameters.png">
+Type the query into the _Query_ box. For example:
 
-    Type the query into the _Query_ box. For example:
+```sql
+select CC_CALL_CENTER_ID, CC_NAME, CC_EMPLOYEES, CC_SQ_FT
+from SNOWFLAKE_SAMPLE_DATA.TPCDS_SF10TCL.CALL_CENTER
+where CC_EMPLOYEES > 600000000;
+```
 
-    ```sql
-    select CC_CALL_CENTER_ID, CC_NAME, CC_EMPLOYEES, CC_SQ_FT
-    from SNOWFLAKE_SAMPLE_DATA.TPCDS_SF10TCL.CALL_CENTER
-    where CC_EMPLOYEES > 600000000;
-    ```
+Click the <span class="blue-button">INSERT CODE</span> button.
 
-    Click the <span class="blue-button">INSERT CODE</span> button.
+<img class="screenshot" src="../../screenshots/sql-snowflake-query.png">
 
-    <img class="screenshot" src="../../screenshots/sql-snowflake-query.png">
+The required code will be inserted into a cell and immediately executed.
 
-    The required code will be inserted into a cell and immediately executed.
-
-    <img class="screenshot" src="../../screenshots/sql-snowflake-inserted-code.png">
-
-=== "R"
-
-    This feature is not yet implemented in the R version of Code Assist.
+<img class="screenshot" src="../../screenshots/sql-snowflake-inserted-code.png">

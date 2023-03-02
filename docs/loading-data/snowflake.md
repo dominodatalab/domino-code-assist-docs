@@ -2,7 +2,7 @@
 
 <!-- https://user-images.githubusercontent.com/46192475/182823489-e5c868b7-00eb-47e7-a16b-6727f4e26639.mp4 -->
 
-## Add a Redshift Data Source
+## Add a Snowflake Data Source
 
 Before you can use Code Assist to access data from Snowflake you'll need to add a suitable data source. Click the _Data_ option in the left-hand menu. Click the <span class="blue-button">+ Create a Data Source</span> button.
 

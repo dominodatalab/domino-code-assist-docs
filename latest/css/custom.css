@@ -12,12 +12,6 @@ li > img {
   margin-top: 8px;
 }
 
-.assistant-icon {
-    width: 18px;
-    height: 18px;
-    margin-bottom: -3px;
-}
-
 .menu-item {
     width: 185px;
     height: 40px;
@@ -25,30 +19,6 @@ li > img {
 
 .retina-image {
   zoom: 50%;
-}
-
-.white-button,
-.white-button-blue-text,
-.blue-button,
-.green-button {
-  color: white;
-  padding: 3px 10px 3px 10px;
-  border-radius: 5px;
-  white-space: nowrap;
-}
-.white-button {
-  color: black;
-  border: 1px solid black;
-}
-.blue-button {
-  background-color: #2D71C7;
-}
-.green-button {
-  background-color: #5ebe5e;
-}
-.white-button-blue-text {
-  color: rgb(25, 118, 210);
-  border: 1px solid rgb(25, 118, 210);
 }
 
 img.screenshot {

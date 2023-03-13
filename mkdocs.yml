@@ -2,6 +2,7 @@ site_name: "Domino Code Assist"
 site_url: https://dominolowcode.github.io/
 site_dir: site
 edit_uri: ""
+dev_addr: "127.0.0.1:8500"
 nav:
   - index.md
   - Install: install.md
@@ -16,6 +17,7 @@ nav:
       - Introduction: transform/introduction.md
       - Filtering Data: transform/filter.md
       - Grouping & Aggregating: transform/group-aggregate.md
+      - Column Summary: transform/column-summary.md
       # - Chaining Transformations: transform/chaining.md
   - Visualization:
       - Creating Plots: visualization/create-plot.md

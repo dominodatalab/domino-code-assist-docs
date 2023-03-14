@@ -1,6 +1,6 @@
 # Column Summary
 
-The transformation widget generates summary data for all columns in the dataset. These summaries are generated on the fly and then cached.
+The Transformation widget generates summary data for all columns in the dataset. These summaries are generated on the fly and then cached.
 
 For this tutorial we'll use the _Palmer Penguins_ data.
 

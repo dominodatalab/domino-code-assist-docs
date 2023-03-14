@@ -18,6 +18,7 @@ nav:
       - Filtering Data: transform/filter.md
       - Grouping & Aggregating: transform/group-aggregate.md
       - Column Summary: transform/column-summary.md
+      - Joins: transform/join.md
       # - Chaining Transformations: transform/chaining.md
   - Visualization:
       - Creating Plots: visualization/create-plot.md

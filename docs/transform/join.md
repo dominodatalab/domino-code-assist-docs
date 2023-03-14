@@ -34,9 +34,18 @@ For this tutorial we'll use the _Palmer Penguins_ data.
 
     <img class="screenshot" src="../../screenshots/penguin-mass-location-outer-join.png">
 
-    Now Toegerson is included in the results, but the location fields are empty.
+    Now Torgerson is included in the results, but the location fields are empty.
 
     <img class="screenshot" src="../../screenshots/penguin-mass-location-outer-join-code.png">
+
+    There is a lot of flexibility in the way that you can join data frames using the _Transformation_ widget. You can choose between four types of join:
+
+    - inner join
+    - left outer join
+    - right outer join and
+    - full outer join.
+
+    You can also specify which columns are used as join keys or simply join on all common columns.
 
 === "R"
 

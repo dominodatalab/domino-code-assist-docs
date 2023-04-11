@@ -80,4 +80,4 @@ For this tutorial we'll use the _Palmer Penguins_ data. We have already filtered
 
     The required code will be inserted into the script and the aggregated results stored in a new variable.
 
-    <img class="screenshot" src="../../screenshots/Domino — Mozilla Firefox_0044.png">
+    <!-- <img class="screenshot" src="../../screenshots/Domino — Mozilla Firefox_0044.png"> -->

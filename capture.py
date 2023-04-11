@@ -214,7 +214,7 @@ class CaptureHelper:
             text = text.replace("™", "")  # remove trademark in script
             f.write(f"{text}\n")
 
-    # TODO: deduplicate this code with lca.Notebook
+    # TODO: deduplicate this code with dca.Notebook
     def last_cell_assistant_hover(self):
         last_input = self.last_code_cell.locator(".input")
         last_input.scroll_into_view_if_needed()
@@ -230,7 +230,7 @@ class CaptureHelper:
         path.unlink(missing_ok=True)
 
     def step_init(self):
-        with self.step("Click the Low Code Assistant™ button", 2.0):
+        with self.step("Click the Domino Code Assist™ button", 2.0):
             self.assistant.initializer.click()
             self.assistant.initialized_text.click()
             self.shot("assistant-ready")
@@ -249,13 +249,13 @@ df = pd.read_csv("{path_csv}")
 df.head(2)"""
         self.step_cell_insert_code(
             code,
-            "Open a dataset using the Low Code Assistant™, or your own Python code.",
+            "Open a dataset using the Domino Code Assist™, or your own Python code.",
         )
         self.page.locator("text=pclass").wait_for()
 
     def step_hover_cell(self):
         with self.step(
-            "Hover above the next code cell, to show the Low Code Assistant™ button",
+            "Hover above the next code cell, to show the Domino Code Assist™ button",
             2.0,
         ):
             self.scroll_to_last_code_cell()
@@ -265,7 +265,7 @@ df.head(2)"""
 
     def step_hover_assistant_fab(self):
         with self.step(
-            "Hover above the Low Code Assistant™ button to expand the menu", 2.5
+            "Hover above the Domino Code Assist™ button to expand the menu", 2.5
         ):
             self.assistant.domino_logo.hover()
             self.page.wait_for_timeout(500)
@@ -408,7 +408,7 @@ df.head(2)"""
 
     def step_cell_insert_code_histogram_survived(self):
         with self.step(
-            "Create a histogram using the Low Code Assistant™, or your own Python code.",
+            "Create a histogram using the Domino Code Assist™, or your own Python code.",
             3.5,
         ):
             self.scroll_to_last_code_cell()
@@ -427,7 +427,7 @@ histogram_survived
 
     def step_cell_insert_code_scatter_age_fare_survived(self):
         with self.step(
-            "Create a scatter plot using the Low Code Assistant™, or your own Python code.",
+            "Create a scatter plot using the Domino Code Assist™, or your own Python code.",
             3.5,
         ):
             self.scroll_to_last_code_cell()
@@ -516,7 +516,7 @@ def load_snowflake(
             helper.shot("initial")
 
             helper.assistant.click()
-            page.locator("text=Low Code Assistant™ initialized").wait_for()
+            page.locator("text=Domino Code Assist™ initialized").wait_for()
             helper.shot("assistant-read")
 
             mouse_move_middle(page, page.locator(".code_cell").last)
@@ -585,9 +585,9 @@ def load_redshift(
 
             helper.shot("initial")
 
-            helper.add_msg("Click the Low Code Assistant button", 2)
+            helper.add_msg("Click the Domino Code Assist button", 2)
             helper.assistant.click()
-            page.locator("text=Low Code Assistant™ initialized").wait_for()
+            page.locator("text=Domino Code Assist™ initialized").wait_for()
             helper.shot("assistant-read")
 
             helper.add_msg("Hover above the next code cell", 2)
@@ -670,9 +670,9 @@ def load_redshift_sql(
 
             helper.shot("initial")
 
-            helper.add_msg("Click the Low Code Assistant button", 2)
+            helper.add_msg("Click the Domino Code Assist button", 2)
             helper.assistant.click()
-            page.locator("text=Low Code Assistant™ initialized").wait_for()
+            page.locator("text=Domino Code Assist™ initialized").wait_for()
             helper.shot("assistant-read")
 
             helper.add_msg("Hover above the next code cell", 2)
@@ -1147,7 +1147,7 @@ def overview(
             page.wait_for_timeout(time_step)
 
             with helper.step(
-                "This video will demonstrate many of the features of Low Code Assistant™",
+                "This video will demonstrate many of the features of Domino Code Assist™",
                 2.5,
             ):
                 pass
@@ -1173,7 +1173,7 @@ def overview(
                 helper.step_cell_insert_code_load_titanic()
 
             with helper.step(
-                "Next, we will filter the data using the Low Code Assistant™", 2.5
+                "Next, we will filter the data using the Domino Code Assist™", 2.5
             ):
                 pass
 
@@ -1243,7 +1243,7 @@ def overview(
                 helper.step_cell_insert_code_scatter_age_fare_survived()
 
             with helper.step(
-                "Our second visualization, is done without the Low Code Assistant™", 1.5
+                "Our second visualization, is done without the Domino Code Assist™", 1.5
             ):
                 pass
 

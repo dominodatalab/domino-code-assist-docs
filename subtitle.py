@@ -180,7 +180,7 @@ CMD = [
     f"-annotate +0+450 '{TITLE}'",
     "-fill '#bbbbbb'",
     "-pointsize 64",
-    f"-annotate +0+595 'with Low Code Assistant (LCA)'",
+    f"-annotate +0+595 'with Domino Code Assist (DCA)'",
     "-fill '#0072cd'",
     "-pointsize 48",
     "-gravity southeast",

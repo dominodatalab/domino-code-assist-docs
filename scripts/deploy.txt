@@ -1,15 +1,15 @@
-Click the Low Code Assistant button
-Open a dataset using the Low Code Assistant, or your own Python code.
-Create a histogram using the Low Code Assistant, or your own Python code.
-Create a scatter plot using the Low Code Assistant, or your own Python code.
-Hover above the next code cell, to show the Low Code Assistant button
-Hover above the Low Code Assistant button to expand the menu
+Click the Domino Code Assist button
+Open a dataset using the Domino Code Assist, or your own Python code.
+Create a histogram using the Domino Code Assist, or your own Python code.
+Create a scatter plot using the Domino Code Assist, or your own Python code.
+Hover above the next code cell, to show the Domino Code Assist button
+Hover above the Domino Code Assist button to expand the menu
 Click on 'App'
 Toggle the visualizations you want to add to the app.
 Optionally drag and resize the visualizations
 Click 'Insert code' to insert the code snippet into your notebook
-Hover above the next code cell, to show the Low Code Assistant button
-Hover above the Low Code Assistant button to expand the menu
+Hover above the next code cell, to show the Domino Code Assist button
+Hover above the Domino Code Assist button to expand the menu
 Click on 'Deploy'
 Click on 'Write script' to write the script for the application
 Click on 'Continue'

@@ -1,16 +1,16 @@
-This video will demonstrate many of the features of Low Code Assistant
-Click the Low Code Assistant button
-Hover above the next code cell, to show the Low Code Assistant button
-Hover above the Low Code Assistant button to expand the menu
+This video will demonstrate many of the features of Domino Code Assist
+Click the Domino Code Assist button
+Hover above the next code cell, to show the Domino Code Assist button
+Hover above the Domino Code Assist button to expand the menu
 Click on 'Load Data'
 Go to the 'Datasets' tab to explore your filesystem
 Navigate to the right directory
 Click the file you want to open
 Click 'Insert code' to insert the code snippet into your notebook
 The code is inserted, and will be automatically executed
-Next, we will filter the data using the Low Code Assistant
-Hover above the next code cell, to show the Low Code Assistant button
-Hover above the Low Code Assistant button to expand the menu
+Next, we will filter the data using the Domino Code Assist
+Hover above the next code cell, to show the Domino Code Assist button
+Hover above the Domino Code Assist button to expand the menu
 Click on "Transformations"
 Pick the right dataframe
 Hover above the dotted icon in the table to show the cell actions
@@ -20,8 +20,8 @@ Click the 'Show code' toggle to preview the code
 Click 'Insert code' to insert the code snippet into your notebook
 The code is inserted, and will be automatically executed
 Next, we will create two visualizations
-Hover above the next code cell, to show the Low Code Assistant button
-Hover above the Low Code Assistant button to expand the menu
+Hover above the next code cell, to show the Domino Code Assist button
+Hover above the Domino Code Assist button to expand the menu
 Click on 'Visualizations'
 Pick the right dataframe
 Click on the visualization you want to use, for instance scatter
@@ -29,16 +29,16 @@ Configure the visualization
 Choose a variable name
 Click 'Insert code' to insert the code snippet into your notebook
 The code is inserted, and will be automatically executed
-Our second visualization, is done without the Low Code Assistant
-Create a histogram using the Low Code Assistant, or your own Python code.
-Hover above the next code cell, to show the Low Code Assistant button
-Hover above the Low Code Assistant button to expand the menu
+Our second visualization, is done without the Domino Code Assist
+Create a histogram using the Domino Code Assist, or your own Python code.
+Hover above the next code cell, to show the Domino Code Assist button
+Hover above the Domino Code Assist button to expand the menu
 Click on 'App'
 Toggle the visualizations you want to add to the app.
 Optionally drag and resize the visualizations
 Click 'Insert code' to insert the code snippet into your notebook
-Hover above the next code cell, to show the Low Code Assistant button
-Hover above the Low Code Assistant button to expand the menu
+Hover above the next code cell, to show the Domino Code Assist button
+Hover above the Domino Code Assist button to expand the menu
 Click on 'Deploy'
 Click on 'Write script' to write the script for the application
 Click on 'Continue'

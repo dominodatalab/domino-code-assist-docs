@@ -1,4 +1,4 @@
-name: lca-docs
+name: dca-docs
 channels:
   - conda-forge
   - defaults

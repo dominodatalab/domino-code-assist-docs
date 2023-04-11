@@ -57,8 +57,8 @@ The capability to edit snippets is not enabled by default. It has to be explicit
 === "Python"
 
      <div>Enable snippet edit mode by clicking the pen icon in the context menu:</div>
-     ![Snippets Context Menu](../screenshots/snippets/lca_context_menu.png){: style="width: 299px"}
-     ![Snippets edit](../screenshots/snippets/lca_context_menu_edit.png){: style="width: 251px"}
+     ![Snippets Context Menu](../screenshots/snippets/dca_context_menu.png){: style="width: 299px"}
+     ![Snippets edit](../screenshots/snippets/dca_context_menu_edit.png){: style="width: 251px"}
 
      <div>Enter the snippet code and click on "SAVE AS SNIPPET"</div>
      ![Snippets save as snippet](../screenshots/snippets/save_as_snippet.png){: style="width: 1024px"}
@@ -74,7 +74,7 @@ The capability to edit snippets is not enabled by default. It has to be explicit
 
      <div>To sync the snippet back to git, open "File Changes" in the left-hand sidebar and click "Select and sync"
      on the "Imported Repositories" section</div>
-     ![Snippets sync git](../screenshots/snippets/LCA_edit_git.png){: style="width: 588px"}
+     ![Snippets sync git](../screenshots/snippets/DCA_edit_git.png){: style="width: 588px"}
 
 === "R"
 

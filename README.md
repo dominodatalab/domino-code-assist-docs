@@ -39,7 +39,7 @@ This is required when Code Assist looks different.
 
 ```bash
 $ conda env create -f environment.yml
-$ conda activate lca-docs
+$ conda activate dca-docs
 ```
 
  1. Start a jupyter notebook server

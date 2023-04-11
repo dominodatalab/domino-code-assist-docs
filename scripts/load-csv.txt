@@ -1,6 +1,6 @@
-Click the Low Code Assistant button
-Hover above the next code cell, to show the Low Code Assistant button
-Hover above the Low Code Assistant button to expand the menu
+Click the Domino Code Assist button
+Hover above the next code cell, to show the Domino Code Assist button
+Hover above the Domino Code Assist button to expand the menu
 Click on 'Load Data'
 Go to the 'Datasets' tab to explore your filesystem
 Navigate to the right directory

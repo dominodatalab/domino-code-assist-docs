@@ -29,11 +29,11 @@ The next steps will depend on whether you are working with Python (Jupyter or Ju
       !pip install --user domino-code-assist
       ```
 
-      <img class="screenshot" src="../screenshots/lca-install-jupyter.png">
+      <img class="screenshot" src="../screenshots/dca-install-jupyter.png">
 
       After the installation completes, refresh your browser tab. The <span class="blue-button">Domino Code Assist</span> button will appear in the Jupyter toolbar. Click this button to initialize DCA.
 
-      <img class="screenshot" src="../screenshots/lca-installed-jupyter.png">
+      <img class="screenshot" src="../screenshots/dca-installed-jupyter.png">
 
       To upgrade an existing installation do:
 
@@ -59,7 +59,7 @@ The next steps will depend on whether you are working with Python (Jupyter or Ju
 
     After the installation completes, refresh your browser tab. Under the _Addins_ menu option you should now see an _ASSISTDOMINO_ section with various actions listed below. You can also confirm that the `{assistDomino}` package has been installed by searching in the _Packages_ tab.
 
-    <img class="screenshot" src="../screenshots/lca-installed-rstudio.png">
+    <img class="screenshot" src="../screenshots/dca-installed-rstudio.png">
 
 ### Install in a Project
 
@@ -169,19 +169,19 @@ If your Domino deployment does not have open access to the internet (you're in a
 
     If you have followed the [installation instructions](./install.md), you should see a blue <span class="blue-button">Domino DCA</span> button in the toolbar of your Jupyter notebook.
 
-    <img class="screenshot" src="../screenshots/lca-toolbar-button.png">
+    <img class="screenshot" src="../screenshots/dca-toolbar-button.png">
 
     DCA can be started by clicking the <span class="blue-button">Domino Code Assist</span> button in the toolbar. It will insert a code snippet in a new code cell and execute it.
 
-    <img class="screenshot" src="../screenshots/lca-toolbar-button-code.png">
+    <img class="screenshot" src="../screenshots/dca-toolbar-button-code.png">
 
     If you now hover above a code cell, you should see the <img alt="assistant icon" class="assistant-icon" src="../screenshots/general/assistant-icon.png"> icon to the right.
 
-    <img class="screenshot" src="../screenshots/lca-icon.png">
+    <img class="screenshot" src="../screenshots/dca-icon.png">
 
     If you hover above the <img alt="assistant icon" class="assistant-icon" src="../screenshots/general/assistant-icon.png"> icon, it will show a popup menu.
 
-    <img class="screenshot" src="../screenshots/lca-icon-hover-menu.png">
+    <img class="screenshot" src="../screenshots/dca-icon-hover-menu.png">
 
 === "R"
 

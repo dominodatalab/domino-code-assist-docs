@@ -1,7 +1,7 @@
-Click the Low Code Assistant button
-Open a dataset using the Low Code Assistant, or your own Python code.
-Hover above the next code cell, to show the Low Code Assistant button
-Hover above the Low Code Assistant button to expand the menu
+Click the Domino Code Assist button
+Open a dataset using the Domino Code Assist, or your own Python code.
+Hover above the next code cell, to show the Domino Code Assist button
+Hover above the Domino Code Assist button to expand the menu
 Click on "Transformations"
 Pick the right dataframe
 Hover above the dotted icon in the table to show the cell actions

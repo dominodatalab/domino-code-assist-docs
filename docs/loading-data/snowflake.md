@@ -36,23 +36,23 @@ The Snowflake connection will appear under the list of data sources.
 
     Click the <span class="blue-button">Domino Code Assist™</span> button in the toolbar. It will insert a code snippet in a new code cell and execute it.
 
-    <img class="screenshot" src="../../screenshots/snowflake-lca.png">
+    <img class="screenshot" src="../../screenshots/snowflake-dca.png">
 
     Once Code Assist has been initialised if you hover above a code cell, you will see the <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png"> icon. If you hover above the <img alt="assistant icon" class="assistant-icon" src="../../screenshots/general/assistant-icon.png"> icon, it will show a popup menu. Select the _Load Data_ item from the menu.
 
-    <img class="screenshot" src="../../screenshots/snowflake-lca-menu.png">
+    <img class="screenshot" src="../../screenshots/snowflake-dca-menu.png">
 
     Under the drop-down list of data sources you will find the Snowflake data source which we created earlier. Select it.
 
-    <img class="screenshot" src="../../screenshots/snowflake-lca-data-sources.png">
+    <img class="screenshot" src="../../screenshots/snowflake-dca-data-sources.png">
 
     Specify the database, schema and table that you want to load. Click the <span class="blue-button">INSERT CODE</span> button.
 
-    <img class="screenshot" src="../../screenshots/snowflake-lca-database-schema-table.png">
+    <img class="screenshot" src="../../screenshots/snowflake-dca-database-schema-table.png">
 
     The required code will be inserted into a cell and immediately executed.
 
-    <img class="screenshot" src="../../screenshots/snowflake-lca-inserted-code.png">
+    <img class="screenshot" src="../../screenshots/snowflake-dca-inserted-code.png">
 
 === "R"
 

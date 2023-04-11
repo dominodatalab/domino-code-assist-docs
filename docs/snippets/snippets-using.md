@@ -40,7 +40,7 @@ Before inserting a snippet you first need to find and select it.
     
     Click on the Addins button and choose the _DCA Snippets_ option.
 
-    <img class="screenshot" src="../../screenshots/rstudio-lca-menu-snippets.png">
+    <img class="screenshot" src="../../screenshots/rstudio-dca-menu-snippets.png">
 
     The snippets dialog will appear. Navigate through the folder hierarchy to find a snippet which suits your use case.
 
